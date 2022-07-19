@@ -15,12 +15,4 @@
 void	ft_ft(int *nbr)
 {
 	*nbr = 42;
-	printf("%d", *nbr);
 }
-
-//int	main(void)
-//{
-//	int	nbr;
-//
-//	ft_ft(&nbr);
-//}

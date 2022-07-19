@@ -24,12 +24,3 @@ int	ft_strlen(char *str)
 	}
 	return a;
 }
-
-//int	main(void)
-//{
-//	int c;
-//
-//	c = ft_strlen("befhwv");
-//	c += '0';
-//	write(1, &c, 1);
-//}
