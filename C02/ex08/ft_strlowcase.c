@@ -6,13 +6,13 @@
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:30:36 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/20 02:41:25 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/07/20 18:57:06 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strlowcase(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
