@@ -1,46 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 06:32:11 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/19 19:10:01 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/20 02:00:36 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/20 02:29:30 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcpy(char *dest, char *src, unsigned int n)
+char	*ft_strupcase(char *str)
 {
-	unsigned int	i;
+	int i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	while (str[i])
 	{
-		dest[i] = src[i];
+		if (str[i] >= 97 && str[i] <= 122)
+			str[i] -= 32;
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
-}
-
-int	main(void)
-{
-	char	src[] = "teeeeeeest";
-	char	dest[250];
-	int	n = 5;
-	int	i = 0;
-
-	ft_strcpy(dest, src, n);
-	while (dest[i] != '\0')
-	{
-		write(1, &dest[i], 1);
-		i++;
-	}
-}
+	return (str);

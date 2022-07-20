@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 06:32:11 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/19 19:10:01 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/19 22:27:15 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/19 22:31:53 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcpy(char *dest, char *src, unsigned int n)
+//#include <stdio.h>
+ 
+int     ft_str_is_uppercase(char *str)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (i < n && src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
-}
-
-int	main(void)
+         int     i;
+  
+         i = 0;
+         while (str[i])
+         { 
+                 if (str[i] >= 41 && str[i] <= 90)
+                         i++;
+                 else
+                         return (0);
+         }
+         return (1);
+/*}
+int   main(void)
 {
-	char	src[] = "teeeeeeest";
-	char	dest[250];
-	int	n = 5;
-	int	i = 0;
-
-	ft_strcpy(dest, src, n);
-	while (dest[i] != '\0')
-	{
-		write(1, &dest[i], 1);
-		i++;
-	}
-}
+	char    str[] = "GHBKJNO";
+        printf("%d", ft_str_is_uppercase(str));
+}*/
