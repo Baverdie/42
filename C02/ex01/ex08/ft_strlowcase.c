@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 22:27:15 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/21 03:06:01 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/20 02:30:36 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/20 18:57:06 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-int	ft_str_is_uppercase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 41 && str[i] <= 90)
-			i++;
-		else
-			return (0);
+		if (str[i] >= 65 && str[i] <= 90)
+			str[i] += 32;
+		i++;
 	}
-	return (1);
-	printf(ft_str_is_uppercase);
-}
-
-int	main(void)
-{
-	char	str[] = "test";
-
-	ft_str_is_uppercase(str);
+	return (str);
 }

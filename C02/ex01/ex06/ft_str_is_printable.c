@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowcase.c                                :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 22:19:52 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/20 18:39:42 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/19 22:34:13 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/21 06:02:52 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowcase(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 97 && str[i] <= 122)
+		if (str[i] <= 31)
 			i++;
 		else
 			return (0);
