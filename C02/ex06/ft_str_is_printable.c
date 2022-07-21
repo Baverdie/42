@@ -6,7 +6,7 @@
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 22:34:13 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/20 18:56:07 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/07/21 06:02:52 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] <= 31)
+		if (str[i] <= 31 || str[i] >= 126)
 			i++;
 		else
 			return (0);

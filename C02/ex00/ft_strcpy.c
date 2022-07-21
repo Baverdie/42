@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 06:10:23 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/20 18:43:18 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/21 02:38:37 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/21 05:23:20 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	des[i] = '\0';
 	return (dest);
 }

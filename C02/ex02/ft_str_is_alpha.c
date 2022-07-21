@@ -6,7 +6,7 @@
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 21:31:32 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/20 18:47:17 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/07/21 05:42:19 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_str_is_alpha(char *str)
 		if ((str[i] >= 65 && str[i] <= 90) || (str[i] >= 97 && str[i] <= 122))
 			i++;
 		else
-			return (1);
+			return (0);
 	}
-	return (0);
+	return (1);
 }

@@ -6,10 +6,9 @@
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 22:27:15 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/21 03:06:01 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/07/21 05:56:06 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
 int	ft_str_is_uppercase(char *str)
 {
@@ -24,12 +23,4 @@ int	ft_str_is_uppercase(char *str)
 			return (0);
 	}
 	return (1);
-	printf(ft_str_is_uppercase);
-}
-
-int	main(void)
-{
-	char	str[] = "test";
-
-	ft_str_is_uppercase(str);
 }
