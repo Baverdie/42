@@ -1,49 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 23:53:24 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/22 02:46:14 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/22 03:15:59 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/22 04:02:27 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strcat(char *dest, char *src)
 {
-    unsigned int	i;
-	int	som1;
-	int	som2;
+	int	i;
+	int	j;
 
-    som1 = 0;
-	som2 = 0;
 	i = 0;
-    while(s1[i] != '\0' && i <= n)
-    {
-		som1 += s1[i];
+	j = 0;
+	while (dest[i] != '\0')
 		i++;
-    }
-	i = 0;
-    while(s2[i] != '\0' && i <= n)
-    {
-		som2 +=	s2[i];
-		i++;
+	while (src[i] != '\0')
+	{
+		dest[i + j] = src[j];
+		j++;
 	}
-	return (som1 - som2);
+	dest[i + j] = '\0';
+	return (dest);
 }
 
 int	main(void)
 {
-    char    s1[] = "ggbkj";
-    char    s2[] = "ggbk";
-    int    n;
-
-    n = 5;
-    printf("%d\n", ft_strncmp(s1, s2, n));
-    printf("%d", strncmp(s1, s2, n));
-    return (0);
+	char	dest[] = "thch";
+	char	src[] = "gfjd";
+	
+	printf("%s\n", ft_strcat(dest, src));
+	printf("%s", strcat(dest, src));
+	return (0);
 }
