@@ -6,7 +6,7 @@
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 02:38:37 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/21 05:23:20 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/07/21 23:35:12 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
-	des[i] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
