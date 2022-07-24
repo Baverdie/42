@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   print_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/22 03:15:59 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/22 22:02:59 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/23 17:54:17 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/23 18:01:29 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-char	*ft_strcat(char *dest, char *src)
+void	print_tab(char *tab)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[i] != '\0')
+	while (i != 3)
 	{
-		dest[i + j] = src[j];
-		j++;
+		while (j != 3)
+		{
+			tab{{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
+			j++;
+		}
+		i++;
 	}
-	dest[i + j] = '\0';
-	return (dest);
-}
-
-int	main(void)
-{
-	char	dest[50] = "thch";
-	char	src[] = "gfjd";
-	
-	printf("%s\n", ft_strcat(dest, src));
-	printf("%s", strcat(dest, src));
-	return (0);
+	j = 0;
 }
