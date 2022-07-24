@@ -6,7 +6,7 @@
 /*   By: baverdie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 22:27:15 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/21 05:56:06 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/07/24 03:24:40 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_str_is_uppercase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 41 && str[i] <= 90)
+		if (str[i] >= 65 && str[i] <= 90)
 			i++;
 		else
 			return (0);
