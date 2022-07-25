@@ -6,12 +6,9 @@
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 03:15:59 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/22 22:02:59 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/07/25 02:03:19 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strcat(char *dest, char *src)
 {
@@ -22,21 +19,11 @@ char	*ft_strcat(char *dest, char *src)
 	j = 0;
 	while (dest[i] != '\0')
 		i++;
-	while (src[i] != '\0')
+	while (src[j] != '\0')
 	{
 		dest[i + j] = src[j];
 		j++;
 	}
 	dest[i + j] = '\0';
 	return (dest);
-}
-
-int	main(void)
-{
-	char	dest[50] = "thch";
-	char	src[] = "gfjd";
-	
-	printf("%s\n", ft_strcat(dest, src));
-	printf("%s", strcat(dest, src));
-	return (0);
 }

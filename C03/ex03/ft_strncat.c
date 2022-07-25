@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 23:53:24 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/25 02:26:33 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/25 01:41:11 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/25 02:01:45 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
-	int				som1;
-	int				som2;
+	unsigned int	j;
 
-	som1 = 0;
-	som2 = 0;
 	i = 0;
-	while (s1[i] != '\0' && i <= n)
-	{
-		som1 += s1[i];
+	j = 0;
+	while (dest[i] != '\0')
 		i++;
-	}
-	i = 0;
-	while (s2[i] != '\0' && i <= n)
+	while (src[j] != '\0' && j <= nb)
 	{
-		som2 += s2[i];
-		i++;
+		dest[i + j] = src[j];
+		j++;
 	}
-	return (som1 - som2);
+	dest[i + j] = '\0';
+	return (dest);
 }

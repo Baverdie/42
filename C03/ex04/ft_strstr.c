@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 23:53:24 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/25 02:26:33 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/25 01:55:43 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/25 06:20:19 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char 	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int	i;
-	int				som1;
-	int				som2;
+	int	i;
+	int	j;
 
-	som1 = 0;
-	som2 = 0;
 	i = 0;
-	while (s1[i] != '\0' && i <= n)
+	if (!str[i])
+			return (str);
+	while (str[i] != '\0')
 	{
-		som1 += s1[i];
+		j = 0;
+		while (to_find[j] == str[i + j])
+		{
+			j++;
+			if (to_find[j] == '\0')
+				return (&str[i]);
+		}
 		i++;
 	}
-	i = 0;
-	while (s2[i] != '\0' && i <= n)
-	{
-		som2 += s2[i];
-		i++;
-	}
-	return (som1 - som2);
+	return ((0));
 }
