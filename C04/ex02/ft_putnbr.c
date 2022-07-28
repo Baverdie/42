@@ -17,7 +17,7 @@ void	ft_putnbr(int nb)
 	if (nb == -2147483648)
 	{
 		write(1, "-2", 2);
-		nb = 147483647;
+		nb = 147483648;
 	}
 	if (nb < 0)
 	{
