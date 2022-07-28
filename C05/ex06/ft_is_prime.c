@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 09:15:48 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/28 11:17:14 by baverdie         ###   ########.fr       */
+/*   Created: 2022/07/28 11:34:34 by baverdie          #+#    #+#             */
+/*   Updated: 2022/07/28 11:54:00 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+#include <stdio.h>
+
+int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = 1;
-	while (i * i <= nb && i < 46341)
+	i  = 1;
+	if (nb <= 1)
+		return (0);
+	while (i <= nb)
 	{
-		if (i * i == nb)
-			return (i);
+		if (nb % i == 0)
+			return (1);
 		i++;
 	}
 	return (0);
+}
+
+int main(void)
+{
+	int nb = 2;
+	printf("%d", ft_is_prime(nb));
+	return 0;
 }
