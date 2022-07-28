@@ -1,0 +1,46 @@
+===========================================ex00=============================================
+#include <stdio.h>
+int	main(void)
+{
+	int	nb;
+
+	nb = 5;
+	printf("%d", ft_iterative_factoriel(nb));
+	return (0);
+
+===========================================ex01=============================================
+#include <stdio.h>
+int	main(void)
+{
+	int	nb;
+
+	nb = 5;
+	printf("%d", ft_recursive_factorial(nb));
+	return (0);
+}
+===========================================ex02=============================================
+#include <stdio.h>
+int	main(void)
+{
+	int nb;
+	int power;
+
+	nb = 2;
+	power = 8;
+	printf("%d", ft_iterative_power(nb, power));
+	return (0);
+}
+===========================================ex03=============================================
+#include <stdio.h>
+int	main(void)
+{
+	int nb;
+	int power;
+
+	nb = 5;
+	power = -2;
+	printf("%d", ft_iterative_power(nb, power));
+	return (0);
+}
+===========================================ex04=============================================
+
