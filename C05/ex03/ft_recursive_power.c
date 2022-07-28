@@ -20,14 +20,3 @@ int	ft_iterative_power(int nb, int power)
 		return (1);
 	return (nb * ft_iterative_power(nb, power - 1));
 }
-
-int	main(void)
-{
-	int nb;
-	int power;
-
-	nb = 5;
-	power = -2;
-	printf("%d", ft_iterative_power(nb, power));
-	return (0);
-}
