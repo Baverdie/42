@@ -39,7 +39,7 @@ int	main(void)
 
 	nb = 5;
 	power = -2;
-	printf("%d", ft_iterative_power(nb, power));
+	printf("%d", ft_recurcive_power(nb, power));
 	return (0);
 }
 ===========================================ex04=============================================
@@ -63,4 +63,22 @@ int main(void)
 	return 0;
 }
 ===========================================ex06=============================================
+#include <stdio.h>
 
+int main(void)
+{
+	int nb = 100;
+	printf("%d", ft_is_prime(nb));
+	return 0;
+}
+===========================================ex07=============================================
+#include <stdio.h>
+
+int main(void)
+{
+	int nb;
+
+	nb = 2008428;
+	printf("%d", ft_find_next_prime(nb));
+	return 0;
+}
