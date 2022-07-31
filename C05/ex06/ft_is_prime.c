@@ -6,11 +6,9 @@
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 11:34:34 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/28 11:54:00 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/08/01 01:42:01 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_is_prime(int nb)
 {
@@ -26,11 +24,4 @@ int	ft_is_prime(int nb)
 		i++;
 	}
 	return (0);
-}
-
-int main(void)
-{
-	int nb = 2;
-	printf("%d", ft_is_prime(nb));
-	return 0;
 }

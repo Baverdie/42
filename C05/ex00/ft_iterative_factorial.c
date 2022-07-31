@@ -6,7 +6,7 @@
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 03:39:23 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/28 04:44:49 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/08/01 01:23:34 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_iterative_factoriel(int nb)
 
 	i = nb;
 	if (i < 0)
+		return (0);
+	if (i == 0)
 		return (0);
 	while (nb > 1)
 	{
