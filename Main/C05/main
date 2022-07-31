@@ -1,0 +1,84 @@
+===========================================ex00=============================================
+#include <stdio.h>
+int	main(void)
+{
+	int	nb;
+
+	nb = 5;
+	printf("%d", ft_iterative_factoriel(nb));
+	return (0);
+
+===========================================ex01=============================================
+#include <stdio.h>
+int	main(void)
+{
+	int	nb;
+
+	nb = 5;
+	printf("%d", ft_recursive_factorial(nb));
+	return (0);
+}
+===========================================ex02=============================================
+#include <stdio.h>
+int	main(void)
+{
+	int nb;
+	int power;
+
+	nb = 2;
+	power = 8;
+	printf("%d", ft_iterative_power(nb, power));
+	return (0);
+}
+===========================================ex03=============================================
+#include <stdio.h>
+int	main(void)
+{
+	int nb;
+	int power;
+
+	nb = 5;
+	power = -2;
+	printf("%d", ft_recurcive_power(nb, power));
+	return (0);
+}
+===========================================ex04=============================================
+#include <stdio.h>
+
+int	main(void)
+{
+	int	index = 8;
+
+	printf("%d", ft_fibonacci(index));
+	return (0);
+}
+===========================================ex05=============================================
+#include <stdio.h>
+
+int main(void)
+{
+	long int nb = 100;
+
+	printf("%d", ft_sqrt(nb));
+	return 0;
+}
+===========================================ex06=============================================
+#include <stdio.h>
+
+int main(void)
+{
+	int nb = 100;
+	printf("%d", ft_is_prime(nb));
+	return 0;
+}
+===========================================ex07=============================================
+#include <stdio.h>
+
+int main(void)
+{
+	int nb;
+
+	nb = 2008428;
+	printf("%d", ft_find_next_prime(nb));
+	return 0;
+}
