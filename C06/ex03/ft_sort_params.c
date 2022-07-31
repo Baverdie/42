@@ -6,7 +6,7 @@
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 09:30:22 by baverdie          #+#    #+#             */
-/*   Updated: 2022/07/31 10:40:41 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/07/31 23:10:32 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	return (s1[i] - s2[i]);
 }
-
 
 int	main(int argc, char *argv[])
 {
