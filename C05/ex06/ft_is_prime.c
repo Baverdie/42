@@ -6,7 +6,7 @@
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 11:34:34 by baverdie          #+#    #+#             */
-/*   Updated: 2022/08/01 01:42:01 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/08/01 18:37:15 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@ int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = 1;
-	if (nb <= 1)
+	i = 2;
+	if (nb < 2)
 		return (0);
 	while (i <= nb)
 	{

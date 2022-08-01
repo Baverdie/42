@@ -6,11 +6,11 @@
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 03:39:23 by baverdie          #+#    #+#             */
-/*   Updated: 2022/08/01 01:23:34 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/08/01 07:06:13 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factoriel(int nb)
+int	ft_iterative_factorial(int nb)
 {
 	int	i;
 
