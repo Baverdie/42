@@ -14,7 +14,7 @@ int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i  = 1;
+	i = 1;
 	if (nb <= 1)
 		return (0);
 	while (i <= nb)
