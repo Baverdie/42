@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 13:33:52 by baverdie          #+#    #+#             */
-/*   Updated: 2022/08/03 01:42:27 by baverdie         ###   ########.fr       */
+/*   Created: 2022/08/03 04:16:57 by baverdie          #+#    #+#             */
+/*   Updated: 2022/08/03 04:28:19 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,10 @@ int	ft_strlen(char	*str)
 	return (i);
 }
 
-char	*ft_strdup(char *src)
+int *ft_range(int min, int max)
 {
-	char	*dupstr;
+	char	*range;
 	int	i;
 
-	dupstr = malloc(ft_strlen(src) * sizeof(char) + 1);
-	i = 0;
-	while (src[i])
-	{
-		dupstr[i] = src[i];
-		i++;
-	}
-	dupstr += '\0';
-	return (dupstr);
+	range = malloc();
 }
-
-int	main(void)
-{
-	char src[] = "salut";
-
-	printf("%s\n", ft_strdup(src));
-	return (0);
-} 
