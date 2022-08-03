@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 13:33:52 by baverdie          #+#    #+#             */
-/*   Updated: 2022/08/03 01:42:27 by baverdie         ###   ########.fr       */
+/*   Created: 2022/08/03 07:16:51 by baverdie          #+#    #+#             */
+/*   Updated: 2022/08/03 07:18:32 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
-int	ft_strlen(char	*str)
+int	ft_ultimate_range(int **range, int min, int ,max);
 {
-	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dupstr;
-	int	i;
-
-	dupstr = malloc(ft_strlen(src) * sizeof(char) + 1);
-	i = 0;
-	while (src[i])
-	{
-		dupstr[i] = src[i];
-		i++;
-	}
-	dupstr += '\0';
-	return (dupstr);
 }
