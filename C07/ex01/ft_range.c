@@ -6,13 +6,13 @@
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 04:16:57 by baverdie          #+#    #+#             */
-/*   Updated: 2022/08/04 01:12:17 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/08/04 07:48:35 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int *ft_range(int min, int max)
+int	*ft_range(int min, int max)
 {
 	int	*range;
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: baverdie <bastien.verdiervaissiere@gm      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 13:33:52 by baverdie          #+#    #+#             */
-/*   Updated: 2022/08/03 01:42:27 by baverdie         ###   ########.fr       */
+/*   Updated: 2022/08/04 13:32:11 by baverdie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strlen(char	*str)
 char	*ft_strdup(char *src)
 {
 	char	*dupstr;
-	int	i;
+	int		i;
 
 	dupstr = malloc(ft_strlen(src) * sizeof(char) + 1);
 	i = 0;
@@ -34,6 +34,6 @@ char	*ft_strdup(char *src)
 		dupstr[i] = src[i];
 		i++;
 	}
-	dupstr += '\0';
+	dupstr[i] = '\0';
 	return (dupstr);
 }
