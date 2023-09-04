@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   main_putnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 20:34:57 by basverdi          #+#    #+#             */
-/*   Updated: 2023/09/04 22:29:40 by basverdi         ###   ########.fr       */
+/*   Created: 2023/09/04 17:49:07 by basverdi          #+#    #+#             */
+/*   Updated: 2023/09/04 18:24:36 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c) {
-	write(1, &c, 1);
+void	ft_putnbr(int n);
+
+void exect() {
+	ft_putnbr(0);
+	ft_putnbr(1);
+	ft_putnbr(-1);
+	ft_putnbr(-2147483648);
+	ft_putnbr(420);
 }
 
-void ft_putnbr(int n) {
-	if (n == -2147483648) {
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0) {
-		write(1, "-", 1);
-		n = -n;
-	}
-	if (n > 10) {
-		ft_putnbr(n / 10);
-		ft_putchar(n % 10 + 48);
-	}
-	else
-		ft_putchar(n + 48);
+int	main(void) {
+	exect();
+	printf("%s\n", "\033[1;0m=======ft_putnbr=======");
+	printf("%s\n", "\033[1;0m=======================");
 }
