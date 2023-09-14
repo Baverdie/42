@@ -1,4 +1,4 @@
-clang -Wall -Wextra -Werror ft_putchar.c main/main_putchar.c -o putchar
+gcc -Wall -Wextra -Werror ft_putchar.c main/main_putchar.c -o putchar
 
 ./putchar > yours.output
 

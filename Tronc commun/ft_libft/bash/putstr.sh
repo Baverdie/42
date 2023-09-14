@@ -1,4 +1,4 @@
-clang -Wall -Wextra -Werror ft_putchar.c ft_putstr.c main/main_putstr.c -o putstr
+gcc -Wall -Wextra -Werror ft_putchar.c ft_putstr.c main/main_putstr.c -o putstr
 
 ./putstr "a" "aab" "baa" "" " " "1234567890" "&é\"'(§è!çà)" > yours.output
 

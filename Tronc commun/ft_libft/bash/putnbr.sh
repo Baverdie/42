@@ -1,4 +1,4 @@
-clang -Wall -Wextra -Werror ft_putnbr.c ft_atoi.c main/main_putnbr.c -o putnbr
+gcc -Wall -Wextra -Werror ft_putnbr.c ft_atoi.c main/main_putnbr.c -o putnbr
 
 ./putnbr "-2147483648" "-42" "-1" "0" "1" "2" "42" "420" "1234567890" > yours.output
 
