@@ -10,63 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
 void	ft_putnbr(int n);
 
-void exect()
-{
-	int	nb;
+int	ft_atoi(char *str);
 
-	nb = -42;
-	FILE* fichier = NULL;
-	fichier = fopen("test_putnbr.txt", "w");
-	if (fichier != NULL) {
-		while (nb <= 420) {
-			fprintf(fichier, "%d\n", ft_putnbr(nb));
-			nb += 3;
-		}
-		fclose(fichier);
-	}
-}
-
-void	print_result(int nb, int n)
+int	main(int argc, char **argv)
 {
-	if (nb == 0)
-		printf("%s\n", "\033[1;32m<<<<<<< SUCCESS >>>>>>>\033[1;0m");
-	else
+	int	i;
+
+	i = 1;
+	while (i < argc)
 	{
-		printf("%s\n", "\033[1;31m>>>>>> FAILLURE <<<<<<<");
-		printf("Valeur: ");
-		printf("\nft_putnbr = %d\n", n);
+		ft_putnbr(ft_atoi(argv[i]));
+		write(1, "\n", 1);
+		i++;
 	}
-}
-
-int	main(void) {
-	int	count;
-	int	x;
-	int	y;
-
-	exect();
-	FILE* t = NULL;
-	t = fopen("test_putnbr.txt", "r");
-	FILE* r = NULL;
-	r = fopen("putnbr.txt", "r");
-	count = 0;
-	x = 0;
-	y = 0;
-	if (t != NULL && r != NULL) {
-		printf("%s\n", "\033[1;0m=======ft_putnbr=======");
-	 	while (x != EOF && y != EOF) {
-			x = fgetc(t);
- 			y = fgetc(r);
-	 		if (x != y)
-				print_result(1, -42 + count);
-			if (x == '\n' && y == '\n')
-	 			count++;
-		}
-		printf("%s\n", "\033[1;0m=======================");
-	}
-	fclose(t);
-	fclose(r);
+	return (0);
 }

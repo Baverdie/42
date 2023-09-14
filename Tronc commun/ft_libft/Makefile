@@ -1,9 +1,13 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft
-SRCS = main/main_atoi.c \
-		ft_atoi.c
-SHFILES = bash/putnbr.sh
+SRCS = main/main.c     \
+		main/main_atoi.c\
+		ft_atoi.c        \
+		main/main_strlen.c\
+		ft_strlen.c		   \
+
+SHLIST = ./bash/putchar.sh && ./bash/putnbr.sh && ./bash/putstr.sh
 
 OBJS = ${SRCS:.c=.o}
 
@@ -17,15 +21,17 @@ endef
 export HEADER
 
 all:		${NAME}
-	@echo "\033[1m\033[35m$$HEADER\033[0m\n\033[1m\033[36m./$(NAME) is ready 🤓\033[0m"
-	./${NAME} && ./${SHFILES}
+	@echo "\033[1m\033[35m$$HEADER\033[0m\n\033[1m\033[36m$(NAME) is ready 🤓\033[0m\n"
+	@./${NAME} && ${SHLIST}
 
-${NAME}:	${OBJS} ${SHFILES}
-	${CC} ${CFLAGS} -o ${NAME} ${OBJS}
+${NAME}:	${OBJS}
+	@${CC} ${CFLAGS} -o ${NAME} ${SRCS}
+
 %.o:		%.c
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	@echo "\033[1m\033[36mcompiled ✔️\033[0m"
+	@${CC} ${CFLAGS} -c $< -o $@
 clean:	
-	@echo "\033[1m\033[36mevery .o cleaned 🧹\033[0m\n"
+	@echo "\033[1m\033[36mevery .o cleaned 🧹\033[0m"
 	@rm -rf $(OBJS)
 
 fclean:		clean

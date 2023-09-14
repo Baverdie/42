@@ -14,7 +14,7 @@ sed -i '' '1d' fail.output
 
 echo "\033[1;0m=======ft_putnbr======="
 
-cat diff.count | tr -d " " | xargs -I {} test {} -eq 0 && for counter in {1..9}; do echo "\033[1;32m<<<<<<< SUCCESS >>>>>>>"; done || (echo "\033[1;31m>>>>>> FAILLURE <<<<<<<" && echo "Valeur: " | tr -d "\n" && cat fail.output | tail -n 1 && echo "ft_putnbr: " | tr -d "\n" && cat fail.output | head -n 1)
+cat diff.count | tr -d " " | xargs -I {} test {} -eq 0 && for counter in {1..9}; do echo "\033[1;32m<<<<<<< SUCCESS >>>>>>>" && sleep 0.1; done || (echo "\033[1;31m>>>>>> FAILLURE <<<<<<<" && echo "Valeur: " | tr -d "\n" && cat fail.output | tail -n 1 && echo "ft_putnbr: " | tr -d "\n" && cat fail.output | head -n 1)
 
 echo "\033[1;0m======================="
 
