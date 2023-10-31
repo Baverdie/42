@@ -1,12 +1,13 @@
 NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC = clang
+CFLAGS = -Wall -Wextra  -Werror
 
 SRCS = ft_isalnum.c \
 ft_isalpha.c \
 ft_isascii.c \
 ft_isdigit.c \
 ft_isprint.c \
+ft_strlcat.c \
 ft_strlcpy.c \
 ft_strlen.c \
 

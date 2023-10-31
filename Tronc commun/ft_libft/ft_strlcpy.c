@@ -1,27 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 00:52:02 by basverdi          #+#    #+#             */
+/*   Updated: 2023/10/31 00:52:03 by basverdi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	long unsigned int	i;
-	long unsigned int	l;
+	size_t	i;
 
-	l = ft_strlen((char *)src);
 	i = 0;
-	while (i + 1 < size && src[i] != '\0')
+	if (size == 0)
+		return (ft_strlen(src));
+	if (size == 1)
+	{
+		dst[i] = 0;
+		return (ft_strlen(src));
+	}
+	while (src[i] && i < size - 1)
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	if (size > 0)
-		dst[i] = '\0';
-	return(l);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
 
-#include <stdio.h>
-
-int	main()
-{
-	// printf("argv: %s\n", &*argv[i]);
-	printf("ft_strlcpy: %zu\n", ft_strlcpy("aiheah", "azdnjazknd", 1));
-	// printf("strlcpy: %lu\n", strlcpy("hello", " world", 5));
-}
