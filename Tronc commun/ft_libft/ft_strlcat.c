@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:52:00 by basverdi          #+#    #+#             */
-/*   Updated: 2023/10/31 01:44:23 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/10/31 02:02:06 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,31 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
     }
     dst[i + j] = '\0';
     return (ft_strlen(src) + ft_strlen(dst));
+}
+
+size_t  ft_strlcat(char *dst, const char *src, size_t size)
+{
+    size_t i;
+    size_t j;
+    size_t dst_len;
+    size_t src_len;
+
+    i = 0;
+    j = 0;
+    dst_len = strlen(dst);
+    src_len = strlen(src);
+    if (size <= dst_len)
+        return (src_len + size);
+    while (dst[i])
+        i++;
+    while (src[j] && i < size - 1)
+    {
+        dst[i] = src[j];
+        i++;
+        j++;
+    }
+    dst[i] = '\0';
+    return (dst_len + src_len);   
 }
 
 # include <stdio.h>
