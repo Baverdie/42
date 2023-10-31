@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = clang
-CFLAGS = -Wall -Wextra  -Werror
+CFLAGS = -Wall -Wextra  -Werror -fPIC
 
 SRCS = ft_atoi.c \
 ft_isalnum.c \
@@ -9,18 +9,22 @@ ft_isascii.c \
 ft_isdigit.c \
 ft_isprint.c \
 ft_memset.c \
+ft_strlcat.c \
 ft_strlcpy.c \
 ft_strlen.c \
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
-
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 # $(NAME): $(OBJS)
 # 	ar -rc $(NAME) $(OBJS)
 
 # %.o: %.c
 # 	$(CC) $(CFLAGS) -c -o $@ $<
+
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
