@@ -21,9 +21,8 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 #######
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+so: $(OBJS)
+	gcc -nostartfiles -shared -o $(NAME:.a=.so) $(OBJS)
 #######
 $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
