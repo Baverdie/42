@@ -1,81 +1,22 @@
 ft_memset:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_bzero:      [MISSING]
+ft_bzero:      [OK] [OK] [OK] [OK] 
 ft_memcpy:     [MISSING]
 ft_memmove:    [MISSING]
 ft_memchr:     [MISSING]
 ft_memcmp:     [MISSING]
 ft_strlen:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_isalpha:    [OK] 
-ft_isdigit:    [FAILED] 
-[fail]: your isdigit just doesn't work, REALLY ?!
-Test code:
-	int i;
-
-	i = -1;
-	while (i < 530)
-	{
-		if (!!ft_isdigit(i) != !!((*__ctype_b_loc ())[(int) ((i))] & (unsigned short int) _ISdigit))
-			exit(TEST_FAILED);
-		i++;
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-
-
-ft_isalnum:    [FAILED] 
-[fail]: your isalnum just doesn't work, REALLY ?!
-Test code:
-	int i = 0;
-
-	while (i < 256)
-	{
-		if ((_Bool)ft_isalnum(i) != (_Bool)((*__ctype_b_loc ())[(int) ((i))] & (unsigned short int) _ISalnum))
-			exit(TEST_FAILED);
-		i++;
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-
-
-ft_isascii:    [FAILED] 
-[fail]: your isascii just doesn't work, REALLY ?!
-Test code:
-	int i;
-
-	i = -1;
-	while (i < 530)
-	{
-		if (!!ft_isascii(i) != !!(((i) & ~0x7f) == 0))
-		{
-			exit(TEST_FAILED);
-		}
-		i++;
-	}
-	exit(TEST_SUCCESS);
-
-Diffs:
-     isascii: |0|
-  ft_isascii: |1|
-param: (128)
-
+ft_isdigit:    [OK] 
+ft_isalnum:    [OK] 
+ft_isascii:    [OK] 
 ft_isprint:    [OK] 
-ft_toupper:    [MISSING]
-ft_tolower:    [MISSING]
+ft_toupper:    [OK] 
+ft_tolower:    [OK] 
 ft_strchr:     [MISSING]
 ft_strrchr:    [MISSING]
 ft_strncmp:    [MISSING]
 ft_strlcpy:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] 
-[crash]: your strlcat crush when null parameter is sent with a size of 0
-Test code:
-	char b[0xF] = "nyan !";
-
-	ft_strlcat(((void*)0), b, 0);
-	exit(TEST_SUCCESS);
-
-
+ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_strnstr:    [MISSING]
 ft_atoi:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_calloc:     [MISSING]

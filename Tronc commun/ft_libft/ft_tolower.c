@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 00:52:45 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/01 10:42:27 by bastienverd      ###   ########.fr       */
+/*   Created: 2023/11/01 11:04:04 by bastienverd       #+#    #+#             */
+/*   Updated: 2023/11/01 11:11:36 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+int	ft_tolower(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
