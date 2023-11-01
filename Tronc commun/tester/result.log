@@ -1,7 +1,7 @@
 ft_memset:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_bzero:      [OK] [OK] [OK] [OK] 
-ft_memcpy:     [MISSING]
-ft_memmove:    [MISSING]
+ft_memcpy:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_memmove:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_memchr:     [MISSING]
 ft_memcmp:     [MISSING]
 ft_strlen:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
@@ -16,7 +16,14 @@ ft_strchr:     [MISSING]
 ft_strrchr:    [MISSING]
 ft_strncmp:    [MISSING]
 ft_strlcpy:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] [OK] [OK] 
+[no crash]: your strlcat does not segfault when null parameter is sent
+Test code:
+	char b[0xF] = "nyan !";
+
+	ft_strlcat(((void*)0), b, 2);
+
+
 ft_strnstr:    [MISSING]
 ft_atoi:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_calloc:     [MISSING]
