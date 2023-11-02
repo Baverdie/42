@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_test_result.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/13 20:26:54 by alelievr          #+#    #+#             */
-/*   Updated: 2023/11/01 19:20:24 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/01 22:32:23 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -595,10 +595,6 @@ void    display_test_result(int value, char *explanations)
 		case TEST_NOCRASH:
 			printf(COLOR_SUCCESS"[NO CRASH] "COLOR_CLEAR);
 			dprintf(g_log_fd, "[NO CRASH] ");
-			errs[index].type = value;
-			errs[index].data = explanations;
-			errs[index].diff = NULL;
-			errs[index++].code = current_test_code;
 			break ;
 		case TEST_KO:
 			printf(COLOR_KO"[KO] "COLOR_CLEAR);

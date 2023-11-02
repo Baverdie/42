@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alelievr <alelievr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/13 19:59:29 by alelievr          #+#    #+#             */
-/*   Updated: 2023/01/19 03:24:35 by knagase          ###   ########.fr       */
+/*   Updated: 2023/11/01 23:27:19 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ void	run_subtests(void *h, int start) {
 	{
 		MALLOC_RESET;
 		RESET_DIFF;
-		SET_CURRENT_PROTECTED(INVISIBLE);
+		SET_CURRENT_PROTECTED(1);
 		current_part = fun_subtest_table[i].part;
 		current_fun_name = fun_subtest_table[i].fun_name;
 		tmpfun = dlsym(handle, fun_subtest_table[i].fun_name);
@@ -172,7 +172,7 @@ void	run_subbench(void *h, void *h2)
 	for (int i = 0; fun_subbench_table[i].fun_name; i++, current_subtest_id++)
 	{
 		RESET_DIFF;
-		SET_CURRENT_PROTECTED(INVISIBLE);
+		SET_CURRENT_PROTECTED(1);
 		SET_BENCHITER(1);
 		current_fun_name = fun_subbench_table[i].fun_name;
 		tmpfun = dlsym(h, fun_subbench_table[i].fun_name);

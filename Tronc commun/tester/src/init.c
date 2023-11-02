@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alelievr <alelievr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created  2015/11/17 17:30:13 by alelievr          #+#    #+#             */
-/*   Updated: 2022/10/28 13:04:02 by ladloff          ###   ########.fr       */
+/*   Created: 2015/11/17 17:30:13 by alelievr          #+#    #+#             */
+/*   Updated: 2023/11/01 23:27:33 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char			*current_fun_name = "";
 int				current_fun_visibility = 0;
-int				current_protected = 0;
+int				current_protected = 1;
 int				current_test_id = 0;
 int				current_subtest_id = 0;
 int				current_benchtype = 0;
@@ -60,10 +60,10 @@ t_libft_test	fun_test_table[] = {
 	{"ft_calloc", test_ft_calloc, 1, 1},
 	{"ft_strdup", test_ft_strdup, 1, 1},
 
-	{"ft_substr", test_ft_substr, 2, 1}, 
+	{"ft_substr", test_ft_substr, 2, 1},
 	{"ft_strjoin", test_ft_strjoin, 2, 1},
 	{"ft_strtrim", test_ft_strtrim, 2, 1},
-	{"ft_split", test_ft_split, 2, 1}, 
+	{"ft_split", test_ft_split, 2, 1},
 	{"ft_itoa", test_ft_itoa, 2, 1},
 	{"ft_strmapi", test_ft_strmapi, 2, 1},
 	{"ft_putchar_fd", test_ft_putchar_fd, 2, 1},

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfunyu <mfunyu@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/17 17:42:18 by alelievr          #+#    #+#             */
-/*   Updated: 2022/10/30 09:25:38 by ladloff          ###   ########.fr       */
+/*   Updated: 2023/11/01 21:47:23 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2708,7 +2708,7 @@ void			test_ft_strlcat_electric_memory(void *ptr) {
 
 void			test_ft_strlcat_null1(void *ptr) {
 	typeof(strlcat)	*ft_strlcat = ptr;
-	SET_EXPLANATION("your strlcat does not segfault when null parameter is sent");
+	SET_EXPLANATION("Your strlcat is more secure");
 
 	SANDBOX_IRAISE(
 			char	b[0xF] = "nyan !";
@@ -2748,7 +2748,7 @@ void			test_ft_strlcat_return_value(void *ptr) {
 
 void			test_ft_strlcat_null2(void *ptr) {
 	typeof(strlcat)	*ft_strlcat = ptr;
-	SET_EXPLANATION("your strlcat does not segfault when null parameter is sent");
+	SET_EXPLANATION("Your strlcat is more secure");
 
 	SANDBOX_IRAISE(
 			char	b[0xF] = "nyan !";
