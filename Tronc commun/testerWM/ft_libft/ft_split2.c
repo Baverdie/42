@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 15:13:38 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/03 15:50:15 by bastienverd      ###   ########.fr       */
+/*   Created: 2023/11/02 11:57:46 by basverdi          #+#    #+#             */
+/*   Updated: 2023/11/03 15:06:34 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 static int	ft_count_words(const char *s, char c)
 {
-	int	i;
-	int	count;
+	int		i;
+	int		count;
 
 	i = 0;
 	count = 0;
+	if (!s[i])
+		return (0);
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
 			count++;
-			while (*s && s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
 		else
@@ -33,9 +35,9 @@ static int	ft_count_words(const char *s, char c)
 	return (count);
 }
 
-static int	ft_len_words(const char *s, char c)
+static int	ft_word_len(const char *s, char c)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -43,7 +45,7 @@ static int	ft_len_words(const char *s, char c)
 	return (i);
 }
 
-static char **ft_free(char **tab, int i)
+static char	**ft_free(char **tab, int i)
 {
 	while (i >= 0)
 	{
@@ -54,11 +56,11 @@ static char **ft_free(char **tab, int i)
 	return (NULL);
 }
 
-static char	**ft_tab(char **tab, const char *s, char c)
+static char	**ft_fill_tab(char **tab, const char *s, char c)
 {
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;
@@ -67,10 +69,10 @@ static char	**ft_tab(char **tab, const char *s, char c)
 		if (s[i] != c)
 		{
 			k = 0;
-			tab[j] = malloc(sizeof(char) * (ft_len_words(&s[i], c) + 1));
+			tab[j] = malloc(sizeof(char) * (ft_word_len(&s[i], c) + 1));
 			if (!tab[j])
 				return (ft_free(tab, j));
-			while ((s[i] && s[i] != c))
+			while (s[i] && s[i] != c)
 				tab[j][k++] = s[i++];
 			tab[j][k] = '\0';
 			j++;
@@ -91,5 +93,5 @@ char	**ft_split(const char *s, char c)
 	tab = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	return (ft_tab(tab, s, c));
+	return (ft_fill_tab(tab, s, c));
 }
