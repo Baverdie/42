@@ -1,0 +1,10 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     user_exe
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _ft_putnbr_fd, symObjAddr: 0x0, symBinAddr: 0x10000389C, symSize: 0xB8 }
+  - { offsetInCU: 0x3B, offset: 0x3B, size: 0x8, addend: 0x0, symName: _.str, symObjAddr: 0x160, symBinAddr: 0x100003D60, symSize: 0x0 }
+  - { offsetInCU: 0x5E, offset: 0x5E, size: 0x8, addend: 0x0, symName: _ft_putnbr_fd, symObjAddr: 0x0, symBinAddr: 0x10000389C, symSize: 0xB8 }
+  - { offsetInCU: 0x26, offset: 0xBD, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000039EC, symSize: 0x228 }
+  - { offsetInCU: 0x33, offset: 0xCA, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000039EC, symSize: 0x228 }
+...
