@@ -33,8 +33,8 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 #######
-so: $(OBJS)
-	gcc -nostartfiles -shared -o $(NAME:.a=.so) $(OBJS)
+# so: $(OBJS)
+# 	gcc -nostartfiles -shared -o $(NAME:.a=.so) $(OBJS)
 #######
 $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
