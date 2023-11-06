@@ -1,0 +1,74 @@
+============================================ex00=============================================
+#include <stdio.h>
+int	main(void)
+{
+	char src[] = "salut";
+
+	printf("%s\n", ft_strdup(src));
+	return (0);
+} 
+============================================ex01=============================================
+#include <stdio.h>
+
+int main(void)
+{
+	int min = 10;
+	int max = 20;
+	int	*tab;
+	int	i;
+
+	i = 0;
+	tab = ft_range(min, max);
+	while (i < (max - min))
+	{
+		printf("tab[%d] = %d\n", i, tab[i]);
+		i++;
+	}
+	free(tab);
+	return 0;
+}
+============================================ex02=============================================
+#include <stdio.h>
+
+int	main(void)
+{
+	int	min;
+	int	max;
+	int	size;
+	int	*range[size];
+	int	i;
+
+	min = 10;
+	max = 20;
+	size = max - min;
+	i = 0;
+	if (size > 0)
+	{
+		*range = malloc(sizeof(**range) * size);
+		ft_ultimate_range(range, min, max);
+		while (i < size)
+		{
+			printf("tab[%d] = %d\n", i, (*range)[i]);
+			i++;
+		}
+	}
+	else
+		printf("%p\n", *range);
+	free(*range);
+	return (0);
+}
+============================================ex03=============================================
+#include <stdio.h>
+
+int    main(void)
+{
+    char    *tab[4];
+    char    *resstr;
+    tab[0] = "ok1";
+    tab[1] = "ok2";
+    tab[2] = "ok3";
+    tab[3] = "ok4";
+    resstr = ft_strjoin(4, tab, "||");
+    printf("%s", resstr);
+    free(resstr);
+}
