@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 00:59:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/02 15:09:05 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/06 09:37:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*ptr;
 
+	if (nmemb <= 0 || size <= 0)
+		return (malloc (0));
+	if ((nmemb * size) / size != nmemb)
+		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
