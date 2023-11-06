@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-<<<<<<< HEAD
-/*   Created: 2023/11/02 11:57:46 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/02 15:31:56 by basverdi         ###   ########.fr       */
-=======
-/*   Created: 2023/11/03 15:13:38 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/03 17:05:52 by bastienverd      ###   ########.fr       */
->>>>>>> 21186925629151fb153ac1fea34a48ac0c37cdce
+/*   Created: 2023/11/06 10:48:05 by basverdi          #+#    #+#             */
+/*   Updated: 2023/11/06 11:24:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-<<<<<<< HEAD
-=======
 
 static int	ft_count_words(const char *s, char c)
 {
@@ -28,14 +21,9 @@ static int	ft_count_words(const char *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
-		{
+		if ((i == 0 || (i > 0 && s[i - 1] == c)) && s[i] != c)
 			count++;
-			while (*s && s[i] != c)
-				i++;
-		}
-		else
-			i++;
+		i++;
 	}
 	return (count);
 }
@@ -95,9 +83,8 @@ char	**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	tab = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	tab = ft_calloc(sizeof(char *), (ft_count_words(s, c) + 1));
 	if (!tab)
 		return (NULL);
 	return (ft_tab(tab, s, c));
 }
->>>>>>> 21186925629151fb153ac1fea34a48ac0c37cdce

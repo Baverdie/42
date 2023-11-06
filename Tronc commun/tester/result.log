@@ -16,7 +16,15 @@ ft_strchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH]
 ft_strrchr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] 
 ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] [NO CRASH] 
 ft_strlcpy:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [NO CRASH] [OK] [OK] 
+ft_strlcat:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] 
+[crash]: your strlcat crush when null parameter is sent with a size of 0
+Test code:
+	char b[0xF] = "nyan !";
+
+	ft_strlcat(((void*)0), b, 0);
+	exit(TEST_SUCCESS);
+
+
 ft_strnstr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_atoi:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_calloc:     [OK] [OK] [OK] [OK] [OK] 
