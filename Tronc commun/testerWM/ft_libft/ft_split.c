@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:13:38 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/03 15:50:15 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/11/03 17:05:52 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static char	**ft_tab(char **tab, const char *s, char c)
 			k = 0;
 			tab[j] = malloc(sizeof(char) * (ft_len_words(&s[i], c) + 1));
 			if (!tab[j])
-				return (ft_free(tab, j));
+				ft_free(tab, j);
 			while ((s[i] && s[i] != c))
 				tab[j][k++] = s[i++];
 			tab[j][k] = '\0';
