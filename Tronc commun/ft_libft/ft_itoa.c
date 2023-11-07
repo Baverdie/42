@@ -1,39 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 01:39:31 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/07 12:53:05 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/07 12:49:04 by basverdi          #+#    #+#             */
+/*   Updated: 2023/11/07 13:35:43 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strtrim(const char *s1, const char *set)
+#include <stdio.h>
+char	*ft_itoa(int n)
 {
-	int		i;
-	int		j;
-	int		k;
 	char	*str;
+	int	i;
+	int	p;
+	int	tmp;
 
+	tmp = n;
+	p = 0;
 	i = 0;
-	j = 0;
-	k = 0;
-	if (!s1 || !set)
-		return (0);
-	while (s1[i] && ft_strchr(set, s1[i]))
-		i++;
-	j = ft_strlen(s1) - 1;
-	while (j > i && ft_strchr(set, s1[j]))
-		j--;
-	str = malloc(sizeof(char) * (j - i + 2));
+	while (tmp >= 10)
+	{
+		tmp = tmp / 10;
+		p++;
+	}
+	str = ft_calloc(p + 2, sizeof(char));
 	if (!str)
-		return (0);
-	while (i <= j)
-		str[k++] = s1[i++];
-	str[k] = '\0';
+		return (NULL);
+	if (n < 10)
+		str[0] = n + 48;
+	else
+	{
+		while (p >= 0)
+		{
+			str[i] = n / 10 + 48;
+			i++;
+		}
+		str[i] = '\0';
+	}
 	return (str);
+}
+
+int main()
+{
+	printf("itoa = %s", ft_itoa(100));
 }

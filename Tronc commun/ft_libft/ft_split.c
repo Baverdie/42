@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:48:05 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/06 11:24:50 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:51:32 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	ft_len_words(const char *s, char c)
 	return (i);
 }
 
-static char **ft_free(char **tab, int i)
+static char	**ft_free(char **tab, int i)
 {
 	while (i >= 0)
 	{

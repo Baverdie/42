@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 23:45:51 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/06 10:58:56 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:53:26 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	long unsigned int	i;
-	unsigned char	*src;
+	unsigned char		*src;
 
 	i = 0;
 	if (!s || n == 0)
