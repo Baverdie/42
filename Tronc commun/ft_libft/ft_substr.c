@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:16:26 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/02 01:29:01 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/11/06 16:30:27 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	dest = malloc(sizeof(char) * len + 1);
+	dest = ft_calloc(sizeof(char), len + 1);
 	if (!dest)
 		return (NULL);
 	if (start >= ft_strlen(s))
