@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:16:26 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/07 12:38:23 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:46:18 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		dest = ft_calloc(ft_strlen(s) - start + 1, sizeof(char));
 	if (!dest)
 		return (NULL);
-	while (s[start] && i < len)
+	while (s[start + i] && i < len)
 	{
-		dest[i++] = s[i + start];
+		dest[i] = s[i + start];
 		i++;
 	}
 	dest[i] = '\0';
