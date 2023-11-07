@@ -3,48 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:49:04 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/07 13:35:43 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:14:06 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+static int	ft_power(long int n)
+{
+	int	p;
+
+	p = 0;
+	if (n < 0)
+	{
+		n = n * -1;
+		p++;
+	}
+	while (n >= 10)
+	{
+		n = n / 10;
+		p++;
+	}
+	return (p);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int	i;
-	int	p;
-	int	tmp;
+	long int	p;
+	long long int	nb;
 
-	tmp = n;
-	p = 0;
-	i = 0;
-	while (tmp >= 10)
-	{
-		tmp = tmp / 10;
-		p++;
-	}
-	str = ft_calloc(p + 2, sizeof(char));
+	p = ft_power(n) + 1;
+	nb = n;
+	str = ft_calloc(p + 1, sizeof(char));
 	if (!str)
 		return (NULL);
-	if (n < 10)
-		str[0] = n + 48;
-	else
+	if (n < 0)
 	{
-		while (p >= 0)
-		{
-			str[i] = n / 10 + 48;
-			i++;
-		}
-		str[i] = '\0';
+		str[0] = 45;
+		nb *= -1;
+	}
+	p--;
+	while (p >= 0 && str[p] != 45)
+	{
+		str[p] = (nb % 10) + 48;
+		nb = nb / 10;
+		p--;
 	}
 	return (str);
-}
-
-int main()
-{
-	printf("itoa = %s", ft_itoa(100));
 }

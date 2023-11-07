@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:30:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/07 12:52:37 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/07 20:35:33 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putstr_fd("-2147483648", fd);
 		return ;
+	}
+	if (n < 0)
+	{
+		n *= -1;
+		ft_putchar_fd('-', fd);
 	}
 	if (n < 10)
 		ft_putchar_fd(n + 48, fd);

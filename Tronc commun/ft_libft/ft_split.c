@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:48:05 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/07 12:51:32 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:28:57 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char	**ft_tab(char **tab, const char *s, char c)
 		if (s[i] != c)
 		{
 			k = 0;
-			tab[j] = malloc(sizeof(char) * (ft_len_words(&s[i], c) + 1));
+			tab[j] = ft_calloc((ft_len_words(&s[i], c) + 1), sizeof(char));
 			if (!tab[j])
 				ft_free(tab, j);
 			while ((s[i] && s[i] != c))
