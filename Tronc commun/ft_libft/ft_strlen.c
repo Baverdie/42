@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:52:17 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/01 17:31:04 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:47:06 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	if (!str[i])
+	if (!str)
 		return (0);
 	while (str[i])
 		i++;

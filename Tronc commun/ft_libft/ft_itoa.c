@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:49:04 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/07 17:14:06 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/11/08 09:25:35 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static int	ft_power(long int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	long int	p;
+	char			*str;
+	long int		p;
 	long long int	nb;
 
 	p = ft_power(n) + 1;

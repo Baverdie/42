@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:04:50 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/11/06 11:02:02 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:34:09 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i])
 	{
 		if (s[i] == (unsigned char)c)
-		{
 			return ((char *)&s[i]);
-		}
 		i++;
 	}
 	return (0);

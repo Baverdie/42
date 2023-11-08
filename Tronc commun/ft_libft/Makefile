@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = clang
-CFLAGS = -Wall -Wextra  -Werror -fPIC
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 ft_isalnum.c ft_isalpha.c ft_isascii.c \
@@ -17,7 +17,11 @@ ft_toupper.c
 
 BONUS = ft_lstadd_back.c \
 ft_lstadd_front.c \
+ft_lstclear.c \
+ft_lstdelone.c \
+ft_lstiter.c \
 ft_lstlast.c \
+ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
 
@@ -25,28 +29,18 @@ OBJS = $(SRCS:.c=.o)
 OBJSBONUS = $(BONUS:.c=.o)
 
 all: $(NAME)
-#######
-# so: $(OBJS)
-# 	gcc -nostartfiles -shared -o $(NAME:.a=.so) $(OBJS)
-#######
+
 $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-#########
-# $(NAME): $(OBJS)
-# 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-# %.o: %.c
-# 	$(CC) $(CFLAGS) -c $< -o $@
-########
 bonus: $(OBJSBONUS) $(OBJS)
 	ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean
 	rm -f $(NAME)
