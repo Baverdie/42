@@ -28,22 +28,30 @@ ft_lstsize.c \
 OBJS = $(SRCS:.c=.o)
 OBJSBONUS = $(BONUS:.c=.o)
 
+define BANNER
+||||||||||||||||||||||||||||||||
+endef
+export BANNER
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+	@ar -rc $(NAME) $(OBJS)
+	@echo $(BANNER)
+	@echo "\033[38;5;48mft_libft ready !\033[0m"
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 bonus: $(OBJSBONUS) $(OBJS)
-	ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
+	@ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
 
 clean:
-	rm -f $(OBJS) $(OBJSBONUS)
+	@rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[38;5;31mft_libft cleaned...\033[0m"
 
 re: fclean all
 
