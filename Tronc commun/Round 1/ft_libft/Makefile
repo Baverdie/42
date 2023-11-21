@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 ft_isalnum.c ft_isalpha.c ft_isascii.c \
@@ -28,16 +28,21 @@ ft_lstsize.c \
 OBJS = $(SRCS:.c=.o)
 OBJSBONUS = $(BONUS:.c=.o)
 
-define BANNER
-||||||||||||||||||||||||||||||||
-endef
-export BANNER
+DEFAULT = \033[0m
+PURPLE = \033[38;5;213m
+
+BANNER = @printf "$(PURPLE) ____  ____       __    __  ____  ____  ____ \n"
+BANNER1 = printf "$(PURPLE)(  __)(_  _)     (  )  (  )(  _ \(  __)(_  _)\n"
+BANNER2 = printf "$(PURPLE) ) _)   )(  ____ / (_/\ )(  ) _ ( ) _)   )(  \n"
+BANNER3 = printf "$(PURPLE)(__)   (__)(____)\____/(__)(____/(__)   (__) \n"
+
+HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -rc $(NAME) $(OBJS)
-	@echo $(BANNER)
+	$(HEADER)
 	@echo "\033[38;5;48mft_libft ready !\033[0m"
 
 %.o: %.c
