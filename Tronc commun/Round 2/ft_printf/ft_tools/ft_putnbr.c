@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 21:00:58 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/22 16:50:35 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/22 15:36:10 by basverdi          #+#    #+#             */
+/*   Updated: 2023/11/22 16:34:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#include "../printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+int	ft_putnbr(long long int n)
+{
+	int	c;
 
-int	ft_putchar(int c);
-int	ft_putstr(char *s);
-int	ft_putnbr(long long int n);
-int	ft_puthexa(long long int n, char *base);
-int	ft_puthexap(unsigned long long f, char *base);
-int	ft_printf(const char *s, ...);
-
-#endif
+	c = 0;
+	if (n == -2147483648)
+		c += ft_putstr("-2147483648");
+	if (n < 0)
+	{
+		n *= -1;
+		c += ft_putchar('-');
+	}
+	if (n < 10)
+		c += ft_putchar(n + 48);
+	else
+	{
+		c += ft_putnbr(n / 10);
+		c += ft_putchar(n % 10 + 48);
+	}
+	return (c);
+}

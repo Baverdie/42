@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 21:00:58 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/22 16:50:35 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/22 15:34:44 by basverdi          #+#    #+#             */
+/*   Updated: 2023/11/22 16:34:33 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#include "../printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+int	ft_putstr(char *s)
+{
+	int	i;
 
-int	ft_putchar(int c);
-int	ft_putstr(char *s);
-int	ft_putnbr(long long int n);
-int	ft_puthexa(long long int n, char *base);
-int	ft_puthexap(unsigned long long f, char *base);
-int	ft_printf(const char *s, ...);
-
-#endif
+	i = 0;
+	if (!s)
+		return (ft_putstr("(null)"));
+	while (s[i])
+		ft_putchar(s[i++]);
+	return (i);
+}
