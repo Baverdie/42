@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:00:58 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/22 16:50:35 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:07:39 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <unistd.h>
 
-int	ft_putchar(int c);
+size_t	ft_putchar(int c);
 int	ft_putstr(char *s);
 int	ft_putnbr(long long int n);
 int	ft_puthexa(long long int n, char *base);

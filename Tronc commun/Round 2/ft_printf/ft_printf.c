@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:00:56 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/22 16:50:12 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:40:50 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	ft_check_flags(const char *s, int i, va_list ap)
 {
@@ -20,7 +20,9 @@ static int	ft_check_flags(const char *s, int i, va_list ap)
 	if (s[i] == '%')
 	{
 		i++;
-		if (s[i] == 'c')
+		if (s[i] == '%')
+			j += ft_putchar('%');
+		else if (s[i] == 'c')
 			j += ft_putchar(va_arg(ap, int));
 		else if (s[i] == 's')
 			j += ft_putstr(va_arg(ap, char *));
@@ -32,8 +34,6 @@ static int	ft_check_flags(const char *s, int i, va_list ap)
 			j += ft_puthexa(va_arg(ap, int), "0123456789abcdef");
 		else if (s[i] == 'X')
 			j += ft_puthexa(va_arg(ap, int), "0123456789ABCDEF");
-		else if (s[i] == '%')
-			j += ft_putchar('%');
 		else
 			j += ft_putchar(s[i]);
 	}
@@ -51,11 +51,11 @@ int	ft_printf(const char *s, ...)
 	va_start(ap, s);
 	if (s == NULL)
 		return (-1);
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] == '%' && s[i + 1] != '\0')
 		{
-			j += ft_check_flags(s, i, ap);
+			j += ft_putchar(va_arg(ap, int));
 			i ++;
 		}
 		else
@@ -64,4 +64,11 @@ int	ft_printf(const char *s, ...)
 	}
 	va_end(ap);
 	return (j);
+}
+
+int main(){
+
+	ft_printf("%c %c\n", 'z', 'a');
+	printf("%c %c", 'z', 'a');
+	return (0);
 }

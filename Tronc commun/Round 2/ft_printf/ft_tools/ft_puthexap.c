@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexap,c                                      :+:      :+:    :+:   */
+/*   ft_puthexap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:38:25 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/22 16:45:22 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:40:24 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../ft_printf.h"
 
 int	ft_puthexap(unsigned long long f, char *base)
 {
