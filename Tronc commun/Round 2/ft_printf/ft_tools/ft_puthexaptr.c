@@ -3,26 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:38:25 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/23 14:40:24 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/11/27 16:00:44 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_puthexap(unsigned long long f, char *base)
+int	ft_puthexaptr(unsigned long long ptr, char *base)
 {
-	int	c;
+	int	cntr;
 
-	c = 0;
-	if (f < 16)
-		c += ft_putchar(base[f]);
+	cntr = 0;
+	if (ptr == 0)
+	{
+		cntr += ft_putstr("(nil)");
+		return (cntr);
+	}
+	cntr += ft_putstr("0x");
+	if (ptr < 16)
+		cntr += ft_putchar(base[ptr]);
 	else
 	{
-		c += ft_putnbr(f / 16);
-		c += ft_putchar(base[f % 16]);
+		cntr += ft_puthexa(ptr / 16, base);
+		cntr += ft_putchar(base[ptr % 16]);
 	}
-	return (c);
+	return (cntr);
 }
