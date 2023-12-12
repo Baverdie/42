@@ -6,3 +6,5 @@ ft_strdup
 paramsum
 sort_list
 sort_list
+ft_strlen
+max

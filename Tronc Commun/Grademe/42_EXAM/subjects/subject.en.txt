@@ -1,22 +1,19 @@
-Assignment name  : ulstr
-Expected files   : ulstr.c
-Allowed functions: write
+Assignment name  : ft_list_size
+Expected files   : ft_list_size.c
+Allowed functions: 
 --------------------------------------------------------------------------------
 
-Write a program that takes a string and reverses the case of all its letters.
-Other characters remain unchanged.
+Write a function that returns the number of elements in the linked list that's
+passed to it.
 
-You must display the result followed by a '\n'.
+It must be declared as follows:
 
-If the number of arguments is not 1, the program displays '\n'.
+int	ft_list_size(t_list *begin_list);
 
-Examples :
+You must use the following structure in your program ft_list_size.c :
 
-$>./ulstr "L'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte et auto-justification." | cat -e
-l'EspRIT Ne PEuT PLuS PrOGrESsER S'iL STAgNE ET Si PErSiStENT vaNiTE ET AUTO-JUSTIFICATION.$
-$>./ulstr "S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  " | cat -e
-s'ENtoUrER De SecREt EsT Un SigNe dE MaNqUe dE COnnAIssANcE.  $
-$>./ulstr "3:21 Ba  tOut  moUn ki Ka di KE m'en Ka fe fot" | cat -e
-3:21 bA  ToUT  MOuN KI kA DI ke M'EN kA FE FOT$
-$>./ulstr | cat -e
-$
+typedef struct    s_list
+{
+    struct s_list *next;
+    void          *data;
+}                 t_list;
