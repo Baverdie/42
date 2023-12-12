@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:16:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/07 15:10:52 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/12/12 19:40:23 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*get_line(char *line)
 	if (line[i] == '\0' || line[1] == '\0')
 		return (0);
 	stored = ft_substr(line, i + 1, ft_strlen(line) - i);
-	if (*stored == '\0')
+	if (!stored)
 	{
 		ft_free(stored);
 		stored = NULL;
@@ -59,6 +59,7 @@ static char	*read_line(int fd, char *buf, char *stored)
 	int		j;
 
 	j = 1;
+	tmp = NULL;
 	while (j != '\0')
 	{
 		j = read(fd, buf, BUFFER_SIZE);
@@ -73,8 +74,12 @@ static char	*read_line(int fd, char *buf, char *stored)
 			stored[0] = '\0';
 		}
 		tmp = stored;
+		printf("tmp = %s\nbuf = %s\n", tmp, buf);
+		printf("split = %s\n", ft_strjoin(tmp, buf));
 		stored = ft_strjoin(tmp, buf);
-		tmp = ft_free(tmp);
+		printf("stored = %s\n", stored);
+		free(tmp);
+		tmp = NULL;
 		if (check_end(buf))
 			break ;
 	}
