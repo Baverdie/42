@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:18:20 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/13 11:25:58 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/12/13 15:03:20 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 char	*ft_substr(const char *s, unsigned int start, unsigned int len)
 {
-	char	*dest;
 	unsigned int	i;
+	char			*dest;
 
 	i = 0;
 	if (!s)

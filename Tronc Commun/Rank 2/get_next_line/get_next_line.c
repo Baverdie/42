@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:16:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/13 11:38:58 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/12/13 13:30:23 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = read_line(fd, buf, stored);
 	ft_free(buf);
-	if (!line)
+	if (!line || line[0] == '\0')
 		return (NULL);
 	stored = get_line(line);
 	return (line);
