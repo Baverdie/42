@@ -6,19 +6,17 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:18:20 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/07 15:08:37 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/12/13 11:25:58 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+unsigned int	ft_strlen(const char *str)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	if (!str)
-		return (0);
 	while (str[i])
 		i++;
 	return (i);
@@ -48,8 +46,10 @@ char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*dest;
 	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
 	dest = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
@@ -60,39 +60,38 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		dest[i] = s1[i];
 		i++;
 	}
-	while (*s2)
+	while (s2[j])
 	{
-		dest[i] = *s2;
-		i++;
-		s2++;
+		dest[i + j] = s2[j];
+		j++;
 	}
-	dest[i] = '\0';
+	dest[i + j] = '\0';
 	return (dest);
 }
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, unsigned int len)
 {
 	char	*dest;
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
-	{
-		dest = malloc(sizeof(char));
-		return (dest);
-	}
-	if (len <= ft_strlen(s) && start + len <= ft_strlen(s))
+		dest = malloc(1 * sizeof(char));
+	else if (ft_strlen(s) - start > len)
 		dest = malloc(len + 1 * sizeof(char));
 	else
 		dest = malloc((ft_strlen(s) - start + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
-	while (s[start + i] && i < len)
+	if (start < ft_strlen(s))
 	{
-		dest[i] = s[i + start];
-		i++;
+		while (s[start + i] && i < len)
+		{
+			dest[i] = s[i + start];
+			i++;
+		}
 	}
 	dest[i] = '\0';
 	return (dest);

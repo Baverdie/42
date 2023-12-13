@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:16:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/12 19:40:23 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:38:58 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ static char	*read_line(int fd, char *buf, char *stored)
 	int		j;
 
 	j = 1;
-	tmp = NULL;
 	while (j != '\0')
 	{
 		j = read(fd, buf, BUFFER_SIZE);
@@ -74,12 +73,8 @@ static char	*read_line(int fd, char *buf, char *stored)
 			stored[0] = '\0';
 		}
 		tmp = stored;
-		printf("tmp = %s\nbuf = %s\n", tmp, buf);
-		printf("split = %s\n", ft_strjoin(tmp, buf));
 		stored = ft_strjoin(tmp, buf);
-		printf("stored = %s\n", stored);
-		free(tmp);
-		tmp = NULL;
+		tmp = ft_free(tmp);
 		if (check_end(buf))
 			break ;
 	}

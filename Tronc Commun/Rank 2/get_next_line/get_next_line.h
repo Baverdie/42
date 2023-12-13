@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:06:52 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/12 19:16:40 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:27:55 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include <unistd.h>
 # include <stdio.h>
 
-size_t	ft_strlen(const char *str);
+unsigned int	ft_strlen(const char *str);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(const char *s1, const char *s2);
-char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_substr(const char *s, unsigned int start, unsigned int len);
 char	*get_next_line(int fd);
 
 #endif
