@@ -1,0 +1,13 @@
+!#/usr/bin/sh
+echo "	#Architecture: $(uname -a)"
+echo "	#CPU physical: $(cat /proc/cpuinfo | grep 'physical id' | wc -l)"
+echo "	#vCPU: $(cat /proc/cpuinfo | grep processor | wc -l)"
+echo "	#Memory Usage: $(free -m | grep Mem | awk '{print $3"/"$2"MB ("$3/$2*100"%)"}')"
+echo "	#Disk Usage: $(df -Bg | grep '^/dev' | awk '{total += $2} {used += $3} END {print used"/"total"Gb ("used/total*100"%)"}')"
+echo "	#CPU load: $(top -bn1 | grep Cpu | awk '{print $2+$3+$4"%"}')"
+echo "	#Last boot: $(who -b | awk '{print $3" "$4}')"
+echo "	#LVM use: $(/usr/sbin/lvdisplay >/dev/null 2>/dev/null && echo 'yes' || echo 'no')"
+echo "	#Connexions TCP: $(ss -s | grep TCP | tail -1 | awk '{print $3}')"
+echo "	#User log: $(who -q | tail -1 | awk '{print $3}')"
+echo "	#Network: $(hostname -I | tr -d '\n' && ip link | grep ether | awk '{print "("$2")"}')"
+echo "	#Sudo: $(journalctl _COMM=sudo | grep COMMAND | wc -l)"

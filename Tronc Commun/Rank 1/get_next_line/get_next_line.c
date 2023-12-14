@@ -6,17 +6,16 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:16:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/13 13:30:23 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/14 16:18:34 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*ft_free(char *str)
+static void	ft_free(char *str)
 {
 	free(str);
 	str = NULL;
-	return (str);
 }
 
 static int	check_end(char *buf)
@@ -74,7 +73,7 @@ static char	*read_line(int fd, char *buf, char *stored)
 		}
 		tmp = stored;
 		stored = ft_strjoin(tmp, buf);
-		tmp = ft_free(tmp);
+		ft_free(tmp);
 		if (check_end(buf))
 			break ;
 	}
@@ -95,7 +94,11 @@ char	*get_next_line(int fd)
 	line = read_line(fd, buf, stored);
 	ft_free(buf);
 	if (!line || line[0] == '\0')
+	{
+		free(stored);
+		stored = NULL;
 		return (NULL);
+	}
 	stored = get_line(line);
 	return (line);
 }

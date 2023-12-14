@@ -1,0 +1,21 @@
+changer le hostname : sudo nano /etc/hostname
+
+creer un groupe : sudo addgroup group
+
+ajouter un user : sudo adduser user
+
+user to group : sudo usermod -aG user group
+
+etat ufw : sudo ufw status verbose
+
+ajouter une ufw : sudo ufw allow
+
+delete ufw : sudo ufw delete line
+
+protection du mdp : sudo nano /etc/pam.d/common-password
+
+ssh : sudo nano /etc/ssh/sshd_config
+
+ip : hostname -i
+
+se connecter depuis le terminal : sshd user @ipvm -p 4242
