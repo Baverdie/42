@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "MLX42/include/MLX42/MLX42.h"
-
-#define WIDTH 1920
-#define HEIGHT 1080
+#include "so_long.h"
 
 static mlx_image_t* image;
 
@@ -46,10 +43,9 @@ void ft_hook(void* param)
 		image->instances[0].x -= WIDTH / 100;
 	if (mlx_is_key_down(mlx, MLX_KEY_D) && image->instances[0].x < 1870)
 		image->instances[0].x += WIDTH / 100;
-	image->instances[0].y *= y *
 }
 
-int32_t main(int32_t argc, const char* argv[])
+int main(int argc, const char* argv[])
 {
 	mlx_t* mlx;
 
