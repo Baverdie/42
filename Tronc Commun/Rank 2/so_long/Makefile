@@ -1,9 +1,11 @@
 NAME = so_long
 CC = clang
 CFLAGS = -Wall -Wextra -g3
-LIBS = MLX42/build/libmlx42.a -ldl -lglfw -pthread -lm -Llibft 
+LIBS = MLX42/build/libmlx42.a -ldl -lglfw -pthread -lm -Llibft \
+		ft_libft/libft.a
 
-SRCS = test.c
+SRCS = main.c \
+	parsing/parsing_map.c
 OBJS = ${SRCS:.c=.o}
 
 DEFAULT = \033[0m
@@ -22,19 +24,23 @@ all: $(NAME)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	@make -s -C MLX42/build/
+	@make -j -s -C MLX42/build/
+	@echo "\033[38;5;48mMLX42 is ready !\033[0m"
+	@make -j -s -C ft_libft/
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
 	$(HEADER)
 	@echo "\033[38;5;48mso_long is ready !\033[0m"
 
 clean: 
+	@make clean -s -C ft_libft/
 	@rm -rf $(OBJS)
 
 fclean: clean
 	@rm -f $(NAME)
+	@make fclean -s -C ft_libft/
 	@echo "\033[38;5;31mso_long cleaned...\033[0m"
 
-re: fclean all
-	make -j all
+re: fclean
+	@make -j all --no-print-directory
 
 .PHONY: all clean fclean re
