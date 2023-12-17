@@ -6,52 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/16 21:31:48 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/17 13:50:37 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-int	check_errors(t_data *data)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (data->map[i])
-	{
-		j = 0;
-		if ((i == 0 && data->map[i][j] != '1') || (i == data->nb_rows - 1 && data->map[i][j] != '1'))
-			return (0);
-		if ((i == 0 && data->map[i][data->nb_cols - 2] != '1') || (i == data->nb_rows - 1 && data->map[i][data->nb_cols - 2] != '1'))
-			return (0);
-		while (data->map[i][j])
-		{
-			if (data->map[i][j] == '0' || data->map[i][j]== 'P' || data->map[i][j]== 'E' || data->map[i][j]== 'C')
-			{
-				if (j == 0)
-					return (0);
-				if (i == 0)
-					return (0);
-				if (j == data->nb_cols - 2)
-					return (0);
-				if (i == data->nb_rows - 1)
-					return (0);
-				if (i > 0 && j < data->nb_cols && data->map[i - 1][j] == ' ')
-					return (0);
-				if (!data->map[i + 1])
-					return (0);
-				if (j < data->nb_cols && data->map[i][j + 1] == ' ')
-					return (0);
-				if (j > 0 && data->map[i][j - 1] == ' ')
-					return (0);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
 
 int	parse_map(t_data *data)
 {
@@ -80,10 +39,23 @@ int	parse_map(t_data *data)
 	return (1);
 }
 
+int	check_file(t_data *data, char *file)
+{
+	if (data->nb_cols == 0 && ft_strlen(file) > 1)
+		data->nb_cols = ft_strlen(file);
+	if (data->nb_cols != 0 && ft_strlen(file) > 1
+		&& data->nb_cols != ft_strlen(file))
+	{
+		free(file);
+		return (0);
+	}
+	return (1);
+}
+
 int	read_map(t_data *data)
 {
 	char	*file;
-	
+
 	data->fd = open(data->file_name, O_RDONLY);
 	if (data->fd <= 0)
 		return (0);
@@ -92,17 +64,10 @@ int	read_map(t_data *data)
 	data->nb_cols = 0;
 	while (file)
 	{
-		if (data->nb_cols == 0 && ft_strlen(file) > 1)
-			data->nb_cols = ft_strlen(file);
-		if (data->nb_cols != 0 && ft_strlen(file) > 1 && data->nb_cols != ft_strlen(file))
-		{
-			free(file);
+		if (check_file(data, file) == 0)
 			return (0);
-		}
 		if (data->nb_cols > 0 && ft_strlen(file) <= 1)
-		{
 			break ;
-		}
 		if (ft_strlen(file) > 1)
 			data->nb_rows++;
 		free(file);

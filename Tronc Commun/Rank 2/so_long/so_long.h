@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/16 19:20:29 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/17 13:41:12 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,19 @@ typedef struct s_data {
 	int		fd;
 	char	*file_name;
 	char	**map;
-} t_data;
+}	t_data;
 
 # define WIDTH 1920
 # define HEIGHT 1080
 
-typedef struct s_game_positions
-{
+typedef struct s_game_positions {
 	int	player_row;
 	int	player_col;
 	int	exit_row;
 	int	exit_col;
-} t_game_positions;
+}	t_game_positions;
 
-
+int	check_errors(t_data *data);
 int	init_map(t_data *data);
 
 #endif

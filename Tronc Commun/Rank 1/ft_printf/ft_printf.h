@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:00:58 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/27 16:00:39 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/17 15:30:01 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <unistd.h> 
+# include <unistd.h>
 
 int	ft_putchar(int c);
 int	ft_putstr(char *s);

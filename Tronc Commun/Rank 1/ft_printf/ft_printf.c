@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:00:56 by basverdi          #+#    #+#             */
-/*   Updated: 2023/11/27 16:12:46 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/17 15:37:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_check_flags(const char *s, int i, va_list arg)
 		j += ft_puthexa(va_arg(arg, unsigned int), "0123456789abcdef");
 	else if (s[i] == 'X')
 		j += ft_puthexa(va_arg(arg, unsigned int), "0123456789ABCDEF");
-	else
+	else 
 		j += ft_putchar(s[i]);
 	return (j);
 }

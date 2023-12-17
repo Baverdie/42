@@ -39,5 +39,6 @@ fclean: clean
 	@echo "\033[38;5;31mft_printf cleaned...\033[0m"
 
 re: fclean all
+	@echo "\033[38;5;48mft_printf reloaded !\033[0m"
 
 .PHONY: all clean fclean re

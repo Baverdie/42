@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 ft_isalnum.c ft_isalpha.c ft_isascii.c \
@@ -31,32 +31,41 @@ OBJSBONUS = $(BONUS:.c=.o)
 DEFAULT = \033[0m
 PURPLE = \033[38;5;213m
 
-BANNER = @printf "$(PURPLE) ____  ____       __    __  ____  ____  ____ \n"
-BANNER1 = printf "$(PURPLE)(  __)(_  _)     (  )  (  )(  _ \(  __)(_  _)\n"
-BANNER2 = printf "$(PURPLE) ) _)   )(  ____ / (_/\ )(  ) _ ( ) _)   )(  \n"
-BANNER3 = printf "$(PURPLE)(__)   (__)(____)\____/(__)(____/(__)   (__) \n"
+BANNER = @printf "$(PURPLE) ____  ____      __    ____  ____  ____  ____ \n"
+BANNER1 = printf "$(PURPLE)( ___)(_  _)    (  )  (_  _)(  _ \( ___)(_  _)\n"
+BANNER2 = printf "$(PURPLE) )__)   )(  ___  )(__  _)(_  ) _ < )__)   )(  \n"
+BANNER3 = printf "$(PURPLE)(__)   (__)(___)(____)(____)(____/(__)   (__) \n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
+
+BANNERB = @printf "$(PURPLE) ____  ____      __    ____  ____  ____  ____      ____  _____  _  _  __  __  ___ \n"
+BANNERB1 = printf "$(PURPLE)( ___)(_  _)    (  )  (_  _)(  _ \( ___)(_  _)    (  _ \(  _  )( \( )(  )(  )/ __)\n"
+BANNERB2 = printf "$(PURPLE) )__)   )(  ___  )(__  _)(_  ) _ < )__)   )(  ___  ) _ < )(_)(  )  (  )(__)( \__ \ \n"
+BANNERB3 = printf "$(PURPLE)(__)   (__)(___)(____)(____)(____/(__)   (__)(___)(____/(_____)(_)\_)(______)(___/\n\n"
+
+HEADERB = $(BANNERB);$(BANNERB1);$(BANNERB2);$(BANNERB3); \
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -rc $(NAME) $(OBJS)
 	$(HEADER)
-	@echo "\033[38;5;48mft_libft ready !\033[0m"
+	@echo "\033[38;5;48mft_libft is ready !\033[0m"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
-
+	
 bonus: $(OBJSBONUS) $(OBJS)
 	@ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
+	$(HEADERB)
+	@echo "\033[38;5;48mft_libft_bonus is ready !\033[0m"
 
 clean:
 	@rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[38;5;31mft_libft cleaned...\033[0m"
+	@echo "\033[38;5;31mft_printf cleaned...\033[0m"
 
 re: fclean all
 

@@ -34,5 +34,6 @@ fclean: clean
 	@echo "\033[38;5;31mpush_swap cleaned...\033[0m"
 
 re: fclean all
+	@echo "\033[38;5;48mpush_swap reloaded !\033[0m"
 
 .PHONY: all clean fclean re

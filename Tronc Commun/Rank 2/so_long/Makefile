@@ -5,6 +5,7 @@ LIBS = MLX42/build/libmlx42.a -ldl -lglfw -pthread -lm -Llibft \
 		ft_libft/libft.a
 
 SRCS = main.c \
+	parsing/parsing_errors.c \
 	parsing/parsing_map.c
 OBJS = ${SRCS:.c=.o}
 
