@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/17 13:50:43 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:17:03 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ int	errors(t_data *data, int i, int j)
 	return (1);
 }
 
-int	flood(int x, int y, int new_col)
+void	flood(int x, int y, int new_col, t_data *data)
 {
-	if (data->map[x][y] == )
+	printf("ici");
+	if (data->map[x][y] == '0' || data->map[x][y] == 'C')
 	{
-		putpixel(x, y, new_col);
-		flood(x + 1, y, new_col);
-		flood(x - 1, y, new_col);
-		flood(x, y + 1, new_col);
-		flood(x, y - 1, new_col);
+		// putpixel(x, y, new_col, data);
+		flood(x + 1, y, new_col, data);
+		flood(x - 1, y, new_col, data);
+		flood(x, y + 1, new_col, data);
+		flood(x, y - 1, new_col, data);
 	}
-	return (1);
 }
 
 int	check_errors(t_data *data)
@@ -56,6 +56,7 @@ int	check_errors(t_data *data)
 	int	j;
 
 	i = 0;
+	printf("ici2");
 	while (data->map[i])
 	{
 		j = 0;
@@ -68,10 +69,11 @@ int	check_errors(t_data *data)
 			return (0);
 		while (data->map[i][j])
 		{
+			printf("ici");
 			if (errors(data, i, j) == 0)
 				return (0);
-			if (flood(i, j, data) == 0)
-				return (0)
+			printf("ici1");
+			flood(j, i, '7', data);
 			j++;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/17 13:50:37 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:17:27 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	read_map(t_data *data)
 
 int	init_map(t_data *data)
 {
+	printf("ici4");
 	if (read_map(data) == 0)
 		return (0);
 	if (parse_map(data) == 0)
