@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/18 15:17:27 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:24:47 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,18 @@ int	read_map(t_data *data)
 
 int	init_map(t_data *data)
 {
-	printf("ici4");
+	// int i = 1;
+	
 	if (read_map(data) == 0)
 		return (0);
 	if (parse_map(data) == 0)
 		return (0);
 	if (check_errors(data) == 0)
 		return (0);
+	data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
+	if (!data->flood)
+		return (0);
+	flood(0, 0, '7', data);
+	
 	return (1);
 }

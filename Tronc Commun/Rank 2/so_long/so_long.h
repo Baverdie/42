@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/17 13:41:12 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:36:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_data {
 	int		fd;
 	char	*file_name;
 	char	**map;
+	char	**flood;
 }	t_data;
 
 # define WIDTH 1920
@@ -41,5 +42,6 @@ typedef struct s_game_positions {
 
 int	check_errors(t_data *data);
 int	init_map(t_data *data);
+void	flood(int x, int y, int new_col, t_data *data);
 
 #endif

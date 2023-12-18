@@ -1,6 +1,6 @@
 NAME = so_long
 CC = clang
-CFLAGS = -Wall -Wextra -g3
+CFLAGS = -Wall -Wextra -Werror -g3
 LIBS = MLX42/build/libmlx42.a -ldl -lglfw -pthread -lm -Llibft \
 		ft_libft/libft.a
 
