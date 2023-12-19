@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/19 18:28:00 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:05:32 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	parse_map(t_data *data)
 			data->map[rows] = ft_strdup(line);
 			rows++;
 		}
+		free(line);
 		line = get_next_line(data->fd);
 	}
 	close(data->fd);
@@ -104,18 +105,16 @@ int	pos_data(t_data *data, t_game_positions *pos)
 
 int	init_map(t_data *data)
 {
-	t_game_positions	*pos;
-
-	pos = ft_calloc(1, sizeof(int));
-	if (!pos)
+	data->pos = ft_calloc(1, sizeof(t_game_positions));
+	if (!data->pos)
 		return (1);
-	pos->player_col = 0;
-	pos->player_row = 0;
+	data->pos->player_col = 0;
+	data->pos->player_row = 0;
 	if (read_map(data) == 0)
 		return (5);
 	if (parse_map(data) == 0)
 		return (1);
-	if (pos_data(data, pos) == 0)
+	if (pos_data(data, data->pos) == 0)
 		return (4);
 	if (check_errors(data) == 0)
 		return (3);
@@ -123,7 +122,7 @@ int	init_map(t_data *data)
 	if (!data->flood)
 		return (1);
 	data->flood = copy_map(data);
-	flood(pos->player_row, pos->player_col, data, 0);
+	flood(data->pos->player_row, data->pos->player_col, data, 0);
 	if (check_path(data) == 0)
 		return (2);
 	return (0);

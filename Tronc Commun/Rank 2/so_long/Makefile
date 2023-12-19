@@ -10,6 +10,7 @@ SRCS = main.c \
 	parsing/parsing_map.c \
 	utils/map.c \
 	utils/errors.c \
+	utils/utils.c \
 
 OBJS = ${SRCS:.c=.o}
 

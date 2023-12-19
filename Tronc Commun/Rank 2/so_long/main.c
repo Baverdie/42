@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/19 18:27:31 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:09:33 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ int	main(int argc, char **argv)
 	if (init_map(data) != 0)
 	{
 		print_errors(init_map(data));
+		ft_free(data->map);
+		// ft_free(data->flood);
+		free(data->pos);
 		free(data);
 		return (EXIT_FAILURE);
 	}
