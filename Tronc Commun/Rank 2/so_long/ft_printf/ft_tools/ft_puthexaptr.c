@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_puthexap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/19 18:27:31 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/22 16:38:25 by basverdi          #+#    #+#             */
+/*   Updated: 2023/11/27 16:00:44 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_puthexaptr(unsigned long long ptr, char *base)
 {
-	t_data	*data;
+	int	cntr;
 
-	if (argc != 2)
-		return (EXIT_FAILURE);
-	data = ft_calloc(1, sizeof(t_data));
-	if (!data)
-		return (EXIT_FAILURE);
-	data->file_name = argv[1];
-	if (init_map(data) != 0)
+	cntr = 0;
+	if (ptr == 0)
 	{
-		print_errors(init_map(data));
-		free(data);
-		return (EXIT_FAILURE);
+		cntr += ft_putstr("(nil)");
+		return (cntr);
 	}
-	ft_printf("T'es trop fort !\n");
-	return (EXIT_SUCCESS);
+	cntr += ft_putstr("0x");
+	if (ptr < 16)
+		cntr += ft_putchar(base[ptr]);
+	else
+	{
+		cntr += ft_puthexa(ptr / 16, base);
+		cntr += ft_putchar(base[ptr % 16]);
+	}
+	return (cntr);
 }

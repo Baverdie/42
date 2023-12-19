@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/19 18:27:31 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/22 15:36:10 by basverdi          #+#    #+#             */
+/*   Updated: 2023/11/27 15:58:06 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_putnbr(long long int n)
 {
-	t_data	*data;
+	int	cntr;
 
-	if (argc != 2)
-		return (EXIT_FAILURE);
-	data = ft_calloc(1, sizeof(t_data));
-	if (!data)
-		return (EXIT_FAILURE);
-	data->file_name = argv[1];
-	if (init_map(data) != 0)
+	cntr = 0;
+	if (n < 0)
 	{
-		print_errors(init_map(data));
-		free(data);
-		return (EXIT_FAILURE);
+		n *= -1;
+		cntr += ft_putchar('-');
 	}
-	ft_printf("T'es trop fort !\n");
-	return (EXIT_SUCCESS);
+	if (n < 10)
+		cntr += ft_putchar(n + 48);
+	else
+	{
+		cntr += ft_putnbr(n / 10);
+		cntr += ft_putchar(n % 10 + 48);
+	}
+	return (cntr);
 }

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/18 16:36:55 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:18:14 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdbool.h>
 # include "MLX42/include/MLX42/MLX42.h"
 # include "ft_libft/libft.h"
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_data {
 	int		nb_rows;
@@ -40,8 +41,18 @@ typedef struct s_game_positions {
 	int	exit_col;
 }	t_game_positions;
 
+// check fonctions
+
 int	check_errors(t_data *data);
+int	check_path(t_data *data);
 int	init_map(t_data *data);
-void	flood(int x, int y, int new_col, t_data *data);
+void	flood(int x, int y, t_data *data, int dir);
+
+// utils fonctions
+
+char	**copy_map(t_data *data);
+void	print_map(char	**map);
+void	print_map_x(int posx, int posy, char **map);
+void	print_errors(int errors);
 
 #endif

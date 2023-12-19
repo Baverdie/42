@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/19 18:27:31 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/21 21:00:58 by basverdi          #+#    #+#             */
+/*   Updated: 2023/12/17 15:30:01 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	main(int argc, char **argv)
-{
-	t_data	*data;
+# include <stdarg.h>
+# include <unistd.h>
 
-	if (argc != 2)
-		return (EXIT_FAILURE);
-	data = ft_calloc(1, sizeof(t_data));
-	if (!data)
-		return (EXIT_FAILURE);
-	data->file_name = argv[1];
-	if (init_map(data) != 0)
-	{
-		print_errors(init_map(data));
-		free(data);
-		return (EXIT_FAILURE);
-	}
-	ft_printf("T'es trop fort !\n");
-	return (EXIT_SUCCESS);
-}
+int	ft_putchar(int c);
+int	ft_putstr(char *s);
+int	ft_putnbr(long long int n);
+int	ft_puthexa(long long int n, char *base);
+int	ft_puthexaptr(unsigned long long f, char *base);
+int	ft_printf(const char *s, ...);
+
+#endif

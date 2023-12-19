@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/18 18:24:47 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:28:00 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,20 +78,53 @@ int	read_map(t_data *data)
 	return (1);
 }
 
+int	pos_data(t_data *data, t_game_positions *pos)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (data->map[i])
+	{
+		j = 0;
+		while (data->map[i][j])
+		{
+			if (data->map[i][j] == 'P')
+			{
+				pos->player_row = i;
+				pos->player_col = j;
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 int	init_map(t_data *data)
 {
-	// int i = 1;
-	
+	t_game_positions	*pos;
+
+	pos = ft_calloc(1, sizeof(int));
+	if (!pos)
+		return (1);
+	pos->player_col = 0;
+	pos->player_row = 0;
 	if (read_map(data) == 0)
-		return (0);
+		return (5);
 	if (parse_map(data) == 0)
-		return (0);
+		return (1);
+	if (pos_data(data, pos) == 0)
+		return (4);
 	if (check_errors(data) == 0)
-		return (0);
+		return (3);
 	data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
 	if (!data->flood)
-		return (0);
-	flood(0, 0, '7', data);
-	
-	return (1);
+		return (1);
+	data->flood = copy_map(data);
+	flood(pos->player_row, pos->player_col, data, 0);
+	if (check_path(data) == 0)
+		return (2);
+	return (0);
 }

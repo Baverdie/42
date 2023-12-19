@@ -6,13 +6,13 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/18 18:46:00 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:22:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	errors(t_data *data, int i, int j)
+int	errors_type(t_data *data, int i, int j)
 {
 	if (data->map[i][j] == '0' || data->map[i][j] == 'P'
 		|| data->map[i][j] == 'E' || data->map[i][j] == 'C')
@@ -37,45 +37,50 @@ int	errors(t_data *data, int i, int j)
 	return (1);
 }
 
-void	flood(int x, int y, int new_col, t_data *data)
+void	flood(int x, int y, t_data *data, int dir)
 {
-	printf("PARAMS :\n	x = %d y = %d\n	new_col = %c data->map[%d][%d] = %c\n", x, y, new_col, x, y, data->map[x][y]);
+	if (x < data->nb_rows && y < data->nb_cols - 1
+		&& (data->map[x][y] == '1' || data->flood[x][y] == '7'))
+		return ;
+	if (x < data->nb_rows && y < data->nb_cols - 1 && data->flood[x][y] != '7')
+	{
+		data->flood[x][y] = '7';
+		if (dir == 0)
+		{
+			flood(x + 1, y, data, 1);
+			flood(x, y + 1, data, 2);
+		}
+		if (x <= data->nb_rows - 1 && dir != -1 && data->flood[x + 1][y] != '7'
+			&& x + 1 != data->nb_rows - 1)
+			flood(x + 1, y, data, 1);
+		if (x > 0 && dir != 1 && data->flood[x - 1][y] != '7' && x - 1 != 0)
+			flood(x - 1, y, data, -1);
+		if (dir != -2 && y < data->nb_cols - 2 && data->flood[x][y + 1] != '7'
+			&& y + 1 != data->nb_cols - 1)
+			flood(x, y + 1, data, 2);
+		if (dir != 2 && y > 0 && data->flood[x][y - 1] != '7' && y - 1 != 0)
+			flood(x, y - 1, data, -2);
+	}
+}
 
-	data->flood[x] = ft_calloc(data->nb_cols + 1, sizeof(char));
-	if (x < data->nb_rows - 1 && y < data->nb_cols - 1 && (data->map[x][y] == '0' || data->map[x][y] == 'C'))
+int	check_path(t_data *data)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (data->flood[i])
 	{
-		data->flood[x][y] = new_col;
-		if (x == 0 && y == 0)
+		j = 0;
+		while (data->flood[i][j])
 		{
-			flood(x + 1, y, new_col, data);
-			flood(x, y + 1, new_col, data);
+			if (data->flood[i][j] == 'P' || data->flood[i][j] == 'C' || data->flood[i][j] == 'E')
+				return (0);
+			j++;
 		}
-		if (x > 0 && x <= data->nb_rows - 1)
-			flood(x + 1, y, new_col, data);
-		if (y > 0 && y < data->nb_cols - 2)
-			flood(x, y + 1, new_col, data);
-		// if (x > 0 && x < data->nb_rows - 1)
-		// 	flood(x - 1, y, new_col, data);
-		// if (y > 0 && y < data->nb_cols - 1)
-		// 	flood(x, y - 1, new_col, data);
+		i++;
 	}
-	else if (x < data->nb_rows - 1 && y < data->nb_cols - 1)
-	{
-		data->flood[x][y] = '1';
-		if (x == 0 && y == 0)
-		{
-			flood(x + 1, y, new_col, data);
-			flood(x, y + 1, new_col, data);
-		}
-		if (x >= 0 && x <= data->nb_rows - 1)
-			flood(x + 1, y, new_col, data);
-		if (y >= 0 && y < data->nb_cols - 2)
-			flood(x, y + 1, new_col, data);
-		// if (x > 0 && x < data->nb_rows - 1)
-		// 	flood(x - 1, y, new_col, data);
-		// if (y > 0 && y < data->nb_cols - 1)
-		// 	flood(x, y - 1, new_col, data);
-	}
+	return (1);
 }
 
 int	check_errors(t_data *data)
@@ -96,7 +101,7 @@ int	check_errors(t_data *data)
 			return (0);
 		while (data->map[i][j])
 		{
-			if (errors(data, i, j) == 0)
+			if (errors_type(data, i, j) == 0)
 				return (0);
 			j++;
 		}
