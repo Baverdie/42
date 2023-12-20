@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/20 10:50:36 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:17:12 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	flood(int x, int y, t_data *data, int dir);
 
 // utils fonctions
 
-char	**copy_map(t_data *data);
+void	copy_map(t_data *data);
 void	print_map(char	**map);
 void	print_map_x(int posx, int posy, char **map);
 void	print_errors(int errors);

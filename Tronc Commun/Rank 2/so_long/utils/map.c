@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:26:50 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/19 18:20:57 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:44:20 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,15 @@ void	print_map_x(int posx, int posy, char **map)
 	ft_printf("\n\n");
 }
 
-char	**copy_map(t_data *data)
+void	copy_map(t_data *data)
 {
 	int	i;
 
 	i = 0;
-	data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
-	if (!data->flood)
-		return (0);
 	while (i < data->nb_rows)
 	{
+		printf("map[%d] = %s", i, data->map[i]);
 		data->flood[i] = ft_strdup(data->map[i]);
 		i++;
 	}
-	return (data->flood);
 }

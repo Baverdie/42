@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/20 11:16:41 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:46:26 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,6 @@ int	init_map(t_data *data)
 	data->pos = ft_calloc(1, sizeof(t_game_positions));
 	if (!data->pos)
 		return (1);
-	data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
-	if (!data->flood)
-		return (1);
 	data->pos->player_col = 0;
 	data->pos->player_row = 0;
 	if (read_map(data) == 0)
@@ -121,7 +118,10 @@ int	init_map(t_data *data)
 		return (4);
 	if (check_errors(data) == 0)
 		return (3);
-	data->flood = copy_map(data);
+	data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
+	if (!data->flood)
+		return (1);
+	copy_map(data);
 	flood(data->pos->player_row, data->pos->player_col, data, 0);
 	if (check_path(data) == 0)
 		return (2);
