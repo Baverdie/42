@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:46:53 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/19 20:46:38 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:11:33 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ void	ft_free(char **tab)
 	int	i;
 
 	i = 0;
-	while (tab && tab[i])
+	while (tab[i] != NULL)
 	{
 		free(tab[i]);
 		i++;
 	}
 	free(tab);
-	printf("%s", tab[0]);
 }

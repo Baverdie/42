@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:52:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/10/31 12:08:24 by bastienverd      ###   ########.fr       */
+/*   Updated: 2023/12/20 11:07:52 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

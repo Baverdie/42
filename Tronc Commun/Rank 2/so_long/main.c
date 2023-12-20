@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/19 20:09:33 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:20:19 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ int	main(int argc, char **argv)
 	{
 		print_errors(init_map(data));
 		ft_free(data->map);
-		// ft_free(data->flood);
+		ft_free(data->flood);
 		free(data->pos);
 		free(data);
+		// printf("%s\n", data->map[0]);
 		return (EXIT_FAILURE);
 	}
 	ft_printf("T'es trop fort !\n");
