@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/20 12:46:26 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:43:03 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,11 @@ int	check_file(t_data *data, char *file)
 {
 	if (data->nb_cols == 0 && ft_strlen(file) > 1)
 		data->nb_cols = ft_strlen(file);
-	if (data->nb_cols != 0 && ft_strlen(file) > 1
+	if (data->nb_cols != 0 && ft_strlen(file) > 1 \
 		&& data->nb_cols != ft_strlen(file))
 	{
 		free(file);
+		file = NULL;
 		return (0);
 	}
 	return (1);
@@ -66,7 +67,10 @@ int	read_map(t_data *data)
 	while (file)
 	{
 		if (check_file(data, file) == 0)
+		{
+			get_next_line(-42);
 			return (0);
+		}
 		if (data->nb_cols > 0 && ft_strlen(file) <= 1)
 			break ;
 		if (ft_strlen(file) > 1)
@@ -77,53 +81,4 @@ int	read_map(t_data *data)
 	close(data->fd);
 	free(file);
 	return (1);
-}
-
-int	pos_data(t_data *data, t_game_positions *pos)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (data->map[i])
-	{
-		j = 0;
-		while (data->map[i][j])
-		{
-			if (data->map[i][j] == 'P')
-			{
-				pos->player_row = i;
-				pos->player_col = j;
-				return (1);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	init_map(t_data *data)
-{
-	data->pos = ft_calloc(1, sizeof(t_game_positions));
-	if (!data->pos)
-		return (1);
-	data->pos->player_col = 0;
-	data->pos->player_row = 0;
-	if (read_map(data) == 0)
-		return (5);
-	if (parse_map(data) == 0)
-		return (1);
-	if (pos_data(data, data->pos) == 0)
-		return (4);
-	if (check_errors(data) == 0)
-		return (3);
-	data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
-	if (!data->flood)
-		return (1);
-	copy_map(data);
-	flood(data->pos->player_row, data->pos->player_col, data, 0);
-	if (check_path(data) == 0)
-		return (2);
-	return (0);
 }

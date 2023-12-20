@@ -6,51 +6,49 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:26:50 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/20 12:44:20 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 17:31:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	print_map(char	**map)
+void	print_path_map(t_data *data, int err, int x, int y)
 {
-	int	x;
-	int	y;
-
-	y = 0;
-	while (map[y])
-	{
-		x = 0;
-		while (map[y][x])
-		{
-			ft_printf("%c", map[y][x]);
-			x++;
-		}
-		y++;
-	}
-	ft_printf("/n/n");
+	if ((data->map[y][x] == 'P' && err == 5) \
+	|| (data->map[y][x] == 'C' && err == 6) \
+	|| (data->map[y][x] == 'E' && err == 7))
+		ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
+	else if (data->map[y][x] == 'P' || data->map[y][x] == 'C' \
+	|| data->map[y][x] == 'E')
+		ft_printf("\033[0;32m%c\033[0m", data->map[y][x]);
+	else if (data->map[y][x] == '1')
+		ft_printf("\033[0;37m%c\033[0m", 35);
+	else if (data->map[y][x] == data->flood[y][x] && data->map[y][x] != '\n')
+		ft_printf("\033[1;31m%c\033[0m", 'x');
+	else if (data->flood[y][x] == '7')
+		ft_printf("\033[0;36m%c\033[0m", '.');
 }
 
-void	print_map_x(int posx, int posy, char **map)
+void	print_map(t_data *data, int err)
 {
 	int	x;
 	int	y;
 
 	y = 0;
-	while (map[y])
+	while (data->map[y])
 	{
 		x = 0;
-		while (map[y][x])
+		while (data->map[y][x])
 		{
-			if (x == posx && posy == y)
-				ft_printf("\033[0;31mX\033[0m");
+			if (x == data->errorx && data->errory == y)
+				ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
 			else
-				ft_printf("%c", map[y][x]);
+				print_path_map(data, err, x, y);
 			x++;
 		}
+		ft_printf("\n");
 		y++;
 	}
-	ft_printf("\n\n");
 }
 
 void	copy_map(t_data *data)
@@ -60,7 +58,6 @@ void	copy_map(t_data *data)
 	i = 0;
 	while (i < data->nb_rows)
 	{
-		printf("map[%d] = %s", i, data->map[i]);
 		data->flood[i] = ft_strdup(data->map[i]);
 		i++;
 	}

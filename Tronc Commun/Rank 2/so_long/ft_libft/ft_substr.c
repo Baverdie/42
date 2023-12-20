@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 01:16:26 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/19 16:25:52 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:34:33 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_substr(const char *s, int start, int len)
 	if (start >= ft_strlen(s))
 	{
 		dest = ft_calloc(1, sizeof(char));
+		if (!dest)
+			return (NULL);
 		return (dest);
 	}
 	if (len <= ft_strlen(s) && start + len <= ft_strlen(s))

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:16:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/14 16:18:34 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:42:26 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ char	*get_next_line(int fd)
 	char		*buf;
 	char		*line;
 
+	if (fd == -42)
+		free(stored);
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
 	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
