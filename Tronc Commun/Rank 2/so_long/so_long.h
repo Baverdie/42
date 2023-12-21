@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/20 17:17:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2023/12/21 18:10:05 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include "MacroLibX/includes/mlx.h"
+# include "MLX42/include/MLX42/MLX42.h"
 # include "ft_libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
@@ -42,10 +42,13 @@ typedef struct s_data {
 	struct s_game_positions	*pos;
 }	t_data;
 
-# define WIDTH 1920
-# define HEIGHT 1080
+typedef struct	s_mlx {
+	void	*mlx;
+	void	*win;
+}				t_mlx;
 
-
+# define WIDTH data->nb_cols * 64
+# define HEIGHT data->nb_rows * 64
 
 // check fonctions
 
@@ -59,6 +62,10 @@ int		parse_map(t_data *data);
 int		check_errors(t_data *data);
 int		check_path(t_data *data);
 void	flood(int x, int y, t_data *data, int dir);
+
+// game fonction
+
+int	so_long(t_data *data);
 
 // utils fonctions
 

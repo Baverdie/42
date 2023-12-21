@@ -1,7 +1,7 @@
 NAME = so_long
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -g3
-LIBS = MacroLibX/libmlx.so -lSDL2 \
+LIBS = MLX42/build/libmlx42.a -Iinclude -ldl -lglfw -pthread -lm \
 		ft_libft/libft.a \
 		ft_printf/libftprintf.a
 
@@ -10,6 +10,7 @@ SRCS = main.c \
 	parsing/parsing_errors.c \
 	parsing/parsing_map.c \
 	parsing/parsing_data_map.c \
+	graphique/so_long.c \
 	utils/map.c \
 	utils/errors.c \
 	utils/utils.c \
@@ -32,7 +33,7 @@ all: $(NAME)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	@make -j -s -C MacroLibX/
+	@make -j -s -C MLX42/build/
 	@echo "\033[38;5;48mMLX42 is ready !\033[0m"
 	@make -j -s -C ft_libft/
 	@make -j -s -C ft_printf/
