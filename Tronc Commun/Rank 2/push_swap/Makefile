@@ -1,8 +1,11 @@
 NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
+LIBS = ./ft_libft/libft.a \
+	./ft_printf/libftprintf.a \
 
-SRCS = test.c
+SRCS = src/main.c \
+		src/utils.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,7 +22,9 @@ HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar -rc $(NAME) $(OBJS)
+	@make -j -s -C ./ft_libft/
+	@make -j -s -C ./ft_printf/
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
 	$(HEADER)
 	@echo "\033[38;5;48mpush_swap is ready !\033[0m"
 
@@ -30,6 +35,8 @@ clean:
 	@rm -f $(OBJS)
 
 fclean: clean
+	@make fclean -C ./ft_libft/
+	@make fclean -C ./ft_printf/
 	@rm -f $(NAME)
 	@echo "\033[38;5;31mpush_swap cleaned...\033[0m"
 
