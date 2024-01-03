@@ -6,51 +6,91 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/21 19:06:20 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/03 18:40:59 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static void ft_error(void)
+int	ft_close(t_mlx *vars)
 {
-	fprintf(stderr, "%s", mlx_strerror(mlx_errno));
-	exit(EXIT_FAILURE);
-}
-
-// Print the window width and height.
-static void ft_hook(void* param)
-{
-	const mlx_t* mlx = param;
-
-	printf("WIDTH: %d | HEIGHT: %d\n", mlx->width, mlx->height);
+	mlx_destroy_window(vars->mlx, vars->window);
+	mlx_loop_end(vars->mlx);
+	mlx_destroy_display(vars->mlx);
+	printf("ok\n");
+	return (0);
 }
 
 int	so_long(t_data *data)
 {
-	int i = 0;
+	t_mlx	*mlx;
+	// int	i = 0;
+	// int	j = 0;
+	// int	width = 0;
+	// int	height = 0;
 	
-	mlx_t* mlx = mlx_init(WIDTH, HEIGHT, "42Balls", true);
+	mlx = ft_calloc(1, sizeof(t_mlx));
 	if (!mlx)
-		ft_error();
-
-	/* Do stuff */
-
-	// Create and display the image.
-	mlx_image_t* img = mlx_new_image(mlx, WIDTH, HEIGHT);
-	if (!img || (mlx_image_to_window(mlx, img, 0, 0) < 0))
-		ft_error();
-
-	// Even after the image is being displayed, we can still modify the buffer.
-	while ( i < WIDTH)
-	{
-		mlx_put_pixel(img, i, 50, 0xFF0000FF);
-		i++;
-	}
-	// Register a hook and pass mlx as an optional param.
-	// NOTE: Do this before calling mlx_loop!
-	mlx_loop_hook(mlx, ft_hook, mlx);
-	mlx_loop(mlx);
-	mlx_terminate(mlx);
+		return (EXIT_FAILURE);
+	mlx->mlx = mlx_init();
+	if (!mlx->mlx)
+		return (EXIT_FAILURE);
+	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "so_long");
+	mlx->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
+	mlx->img = mlx_xpm_file_to_image(mlx->mlx, "../textures/wall.xpm", &mlx->img_size, &mlx->img_size);
+	
+	printf("width = %d\nheight = %d\n", WIDTH, HEIGHT);
+	// while (data->map[i])
+	// {
+	// 	j = 0;
+	// 	while (data->map[i][j])
+	// 	{
+	// 		height = 0;
+	// 		if (data->map[i][j] == '1')
+	// 		{
+	// 			while (height <= 64)
+	// 			{
+	// 				width = 0;
+	// 				while (width <= 64)
+	// 				{
+	// 					my_mlx_put_pixel(img, j * 64 + height, i * 64 + width, 0xFF0000FF);
+	// 					width++;
+	// 				}
+	// 				height++;
+	// 			}
+	// 		}
+	// 		else if (data->map[i][j] == '0')
+	// 		{
+	// 			while (height <= 64)
+	// 			{
+	// 				width = 0;
+	// 				while (width <= 64)
+	// 				{
+	// 					my_mlx_put_pixel(img, j * 64 + height, i * 64 + width, 0x0000FF);
+	// 					width++;
+	// 				}
+	// 				height++;
+	// 			}
+	// 		}
+	// 		else if (data->map[i][j] == 'P' || data->map[i][j] == 'C' || data->map[i][j] == 'E')
+	// 		{
+	// 			while (height <= 64)
+	// 			{
+	// 				width = 0;
+	// 				while (width <= 64)
+	// 				{
+	// 					my_mlx_put_pixel(img, j * 64 + height, i * 64 + width, 0xFFFF);
+	// 					width++;
+	// 				}
+	// 				height++;
+	// 			}
+	// 		}
+	// 		j++;
+	// 	}
+	// 	i++;
+	// }
+	mlx_hook(mlx->window, 17, 0, ft_close, mlx);
+	printf("ok2\n");
+	mlx_loop(mlx->mlx);
 	return (EXIT_SUCCESS);
 }

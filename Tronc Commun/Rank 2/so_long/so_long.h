@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/21 18:10:05 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/03 18:32:39 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include "MLX42/include/MLX42/MLX42.h"
+# include "minilibx-linux/mlx.h"
 # include "ft_libft/libft.h"
 # include "ft_printf/ft_printf.h"
+
+# define WIDTH (data->nb_cols - 1) * 64
+# define HEIGHT data->nb_rows * 64
 
 typedef struct s_game_positions {
 	int	player_row;
@@ -44,11 +47,10 @@ typedef struct s_data {
 
 typedef struct	s_mlx {
 	void	*mlx;
-	void	*win;
+	void	*window;
+	void	*img;
+	int		img_size;
 }				t_mlx;
-
-# define WIDTH data->nb_cols * 64
-# define HEIGHT data->nb_rows * 64
 
 // check fonctions
 

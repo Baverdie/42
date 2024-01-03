@@ -1,7 +1,7 @@
 NAME = so_long
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -g3
-LIBS = MLX42/build/libmlx42.a -Iinclude -ldl -lglfw -pthread -lm \
+LIBS = minilibx-linux/libmlx.a \
 		ft_libft/libft.a \
 		ft_printf/libftprintf.a
 
@@ -30,14 +30,13 @@ HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 all: $(NAME)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c -o $@ $<
 
 $(NAME): $(OBJS)
-	@make -j -s -C MLX42/build/
 	@echo "\033[38;5;48mMLX42 is ready !\033[0m"
 	@make -j -s -C ft_libft/
 	@make -j -s -C ft_printf/
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
+	@$(CC) $(CFLAGS) $(OBJS) -Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(LIBS)
 	$(HEADER)
 	@echo "\033[38;5;48mso_long is ready !\033[0m"
 
