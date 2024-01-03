@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/03 18:40:59 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/03 20:23:57 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	so_long(t_data *data)
 	// int	j = 0;
 	// int	width = 0;
 	// int	height = 0;
-	
+
 	mlx = ft_calloc(1, sizeof(t_mlx));
 	if (!mlx)
 		return (EXIT_FAILURE);
@@ -38,7 +38,7 @@ int	so_long(t_data *data)
 	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "so_long");
 	mlx->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
 	mlx->img = mlx_xpm_file_to_image(mlx->mlx, "../textures/wall.xpm", &mlx->img_size, &mlx->img_size);
-	
+
 	printf("width = %d\nheight = %d\n", WIDTH, HEIGHT);
 	// while (data->map[i])
 	// {
