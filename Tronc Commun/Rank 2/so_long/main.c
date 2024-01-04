@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/29 20:40:00 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:01:36 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	main(int argc, char **argv)
 		print_errors(result_init, data);
 		if (result_init != 4)
 		{
-			ft_free(data->map);
+			if (data->map)
+				ft_free(data->map);
 			if (data->flood != NULL)
 				ft_free(data->flood);
 		}
@@ -37,6 +38,6 @@ int	main(int argc, char **argv)
 		free(data);
 		return (EXIT_FAILURE);
 	}
-	so_long(data);
+	so_long();
 	return (EXIT_SUCCESS);
 }

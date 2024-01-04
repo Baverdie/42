@@ -1,7 +1,7 @@
 NAME = so_long
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -g3
-LIBS = minilibx-linux/libmlx.a \
+LIBS = MacroLibX/libmlx.so -lSDL2 \
 		ft_libft/libft.a \
 		ft_printf/libftprintf.a
 

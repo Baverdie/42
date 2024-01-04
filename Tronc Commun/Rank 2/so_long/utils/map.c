@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:26:50 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/29 17:23:14 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:25:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,16 @@ void	print_map(t_data *data, int err)
 	int	y;
 
 	y = 0;
-	while (data->map[y])
+	while (data->map[y] && data->map[y][0] != '\n')
 	{
 		x = 0;
 		while (data->map[y][x] != '\n')
 		{
+			if (!data->flood[y])
+			{
+				ft_printf("\033[0;31mEmpty line\033[0m");
+				break;
+			}
 			if (x == data->errorx && data->errory == y)
 				ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
 			else

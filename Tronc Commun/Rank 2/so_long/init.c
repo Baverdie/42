@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:34:46 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/20 17:25:25 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:53:25 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,28 @@ int	init_map(t_data *data)
 		return (4);
 	if (parse_map(data) == 0)
 		return (1);
-	if (pos_data(data) == 1)
+	else if (pos_data(data) == 1)
 		return (3);
 	else if (pos_data(data) == 2)
 		return (8);
 	else if (pos_data(data) == 3)
 		return (9);
-	if (check_errors(data) == 0)
+	else if (check_errors(data) == 0)
 		return (2);
-	data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
-	if (!data->flood)
-		return (1);
-	copy_map(data);
-	flood(data->pos->player_row, data->pos->player_col, data, 0);
-	if (check_path(data) == 1)
-		return (5);
-	if (check_path(data) == 2)
-		return (6);
-	if (check_path(data) == 3)
-		return (7);
+	else
+	{	
+		data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
+		if (!data->flood)
+			return (1);
+		copy_map(data);
+		flood(data->pos->player_row, data->pos->player_col, data, 0);
+		if (check_path(data) == 1)
+			return (5);
+		if (check_path(data) == 2)
+			return (6);
+		if (check_path(data) == 3)
+			return (7);
+	}
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 18:10:38 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/21 17:01:22 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:43:22 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	print_errors_map(int errors, t_data *data)
 			return ;
 		copy_map(data);
 		flood(data->pos->player_row, data->pos->player_col, data, 0);
-		if (check_path(data) != 0)
+		if (check_path(data) == 1 || check_path(data) == 2 || check_path(data) == 3)
 			ft_printf("Invalid map and no valid path found\n", 1);
 		else
 			ft_printf("Invalid map\n", 1);

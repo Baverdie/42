@@ -3,25 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/03 20:23:57 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/04 17:02:58 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	ft_close(t_mlx *vars)
+int	ft_close(int keycode, void *param)
 {
-	mlx_destroy_window(vars->mlx, vars->window);
-	mlx_loop_end(vars->mlx);
-	mlx_destroy_display(vars->mlx);
-	printf("ok\n");
+	if (keycode == 0 || keycode == 41)
+		mlx_loop_end(((t_mlx *)param)->mlx);
 	return (0);
 }
 
-int	so_long(t_data *data)
+int	so_long()
 {
 	t_mlx	*mlx;
 	// int	i = 0;
@@ -33,13 +31,9 @@ int	so_long(t_data *data)
 	if (!mlx)
 		return (EXIT_FAILURE);
 	mlx->mlx = mlx_init();
-	if (!mlx->mlx)
-		return (EXIT_FAILURE);
-	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "so_long");
-	mlx->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
-	mlx->img = mlx_xpm_file_to_image(mlx->mlx, "../textures/wall.xpm", &mlx->img_size, &mlx->img_size);
-
-	printf("width = %d\nheight = %d\n", WIDTH, HEIGHT);
+	mlx->window = mlx_new_window(mlx->mlx, 1920, 1080, "so_long");
+	// mlx->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
+	// mlx->img = mlx_xpm_file_to_image(mlx->mlx, "../textures/wall.xpm", &mlx->img_size, &mlx->img_size);
 	// while (data->map[i])
 	// {
 	// 	j = 0;
@@ -89,8 +83,11 @@ int	so_long(t_data *data)
 	// 	}
 	// 	i++;
 	// }
-	mlx_hook(mlx->window, 17, 0, ft_close, mlx);
-	printf("ok2\n");
+	mlx_on_event(mlx->mlx, mlx->window, MLX_KEYDOWN, ft_close, mlx);
+	mlx_on_event(mlx->mlx, mlx->window, MLX_WINDOW_EVENT, ft_close, mlx);
 	mlx_loop(mlx->mlx);
-	return (EXIT_SUCCESS);
+	mlx_destroy_window(mlx->mlx, mlx->window);
+	mlx_destroy_display(mlx->mlx);
+	exit(EXIT_SUCCESS);
+	return (0);
 }

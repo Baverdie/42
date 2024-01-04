@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/29 18:04:01 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/04 17:54:32 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 int	parse_map(t_data *data)
 {
-	int		rows;
 	char	*line;
+	int	rows;
 
 	rows = 0;
 	data->fd = open(data->file_name, O_RDONLY);
-	if (data->fd <= 0)
-		return (0);
 	data->map = ft_calloc(data->nb_rows + 1, sizeof(char *));
-	if (!data->map)
+	if (!data->map || data->fd <= 0)
 		return (0);
 	line = get_next_line(data->fd);
 	while (line)
 	{
-		if (ft_strlen(line) > 1 && rows <= data->nb_rows)
+		if (ft_strlen(line) > 1 && rows <= data->nb_rows )
+			data->map[rows++] = ft_strdup(line);
+		else if (ft_strlen(line) <= 1 && rows > 0)
 		{
-			data->map[rows] = ft_strdup(line);
-			rows++;
+			close(data->fd);
+			free(line);
+			return (0);
 		}
 		free(line);
 		line = get_next_line(data->fd);
@@ -44,7 +45,7 @@ int	check_file(t_data *data, char *file)
 {
 	if (data->nb_cols == 0 && ft_strlen(file) > 1)
 		data->nb_cols = ft_strlen(file);
-	if (data->nb_cols != 0 && ft_strlen(file) > 1 \
+	else if (data->nb_cols != 0 && ft_strlen(file) > 1 \
 		&& data->nb_cols != ft_strlen(file))
 	{
 		free(file);
@@ -60,18 +61,15 @@ int	read_map(t_data *data)
 
 	data->fd = open(data->file_name, O_RDONLY);
 	if (data->fd <= 0)
-	{
 		return (0);
-	}
 	file = get_next_line(data->fd);
 	data->nb_rows = 0;
 	data->nb_cols = 0;
 	while (file)
 	{
-		if (check_file(data, file) == 0)
+		if (check_file(data, file) == 0 && ft_strlen(get_next_line(data->fd)) > 1)
 		{
 			get_next_line(-42);
-			printf("there\n");
 			return (0);
 		}
 		if (data->nb_cols > 0 && ft_strlen(file) <= 1)
