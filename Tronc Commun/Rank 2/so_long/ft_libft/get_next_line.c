@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:16:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2023/12/20 18:42:26 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 10:45:17 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char	*get_line(char *line)
 	while (line[i] != '\n' && line[i] != '\0')
 		i++;
 	if (line[i] == '\0' || line[1] == '\0')
-		return (0);
+		line[i] = '\n';
 	stored = ft_substr(line, i + 1, ft_strlen(line) - i);
 	if (!stored)
 	{

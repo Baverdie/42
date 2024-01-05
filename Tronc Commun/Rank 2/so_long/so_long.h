@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/04 17:01:45 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:37:30 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,18 @@
 
 # define WIDTH (data->nb_cols - 1) * 64
 # define HEIGHT data->nb_rows * 64
+
+# define TITLE_ERROR "\033[0;31mError\033[0m\n"
+# define ERROR_LABDA "Error detected\n"
+# define MORE_FILE "Too many arguments detected\n"
+# define NO_FILE "Missing file\n"
+# define INVALID_FILE "Invalid file\n"
+# define INVALID_MAP "Invalid map\n"
+# define PLAYER_ERROR "Player not found\n"
+# define EXIT_ERROR "Exit not found\n"
+# define COL_ERROR "Collectible not found\n"
+# define NO_PATH "No valid path found\n"
+# define INVALID_NO_PATH "Invalid map and no valid path found\n"
 
 typedef struct s_game_positions {
 	int	player_row;
@@ -52,28 +64,34 @@ typedef struct	s_mlx {
 	int		img_size;
 }				t_mlx;
 
-// check fonctions
-
+// PARSE
+	//handling
 int		init(t_data *data);
-int		init_map(t_data *data);
-
-int		pos_data(t_data *data);
+int		errors_map(t_data *data);
+	//sort map
 int		read_map(t_data *data);
 int		parse_map(t_data *data);
-
+	//check
 int		check_errors(t_data *data);
 int		check_path(t_data *data);
 void	flood(int x, int y, t_data *data, int dir);
+int		pos_data(t_data *data);
 
-// game fonction
+// GRAPHIQUE
+int		so_long(t_data *data);
 
-int	so_long();
-
-// utils fonctions
-
-void	copy_map(t_data *data);
-void	print_map(t_data *data, int err);
-void	print_errors(int errors, t_data *data);
+// UTILS
+	// free
 void	ft_free(char **tab);
+void	free_all(t_data *data);
+
+	//print
+void	print_map_full(char **map); //delete
+void	print_map_errors(t_data *data);
+void	print_path_map(t_data *data, int x, int y);
+int		ft_print_errors(char *err);
+
+	//copy
+void	copy_map(t_data *data);
 
 #endif

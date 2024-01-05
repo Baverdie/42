@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:08:29 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/04 17:45:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 13:23:17 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	count_obj(t_data *data, t_game_positions *pos)
 	i = 0;
 	while (data->map[i])
 	{
-		printf("map[x] = %s\n", data->map[i]);
 		j = 0;
 		while (data->map[i][j])
 		{
@@ -86,10 +85,10 @@ int	pos_data(t_data *data)
 {
 	count_obj(data, data->pos);
 	if (pos_player(data, data->pos) == 0)
-		return (1);
+		return (ft_print_errors(PLAYER_ERROR));
 	else if (pos_exit(data, data->pos) == 0)
-		return (2);
+		return (ft_print_errors(EXIT_ERROR));
 	else if (data->pos->obj == 0)
-		return (3);
-	return (0);
+		return (ft_print_errors(COL_ERROR));
+	return (1);
 }

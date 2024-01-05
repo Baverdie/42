@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/04 17:43:41 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:23:26 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 int	errors_type(t_data *data, int i, int j)
 {
+	if (data->map[i][j] != '0' && data->map[i][j] != 'P' && data->map[i][j] != 'E'
+		&& data->map[i][j] != 'C' && data->map[i][j] != '1' && data->map[i][j] != '\n')
+		return (0);
 	if (data->map[i][j] == '0' || data->map[i][j] == 'P'
 		|| data->map[i][j] == 'E' || data->map[i][j] == 'C')
 	{
-		if (j == 0)
+		if (j == 0 || i == 0)
 			return (0);
-		if (i == 0)
-			return (0);
-		if (j == data->nb_cols - 2)
-			return (0);
-		if (i == data->nb_rows - 1)
+		if (j == data->nb_cols - 2 || i == data->nb_rows - 1)
 			return (0);
 		if (i > 0 && j < data->nb_cols && data->map[i - 1][j] == ' ')
 			return (0);
@@ -69,6 +68,7 @@ int	check_path(t_data *data)
 	int	j;
 
 	i = 0;
+	print_map_full(data->flood);
 	while (data->flood[i])
 	{
 		j = 0;

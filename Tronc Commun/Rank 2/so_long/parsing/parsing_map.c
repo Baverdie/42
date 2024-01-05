@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/04 17:54:32 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 16:13:41 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	parse_map(t_data *data)
 	{
 		if (ft_strlen(line) > 1 && rows <= data->nb_rows )
 			data->map[rows++] = ft_strdup(line);
-		else if (ft_strlen(line) <= 1 && rows > 0)
+		else if (ft_strlen(line) < 1 && rows > 0)
 		{
 			close(data->fd);
 			free(line);
@@ -43,14 +43,31 @@ int	parse_map(t_data *data)
 
 int	check_file(t_data *data, char *file)
 {
+	printf("strlen = %d\ncols = %d\n", ft_strlen(file), data->nb_cols);
 	if (data->nb_cols == 0 && ft_strlen(file) > 1)
 		data->nb_cols = ft_strlen(file);
-	else if (data->nb_cols != 0 && ft_strlen(file) > 1 \
-		&& data->nb_cols != ft_strlen(file))
+	if (data->nb_cols != 0 && (data->nb_cols != ft_strlen(file) && ft_strlen(file) <= 2))
 	{
-		free(file);
+		printf("ok\n");
+		if (file)
+			free(file);
 		file = NULL;
 		return (0);
+	}
+	return (1);
+}
+
+int	check_end(t_data *data, char *file)
+{
+	while (file)
+	{
+		printf("line = %s\n", file);
+		if (ft_strlen(file) > 1)
+		{
+			return (0);
+		}
+		free(file);
+		file = get_next_line(data->fd);
 	}
 	return (1);
 }
@@ -61,13 +78,14 @@ int	read_map(t_data *data)
 
 	data->fd = open(data->file_name, O_RDONLY);
 	if (data->fd <= 0)
-		return (0);
+		return (ft_print_errors(INVALID_FILE));
 	file = get_next_line(data->fd);
 	data->nb_rows = 0;
 	data->nb_cols = 0;
 	while (file)
 	{
-		if (check_file(data, file) == 0 && ft_strlen(get_next_line(data->fd)) > 1)
+		printf("file = %s\n", file);
+		if (check_end(data, file) == 0 && check_file(data, file) == 0)
 		{
 			get_next_line(-42);
 			return (0);

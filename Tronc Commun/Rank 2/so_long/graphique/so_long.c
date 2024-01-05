@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/04 17:02:58 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:24:05 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_close(int keycode, void *param)
 	return (0);
 }
 
-int	so_long()
+int	so_long(t_data *data)
 {
 	t_mlx	*mlx;
 	// int	i = 0;
@@ -31,7 +31,8 @@ int	so_long()
 	if (!mlx)
 		return (EXIT_FAILURE);
 	mlx->mlx = mlx_init();
-	mlx->window = mlx_new_window(mlx->mlx, 1920, 1080, "so_long");
+	printf("%d / %d\n", WIDTH, HEIGHT);
+	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "so_long");
 	// mlx->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
 	// mlx->img = mlx_xpm_file_to_image(mlx->mlx, "../textures/wall.xpm", &mlx->img_size, &mlx->img_size);
 	// while (data->map[i])

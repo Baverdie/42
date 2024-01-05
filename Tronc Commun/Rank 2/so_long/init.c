@@ -6,55 +6,62 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:34:46 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/04 17:53:25 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:19:34 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	init_map(t_data *data)
+int	errors_map(t_data *data)
 {
-	if (read_map(data) == 0)
-		return (4);
-	if (parse_map(data) == 0)
-		return (1);
-	else if (pos_data(data) == 1)
-		return (3);
-	else if (pos_data(data) == 2)
-		return (8);
-	else if (pos_data(data) == 3)
-		return (9);
-	else if (check_errors(data) == 0)
-		return (2);
-	else
-	{	
-		data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
-		if (!data->flood)
-			return (1);
-		copy_map(data);
-		flood(data->pos->player_row, data->pos->player_col, data, 0);
-		if (check_path(data) == 1)
-			return (5);
-		if (check_path(data) == 2)
-			return (6);
-		if (check_path(data) == 3)
-			return (7);
+	data->flood = ft_calloc(data->nb_rows + 1, sizeof(char *));
+	if (!data->flood)
+		return (ft_print_errors(ERROR_LABDA));
+	copy_map(data);
+	print_map_full(data->flood);
+	flood(data->pos->player_row, data->pos->player_col, data, 0);
+	if (check_errors(data) == 0 && check_path(data) != 0)
+	{
+		print_map_errors(data);
+		return (ft_print_errors(INVALID_NO_PATH));
 	}
-	return (0);
+	if (check_errors(data) == 0)
+	{
+		print_map_errors(data);
+		return (ft_print_errors(INVALID_MAP));
+	}
+	if (check_path(data) != 0)
+	{
+		data->errorx = -1;
+		data->errory = -1;
+		print_map_errors(data);
+		return (ft_print_errors(NO_PATH));
+	}
+	return (1);
 }
 
 int	init(t_data *data)
 {
-	int	errors;
-
 	data->pos = ft_calloc(1, sizeof(t_game_positions));
 	if (!data->pos)
-		return (1);
+		return (ft_print_errors(ERROR_LABDA));
 	data->pos->player_col = 0;
 	data->pos->player_row = 0;
 	data->pos->exit_col = 0;
 	data->pos->exit_row = 0;
 	data->pos->obj = 0;
-	errors = init_map(data);
-	return (errors);
+	if (read_map(data) == 0)
+	{
+		// printf("%d\n", data->nb_rows);
+		// parse_map(data);
+		// print_map_full(data->map);
+		return (ft_print_errors(INVALID_MAP));
+	}
+	if (parse_map(data) == 0)
+		return (ft_print_errors(ERROR_LABDA));
+	if (pos_data(data) == 0)
+		return (0);
+	if (errors_map(data) == 0)
+		return (0);
+	return (1);
 }

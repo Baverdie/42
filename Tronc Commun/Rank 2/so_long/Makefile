@@ -12,7 +12,6 @@ SRCS = main.c \
 	parsing/parsing_data_map.c \
 	graphique/so_long.c \
 	utils/map.c \
-	utils/errors.c \
 	utils/utils.c \
 
 OBJS = ${SRCS:.c=.o}

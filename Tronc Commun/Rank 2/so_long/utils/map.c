@@ -6,19 +6,19 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:26:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/04 17:25:50 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:43:46 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	print_path_map(t_data *data, int err, int x, int y)
+void	print_path_map(t_data *data, int x, int y)
 {
-	if ((data->map[y][x] == 'P' && err == 5) \
-	|| (data->map[y][x] == 'C' && err == 6) \
-	|| (data->map[y][x] == 'E' && err == 7))
-		ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
-	else if (data->map[y][x] == 'P' || data->map[y][x] == 'C' \
+	// if ((data->map[y][x] == 'P' && err == 5) \
+	// || (data->map[y][x] == 'C' && err == 6) \
+	// || (data->map[y][x] == 'E' && err == 7))
+	// 	ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
+	if (data->map[y][x] == 'P' || data->map[y][x] == 'C' \
 	|| data->map[y][x] == 'E')
 		ft_printf("\033[0;32m%c\033[0m", data->map[y][x]);
 	else if (data->map[y][x] == '1')
@@ -29,13 +29,14 @@ void	print_path_map(t_data *data, int err, int x, int y)
 		ft_printf("\033[0;36m%c\033[0m", '.');
 }
 
-void	print_map(t_data *data, int err)
+void	print_map_errors(t_data *data)
 {
 	int	x;
 	int	y;
 
 	y = 0;
-	while (data->map[y] && data->map[y][0] != '\n')
+	print_map_full(data->map);
+	while (data->map[y])
 	{
 		x = 0;
 		while (data->map[y][x] != '\n')
@@ -48,7 +49,7 @@ void	print_map(t_data *data, int err)
 			if (x == data->errorx && data->errory == y)
 				ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
 			else
-				print_path_map(data, err, x, y);
+				print_path_map(data, x, y);
 			x++;
 		}
 		ft_printf("\n");
