@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 17:46:25 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/08 16:58:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	parse_map(t_data *data)
 	if (!data->map || data->fd <= 0)
 		return (0);
 	line = get_next_line(data->fd);
-	while (line)
+	while (line && rows <= data->nb_rows)
 	{
 		if (ft_strlen(line) > 1 && rows <= data->nb_rows )
 			data->map[rows++] = ft_strdup(line);
@@ -55,9 +55,31 @@ int	check_file(t_data *data, char *file)
 	return (1);
 }
 
+int	check_end_file(t_data *data, char *file)
+{
+	if (data->nb_cols != 0 && ft_strlen(file) != data->nb_cols)
+	{
+		while (file && ft_strlen(file) == 1)
+		{
+			free(file);
+			file = get_next_line(data->fd);
+		}
+		if (ft_strlen(file) > 1)
+		{
+			free(file);
+			return (0);
+		}
+		else
+			return (2);
+		free(file);
+	}
+	return (1);
+}
+
 int	read_map(t_data *data)
 {
 	char	*file;
+	int		end;
 
 	data->fd = open(data->file_name, O_RDONLY);
 	if (data->fd <= 0)
@@ -69,11 +91,14 @@ int	read_map(t_data *data)
 	{
 		if (data->nb_cols == 0 && ft_strlen(file) >= 3)
 			data->nb_cols = ft_strlen(file);
-		if (ft_strlen(file) < 3 )
+		end = check_end_file(data, file);
+		if (end == 0)
 		{
 			get_next_line(-42);
 			return (0);
 		}
+		else if (end == 2)
+			break ;
 		if (ft_strlen(file) > 1)
 			data->nb_rows++;
 		free(file);

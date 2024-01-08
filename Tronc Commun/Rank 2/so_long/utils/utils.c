@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:46:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 18:06:51 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/08 16:29:34 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-void	ft_free(char **tab)
+void	ft_free_map(char **tab)
 {
 	int	i;
 
@@ -46,9 +46,9 @@ void	ft_free(char **tab)
 void	free_all(t_data *data)
 {
 	if (data->flood)
-		ft_free(data->flood);
+		ft_free_map(data->flood);
 	if (data->map)
-		ft_free(data->map);
+		ft_free_map(data->map);
 	free(data->pos);
 	free(data);
 }

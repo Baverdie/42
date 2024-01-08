@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:34:46 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:19:34 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/08 09:34:28 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	errors_map(t_data *data)
 	if (!data->flood)
 		return (ft_print_errors(ERROR_LABDA));
 	copy_map(data);
-	print_map_full(data->flood);
 	flood(data->pos->player_row, data->pos->player_col, data, 0);
 	if (check_errors(data) == 0 && check_path(data) != 0)
 	{
@@ -51,12 +50,7 @@ int	init(t_data *data)
 	data->pos->exit_row = 0;
 	data->pos->obj = 0;
 	if (read_map(data) == 0)
-	{
-		// printf("%d\n", data->nb_rows);
-		// parse_map(data);
-		// print_map_full(data->map);
 		return (ft_print_errors(INVALID_MAP));
-	}
 	if (parse_map(data) == 0)
 		return (ft_print_errors(ERROR_LABDA));
 	if (pos_data(data) == 0)

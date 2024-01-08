@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:26:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 14:43:46 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/08 09:35:00 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	print_map_errors(t_data *data)
 	int	y;
 
 	y = 0;
-	print_map_full(data->map);
 	while (data->map[y])
 	{
 		x = 0;

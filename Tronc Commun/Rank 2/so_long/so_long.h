@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 18:07:12 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/08 13:31:40 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
-// # include "MacroLibX/includes/mlx.h"
+# include "MacroLibX/includes/mlx.h"
 # include "ft_libft/libft.h"
 # include "ft_printf/ft_printf.h"
 

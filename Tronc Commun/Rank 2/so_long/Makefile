@@ -3,7 +3,7 @@ CC = clang
 CFLAGS = -Wall -Wextra -Werror -g3
 LIBS = ft_printf/libftprintf.a \
 		ft_libft/libft.a \
-		# MacroLibX/libmlx.so -lSDL2
+		MacroLibX/libmlx.so -lSDL2
 
 SRCS = main.c \
 	init.c \
@@ -12,7 +12,7 @@ SRCS = main.c \
 	parsing/parsing_data_map.c \
 	utils/map.c \
 	utils/utils.c \
-	# graphique/so_long.c \
+	graphique/so_long.c \
 
 OBJS = ${SRCS:.c=.o}
 

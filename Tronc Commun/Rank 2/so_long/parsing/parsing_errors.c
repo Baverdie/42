@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 14:23:26 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/08 09:34:57 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	check_path(t_data *data)
 	int	j;
 
 	i = 0;
-	print_map_full(data->flood);
 	while (data->flood[i])
 	{
 		j = 0;

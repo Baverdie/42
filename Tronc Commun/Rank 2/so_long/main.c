@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 18:19:19 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/08 16:45:05 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
