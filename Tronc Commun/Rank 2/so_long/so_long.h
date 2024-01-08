@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 14:37:30 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 18:07:12 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include "MacroLibX/includes/mlx.h"
+// # include "MacroLibX/includes/mlx.h"
 # include "ft_libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
@@ -26,13 +26,16 @@
 # define HEIGHT data->nb_rows * 64
 
 # define TITLE_ERROR "\033[0;31mError\033[0m\n"
+# define INVALID_EXTENSION "Invalid extension\n"
 # define ERROR_LABDA "Error detected\n"
 # define MORE_FILE "Too many arguments detected\n"
 # define NO_FILE "Missing file\n"
 # define INVALID_FILE "Invalid file\n"
 # define INVALID_MAP "Invalid map\n"
-# define PLAYER_ERROR "Player not found\n"
-# define EXIT_ERROR "Exit not found\n"
+# define PLAYER_MISSING "Player not found\n"
+# define PLAYER_MULTIPLE "Multiple players found\n"
+# define EXIT_MISSING "Exit not found\n"
+# define EXIT_MULTIPLE "Multiple exits found\n"
 # define COL_ERROR "Collectible not found\n"
 # define NO_PATH "No valid path found\n"
 # define INVALID_NO_PATH "Invalid map and no valid path found\n"
@@ -93,5 +96,6 @@ int		ft_print_errors(char *err);
 
 	//copy
 void	copy_map(t_data *data);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

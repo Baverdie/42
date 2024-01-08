@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 16:13:41 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:46:25 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,31 +43,14 @@ int	parse_map(t_data *data)
 
 int	check_file(t_data *data, char *file)
 {
-	printf("strlen = %d\ncols = %d\n", ft_strlen(file), data->nb_cols);
 	if (data->nb_cols == 0 && ft_strlen(file) > 1)
 		data->nb_cols = ft_strlen(file);
 	if (data->nb_cols != 0 && (data->nb_cols != ft_strlen(file) && ft_strlen(file) <= 2))
 	{
-		printf("ok\n");
 		if (file)
 			free(file);
 		file = NULL;
 		return (0);
-	}
-	return (1);
-}
-
-int	check_end(t_data *data, char *file)
-{
-	while (file)
-	{
-		printf("line = %s\n", file);
-		if (ft_strlen(file) > 1)
-		{
-			return (0);
-		}
-		free(file);
-		file = get_next_line(data->fd);
 	}
 	return (1);
 }
@@ -84,14 +67,13 @@ int	read_map(t_data *data)
 	data->nb_cols = 0;
 	while (file)
 	{
-		printf("file = %s\n", file);
-		if (check_end(data, file) == 0 && check_file(data, file) == 0)
+		if (data->nb_cols == 0 && ft_strlen(file) >= 3)
+			data->nb_cols = ft_strlen(file);
+		if (ft_strlen(file) < 3 )
 		{
 			get_next_line(-42);
 			return (0);
 		}
-		if (data->nb_cols > 0 && ft_strlen(file) <= 1)
-			break ;
 		if (ft_strlen(file) > 1)
 			data->nb_rows++;
 		free(file);

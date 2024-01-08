@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_data_map.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:08:29 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 13:23:17 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:42:30 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,20 @@ int	pos_player(t_data *data, t_game_positions *pos)
 		j = 0;
 		while (data->map[i][j])
 		{
-			if (data->map[i][j] == 'P')
+			if (data->map[i][j] == 'P' && pos->player_col != 0)
+				return (ft_print_errors(PLAYER_MULTIPLE));
+			else if (data->map[i][j] == 'P')
 			{
 				pos->player_row = i;
 				pos->player_col = j;
-				return (1);
 			}
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	if (pos->player_col != 0)
+		return (1);
+	return (ft_print_errors(PLAYER_MISSING));
 }
 
 void	count_obj(t_data *data, t_game_positions *pos)
@@ -68,26 +71,29 @@ int	pos_exit(t_data *data, t_game_positions *pos)
 		j = 0;
 		while (data->map[i][j])
 		{
-			if (data->map[i][j] == 'E')
+			if (data->map[i][j] == 'E' && pos->exit_col != 0)
+				return (ft_print_errors(EXIT_MULTIPLE));
+			else if (data->map[i][j] == 'E')
 			{
 				pos->exit_row = i;
 				pos->exit_col = j;
-				return (1);
 			}
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	if (pos->exit_col != 0)
+		return (1);
+	return (ft_print_errors(EXIT_MISSING));
 }
 
 int	pos_data(t_data *data)
 {
 	count_obj(data, data->pos);
 	if (pos_player(data, data->pos) == 0)
-		return (ft_print_errors(PLAYER_ERROR));
+		return (0);
 	else if (pos_exit(data, data->pos) == 0)
-		return (ft_print_errors(EXIT_ERROR));
+		return (0);
 	else if (data->pos->obj == 0)
 		return (ft_print_errors(COL_ERROR));
 	return (1);
