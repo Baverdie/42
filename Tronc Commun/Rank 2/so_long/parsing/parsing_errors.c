@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/08 09:34:57 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:11:59 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,26 @@ int	errors_type(t_data *data, int i, int j)
 	{
 		if (j == 0 || i == 0)
 			return (0);
-		if (j == data->nb_cols - 2 || i == data->nb_rows - 1)
+		if (j == data->nb_cols || i == data->nb_rows)
 			return (0);
-		if (i > 0 && j < data->nb_cols && data->map[i - 1][j] == ' ')
-			return (0);
-		if (!data->map[i + 1])
-			return (0);
-		if (j < data->nb_cols && data->map[i][j + 1] == ' ')
-			return (0);
-		if (j > 0 && data->map[i][j - 1] == ' ')
-			return (0);
+		// if (i > 0 && j <= data->nb_cols && data->map[i - 1][j] == ' ')
+		// 	return (0);
+		// if (!data->map[i + 1])
+		// 	return (0);
+		// if (j <= data->nb_cols && data->map[i][j + 1] == ' ')
+		// 	return (0);
+		// if (j > 0 && data->map[i][j - 1] == ' ')
+		// 	return (0);
 	}
 	return (1);
 }
 
 void	flood(int x, int y, t_data *data, int dir)
 {
-	if (x < data->nb_rows && y < data->nb_cols - 1 \
+	if (x < data->nb_rows && y <= data->nb_cols \
 		&& (data->map[x][y] == '1' || data->flood[x][y] == '7'))
 		return ;
-	if (x < data->nb_rows && y < data->nb_cols - 1 && data->flood[x][y] != '7')
+	if (x < data->nb_rows && y <= data->nb_cols && data->flood[x][y] != '7')
 	{
 		data->flood[x][y] = '7';
 		if (dir == 0)
@@ -54,8 +54,8 @@ void	flood(int x, int y, t_data *data, int dir)
 			flood(x + 1, y, data, 1);
 		if (x > 0 && dir != 1 && data->flood[x - 1][y] != '7' && x - 1 != 0)
 			flood(x - 1, y, data, -1);
-		if (dir != -2 && y < data->nb_cols - 2 && data->flood[x][y + 1] != '7' \
-			&& y + 1 != data->nb_cols - 1)
+		if (dir != -2 && y <= data->nb_cols && data->flood[x][y + 1] != '7' \
+			&& y + 1 != data->nb_cols)
 			flood(x, y + 1, data, 2);
 		if (dir != 2 && y > 0 && data->flood[x][y - 1] != '7' && y - 1 != 0)
 			flood(x, y - 1, data, -2);
@@ -95,10 +95,8 @@ int	check_errors(t_data *data)
 	while (data->map[i])
 	{
 		j = 0;
-		if (((i == 0 && data->map[i][j] != '1') \
-			|| (i == data->nb_rows - 1 && data->map[i][j] != '1')) \
-		|| ((i == 0 && data->map[i][data->nb_cols - 2] != '1') \
-		|| (i == data->nb_rows - 1 && data->map[i][data->nb_cols - 2] != '1')))
+		if (((i == 0 && data->map[i][j] != '1') || (i == data->nb_rows - 1 && data->map[i][j] != '1')) \
+		|| ((i == 0 && data->map[i][data->nb_cols - 1] != '1') || (i == data->nb_rows - 1 && data->map[i][data->nb_cols - 1] != '1')))
 			return (0);
 		while (data->map[i][j])
 		{

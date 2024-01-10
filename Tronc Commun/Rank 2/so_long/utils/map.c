@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:26:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/08 09:35:00 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:28:19 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 void	print_path_map(t_data *data, int x, int y)
 {
-	// if ((data->map[y][x] == 'P' && err == 5) \
-	// || (data->map[y][x] == 'C' && err == 6) \
-	// || (data->map[y][x] == 'E' && err == 7))
-	// 	ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
 	if (data->map[y][x] == 'P' || data->map[y][x] == 'C' \
-	|| data->map[y][x] == 'E')
+		|| data->map[y][x] == 'E')
 		ft_printf("\033[0;32m%c\033[0m", data->map[y][x]);
 	else if (data->map[y][x] == '1')
 		ft_printf("\033[0;37m%c\033[0m", 35);
@@ -38,15 +34,12 @@ void	print_map_errors(t_data *data)
 	while (data->map[y])
 	{
 		x = 0;
-		while (data->map[y][x] != '\n')
+		while (data->map[y][x] != '\n' && data->map[y][x] != '\0')
 		{
-			if (!data->flood[y])
-			{
-				ft_printf("\033[0;31mEmpty line\033[0m");
-				break;
-			}
-			if (x == data->errorx && data->errory == y)
+			if (x == data->errorx && y == data->errory && data->map[y][x] > 32 && data->map[y][x] < 127)
 				ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
+			else if (x == data->errorx && y == data->errory)
+				ft_printf("\033[0;31mX\033[0m");
 			else
 				print_path_map(data, x, y);
 			x++;

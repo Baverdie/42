@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/08 16:58:50 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:06:13 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,45 +41,9 @@ int	parse_map(t_data *data)
 	return (1);
 }
 
-int	check_file(t_data *data, char *file)
-{
-	if (data->nb_cols == 0 && ft_strlen(file) > 1)
-		data->nb_cols = ft_strlen(file);
-	if (data->nb_cols != 0 && (data->nb_cols != ft_strlen(file) && ft_strlen(file) <= 2))
-	{
-		if (file)
-			free(file);
-		file = NULL;
-		return (0);
-	}
-	return (1);
-}
-
-int	check_end_file(t_data *data, char *file)
-{
-	if (data->nb_cols != 0 && ft_strlen(file) != data->nb_cols)
-	{
-		while (file && ft_strlen(file) == 1)
-		{
-			free(file);
-			file = get_next_line(data->fd);
-		}
-		if (ft_strlen(file) > 1)
-		{
-			free(file);
-			return (0);
-		}
-		else
-			return (2);
-		free(file);
-	}
-	return (1);
-}
-
 int	read_map(t_data *data)
 {
 	char	*file;
-	int		end;
 
 	data->fd = open(data->file_name, O_RDONLY);
 	if (data->fd <= 0)
@@ -89,18 +53,14 @@ int	read_map(t_data *data)
 	data->nb_cols = 0;
 	while (file)
 	{
-		if (data->nb_cols == 0 && ft_strlen(file) >= 3)
-			data->nb_cols = ft_strlen(file);
-		end = check_end_file(data, file);
-		if (end == 0)
+		if (ft_strlen(file) < 3)
 		{
 			get_next_line(-42);
 			return (0);
 		}
-		else if (end == 2)
-			break ;
-		if (ft_strlen(file) > 1)
+		else if (ft_strlen(file) > 1)
 			data->nb_rows++;
+		data->nb_cols = ft_strlen(file) - 1;
 		free(file);
 		file = get_next_line(data->fd);
 	}
