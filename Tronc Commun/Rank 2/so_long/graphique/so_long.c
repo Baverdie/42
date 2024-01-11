@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/11 14:04:06 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:05:10 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	so_long(t_data *data)
 			if (data->map[i][j] == '1')
 			{
 				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->wall, j * 64, i * 64);
-				// mlx_destroy_image(mlx->mlx, mlx->img);
 			}
 			else if (data->map[i][j] == '0')
 			{
