@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/11 13:21:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:59:40 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct	s_textures {
 	void	*exit;
 	void	*wall;
 	void	*collectible;
+	void	*ground;
 }	t_textures;
 
 typedef struct	s_mlx {

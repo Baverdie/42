@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/11 13:17:41 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:04:06 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ int	so_long(t_data *data)
 	mlx->mlx = mlx_init();
 	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "so_long");
 	printf("cols = %d\nrows = %d\n", data->nb_cols, data->nb_rows);
+	mlx->img->wall = mlx_png_file_to_image(mlx->mlx, "textures/wall.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->ground = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/ground.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->player = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/zenitsu.png", &mlx->img_size, &mlx->img_size);
 	while (data->map[i])
 	{
 		j = 0;
@@ -43,13 +46,15 @@ int	so_long(t_data *data)
 			height = 0;
 			if (data->map[i][j] == '1')
 			{
-				mlx->img->wall = mlx_png_file_to_image(mlx->mlx, "textures/wall.png", &mlx->img_size, &mlx->img_size);
 				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->wall, j * 64, i * 64);
 				// mlx_destroy_image(mlx->mlx, mlx->img);
 			}
+			else if (data->map[i][j] == '0')
+			{
+				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->ground, j * 64, i * 64);
+			}
 			else if (data->map[i][j] == 'P')
 			{
-				mlx->img->player = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/zenitsu.png", &mlx->img_size, &mlx->img_size);
 				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player, j * 64, i * 64);
 			}
 			else if (data->map[i][j] == 'C' || data->map[i][j] == 'E')
@@ -74,6 +79,7 @@ int	so_long(t_data *data)
 	mlx_on_event(mlx->mlx, mlx->window, MLX_WINDOW_EVENT, ft_close, mlx);
 	mlx_loop(mlx->mlx);
 	mlx_destroy_image(mlx->mlx, mlx->img->wall);
+	mlx_destroy_image(mlx->mlx, mlx->img->ground);
 	mlx_destroy_image(mlx->mlx, mlx->img->player);
 	mlx_destroy_window(mlx->mlx, mlx->window);
 	mlx_destroy_display(mlx->mlx);
