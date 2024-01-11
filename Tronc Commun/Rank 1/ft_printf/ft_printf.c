@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:00:56 by basverdi          #+#    #+#             */
-/*   Updated: 2023/12/17 15:37:31 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/11 01:15:27 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_check_flags(const char *s, int i, va_list arg)
+static int ft_check_flags(const char *s, int i, va_list arg)
 {
-	int	j;
+	int j;
 
 	j = 0;
 	if (s[i] == '%')
@@ -33,16 +33,16 @@ static int	ft_check_flags(const char *s, int i, va_list arg)
 		j += ft_puthexa(va_arg(arg, unsigned int), "0123456789abcdef");
 	else if (s[i] == 'X')
 		j += ft_puthexa(va_arg(arg, unsigned int), "0123456789ABCDEF");
-	else 
+	else
 		j += ft_putchar(s[i]);
 	return (j);
 }
 
 int	ft_printf(const char *s, ...)
 {
-	va_list	arg;
-	int		i;
-	int		j;
+	va_list arg;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
@@ -53,7 +53,7 @@ int	ft_printf(const char *s, ...)
 	{
 		if (s[i] == '%' && s[i + 1] != '\0')
 		{
-			i ++;
+			i++;
 			j += ft_check_flags(s, i, arg);
 		}
 		else
@@ -62,4 +62,17 @@ int	ft_printf(const char *s, ...)
 	}
 	va_end(arg);
 	return (j);
+}
+
+int main(void)
+{
+	ft_printf("Hello %s\n", "World");
+	ft_printf("Hello %c\n", 'W');
+	ft_printf("Hello %d\n", 42);
+	ft_printf("Hello %i\n", 42);
+	ft_printf("Hello %u\n", 42);
+	ft_printf("Hello %x\n", 42);
+	ft_printf("Hello %X\n", 42);
+	ft_printf("Hello %p\n", 42);
+	return (0);
 }

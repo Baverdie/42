@@ -1,7 +1,0 @@
-----------------8<-------------[ START TEST 
-        💻 TEST
-./a.out         🔎 YOUR OUTPUT:
-clang: error: no such file or directory: '../../rendu/ft_list_size/ft_list_size.c'
-
-        ❌ COMPILATION ERROR
-----------------8<------------- END TEST ]
