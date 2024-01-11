@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/08 13:31:40 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:21:44 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include "ft_libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
-# define WIDTH (data->nb_cols - 1) * 64
+# define WIDTH (data->nb_cols + 1) * 64
 # define HEIGHT data->nb_rows * 64
 
 # define TITLE_ERROR "\033[0;31mError\033[0m\n"
@@ -60,12 +60,19 @@ typedef struct s_data {
 	struct s_game_positions	*pos;
 }	t_data;
 
+typedef struct	s_textures {
+	void	*player;
+	void	*exit;
+	void	*wall;
+	void	*collectible;
+}	t_textures;
+
 typedef struct	s_mlx {
 	void	*mlx;
 	void	*window;
-	void	*img;
 	int		img_size;
-}				t_mlx;
+	struct s_textures	*img;
+}	t_mlx;
 
 // PARSE
 	//handling

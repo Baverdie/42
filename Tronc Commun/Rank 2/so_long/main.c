@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/10 15:46:02 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:01:49 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ int	main(int argc, char **argv)
 		free_all(data);
 		return (0);
 	}
-	// so_long(data);
-	printf("map ok\n");
+	so_long(data);
 	free_all(data);
 	return (EXIT_SUCCESS);
 }
