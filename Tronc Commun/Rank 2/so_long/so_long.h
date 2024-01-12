@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/11 19:26:38 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/12 18:53:27 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define COL_ERROR "Collectible not found\n"
 # define NO_PATH "No valid path found\n"
 # define INVALID_NO_PATH "Invalid map and no valid path found\n"
+# define MISSING_TEXTURE "Missing textures\n"
 
 typedef struct s_game_positions {
 	int	player_row;
@@ -64,7 +65,7 @@ typedef struct	s_textures {
 	void	*player;
 	void	*exit;
 	void	*wall;
-	void	*collectible;
+	void	*col;
 	void	*ground;
 }	t_textures;
 
@@ -95,6 +96,7 @@ int		so_long(t_data *data);
 	// free
 void	ft_free(char **tab);
 void	free_all(t_data *data);
+void	ft_destroy(t_mlx *mlx);
 
 	//print
 void	print_map_full(char **map); //delete

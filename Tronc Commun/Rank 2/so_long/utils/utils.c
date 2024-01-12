@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:46:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/08 16:29:34 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/12 18:47:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,22 @@ int	ft_print_errors(char *err)
 {
 	ft_printf("%s%s", TITLE_ERROR, err);\
 	return(0);
+}
+
+void ft_destroy(t_mlx *mlx)
+{
+	if (mlx->img->wall)
+		mlx_destroy_image(mlx->mlx, mlx->img->wall);
+	if (mlx->img->ground)
+		mlx_destroy_image(mlx->mlx, mlx->img->ground);
+	if (mlx->img->player)
+		mlx_destroy_image(mlx->mlx, mlx->img->player);
+	if (mlx->img->exit)
+		mlx_destroy_image(mlx->mlx, mlx->img->exit);
+	if (mlx->img->collectible)
+		mlx_destroy_image(mlx->mlx, mlx->img->collectible);
+	mlx_destroy_window(mlx->mlx, mlx->window);
+	mlx_destroy_display(mlx->mlx);
 }
 
 void print_map_full(char **map)
