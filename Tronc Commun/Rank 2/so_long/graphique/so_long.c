@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/12 18:53:47 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 01:18:07 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,43 +19,84 @@ int	ft_close(int keycode, void *param)
 	return (0);
 }
 
-int	ft_map(t_mlx *mlx, t_data *data)
+int	ft_key(int keycode, void *param)
 {
-	int	i = 0;
-	int	j = 0;
-	
-	while (data->map[i])
-	{
-		j = 0;
-		while (data->map[i][j])
-		{
-			if (data->map[i][j] == '1')
-				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->wall, j * 64, i * 64);
-			else if (data->map[i][j] == '0')
-				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->ground, j * 64, i * 64);
-			else if (data->map[i][j] == 'P')
-				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player, j * 64, i * 64);
-			else if (data->map[i][j] == 'E')
-				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->exit, j * 64, i * 64);
-			else if (data->map[i][j] == 'C')
-				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->col, j * 64, i * 64);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	ft_move()
-{
-	printf("ok\n");
+	if (keycode == 41)
+		ft_close(keycode, (t_mlx *)param);
+	else if (keycode == 26 || keycode == 82)
+		ft_forward((t_mlx *)param);
+	else if (keycode == 4 || keycode == 80)
+		ft_left((t_mlx *)param);
+	else if (keycode == 22 || keycode == 81)
+		ft_backward((t_mlx *)param);
+	else if (keycode == 7 || keycode == 79)
+		ft_right((t_mlx *)param);
+	// else if (keycode == 44)
+	// 	ft_dash((t_mlx *)param);
 	return (0);
 }
 
 void ft_event(t_mlx *mlx)
 {
-	mlx_on_event(mlx->mlx, mlx->window, MLX_KEYDOWN, ft_close, mlx);
+	mlx_on_event(mlx->mlx, mlx->window, MLX_KEYDOWN, ft_key, mlx);
 	mlx_on_event(mlx->mlx, mlx->window, MLX_WINDOW_EVENT, ft_close, mlx);
+}
+
+int	ft_map(t_mlx *mlx)
+{
+	int	i = 0;
+	int	j = 0;
+	
+	move_mobs(mlx->data->mobs);
+	while (mlx->data->map[i])
+	{
+		j = 0;
+		while (mlx->data->map[i][j])
+		{
+			if (mlx->data->map[i][j] == '1')
+				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->wall, j * 64, i * 64);
+			else if ((i == mlx->data->pos->player_row && j == mlx->data->pos->player_col) || mlx->data->map[i][j] == 'P')
+			{
+				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player, j * 64, i * 64);
+				if (mlx->data->map[i][j] != 'E')
+					mlx->data->map[i][j] = '0';
+			}
+			else if (mlx->data->map[i][j] == 'E')
+			{
+				if (mlx->nb_col == mlx->data->pos->obj)
+				{
+					mlx_destroy_image(mlx->mlx, mlx->img->exit);
+					mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/temple_open.png", &mlx->img_size, &mlx->img_size);
+				}
+				else if (mlx->nb_col > 0)
+				{
+					mlx_destroy_image(mlx->mlx, mlx->img->exit);
+					mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/temple_half-open.png", &mlx->img_size, &mlx->img_size);
+				}
+				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->exit, j * 64, i * 64);
+			}
+			else if (mlx->data->map[i][j] == '0')
+				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->ground, j * 64, i * 64);
+			else if (mlx->data->map[i][j] == 'C')
+				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->col, j * 64, i * 64);
+			else if (mlx->data->map[i][j] == 'M')
+				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->mob, j * 64, i * 64);
+			j++;
+		}
+		i++;
+	}
+	ft_event(mlx);
+	return (0);
+}
+
+void	set_img(t_mlx *mlx)
+{
+	mlx->img->wall = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/ground2.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->ground = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/ground.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->player = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/zenitsu.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/temple_close.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->col = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/sabre_mid.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->mob = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/ground2.png", &mlx->img_size, &mlx->img_size);
 }
 
 int	so_long(t_data *data)
@@ -65,22 +106,21 @@ int	so_long(t_data *data)
 	mlx = ft_calloc(1, sizeof(t_mlx));
 	mlx->img = ft_calloc(1, sizeof(t_textures));
 	if (!mlx || !mlx->img)
-		return (EXIT_FAILURE);
+		return (ft_print_errors(ERROR_LABDA));
+	mlx->data = data;
+	mlx->nb_move = 0;
+	mlx->nb_col = 0;
+	mlx->dir = 0;
 	mlx->mlx = mlx_init();
 	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "so_long");
-	mlx->img->wall = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/ground2.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->ground = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/ground.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->player = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/zenitsu.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/temple_close.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->col = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/sabre_mid.png", &mlx->img_size, &mlx->img_size);
+	set_img(mlx);
 	if (!mlx->img->wall || !mlx->img->ground || !mlx->img->player || !mlx->img->exit || !mlx->img->col)
 	{
 		ft_print_errors(MISSING_TEXTURE);
 		mlx_loop_end(mlx->mlx);
 	}
 	else
-		ft_map(mlx, data);
-	ft_event(mlx);
+		ft_map(mlx);
 	mlx_loop(mlx->mlx);
 	ft_destroy(mlx);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/12 18:53:27 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 01:38:13 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include "MacroLibX/includes/mlx.h"
 # include "ft_libft/libft.h"
 # include "ft_printf/ft_printf.h"
+#include <stdlib.h>
+#include <time.h>
 
 # define WIDTH (data->nb_cols + 1) * 64
 # define HEIGHT data->nb_rows * 64
@@ -41,13 +43,22 @@
 # define INVALID_NO_PATH "Invalid map and no valid path found\n"
 # define MISSING_TEXTURE "Missing textures\n"
 
-typedef struct s_game_positions {
+typedef struct s_game_object {
 	int	player_row;
 	int	player_col;
 	int	exit_row;
 	int	exit_col;
 	int	obj;
-}	t_game_positions;
+	int	nb_mobs;
+}	t_game_object;
+
+typedef struct s_mob {
+	int	id;
+	int	pos_x;
+	int	pos_y;
+	int	initial_x;
+	int	initial_y;
+}	t_mob;
 
 typedef struct s_data {
 	int		nb_rows;
@@ -58,7 +69,8 @@ typedef struct s_data {
 	char	**flood;
 	int		errorx;
 	int		errory;
-	struct s_game_positions	*pos;
+	struct	s_mob	**mobs;
+	struct s_game_object	*pos;
 }	t_data;
 
 typedef struct	s_textures {
@@ -67,13 +79,19 @@ typedef struct	s_textures {
 	void	*wall;
 	void	*col;
 	void	*ground;
+	void	*mob;
 }	t_textures;
 
 typedef struct	s_mlx {
 	void	*mlx;
 	void	*window;
 	int		img_size;
+	int		nb_move;
+	int		nb_col;
+	int		dir;
+	struct s_data	*data;
 	struct s_textures	*img;
+
 }	t_mlx;
 
 // PARSE
@@ -91,11 +109,15 @@ int		pos_data(t_data *data);
 
 // GRAPHIQUE
 int		so_long(t_data *data);
+void	ft_forward(t_mlx *mlx);
+void	ft_left(t_mlx *mlx);
+void	ft_backward(t_mlx *mlx);
+void	ft_right(t_mlx *mlx);
 
 // UTILS
 	// free
 void	ft_free(char **tab);
-void	free_all(t_data *data);
+void	free_data(t_data *data);
 void	ft_destroy(t_mlx *mlx);
 
 	//print
@@ -103,9 +125,13 @@ void	print_map_full(char **map); //delete
 void	print_map_errors(t_data *data);
 void	print_path_map(t_data *data, int x, int y);
 int		ft_print_errors(char *err);
+int		ft_map(t_mlx *mlx);
 
 	//copy
-void	copy_map(t_data *data);
+void	copy_map(char **dest, char **src, int len);
 int		ft_strcmp(const char *s1, const char *s2);
+
+	//MOB
+int		pos_mob(t_data *data);
 
 #endif

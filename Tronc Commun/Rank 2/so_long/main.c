@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/11 13:01:49 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 01:01:09 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ int	main(int argc, char **argv)
 	data->file_name = argv[1];
 	if (init(data) == 0)
 	{
-		free_all(data);
+		free_data(data);
 		return (0);
 	}
 	so_long(data);
-	free_all(data);
+	free_data(data);
 	return (EXIT_SUCCESS);
 }

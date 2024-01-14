@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_data_map.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:08:29 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/05 17:42:30 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/14 01:04:11 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	pos_player(t_data *data, t_game_positions *pos)
+int	pos_player(t_data *data, t_game_object *pos)
 {
 	int	i;
 	int	j;
@@ -39,7 +39,7 @@ int	pos_player(t_data *data, t_game_positions *pos)
 	return (ft_print_errors(PLAYER_MISSING));
 }
 
-void	count_obj(t_data *data, t_game_positions *pos)
+void	count_obj(t_data *data, t_game_object *pos)
 {
 	int	i;
 	int	j;
@@ -60,7 +60,7 @@ void	count_obj(t_data *data, t_game_positions *pos)
 	}
 }
 
-int	pos_exit(t_data *data, t_game_positions *pos)
+int	pos_exit(t_data *data, t_game_object *pos)
 {
 	int	i;
 	int	j;
@@ -93,6 +93,8 @@ int	pos_data(t_data *data)
 	if (pos_player(data, data->pos) == 0)
 		return (0);
 	else if (pos_exit(data, data->pos) == 0)
+		return (0);
+	else if (pos_mob(data) == 0)
 		return (0);
 	else if (data->pos->obj == 0)
 		return (ft_print_errors(COL_ERROR));

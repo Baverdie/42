@@ -11,8 +11,11 @@ SRCS = main.c \
 	parsing/parsing_map.c \
 	parsing/parsing_data_map.c \
 	utils/map.c \
+	utils/free.c \
 	utils/utils.c \
 	graphique/so_long.c \
+	graphique/move.c \
+	graphique/mob.c \
 
 OBJS = ${SRCS:.c=.o}
 
@@ -26,6 +29,17 @@ BANNER3 = printf "$(COLOR)(___/(_____)(___)(____)(_____)(_)\_)\___/\n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
+load:
+	@printf "|\033[0;31m▰     34%%\033[0m|"
+	@sleep 0.4
+	@printf "\r|\033[0;31m▰▰    69%%\033[0m|"
+	@sleep 0.4
+	@printf "\r|\033[0;31m▰▰▰   82%%\033[0m|"
+	@sleep 0.4
+	@printf "\r|\033[0;31m▰▰▰▰ 420%%\033[0m|"
+	@sleep 0.4
+	@printf "\r|\033[0;31m▰▰▰▰ 100%%\033[0m|\n"
+
 all: $(NAME)
 
 %.o: %.c
@@ -33,10 +47,13 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "\033[38;5;48mMLX42 is ready !\033[0m"
+	# @make load
 	@make -j -s -C ft_libft/
+	# @make load
 	@make -j -s -C ft_printf/
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
 	$(HEADER)
+	# @make load
 	@echo "\033[38;5;48mso_long is ready !\033[0m"
 
 clean:

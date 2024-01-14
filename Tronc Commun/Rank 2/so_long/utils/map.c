@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:26:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/10 17:28:19 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/13 16:32:00 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ void	print_map_errors(t_data *data)
 	}
 }
 
-void	copy_map(t_data *data)
+void	copy_map(char **dest, char **src, int len)
 {
 	int	i;
 
 	i = 0;
-	while (i < data->nb_rows)
+	while (i < len)
 	{
-		data->flood[i] = ft_strdup(data->map[i]);
+		dest[i] = ft_strdup(src[i]);
 		i++;
 	}
 }
