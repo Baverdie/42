@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 05:09:18 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 07:15:17 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 int	ft_close(int keycode, void *param)
 {
 	if (keycode == 0 || keycode == 41)
+	{
+		ft_printf("\033[0;31mGive up !\033[0m\n");
 		mlx_loop_end(((t_mlx *)param)->mlx);
+	}
 	return (0);
 }
 
 int	ft_key(int keycode, void *param)
 {
-	printf("key = %d\n", keycode);
 	if (keycode == 41)
 		ft_close(keycode, (t_mlx *)param);
 	else if (keycode == 26 || keycode == 82)
@@ -89,6 +91,7 @@ int	ft_map(t_mlx *mlx)
 		}
 		i++;
 	}
+	ft_str_display(mlx);
 	ft_event(mlx);
 	return (0);
 }
@@ -123,10 +126,10 @@ int	update(void *param)
 			}
 			i++;
 		}
-		move_mobs(mlx->data);
-			i = 0;
-			j = 0;
-
+		if (move_mobs(mlx->data))
+			mlx_loop_end(mlx->mlx);
+		i = 0;
+		j = 0;
 		while (mlx->data->map[i])
 		{
 			j = 0;
@@ -171,6 +174,7 @@ int	so_long(t_data *data)
 		mlx_loop_hook(mlx->mlx, update, mlx);
 	}
 	mlx_loop(mlx->mlx);
+	ft_printf("\033[1;33mFinal Score : %d \033[0m\n", mlx->score);
 	ft_destroy(mlx);
 	return (0);
 }

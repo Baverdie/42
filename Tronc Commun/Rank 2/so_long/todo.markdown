@@ -1,7 +1,7 @@
 - change players
 - night mode
-- dash
 - random boss spawn
 - dash reloading
 - Score screen
 - retry screen
+- Game over screen

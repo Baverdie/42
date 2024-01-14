@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 05:10:06 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 07:07:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ typedef struct s_game_object {
 	int	exit_col;
 	int	obj;
 	int	nb_mobs;
+	int	ref_mob_score;
+	int	ref_col_score;
 }	t_game_object;
 
 typedef struct s_mob {
@@ -58,6 +60,7 @@ typedef struct s_mob {
 	int	pos_y;
 	int	initial_x;
 	int	initial_y;
+	int	is_alive;
 }	t_mob;
 
 typedef struct s_data {
@@ -118,7 +121,7 @@ void	ft_forward(t_mlx *mlx);
 void	ft_left(t_mlx *mlx);
 void	ft_backward(t_mlx *mlx);
 void	ft_right(t_mlx *mlx);
-void	ft_dash(t_mlx *mlx);
+int		ft_dash(t_mlx *mlx);
 
 // UTILS
 	//init
@@ -134,6 +137,7 @@ void	print_map_errors(t_data *data);
 void	print_path_map(t_data *data, int x, int y);
 int		ft_print_errors(char *err);
 int		ft_map(t_mlx *mlx);
+int		ft_str_display(t_mlx *mlx);
 
 	//copy
 void	copy_map(char **dest, char **src, int len);

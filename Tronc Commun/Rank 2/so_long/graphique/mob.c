@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 00:09:23 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 04:04:45 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 06:29:23 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	pos_mob(t_data *data)
 			if (data->map[i][j] == 'M')
 			{
 				data->mobs[counter_mob] = ft_calloc(sizeof(t_mob), 1);
+				data->mobs[counter_mob]->is_alive = 1;
+				data->mobs[counter_mob]->id = counter_mob;
 				data->mobs[counter_mob]->pos_x = j;
 				data->mobs[counter_mob]->pos_y = i;
 				data->mobs[counter_mob]->initial_x = j;
@@ -118,6 +120,8 @@ int	define_new_mob_pos(t_data *data, t_mob *mob, int rand)
 	if (rand == 3)
 		mob->pos_y++;
 	data->map[mob->pos_y][mob->pos_x] = 'M';
+	if (mob->pos_y == data->pos->player_row && mob->pos_x == data->pos->player_col)
+		return (-1);
 	return (0);
 }
 
@@ -129,6 +133,11 @@ int	move_mobs(t_data *data)
 	i = 0;
 	while (i < data->pos->nb_mobs)
 	{
+		if (data->mobs[i]->is_alive == 0)
+		{
+			i++;
+			continue ;
+		}
 		rd = -1;
 		if (rd == -1)
 		{
@@ -137,7 +146,10 @@ int	move_mobs(t_data *data)
 		}
 		rd = ft_check_rand_move(data, data->mobs[i], rd);
 		if (rd != -42)
-			define_new_mob_pos(data, data->mobs[i], rd);
+		{
+			if (define_new_mob_pos(data, data->mobs[i], rd) < 0)
+				return (1);
+		}
 		i++;
 	}
 	return (0);

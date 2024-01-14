@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:34:46 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 05:08:47 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 05:27:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	init(t_data *data)
 	data->errory = -1;
 	data->pos->obj = 0;
 	data->nb_0 = 0;
+	data->pos->ref_mob_score = 0;
+	data->pos->ref_col_score = 0;
 	if (read_map(data) == 0)
 		return (ft_print_errors(INVALID_MAP));
 	if (parse_map(data) == 0)

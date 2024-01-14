@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:33:09 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/13 21:48:34 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 06:56:17 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_forward(t_mlx *mlx)
 	{
 		if (mlx->data->map[y - 1][x] == 'C')
 			mlx->nb_col++;
-		if (mlx->data->map[y - 1][x] == 'E' && mlx->nb_col == mlx->data->pos->obj)
+		if ((mlx->data->map[y - 1][x] == 'E' && mlx->nb_col == mlx->data->pos->obj) || mlx->data->map[y - 1][x] == 'M' || mlx->data->map[y - 1][x] == 'B')
 			mlx_loop_end(mlx->mlx);
 		mlx->data->pos->player_row--;
 		mlx->nb_move += 1;
@@ -47,7 +47,7 @@ void	ft_backward(t_mlx *mlx)
 	{
 		if (mlx->data->map[y + 1][x] == 'C')
 			mlx->nb_col++;
-		if (mlx->data->map[y + 1][x] == 'E' && mlx->nb_col == mlx->data->pos->obj)
+		if ((mlx->data->map[y + 1][x] == 'E' && mlx->nb_col == mlx->data->pos->obj) || mlx->data->map[y + 1][x] == 'M' || mlx->data->map[y + 1][x] == 'B')
 			mlx_loop_end(mlx->mlx);
 		mlx->data->pos->player_row++;
 		mlx->nb_move += 1;
@@ -69,7 +69,7 @@ void	ft_right(t_mlx *mlx)
 	{
 		if (mlx->data->map[y][x + 1] == 'C')
 			mlx->nb_col++;
-		if (mlx->data->map[y][x + 1] == 'E' && mlx->nb_col == mlx->data->pos->obj)
+		if ((mlx->data->map[y][x + 1] == 'E' && mlx->nb_col == mlx->data->pos->obj) || mlx->data->map[y][x + 1] == 'M' || mlx->data->map[y][x + 1] == 'B')
 			mlx_loop_end(mlx->mlx);
 		mlx->data->pos->player_col++;
 		mlx->nb_move += 1;
@@ -91,7 +91,7 @@ void	ft_left(t_mlx *mlx)
 	{
 		if (mlx->data->map[y][x - 1] == 'C')
 			mlx->nb_col++;
-		if (mlx->data->map[y][x - 1] == 'E' && mlx->nb_col == mlx->data->pos->obj)
+		if ((mlx->data->map[y][x - 1] == 'E' && mlx->nb_col == mlx->data->pos->obj) || mlx->data->map[y][x - 1] == 'M' || mlx->data->map[y][x - 1] == 'B')
 			mlx_loop_end(mlx->mlx);
 		mlx->data->pos->player_col--;
 		mlx->nb_move += 1;
