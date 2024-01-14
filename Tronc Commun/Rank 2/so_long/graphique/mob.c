@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 00:09:23 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 01:38:57 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 04:04:45 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,55 @@ int	pos_mob(t_data *data)
 
 int	ft_check_rand_move(t_data *data, t_mob *mob, int rd)
 {
-	if (rd == 0)
-		if (mob->pos_x > 0 && data->map[mob->pos_y][mob->pos_x - 1] == '1' && data->map[mob->pos_y][mob->pos_x + 1] == 'E' && data->map[mob->pos_y][mob->pos_x + 1] == 'C')
-			return (1);
-	if (rd == 1)
-		if (mob->pos_y > 0 && data->map[mob->pos_y - 1][mob->pos_x] == '1' && data->map[mob->pos_y][mob->pos_x + 1] == 'E' && data->map[mob->pos_y][mob->pos_x + 1] == 'C')
-			return (1);
-	if (rd == 2)
-		if (mob->pos_x < data->nb_cols && data->map[mob->pos_y][mob->pos_x + 1] == '1' && data->map[mob->pos_y][mob->pos_x + 1] == 'E' && data->map[mob->pos_y][mob->pos_x + 1] == 'C')
-			return (1);
-	if (rd == 3)
-		if (mob->pos_y < data->nb_rows && data->map[mob->pos_y + 1][mob->pos_x] == '1' && data->map[mob->pos_y + 1][mob->pos_x] == 'E' && data->map[mob->pos_y + 1][mob->pos_x] == 'C')
-			return (1);
+	int	i;
+
+	i = 0;
+	while (i <= 4)
+	{
+		if (rd == 0)
+		{
+			if (mob->pos_x > 0 && (data->map[mob->pos_y][mob->pos_x - 1] != 'M' && data->map[mob->pos_y][mob->pos_x - 1] != '1' && data->map[mob->pos_y][mob->pos_x - 1] != 'E' && data->map[mob->pos_y][mob->pos_x - 1] != 'C'))
+				return (rd);
+			rd++;
+			i++;
+		}
+		if (rd == 1)
+		{
+			if (mob->pos_y > 0 && (data->map[mob->pos_y - 1][mob->pos_x] != 'M' && data->map[mob->pos_y - 1][mob->pos_x] != '1' && data->map[mob->pos_y - 1][mob->pos_x] != 'E' && data->map[mob->pos_y - 1][mob->pos_x] != 'C'))
+				return (rd);
+			rd++;
+			i++;
+		}
+		if (rd == 2)
+		{
+			if (mob->pos_x < data->nb_cols && (data->map[mob->pos_y][mob->pos_x + 1] != 'M' && data->map[mob->pos_y][mob->pos_x + 1] != '1' && data->map[mob->pos_y][mob->pos_x + 1] != 'E' && data->map[mob->pos_y][mob->pos_x + 1] != 'C'))
+				return (rd);
+			rd++;
+			i++;
+		}
+		if (rd == 3)
+		{
+			if (mob->pos_y < data->nb_rows && (data->map[mob->pos_y + 1][mob->pos_x] != 'M' && data->map[mob->pos_y + 1][mob->pos_x] != '1' && data->map[mob->pos_y + 1][mob->pos_x] != 'E' && data->map[mob->pos_y + 1][mob->pos_x] != 'C'))
+				return (rd);
+			rd = 0;
+			i++;
+		}
+	}
+	return (-42);
+}
+
+int	define_new_mob_pos(t_data *data, t_mob *mob, int rand)
+{
+	data->map[mob->pos_y][mob->pos_x] = '0';
+	if (rand == 0)
+		mob->pos_x--;
+	if (rand == 1)
+		mob->pos_y--;
+	if (rand == 2)
+		mob->pos_x++;
+	if (rand == 3)
+		mob->pos_y++;
+	data->map[mob->pos_y][mob->pos_x] = 'M';
 	return (0);
 }
 
@@ -90,15 +127,18 @@ int	move_mobs(t_data *data)
 	int	rd;
 
 	i = 0;
-	rd = -1;
 	while (i < data->pos->nb_mobs)
 	{
-		while (rd == -1 || ft_check_rand_move(data, data->mobs[i], rd))
+		rd = -1;
+		if (rd == -1)
 		{
 			srand(time(NULL));
 			rd = rand() % 4;
 		}
-		define_new_mob_pos(data, rd);
+		rd = ft_check_rand_move(data, data->mobs[i], rd);
+		if (rd != -42)
+			define_new_mob_pos(data, data->mobs[i], rd);
 		i++;
 	}
+	return (0);
 }

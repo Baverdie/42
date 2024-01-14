@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 01:38:13 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 05:10:06 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ typedef struct s_data {
 	char	**flood;
 	int		errorx;
 	int		errory;
+	int		nb_0;
 	struct	s_mob	**mobs;
 	struct s_game_object	*pos;
 }	t_data;
@@ -88,7 +89,8 @@ typedef struct	s_mlx {
 	int		img_size;
 	int		nb_move;
 	int		nb_col;
-	int		dir;
+	int		nb_frames;
+	int		score;
 	struct s_data	*data;
 	struct s_textures	*img;
 
@@ -109,12 +111,18 @@ int		pos_data(t_data *data);
 
 // GRAPHIQUE
 int		so_long(t_data *data);
+	// check
+int		check_dir(t_mlx *mlx);
+	// move
 void	ft_forward(t_mlx *mlx);
 void	ft_left(t_mlx *mlx);
 void	ft_backward(t_mlx *mlx);
 void	ft_right(t_mlx *mlx);
+void	ft_dash(t_mlx *mlx);
 
 // UTILS
+	//init
+int		init_vars(t_mlx *mlx, t_data *data);
 	// free
 void	ft_free(char **tab);
 void	free_data(t_data *data);
@@ -133,5 +141,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 
 	//MOB
 int		pos_mob(t_data *data);
+int		move_mobs(t_data *data);
 
 #endif

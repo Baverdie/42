@@ -11,9 +11,11 @@ SRCS = main.c \
 	parsing/parsing_map.c \
 	parsing/parsing_data_map.c \
 	utils/map.c \
+	utils/utils_dash.c \
 	utils/free.c \
 	utils/utils.c \
 	graphique/so_long.c \
+	graphique/dash.c \
 	graphique/move.c \
 	graphique/mob.c \
 

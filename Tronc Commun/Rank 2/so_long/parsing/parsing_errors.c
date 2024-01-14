@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 01:12:34 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 05:04:44 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	flood(int x, int y, t_data *data, int dir)
 	if (x < data->nb_rows && y <= data->nb_cols && data->flood[x][y] != '7')
 	{
 		data->flood[x][y] = '7';
+		data->nb_0++;
 		if (dir == 0)
 		{
 			flood(x + 1, y, data, 1);

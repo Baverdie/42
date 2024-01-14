@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:37:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/13 17:09:45 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/14 01:49:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void ft_destroy(t_mlx *mlx)
 		mlx_destroy_image(mlx->mlx, mlx->img->exit);
 	if (mlx->img->col)
 		mlx_destroy_image(mlx->mlx, mlx->img->col);
+	if (mlx->img->mob)
+		mlx_destroy_image(mlx->mlx, mlx->img->mob);
 	mlx_destroy_window(mlx->mlx, mlx->window);
 	mlx_destroy_display(mlx->mlx);
 	free(mlx->img);

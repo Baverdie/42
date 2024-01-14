@@ -1,6 +1,7 @@
 - change players
 - night mode
 - dash
-- mobs
 - random boss spawn
-- random mob direction
+- dash reloading
+- Score screen
+- retry screen
