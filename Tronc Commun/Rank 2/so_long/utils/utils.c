@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:46:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 07:23:31 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:41:37 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	init_vars(t_mlx *mlx, t_data *data)
 	mlx->data->nb_0 -= 2;
 	mlx->data->pos->ref_mob_score = 10;
 	mlx->data->pos->ref_col_score = 5;
+	mlx->data->pos->ref_exit_score = 1;
 	mlx->score = 0;
 	return (0);
 }

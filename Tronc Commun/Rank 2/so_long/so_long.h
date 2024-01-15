@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 07:07:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:59:03 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_game_object {
 	int	nb_mobs;
 	int	ref_mob_score;
 	int	ref_col_score;
+	int	ref_exit_score;
 }	t_game_object;
 
 typedef struct s_mob {
@@ -130,7 +131,6 @@ int		init_vars(t_mlx *mlx, t_data *data);
 void	ft_free(char **tab);
 void	free_data(t_data *data);
 void	ft_destroy(t_mlx *mlx);
-
 	//print
 void	print_map_full(char **map); //delete
 void	print_map_errors(t_data *data);
@@ -138,7 +138,6 @@ void	print_path_map(t_data *data, int x, int y);
 int		ft_print_errors(char *err);
 int		ft_map(t_mlx *mlx);
 int		ft_str_display(t_mlx *mlx);
-
 	//copy
 void	copy_map(char **dest, char **src, int len);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -146,5 +145,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 	//MOB
 int		pos_mob(t_data *data);
 int		move_mobs(t_data *data);
+int		kill_mob(t_data *data, int y, int x);
 
 #endif
