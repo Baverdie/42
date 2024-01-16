@@ -6,33 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 00:09:23 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 06:29:23 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:13:44 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-int	count_mob(t_data *data)
-{
-	int	counter_mob;
-	int	i;
-	int	j;
-
-	i = 0;
-	counter_mob = 0;
-	while (data->map[i])
-	{
-		j = 0;
-		while (data->map[i][j])
-		{
-			if (data->map[i][j] == 'M')
-				counter_mob++;
-			j++;
-		}
-		i++;
-	}
-	return (counter_mob);
-}
 
 int	pos_mob(t_data *data)
 {
@@ -41,9 +19,9 @@ int	pos_mob(t_data *data)
 	int	j;
 
 	data->mobs = ft_calloc(sizeof(t_mob *), count_mob(data));
-	data->pos->nb_mobs = count_mob(data);
 	if (data->mobs == NULL)
 		return (0);
+	data->pos->nb_mobs = count_mob(data);
 	i = 0;
 	counter_mob = 0;
 	while (data->map[i])
@@ -53,13 +31,7 @@ int	pos_mob(t_data *data)
 		{
 			if (data->map[i][j] == 'M')
 			{
-				data->mobs[counter_mob] = ft_calloc(sizeof(t_mob), 1);
-				data->mobs[counter_mob]->is_alive = 1;
-				data->mobs[counter_mob]->id = counter_mob;
-				data->mobs[counter_mob]->pos_x = j;
-				data->mobs[counter_mob]->pos_y = i;
-				data->mobs[counter_mob]->initial_x = j;
-				data->mobs[counter_mob]->initial_y = i;
+				init_mob(data, counter_mob, i, j);
 				counter_mob++;
 			}
 			j++;
@@ -121,7 +93,10 @@ int	define_new_mob_pos(t_data *data, t_mob *mob, int rand)
 		mob->pos_y++;
 	data->map[mob->pos_y][mob->pos_x] = 'M';
 	if (mob->pos_y == data->pos->player_row && mob->pos_x == data->pos->player_col)
+	{
+		ft_printf("\033[1;31mGame Over !\033[0m\n");
 		return (-1);
+	}
 	return (0);
 }
 

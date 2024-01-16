@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/15 15:59:03 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:39:59 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct s_data {
 	int		errorx;
 	int		errory;
 	int		nb_0;
+	int		dash_count;
 	struct	s_mob	**mobs;
 	struct s_game_object	*pos;
 }	t_data;
@@ -116,7 +117,7 @@ int		pos_data(t_data *data);
 // GRAPHIQUE
 int		so_long(t_data *data);
 	// check
-int		check_dir(t_mlx *mlx);
+int		check_best_dir(t_mlx *mlx);
 	// move
 void	ft_forward(t_mlx *mlx);
 void	ft_left(t_mlx *mlx);
@@ -138,13 +139,16 @@ void	print_path_map(t_data *data, int x, int y);
 int		ft_print_errors(char *err);
 int		ft_map(t_mlx *mlx);
 int		ft_str_display(t_mlx *mlx);
+int		ft_print_dash(t_mlx *mlx);
 	//copy
 void	copy_map(char **dest, char **src, int len);
 int		ft_strcmp(const char *s1, const char *s2);
 
 	//MOB
+int	init_mob(t_data *data, int counter_mob, int i, int j);
 int		pos_mob(t_data *data);
 int		move_mobs(t_data *data);
 int		kill_mob(t_data *data, int y, int x);
+int		count_mob(t_data *data);
 
 #endif

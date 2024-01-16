@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/15 15:42:42 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:19:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_map(t_mlx *mlx)
 			else if ((i == mlx->data->pos->player_row && j == mlx->data->pos->player_col) || mlx->data->map[i][j] == 'P')
 			{
 				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player, j * 64, i * 64);
-				if (mlx->data->map[i][j] != 'E')
+				if (mlx->data->map[i][j] != 'E' || mlx->data->map[i][j] != 'T' || mlx->data->map[i][j] != '2')
 					mlx->data->map[i][j] = '0';
 			}
 			else if (mlx->data->map[i][j] == 'E')
@@ -79,6 +79,8 @@ int	ft_map(t_mlx *mlx)
 				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->exit, j * 64, i * 64);
 			}
 			else if (mlx->data->map[i][j] == '0')
+				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->ground, j * 64, i * 64);
+			else if (mlx->data->map[i][j] == '2')
 				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->ground, j * 64, i * 64);
 			else if (mlx->data->map[i][j] == 'C')
 				mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->col, j * 64, i * 64);
@@ -174,7 +176,7 @@ int	so_long(t_data *data)
 		mlx_loop_hook(mlx->mlx, update, mlx);
 	}
 	mlx_loop(mlx->mlx);
-	ft_printf("\033[1;33mFinal Score : %d \033[0m\n", mlx->score);
+	ft_printf("\033[1;32mYou Win !\n\033[1;37mFinal Score : %d \033[0m\nTotal Mouvements : %d\n", mlx->score, mlx->nb_move);
 	ft_destroy(mlx);
 	return (0);
 }
