@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 01:01:09 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:39:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	so_long(data);
+	free(data->mobs);
 	free_data(data);
 	return (EXIT_SUCCESS);
 }

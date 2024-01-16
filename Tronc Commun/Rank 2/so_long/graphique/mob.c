@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 00:09:23 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 16:13:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:29:58 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	pos_mob(t_data *data)
 
 	data->mobs = ft_calloc(sizeof(t_mob *), count_mob(data));
 	if (data->mobs == NULL)
-		return (0);
+		return (ft_print_errors(ERROR_LABDA));
 	data->pos->nb_mobs = count_mob(data);
 	i = 0;
 	counter_mob = 0;
@@ -84,19 +84,28 @@ int	define_new_mob_pos(t_data *data, t_mob *mob, int rand)
 {
 	data->map[mob->pos_y][mob->pos_x] = '0';
 	if (rand == 0)
+	{
 		mob->pos_x--;
+		mob->dir = 0;
+	}
 	if (rand == 1)
+	{
 		mob->pos_y--;
+		mob->dir = 1;
+	}
 	if (rand == 2)
+	{
 		mob->pos_x++;
+		mob->dir = 2;
+	}
 	if (rand == 3)
+	{
 		mob->pos_y++;
+		mob->dir = 3;
+	}
 	data->map[mob->pos_y][mob->pos_x] = 'M';
 	if (mob->pos_y == data->pos->player_row && mob->pos_x == data->pos->player_col)
-	{
-		ft_printf("\033[1;31mGame Over !\033[0m\n");
 		return (-1);
-	}
 	return (0);
 }
 

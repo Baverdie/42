@@ -6,26 +6,26 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 04:52:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 16:39:06 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:00:54 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	ft_print_dash(t_mlx *mlx)
+int	ft_print_score(t_mlx *mlx)
 {
 	if (mlx->data->dash_count == 2)
 	{
-		ft_printf("\033[1;31mDouble Kill +20 points !\033[0m\n");
-		mlx->score += 20;
+		ft_printf("\033[1;31mDouble Kill +10 points !\033[0m\n");
+		mlx->score += 10;
 	}
 	else if (mlx->data->dash_count == 3)
 	{
-		ft_printf("\033[1;31mTriple Kill +30 points !\033[0m\n");
-		mlx->score += 30;
+		ft_printf("\033[1;31mTriple Kill +50 points !\033[0m\n");
+		mlx->score += 50;
 	}
 	mlx->data->dash_count = 0;
-	ft_printf("\033[1;37mScore : %d\n\033[0mMovements : %d\n", mlx->score, mlx->nb_move);
+	ft_printf("\033[1;37mScore : %d\033[0m\n", mlx->score);
 	return (0);
 }
 
@@ -115,5 +115,7 @@ int	check_best_dir(t_mlx *mlx)
 		dir++;
 	}
 	mlx->score += best_score;
+	if (best_score > 0)
+		ft_print_score(mlx);
 	return(best_dir);
 }

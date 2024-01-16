@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 16:39:59 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:01:40 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_mob {
 	int	initial_x;
 	int	initial_y;
 	int	is_alive;
+	int	dir;
 }	t_mob;
 
 typedef struct s_data {
@@ -80,12 +81,16 @@ typedef struct s_data {
 }	t_data;
 
 typedef struct	s_textures {
-	void	*player;
+	void	*player_left;
+	// void	*player_top;
+	void	*player_right;
 	void	*exit;
 	void	*wall;
 	void	*col;
 	void	*ground;
-	void	*mob;
+	void	*mob_left;
+	// void	*mob_top;
+	void	*mob_right;
 }	t_textures;
 
 typedef struct	s_mlx {
@@ -96,6 +101,7 @@ typedef struct	s_mlx {
 	int		nb_col;
 	int		nb_frames;
 	int		score;
+	int		dir_player;
 	struct s_data	*data;
 	struct s_textures	*img;
 
@@ -116,6 +122,7 @@ int		pos_data(t_data *data);
 
 // GRAPHIQUE
 int		so_long(t_data *data);
+void	ft_event(t_mlx *mlx);
 	// check
 int		check_best_dir(t_mlx *mlx);
 	// move
@@ -139,7 +146,9 @@ void	print_path_map(t_data *data, int x, int y);
 int		ft_print_errors(char *err);
 int		ft_map(t_mlx *mlx);
 int		ft_str_display(t_mlx *mlx);
-int		ft_print_dash(t_mlx *mlx);
+int		ft_print_score(t_mlx *mlx);
+void	display_element(t_mlx *mlx, int i, int j);
+void	display_mob(t_mlx *mlx, int i, int j);
 	//copy
 void	copy_map(char **dest, char **src, int len);
 int		ft_strcmp(const char *s1, const char *s2);

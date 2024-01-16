@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 21:48:40 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 16:39:12 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:53:12 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int	ft_dash_right(t_mlx *mlx, char **map, int	x, int	y)
 				mlx_loop_end(mlx->mlx);	
 			if (i == 3 && map[y][x + i] != 'E')
 				mlx->data->pos->player_col = x + i;
+			mlx->dir_player = 2;
 			ft_map(mlx);
 			i++;
 		}
+		return (0);
 	}
-	else
-		return (1);
-	return (0);
+	return (1);
 }
 
 int	ft_dash_left(t_mlx *mlx, char **map, int	x, int	y)
@@ -61,13 +61,13 @@ int	ft_dash_left(t_mlx *mlx, char **map, int	x, int	y)
 				mlx_loop_end(mlx->mlx);	
 			if (i == 3 && map[y][x - i] != 'E')
 				mlx->data->pos->player_col = x - i;
+			mlx->dir_player = 0;
 			ft_map(mlx);
 			i++;
 		}
+		return (0);
 	}
-	else
-		return (1);
-	return (0);
+	return (1);
 }
 
 int	ft_dash_top(t_mlx *mlx, char **map, int	x, int	y)
@@ -90,13 +90,13 @@ int	ft_dash_top(t_mlx *mlx, char **map, int	x, int	y)
 				mlx_loop_end(mlx->mlx);	
 			if (i == 3 && map[y - i][x] != 'E')
 				mlx->data->pos->player_row = y - i;
+			mlx->dir_player = 1;
 			ft_map(mlx);
 			i++;
 		}
+		return (0);
 	}
-	else
-		return (1);
-	return (0);
+	return (1);
 }
 
 int	ft_dash_bottom(t_mlx *mlx, char **map, int	x, int	y)
@@ -119,13 +119,13 @@ int	ft_dash_bottom(t_mlx *mlx, char **map, int	x, int	y)
 				mlx_loop_end(mlx->mlx);	
 			if (i == 3 && map[y + i][x] != 'E')
 				mlx->data->pos->player_row = y + i;
+			mlx->dir_player = 3;
 			ft_map(mlx);
 			i++;
 		}
+		return (0);
 	}
-	else
-		return (1);
-	return (0);
+	return (1);
 }
 
 int ft_dash(t_mlx *mlx)
@@ -146,6 +146,6 @@ int ft_dash(t_mlx *mlx)
 	if (dir == 3)
 		ft_dash_bottom(mlx, mlx->data->map, mlx->data->pos->player_col, mlx->data->pos->player_row);
 	mlx->nb_move += 1;
-	ft_print_dash(mlx);
+	ft_printf("Movements : %d\n", mlx->nb_move);
 	return (0);
 }
