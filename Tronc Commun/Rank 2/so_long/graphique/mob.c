@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 00:09:23 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 12:56:42 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:21:06 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,36 +43,26 @@ int	pos_mob(t_data *data)
 int	ft_check_rand_move(t_data *data, t_mob *mob, int rd)
 {
 	int	i;
+	int	result;
 
 	i = 0;
+	result = 0;
 	while (i <= 4)
 	{
-		if (rd == 0)
+		if (rd == 0 || rd == 2)
 		{
-			if (mob->pos_x > 0 && (data->map[mob->pos_y][mob->pos_x - 1] != 'M' && data->map[mob->pos_y][mob->pos_x - 1] != '1' && data->map[mob->pos_y][mob->pos_x - 1] != 'E' && data->map[mob->pos_y][mob->pos_x - 1] != 'C'))
-				return (rd);
+			result = lateral(data, mob, rd);
+			if (result != 1)
+				return (result);
 			rd++;
 			i++;
 		}
-		if (rd == 1)
+		if (rd == 1 || rd == 3)
 		{
-			if (mob->pos_y > 0 && (data->map[mob->pos_y - 1][mob->pos_x] != 'M' && data->map[mob->pos_y - 1][mob->pos_x] != '1' && data->map[mob->pos_y - 1][mob->pos_x] != 'E' && data->map[mob->pos_y - 1][mob->pos_x] != 'C'))
-				return (rd);
+			result = vertical(data, mob, rd);
+			if (result != 2)
+				return (result);
 			rd++;
-			i++;
-		}
-		if (rd == 2)
-		{
-			if (mob->pos_x < data->nb_cols && (data->map[mob->pos_y][mob->pos_x + 1] != 'M' && data->map[mob->pos_y][mob->pos_x + 1] != '1' && data->map[mob->pos_y][mob->pos_x + 1] != 'E' && data->map[mob->pos_y][mob->pos_x + 1] != 'C'))
-				return (rd);
-			rd++;
-			i++;
-		}
-		if (rd == 3)
-		{
-			if (mob->pos_y < data->nb_rows && (data->map[mob->pos_y + 1][mob->pos_x] != 'M' && data->map[mob->pos_y + 1][mob->pos_x] != '1' && data->map[mob->pos_y + 1][mob->pos_x] != 'E' && data->map[mob->pos_y + 1][mob->pos_x] != 'C'))
-				return (rd);
-			rd = 0;
 			i++;
 		}
 	}
@@ -83,27 +73,24 @@ int	define_new_mob_pos(t_data *data, t_mob *mob, int rand)
 {
 	data->map[mob->pos_y][mob->pos_x] = '0';
 	if (rand == 0)
-	{
 		mob->pos_x--;
+	if (rand == 0)
 		mob->dir = 0;
-	}
 	if (rand == 1)
-	{
 		mob->pos_y--;
+	if (rand == 1)
 		mob->dir = 1;
-	}
 	if (rand == 2)
-	{
 		mob->pos_x++;
+	if (rand == 2)
 		mob->dir = 2;
-	}
 	if (rand == 3)
-	{
 		mob->pos_y++;
+	if (rand == 3)
 		mob->dir = 3;
-	}
 	data->map[mob->pos_y][mob->pos_x] = 'M';
-	if (mob->pos_y == data->pos->player_row && mob->pos_x == data->pos->player_col)
+	if (mob->pos_y == data->pos->player_row
+		&& mob->pos_x == data->pos->player_col)
 		return (-1);
 	return (0);
 }
@@ -123,10 +110,9 @@ int	move_mobs(t_data *data)
 		}
 		rd = -1;
 		if (rd == -1)
-		{
 			srand(time(NULL));
+		if (rd == -1)
 			rd = rand() % 4;
-		}
 		rd = ft_check_rand_move(data, data->mobs[i], rd);
 		if (rd != -42)
 		{

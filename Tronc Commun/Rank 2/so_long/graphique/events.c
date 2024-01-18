@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:57:34 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 19:58:35 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:47:59 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_key(int keycode, void *param)
 	return (0);
 }
 
-void ft_event(t_mlx *mlx)
+void	ft_event(t_mlx *mlx)
 {
 	mlx_on_event(mlx->mlx, mlx->window, MLX_KEYDOWN, ft_key, mlx);
 	mlx_on_event(mlx->mlx, mlx->window, MLX_WINDOW_EVENT, ft_close, mlx);

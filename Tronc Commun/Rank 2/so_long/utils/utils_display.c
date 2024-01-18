@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:44:41 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 13:06:06 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:29:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	display_player(t_mlx *mlx, int i, int j)
 		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player_right, j * 64, i * 64);
 	else if (mlx->dir_player == 2)
 		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player_right, j * 64, i * 64);
-	if (mlx->data->map[i][j] != 'E' || mlx->data->map[i][j] != 'T' || mlx->data->map[i][j] != '2')
+	if (mlx->data->map[i][j] != 'E' && mlx->data->map[i][j] != 'T' && mlx->data->map[i][j] != '2')
 		mlx->data->map[i][j] = '0';
 }
 
@@ -62,6 +62,8 @@ void	display_element(t_mlx *mlx, int i, int j)
 		display_player(mlx, i, j);
 	else if (mlx->data->map[i][j] == 'E')
 		display_exit(mlx, i, j);
+	else if (mlx->data->map[i][j] == 'T')
+		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->tombstone, j * 64, i * 64);
 	else if (mlx->data->map[i][j] == '0')
 		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->ground, j * 64, i * 64);
 	else if (mlx->data->map[i][j] == '2')

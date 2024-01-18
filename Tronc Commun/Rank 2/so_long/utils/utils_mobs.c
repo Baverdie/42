@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:54:38 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 12:35:01 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:21:12 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,57 @@ int	count_mob(t_data *data)
 		i++;
 	}
 	return (counter_mob);
+}
+
+
+int	lateral(t_data *data, t_mob *mob, int rd)
+{
+	if (rd == 0)
+	{
+		if (mob->pos_x > 0 && (data->map[mob->pos_y][mob->pos_x - 1] != 'M'
+			&& data->map[mob->pos_y][mob->pos_x - 1] != '1'
+			&& data->map[mob->pos_y][mob->pos_x - 1] != 'E'
+			&& data->map[mob->pos_y][mob->pos_x - 1] != 'C'))
+			return (rd);
+		rd++;
+		i++;
+	}
+	if (rd == 2)
+	{
+		if (mob->pos_x < data->nb_cols
+			&& (data->map[mob->pos_y][mob->pos_x + 1] != 'M'
+			&& data->map[mob->pos_y][mob->pos_x + 1] != '1'
+			&& data->map[mob->pos_y][mob->pos_x + 1] != 'E'
+			&& data->map[mob->pos_y][mob->pos_x + 1] != 'C'))
+			return (rd);
+		rd++;
+		i++;
+	}
+	return (1);
+}
+
+int	vertical(t_data *data, t_mob *mob, int rd)
+{
+	if (rd == 1)
+	{
+		if (mob->pos_y > 0 && (data->map[mob->pos_y - 1][mob->pos_x] != 'M'
+			&& data->map[mob->pos_y - 1][mob->pos_x] != '1'
+			&& data->map[mob->pos_y - 1][mob->pos_x] != 'E'
+			&& data->map[mob->pos_y - 1][mob->pos_x] != 'C'))
+			return (rd);
+		rd++;
+		i++;
+	}
+	if (rd == 3)
+	{
+		if (mob->pos_y < data->nb_rows
+			&& (data->map[mob->pos_y + 1][mob->pos_x] != 'M'
+			&& data->map[mob->pos_y + 1][mob->pos_x] != '1'
+			&& data->map[mob->pos_y + 1][mob->pos_x] != 'E'
+			&& data->map[mob->pos_y + 1][mob->pos_x] != 'C'))
+			return (rd);
+		rd = 0;
+		i++;
+	}
+	return (2);
 }

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:46:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 12:42:55 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:36:03 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,15 @@ int	ft_str_display(t_mlx *mlx)
 	free(movs);
 	free(score);
 	return (0);
+}
+
+void	ft_print_end(t_mlx *mlx)
+{
+	if (mlx->nb_col == mlx->data->pos->obj)
+		ft_printf("\n\033[1;32mYou Win !\n\033[0m");
+	else
+		ft_printf("\n\033[1;31mGame over !\n\033[0m");
+	ft_printf("\033[1;37mFinal Score : %d \033[0m\nTotal Mouvements : %d\n", mlx->score, mlx->nb_move);
 }
 
 void print_map_full(char **map)
