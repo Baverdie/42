@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 00:09:23 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 19:29:58 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:56:42 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 int	pos_mob(t_data *data)
 {
-	int	counter_mob;
 	int	i;
 	int	j;
 
 	data->mobs = ft_calloc(sizeof(t_mob *), count_mob(data));
-	if (data->mobs == NULL)
+	if (!data->mobs)
 		return (ft_print_errors(ERROR_LABDA));
 	data->pos->nb_mobs = count_mob(data);
 	i = 0;
-	counter_mob = 0;
+	data->counter_mob = 0;
 	while (data->map[i])
 	{
 		j = 0;
@@ -31,8 +30,8 @@ int	pos_mob(t_data *data)
 		{
 			if (data->map[i][j] == 'M')
 			{
-				init_mob(data, counter_mob, i, j);
-				counter_mob++;
+				init_mob(data, data->counter_mob, i, j);
+				data->counter_mob++;
 			}
 			j++;
 		}

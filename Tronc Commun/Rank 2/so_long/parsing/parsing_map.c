@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/13 18:19:26 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:24:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	parse_map(t_data *data)
 	}
 	close(data->fd);
 	free(line);
+	printf("cols = %d\nrows = %d\n", data->nb_cols, data->nb_rows);
 	return (1);
 }
 
@@ -50,7 +51,7 @@ int	read_map(t_data *data)
 		return (ft_print_errors(INVALID_FILE));
 	file = get_next_line(data->fd);
 	data->nb_rows = 0;
-	data->nb_cols = 0;
+	data->nb_cols = ft_strlen(file) - 1;
 	while (file)
 	{
 		if (ft_strlen(file) < 3)
@@ -60,7 +61,6 @@ int	read_map(t_data *data)
 		}
 		else if (ft_strlen(file) > 1)
 			data->nb_rows++;
-		data->nb_cols = ft_strlen(file) - 1;
 		free(file);
 		file = get_next_line(data->fd);
 	}

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 20:01:40 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:17:59 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-# define WIDTH (data->nb_cols + 1) * 64
+# define WIDTH data->nb_cols * 64
 # define HEIGHT data->nb_rows * 64
 
 # define TITLE_ERROR "\033[0;31mError\033[0m\n"
@@ -76,6 +76,7 @@ typedef struct s_data {
 	int		errory;
 	int		nb_0;
 	int		dash_count;
+	int		counter_mob;
 	struct	s_mob	**mobs;
 	struct s_game_object	*pos;
 }	t_data;

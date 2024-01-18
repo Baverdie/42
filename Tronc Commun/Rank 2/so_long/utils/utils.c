@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:46:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 19:29:52 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:42:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ int	ft_str_display(t_mlx *mlx)
 	score = ft_strjoin("Score : ", nb_score);
 	mlx_string_put(mlx->mlx, mlx->window, 32, 25, 0xffFFFFFF, movs);
 	mlx_string_put(mlx->mlx, mlx->window, width, 25, 0xffFFFFFF, score);
+	free(nb_score);
 	free(nb_moves);
 	free(movs);
+	free(score);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:44:41 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 19:56:30 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:06:06 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	display_exit(t_mlx *mlx, int i, int j)
 	if (mlx->nb_col == mlx->data->pos->obj)
 	{
 		mlx_destroy_image(mlx->mlx, mlx->img->exit);
-		mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/temple_open.png", &mlx->img_size, &mlx->img_size);
+		mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/temple_open.png", &mlx->img_size, &mlx->img_size);
 	}
 	else if (mlx->nb_col > 0)
 	{
 		mlx_destroy_image(mlx->mlx, mlx->img->exit);
-		mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/temple_half-open.png", &mlx->img_size, &mlx->img_size);
+		mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/temple_half-open.png", &mlx->img_size, &mlx->img_size);
 	}
 	mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->exit, j * 64, i * 64);
 }

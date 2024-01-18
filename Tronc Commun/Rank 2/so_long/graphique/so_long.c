@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 20:01:20 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:15:25 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,26 @@ int	ft_map(t_mlx *mlx)
 
 void	set_img(t_mlx *mlx)
 {
-	mlx->img->wall = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/ground2.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->ground = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/ground.png", &mlx->img_size, &mlx->img_size);
-	// mlx->img->player_top = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/zenitsu.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->player_right = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/zenitsu_right.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->player_left = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/zenitsu_left.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->exit = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/temple_close.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->col = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/sabre_mid.png", &mlx->img_size, &mlx->img_size);
-	// mlx->img->mob_top = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/muzan.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->mob_right = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/muzan_right.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->mob_left = mlx_png_file_to_image(mlx->mlx, "textures/Theme/Demon_Slayer/muzan_left.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->wall = mlx_png_file_to_image(mlx->mlx, \
+		"textures/ground2.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->ground = mlx_png_file_to_image(mlx->mlx, \
+		"textures/ground.png", &mlx->img_size, &mlx->img_size);
+	// mlx->img->player_top = mlx_png_file_to_image(mlx->mlx, '\'
+		// "textures/zenitsu.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->player_right = mlx_png_file_to_image(mlx->mlx, \
+		"textures/zenitsu_right.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->player_left = mlx_png_file_to_image(mlx->mlx, \
+		"textures/zenitsu_left.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->exit = mlx_png_file_to_image(mlx->mlx, \
+		"textures/temple_close.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->col = mlx_png_file_to_image(mlx->mlx, \
+		"textures/sabre_mid.png", &mlx->img_size, &mlx->img_size);
+	// mlx->img->mob_top = mlx_png_file_to_image(mlx->mlx, '\'
+		// "textures/muzan.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->mob_right = mlx_png_file_to_image(mlx->mlx, \
+		"textures/muzan_right.png", &mlx->img_size, &mlx->img_size);
+	mlx->img->mob_left = mlx_png_file_to_image(mlx->mlx, \
+		"textures/muzan_left.png", &mlx->img_size, &mlx->img_size);
 }
 
 int	update(void *param)
