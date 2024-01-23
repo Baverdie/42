@@ -1,6 +1,6 @@
 NAME = so_long
-CC = clang
-CFLAGS = -Wall -Wextra -Werror -g3
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 LIBS = ft_printf/libftprintf.a \
 		ft_libft/libft.a \
 		MacroLibX/libmlx.so -lSDL2
@@ -16,6 +16,8 @@ SRCS = main.c \
 	utils/utils_display.c \
 	utils/free.c \
 	utils/utils.c \
+	utils/utils_graphique.c \
+	utils/utils_score.c \
 	graphique/so_long.c \
 	graphique/dash.c \
 	graphique/move.c \
@@ -30,35 +32,37 @@ COLOR = \033[38;5;197m
 BANNER = @printf "$(COLOR) ___  _____       __    _____  _  _  ___ \n"
 BANNER1 = printf "$(COLOR)/ __)(  _  )     (  )  (  _  )( \( )/ __)\n"
 BANNER2 = printf "$(COLOR)\__ \ )(_)(  ___  )(__  )(_)(  )  (( (_-.\n"
-BANNER3 = printf "$(COLOR)(___/(_____)(___)(____)(_____)(_)\_)\___/\n\n"
+BANNER3 = printf "$(COLOR)(___/(_____)(___)(____)(_____)(_)\_)\___/\n\n\033[0m"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
+all: $(NAME)
+
 load:
+	@sleep 0.4
 	@printf "|\033[0;31m▰     34%%\033[0m|"
 	@sleep 0.4
 	@printf "\r|\033[0;31m▰▰    69%%\033[0m|"
 	@sleep 0.4
 	@printf "\r|\033[0;31m▰▰▰   82%%\033[0m|"
 	@sleep 0.4
-	@printf "\r|\033[0;31m▰▰▰▰ 420%%\033[0m|"
+	@printf "\r|\033[0;31m▰▰▰▰ 100%%\033[0m|"
 	@sleep 0.4
-	@printf "\r|\033[0;31m▰▰▰▰ 100%%\033[0m|\n"
-
-all: $(NAME)
+	@printf "\r"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
+	$(HEADER)
+	@make --no-print-directory load
 	@echo "\033[38;5;48mMLX42 is ready !\033[0m"
-	# @make load
+	@make --no-print-directory load
 	@make -j -s -C ft_libft/
-	# @make load
+	@make --no-print-directory load
 	@make -j -s -C ft_printf/
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
-	$(HEADER)
-	# @make load
+	@make --no-print-directory load
 	@echo "\033[38;5;48mso_long is ready !\033[0m"
 
 clean:

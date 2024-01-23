@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:33:09 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:47:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:53:57 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_forward(t_mlx *mlx)
 			mlx->score += mlx->data->pos->ref_col_score;
 			ft_printf("\033[1;37mScore : %d\033[0m\n", mlx->score);
 		}
-		if ((mlx->data->map[y - 1][x] == 'E'
+		if ((mlx->data->map[mlx->data->pos->player_row - 1][x] == 'E'
 			&& mlx->nb_col == mlx->data->pos->obj)
 			|| mlx->data->map[mlx->data->pos->player_row - 1][x] == 'M'
 			|| mlx->data->map[mlx->data->pos->player_row - 1][x] == 'B')

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:16:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/10 17:22:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:12:47 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static int	check_end(char *buf)
 	}
 	return (0);
 }
+
 static char	*get_line(char *line)
 {
 	unsigned int	i;

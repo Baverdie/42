@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:41:31 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 12:33:29 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:52:13 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	so_long(data);
-	return (EXIT_SUCCESS);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:54:38 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:21:12 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:06:19 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	init_mob(t_data *data, int counter_mob, int i, int j)
 	data->mobs[counter_mob]->pos_y = i;
 	data->mobs[counter_mob]->initial_x = j;
 	data->mobs[counter_mob]->initial_y = i;
+	data->mobs[counter_mob]->tombstone = 0;
 	return (0);
 }
 
@@ -48,7 +49,6 @@ int	count_mob(t_data *data)
 	return (counter_mob);
 }
 
-
 int	lateral(t_data *data, t_mob *mob, int rd)
 {
 	if (rd == 0)
@@ -59,7 +59,6 @@ int	lateral(t_data *data, t_mob *mob, int rd)
 			&& data->map[mob->pos_y][mob->pos_x - 1] != 'C'))
 			return (rd);
 		rd++;
-		i++;
 	}
 	if (rd == 2)
 	{
@@ -70,9 +69,8 @@ int	lateral(t_data *data, t_mob *mob, int rd)
 			&& data->map[mob->pos_y][mob->pos_x + 1] != 'C'))
 			return (rd);
 		rd++;
-		i++;
 	}
-	return (1);
+	return (rd);
 }
 
 int	vertical(t_data *data, t_mob *mob, int rd)
@@ -85,7 +83,6 @@ int	vertical(t_data *data, t_mob *mob, int rd)
 			&& data->map[mob->pos_y - 1][mob->pos_x] != 'C'))
 			return (rd);
 		rd++;
-		i++;
 	}
 	if (rd == 3)
 	{
@@ -96,7 +93,29 @@ int	vertical(t_data *data, t_mob *mob, int rd)
 			&& data->map[mob->pos_y + 1][mob->pos_x] != 'C'))
 			return (rd);
 		rd = 0;
+	}
+	return (rd);
+}
+
+void	print_map_mob(t_mlx *mlx)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	if (move_mobs(mlx->data))
+		mlx_loop_end(mlx->mlx);
+	while (mlx->data->map[i])
+	{
+		j = 0;
+		while (mlx->data->map[i][j])
+		{
+			if (mlx->data->map[i][j] == 'M')
+				display_mob(mlx, i, j);
+			j++;
+		}
 		i++;
 	}
-	return (2);
+	mlx->nb_frames = 0;
 }

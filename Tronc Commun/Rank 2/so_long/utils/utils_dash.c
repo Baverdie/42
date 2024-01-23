@@ -6,46 +6,46 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 04:52:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/16 19:00:54 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:07:11 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	ft_print_score(t_mlx *mlx)
+int	ft_print_score(t_mlx *mlx, int nb_kill)
 {
-	if (mlx->data->dash_count == 2)
+	if (nb_kill == 1)
+		ft_printf("\033[1;31mOne Kill !\033[0m\n");
+	if (nb_kill == 2)
 	{
 		ft_printf("\033[1;31mDouble Kill +10 points !\033[0m\n");
 		mlx->score += 10;
 	}
-	else if (mlx->data->dash_count == 3)
+	else if (nb_kill == 3)
 	{
 		ft_printf("\033[1;31mTriple Kill +50 points !\033[0m\n");
 		mlx->score += 50;
 	}
-	mlx->data->dash_count = 0;
 	ft_printf("\033[1;37mScore : %d\033[0m\n", mlx->score);
 	return (0);
 }
 
-int	kill_mob(t_data *data, int y, int x)
+int	kill_mob(t_mlx *mlx, int y, int x)
 {
 	int	i;
 
 	i = 0;
-	while (i <= data->pos->nb_mobs)
+	while (i <= mlx->data->pos->nb_mobs)
 	{
-		if (data->mobs[i]->is_alive == 0)
+		if (mlx->data->mobs[i]->is_alive == 0)
 		{
 			i++;
 			continue ;
 		}
-		if (data->mobs[i]->pos_x == x && data->mobs[i]->pos_y == y)
+		if (mlx->data->mobs[i]->pos_x == x && mlx->data->mobs[i]->pos_y == y)
 		{
-			data->mobs[i]->is_alive = 0;
-			data->map[y][x] = 'T';
-			data->dash_count++;
+			mlx->data->mobs[i]->is_alive = 0;
+			mlx->data->map[y][x] = 'T';
 			break ;
 		}
 		i++;
@@ -64,26 +64,22 @@ int	check_score(t_data *data, int dir, int x, int y)
 	neg = 1;
 	if (dir == 0 || dir == 1)
 		neg = -1;
-	if ((dir == 0 || dir == 2) && (x + 3 * neg <= 0 || x + 3 * neg >= data->nb_cols || data->map[y][x + 3 * neg] == 'E' || data->map[y][x + 3 * neg] == '1'))
+	if ((dir == 0 || dir == 2) && (x + 3 * neg <= 0 \
+		|| x + 3 * neg >= data->nb_cols || data->map[y][x + 3 * neg] == 'E' \
+		|| data->map[y][x + 3 * neg] == '1'))
 		return (-1);
-	else if ((dir == 1 || dir == 3) && (y + 3 * neg <= 0 || y + 3 * neg >= data->nb_rows - 1 || data->map[y + 3 * neg][x] == 'E' || data->map[y + 3 * neg][x] == '1'))
+	else if ((dir == 1 || dir == 3) && (y + 3 * neg <= 0 \
+		|| y + 3 * neg >= data->nb_rows - 1 || data->map[y + 3 * neg][x] == 'E' \
+		|| data->map[y + 3 * neg][x] == '1'))
 		return (-1);
 	while (i <= 3)
 	{
-		if ((dir == 0 || dir == 2) && x + i * neg > 0 && x + i * neg < data->nb_cols)
-		{
-			if (i <= 3 && data->map[y][x + i * neg] == 'M')
-				scores += data->pos->ref_mob_score;
-			if (data->map[y][x + i * neg] == 'C')
-				scores += data->pos->ref_col_score;
-		}
-		if ((dir == 1 || dir == 3) && y + i * neg > 0 && y + i * neg < data->nb_rows - 1)
-		{
-			if (i <= 3 && data->map[y + i * neg][x] == 'M')
-				scores += data->pos->ref_mob_score;
-			if (data->map[y + i * neg][x] == 'C')
-				scores += data->pos->ref_col_score;
-		}
+		if ((dir == 0 || dir == 2) && x + i * neg > 0 \
+			&& x + i * neg < data->nb_cols)
+			scores += add_score_x(data, i, x + i * neg, y);
+		if ((dir == 1 || dir == 3) && y + i * neg > 0 \
+			&& y + i * neg < data->nb_rows - 1)
+			scores += add_score_y(data, i, x, y + i * neg);
 		i++;
 	}
 	return (scores);
@@ -99,7 +95,8 @@ int	check_best_dir(t_mlx *mlx)
 	dir = 0;
 	while (dir < 4)
 	{
-		scores[dir] = check_score(mlx->data, dir, mlx->data->pos->player_col, mlx->data->pos->player_row);
+		scores[dir] = check_score(mlx->data, dir, \
+		mlx->data->pos->player_col, mlx->data->pos->player_row);
 		dir++;
 	}
 	dir = 0;
@@ -115,7 +112,7 @@ int	check_best_dir(t_mlx *mlx)
 		dir++;
 	}
 	mlx->score += best_score;
-	if (best_score > 0)
-		ft_print_score(mlx);
-	return(best_dir);
+	if (best_score > 10)
+		ft_print_score(mlx, best_score / 10);
+	return (best_dir);
 }

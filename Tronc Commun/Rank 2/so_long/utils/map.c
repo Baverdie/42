@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 16:26:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/13 16:32:00 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:05:49 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	print_map_errors(t_data *data)
 		x = 0;
 		while (data->map[y][x] != '\n' && data->map[y][x] != '\0')
 		{
-			if (x == data->errorx && y == data->errory && data->map[y][x] > 32 && data->map[y][x] < 127)
+			if (x == data->errorx && y == data->errory
+				&& data->map[y][x] > 32 && data->map[y][x] < 127)
 				ft_printf("\033[0;31m%c\033[0m", data->map[y][x]);
 			else if (x == data->errorx && y == data->errory)
 				ft_printf("\033[0;31mX\033[0m");

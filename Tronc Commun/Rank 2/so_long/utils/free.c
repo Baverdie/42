@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:37:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:25:36 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:04:26 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_free_map(char **tab)
 
 void	ft_free_mobs(t_data *data)
 {
-	while(data->counter_mob > 0)
+	while (data->counter_mob > 0)
 	{
 		data->counter_mob--;
 		free(data->mobs[data->counter_mob]);

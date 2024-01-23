@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:21:53 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:23:10 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@
 # include "MacroLibX/includes/mlx.h"
 # include "ft_libft/libft.h"
 # include "ft_printf/ft_printf.h"
-#include <stdlib.h>
-#include <time.h>
-
-# define WIDTH data->nb_cols * 64
-# define HEIGHT data->nb_rows * 64
+# include <stdlib.h>
+# include <time.h>
 
 # define TITLE_ERROR "\033[0;31mError\033[0m\n"
 # define INVALID_EXTENSION "Invalid extension\n"
@@ -61,62 +58,63 @@ typedef struct s_mob {
 	int	pos_y;
 	int	initial_x;
 	int	initial_y;
+	int	tombstone;
 	int	is_alive;
 	int	dir;
 }	t_mob;
 
 typedef struct s_data {
-	int		nb_rows;
-	int		nb_cols;
-	int		fd;
-	char	*file_name;
-	char	**map;
-	char	**flood;
-	int		errorx;
-	int		errory;
-	int		nb_0;
-	int		dash_count;
-	int		counter_mob;
-	struct	s_mob	**mobs;
+	int						nb_rows;
+	int						nb_cols;
+	int						fd;
+	char					*file_name;
+	char					**map;
+	char					**flood;
+	int						errorx;
+	int						errory;
+	int						nb_0;
+	int						dash_count;
+	int						counter_mob;
+	struct s_mob			**mobs;
 	struct s_game_object	*pos;
 }	t_data;
 
-typedef struct	s_textures {
+typedef struct s_textures {
 	void	*player_left;
-	// void	*player_top;
+	void	*player_top;
 	void	*player_right;
 	void	*exit;
 	void	*wall;
 	void	*col;
 	void	*ground;
 	void	*mob_left;
-	// void	*mob_top;
+	void	*mob_top;
 	void	*mob_right;
 	void	*tombstone;
 }	t_textures;
 
-typedef struct	s_mlx {
-	void	*mlx;
-	void	*window;
-	int		img_size;
-	int		nb_move;
-	int		nb_col;
-	int		nb_frames;
-	int		score;
-	int		dir_player;
-	struct s_data	*data;
+typedef struct s_mlx {
+	void				*mlx;
+	void				*window;
+	int					img_size;
+	int					nb_move;
+	int					nb_col;
+	int					nb_frames;
+	int					score;
+	int					dir_player;
+	struct s_data		*data;
 	struct s_textures	*img;
 
 }	t_mlx;
 
 // PARSE
-	//handling
+	// handling
 int		init(t_data *data);
 int		errors_map(t_data *data);
-	//sort map
+	// sort map
 int		read_map(t_data *data);
 int		parse_map(t_data *data);
-	//check
+	// check
 int		check_errors(t_data *data);
 int		check_path(t_data *data);
 void	flood(int x, int y, t_data *data, int dir);
@@ -135,31 +133,36 @@ void	ft_right(t_mlx *mlx);
 int		ft_dash(t_mlx *mlx);
 
 // UTILS
-	//init
+	// init
 int		init_vars(t_mlx *mlx, t_data *data);
+	// score
+int		add_score_y(t_data *data, int i, int x, int y);
+int		add_score_x(t_data *data, int i, int x, int y);
 	// free
 void	ft_free(char **tab);
 void	free_data(t_data *data);
 void	ft_destroy(t_mlx *mlx);
-	//print
+	// print
 void	print_map_full(char **map); //delete
 void	print_map_errors(t_data *data);
 void	print_path_map(t_data *data, int x, int y);
 int		ft_print_errors(char *err);
 int		ft_map(t_mlx *mlx);
 int		ft_str_display(t_mlx *mlx);
-int		ft_print_score(t_mlx *mlx);
+int		ft_print_score(t_mlx *mlx, int nb_kill);
 void	display_element(t_mlx *mlx, int i, int j);
 void	display_mob(t_mlx *mlx, int i, int j);
-	//copy
+void	ft_print_end(t_mlx *mlx);
+void	print_map_mob(t_mlx *mlx);
+	// copy
 void	copy_map(char **dest, char **src, int len);
 int		ft_strcmp(const char *s1, const char *s2);
 
-	//MOB
+// MOB
 int		init_mob(t_data *data, int counter_mob, int i, int j);
 int		pos_mob(t_data *data);
 int		move_mobs(t_data *data);
-int		kill_mob(t_data *data, int y, int x);
+int		kill_mob(t_mlx *mlx, int y, int x);
 int		count_mob(t_data *data);
 int		lateral(t_data *data, t_mob *mob, int rd);
 int		vertical(t_data *data, t_mob *mob, int rd);

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:35:27 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:13:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,45 +63,29 @@ void	set_img(t_mlx *mlx)
 
 int	update(void *param)
 {
-	t_mlx	*mlx;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	mlx = (t_mlx *)param;
-	if (mlx->nb_frames == 10000)
+	if (((t_mlx *)param)->nb_frames == 10000)
 	{
-		while (mlx->data->map[i])
+		while (((t_mlx *)param)->data->map[i])
 		{
 			j = 0;
-			while (mlx->data->map[i][j])
+			while (((t_mlx *)param)->data->map[i][j])
 			{
-				if (mlx->data->map[i][j] == 'M')
-					mlx_put_image_to_window(mlx->mlx, mlx->window, \
-						mlx->img->ground, j * 64, i * 64);
+				if (((t_mlx *)param)->data->map[i][j] == 'M')
+					mlx_put_image_to_window(((t_mlx *)param)->mlx, \
+				((t_mlx *)param)->window, \
+				((t_mlx *)param)->img->ground, j * 64, i * 64);
 				j++;
 			}
 			i++;
 		}
-		if (move_mobs(mlx->data))
-			mlx_loop_end(mlx->mlx);
-		i = 0;
-		j = 0;
-		while (mlx->data->map[i])
-		{
-			j = 0;
-			while (mlx->data->map[i][j])
-			{
-				if (mlx->data->map[i][j] == 'M')
-					display_mob(mlx, i, j);
-				j++;
-			}
-			i++;
-		}
-		mlx->nb_frames = 0;
+		print_map_mob((t_mlx *)param);
 	}
-	mlx->nb_frames++;
+	((t_mlx *)param)->nb_frames++;
 	return (0);
 }
 
@@ -112,7 +96,8 @@ int	so_long(t_data *data)
 	mlx = ft_calloc(1, sizeof(t_mlx));
 	init_vars(mlx, data);
 	mlx->mlx = mlx_init();
-	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "so_long");
+	mlx->window = mlx_new_window(mlx->mlx, mlx->data->nb_cols * 64, \
+		mlx->data->nb_rows * 64, "so_long");
 	set_img(mlx);
 	if (!mlx->img->wall || !mlx->img->ground || !mlx->img->player_right
 		|| !mlx->img->player_left || !mlx->img->exit || !mlx->img->col

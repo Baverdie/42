@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 00:09:23 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:21:06 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:54:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,22 @@ int	pos_mob(t_data *data)
 int	ft_check_rand_move(t_data *data, t_mob *mob, int rd)
 {
 	int	i;
-	int	result;
 
 	i = 0;
-	result = 0;
 	while (i <= 4)
 	{
 		if (rd == 0 || rd == 2)
 		{
-			result = lateral(data, mob, rd);
-			if (result != 1)
-				return (result);
-			rd++;
+			rd = lateral(data, mob, rd);
+			if (rd == 0 || rd == 2)
+				return (rd);
 			i++;
 		}
 		if (rd == 1 || rd == 3)
 		{
-			result = vertical(data, mob, rd);
-			if (result != 2)
-				return (result);
-			rd++;
+			rd = vertical(data, mob, rd);
+			if (rd == 1 || rd == 3)
+				return (rd);
 			i++;
 		}
 	}
@@ -88,6 +84,8 @@ int	define_new_mob_pos(t_data *data, t_mob *mob, int rand)
 		mob->pos_y++;
 	if (rand == 3)
 		mob->dir = 3;
+	if (data->map[mob->pos_y][mob->pos_x] == 'T')
+		mob->tombstone = 1;
 	data->map[mob->pos_y][mob->pos_x] = 'M';
 	if (mob->pos_y == data->pos->player_row
 		&& mob->pos_x == data->pos->player_col)

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 14:19:02 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 13:24:50 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:13:43 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	parse_map(t_data *data)
 {
 	char	*line;
-	int	rows;
+	int		rows;
 
 	rows = 0;
 	data->fd = open(data->file_name, O_RDONLY);
@@ -25,7 +25,7 @@ int	parse_map(t_data *data)
 	line = get_next_line(data->fd);
 	while (line && rows <= data->nb_rows)
 	{
-		if (ft_strlen(line) > 1 && rows <= data->nb_rows )
+		if (ft_strlen(line) > 1 && rows <= data->nb_rows)
 			data->map[rows++] = ft_strdup(line);
 		else if (ft_strlen(line) < 1 && rows > 0)
 		{
@@ -38,7 +38,6 @@ int	parse_map(t_data *data)
 	}
 	close(data->fd);
 	free(line);
-	printf("cols = %d\nrows = %d\n", data->nb_cols, data->nb_rows);
 	return (1);
 }
 

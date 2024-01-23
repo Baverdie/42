@@ -6,9 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:25:24 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:26:25 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:04:03 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../so_long.h"
 
 void	ft_free_img(t_mlx *mlx)
 {
@@ -36,7 +38,7 @@ void	ft_free_img(t_mlx *mlx)
 		mlx_destroy_image(mlx->mlx, mlx->img->tombstone);
 }
 
-void ft_destroy(t_mlx *mlx)
+void	ft_destroy(t_mlx *mlx)
 {
 	ft_free_img(mlx);
 	mlx_destroy_window(mlx->mlx, mlx->window);

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 05:04:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:14:54 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,19 @@
 
 int	errors_type(t_data *data, int i, int j)
 {
-	if (data->map[i][j] != '0' && data->map[i][j] != 'P' && data->map[i][j] != 'E'
-		&& data->map[i][j] != 'C' && data->map[i][j] != '1' && data->map[i][j] != '\n' && data->map[i][j] != 'M')
+	if (data->map[i][j] != '0' && data->map[i][j] != 'P' \
+		&& data->map[i][j] != 'E' && data->map[i][j] != 'C' \
+		&& data->map[i][j] != '1' && data->map[i][j] != '\n' \
+		&& data->map[i][j] != 'M' && data->map[i][j] != 'T')
 		return (0);
-	if (data->map[i][j] == '0' || data->map[i][j] == 'P'
-		|| data->map[i][j] == 'E' || data->map[i][j] == 'C' || data->map[i][j] == 'M')
+	if (data->map[i][j] == '0' || data->map[i][j] == 'P' \
+		|| data->map[i][j] == 'E' || data->map[i][j] == 'C' \
+		|| data->map[i][j] == 'M')
 	{
 		if (j == 0 || i == 0)
 			return (0);
 		if (j == data->nb_cols || i == data->nb_rows)
 			return (0);
-		// if (i > 0 && j <= data->nb_cols && data->map[i - 1][j] == ' ')
-		// 	return (0);
-		// if (!data->map[i + 1])
-		// 	return (0);
-		// if (j <= data->nb_cols && data->map[i][j + 1] == ' ')
-		// 	return (0);
-		// if (j > 0 && data->map[i][j - 1] == ' ')
-		// 	return (0);
 	}
 	return (1);
 }
@@ -96,8 +91,10 @@ int	check_errors(t_data *data)
 	while (data->map[i])
 	{
 		j = 0;
-		if (((i == 0 && data->map[i][j] != '1') || (i == data->nb_rows - 1 && data->map[i][j] != '1')) \
-		|| ((i == 0 && data->map[i][data->nb_cols - 1] != '1') || (i == data->nb_rows - 1 && data->map[i][data->nb_cols - 1] != '1')))
+		if (((i == 0 && data->map[i][j] != '1') || (i == data->nb_rows - 1 \
+		&& data->map[i][j] != '1')) \
+		|| ((i == 0 && data->map[i][data->nb_cols - 1] != '1') \
+		|| (i == data->nb_rows - 1 && data->map[i][data->nb_cols - 1] != '1')))
 			return (0);
 		while (data->map[i][j])
 		{
