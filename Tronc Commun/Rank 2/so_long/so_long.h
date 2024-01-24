@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/23 13:23:10 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/24 18:44:11 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,23 @@ typedef struct s_mob {
 	int	dir;
 }	t_mob;
 
+typedef struct s_level {
+	int		id;
+	int		nb_rows;
+	int		nb_cols;
+	int		fd;
+	char	*file_name;
+	char	**map;
+}	t_level;
+
 typedef struct s_data {
 	int						nb_rows;
 	int						nb_cols;
 	int						fd;
 	char					*file_name;
+	int						history;
+	int						nb_level;
+	struct s_level			**levels;
 	char					**map;
 	char					**flood;
 	int						errorx;
@@ -123,6 +135,7 @@ int		pos_data(t_data *data);
 // GRAPHIQUE
 int		so_long(t_data *data);
 void	ft_event(t_mlx *mlx);
+int		update(void *param);
 	// check
 int		check_best_dir(t_mlx *mlx);
 	// move
@@ -135,6 +148,8 @@ int		ft_dash(t_mlx *mlx);
 // UTILS
 	// init
 int		init_vars(t_mlx *mlx, t_data *data);
+t_mlx	*init_mlx(t_data *data);
+void	set_img(t_mlx *mlx);
 	// score
 int		add_score_y(t_data *data, int i, int x, int y);
 int		add_score_x(t_data *data, int i, int x, int y);
@@ -142,6 +157,7 @@ int		add_score_x(t_data *data, int i, int x, int y);
 void	ft_free(char **tab);
 void	free_data(t_data *data);
 void	ft_destroy(t_mlx *mlx);
+void	ft_destroy_history(t_mlx *mlx);
 	// print
 void	print_map_full(char **map); //delete
 void	print_map_errors(t_data *data);
@@ -154,6 +170,7 @@ void	display_element(t_mlx *mlx, int i, int j);
 void	display_mob(t_mlx *mlx, int i, int j);
 void	ft_print_end(t_mlx *mlx);
 void	print_map_mob(t_mlx *mlx);
+int		ft_print_score(t_mlx *mlx, int nb_kill);
 	// copy
 void	copy_map(char **dest, char **src, int len);
 int		ft_strcmp(const char *s1, const char *s2);
@@ -166,5 +183,11 @@ int		kill_mob(t_mlx *mlx, int y, int x);
 int		count_mob(t_data *data);
 int		lateral(t_data *data, t_mob *mob, int rd);
 int		vertical(t_data *data, t_mob *mob, int rd);
+
+// HISTORY
+int		history_mode(int level);
+char	*ft_add_path(char *history, char level);
+int		so_long_history(t_mlx *mlx);
+int		reset_vars(t_mlx *mlx);
 
 #endif

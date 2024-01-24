@@ -18,6 +18,7 @@ SRCS = main.c \
 	utils/utils.c \
 	utils/utils_graphique.c \
 	utils/utils_score.c \
+	utils/utils_history.c \
 	graphique/so_long.c \
 	graphique/dash.c \
 	graphique/move.c \
@@ -41,11 +42,11 @@ all: $(NAME)
 load:
 	@sleep 0.4
 	@printf "|\033[0;31m▰     34%%\033[0m|"
-	@sleep 0.4
+	@sleep 0.3
 	@printf "\r|\033[0;31m▰▰    69%%\033[0m|"
-	@sleep 0.4
+	@sleep 0.3
 	@printf "\r|\033[0;31m▰▰▰   82%%\033[0m|"
-	@sleep 0.4
+	@sleep 0.3
 	@printf "\r|\033[0;31m▰▰▰▰ 100%%\033[0m|"
 	@sleep 0.4
 	@printf "\r"
@@ -55,14 +56,14 @@ load:
 
 $(NAME): $(OBJS)
 	$(HEADER)
-	@make --no-print-directory load
+	# @make --no-print-directory load
 	@echo "\033[38;5;48mMLX42 is ready !\033[0m"
-	@make --no-print-directory load
+	# @make --no-print-directory load
 	@make -j -s -C ft_libft/
-	@make --no-print-directory load
+	# @make --no-print-directory load
 	@make -j -s -C ft_printf/
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
-	@make --no-print-directory load
+	# @make --no-print-directory load
 	@echo "\033[38;5;48mso_long is ready !\033[0m"
 
 clean:

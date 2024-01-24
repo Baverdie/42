@@ -6,27 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 19:44:41 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/23 13:03:45 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:43:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-void	display_player(t_mlx *mlx, int i, int j)
-{
-	if (mlx->dir_player == 0 || mlx->dir_player == 3)
-		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player_left, \
-	j * 64, i * 64);
-	else if (mlx->dir_player == 1)
-		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player_right,
-			j * 64, i * 64);
-	else if (mlx->dir_player == 2)
-		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player_right,
-			j * 64, i * 64);
-	if (mlx->data->map[i][j] != 'E' && mlx->data->map[i][j] != 'T'
-		&& mlx->data->map[i][j] != '2')
-		mlx->data->map[i][j] = '0';
-}
 
 void	display_mob(t_mlx *mlx, int i, int j)
 {
@@ -64,6 +48,24 @@ void	display_exit(t_mlx *mlx, int i, int j)
 	}
 	mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->exit, \
 	j * 64, i * 64);
+}
+
+void	display_player(t_mlx *mlx, int i, int j)
+{
+	if (mlx->data->map[i][j] == 'E')
+		display_exit(mlx, i, j);
+	if (mlx->dir_player == 0 || mlx->dir_player == 3)
+		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player_left, \
+	j * 64, i * 64);
+	else if (mlx->dir_player == 1)
+		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player_right,
+			j * 64, i * 64);
+	else if (mlx->dir_player == 2)
+		mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img->player_right,
+			j * 64, i * 64);
+	if (mlx->data->map[i][j] != 'E' && mlx->data->map[i][j] != 'T'
+		&& mlx->data->map[i][j] != '2')
+		mlx->data->map[i][j] = '0';
 }
 
 void	display_element(t_mlx *mlx, int i, int j)

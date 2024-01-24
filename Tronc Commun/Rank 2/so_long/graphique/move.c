@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:33:09 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/20 16:53:57 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:14:39 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ void	ft_forward(t_mlx *mlx)
 	int	x;
 
 	x = mlx->data->pos->player_col;
-	if (mlx->data->map[mlx->data->pos->player_row - 1][x] != '1'
-		&& (mlx->data->map[mlx->data->pos->player_row - 1][x] != 'E'
-		|| mlx->nb_col == mlx->data->pos->obj))
+	if (mlx->data->map[mlx->data->pos->player_row - 1][x] != '1')
 	{
 		if (mlx->data->map[mlx->data->pos->player_row - 1][x] == 'C')
 		{
@@ -46,9 +44,7 @@ void	ft_backward(t_mlx *mlx)
 	int	x;
 
 	x = mlx->data->pos->player_col;
-	if (mlx->data->map[mlx->data->pos->player_row + 1][x] != '1'
-		&& (mlx->data->map[mlx->data->pos->player_row + 1][x] != 'E'
-		|| mlx->nb_col == mlx->data->pos->obj))
+	if (mlx->data->map[mlx->data->pos->player_row + 1][x] != '1')
 	{
 		if (mlx->data->map[mlx->data->pos->player_row + 1][x] == 'C')
 		{
@@ -75,9 +71,7 @@ void	ft_right(t_mlx *mlx)
 	int	x;
 
 	x = mlx->data->pos->player_col;
-	if (mlx->data->map[mlx->data->pos->player_row][x + 1] != '1'
-		&& (mlx->data->map[mlx->data->pos->player_row][x + 1] != 'E'
-		|| mlx->nb_col == mlx->data->pos->obj))
+	if (mlx->data->map[mlx->data->pos->player_row][x + 1] != '1')
 	{
 		if (mlx->data->map[mlx->data->pos->player_row][x + 1] == 'C')
 		{
@@ -104,9 +98,7 @@ void	ft_left(t_mlx *mlx)
 	int	x;
 
 	x = mlx->data->pos->player_col;
-	if (mlx->data->map[mlx->data->pos->player_row][x - 1] != '1'
-		&& (mlx->data->map[mlx->data->pos->player_row][x - 1] != 'E'
-		|| mlx->nb_col == mlx->data->pos->obj))
+	if (mlx->data->map[mlx->data->pos->player_row][x - 1] != '1')
 	{
 		if (mlx->data->map[mlx->data->pos->player_row][x - 1] == 'C')
 		{

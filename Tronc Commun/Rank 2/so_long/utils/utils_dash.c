@@ -6,29 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 04:52:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/23 13:07:11 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:00:22 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-int	ft_print_score(t_mlx *mlx, int nb_kill)
-{
-	if (nb_kill == 1)
-		ft_printf("\033[1;31mOne Kill !\033[0m\n");
-	if (nb_kill == 2)
-	{
-		ft_printf("\033[1;31mDouble Kill +10 points !\033[0m\n");
-		mlx->score += 10;
-	}
-	else if (nb_kill == 3)
-	{
-		ft_printf("\033[1;31mTriple Kill +50 points !\033[0m\n");
-		mlx->score += 50;
-	}
-	ft_printf("\033[1;37mScore : %d\033[0m\n", mlx->score);
-	return (0);
-}
 
 int	kill_mob(t_mlx *mlx, int y, int x)
 {
@@ -53,6 +35,24 @@ int	kill_mob(t_mlx *mlx, int y, int x)
 	return (0);
 }
 
+int	is_avaible(t_data *data, int dir, int x, int y)
+{
+	int	neg;
+
+	neg = 1;
+	if (dir == 0 || dir == 1)
+		neg = -1;
+	if ((dir == 0 || dir == 2) && (x + 3 * neg <= 0 \
+		|| x + 3 * neg >= data->nb_cols || data->map[y][x + 3 * neg] == 'E' \
+		|| data->map[y][x + 3 * neg] == '1'))
+		return (1);
+	else if ((dir == 1 || dir == 3) && (y + 3 * neg <= 0 \
+		|| y + 3 * neg >= data->nb_rows - 1 || data->map[y + 3 * neg][x] == 'E' \
+		|| data->map[y + 3 * neg][x] == '1'))
+		return (1);
+	return (0);
+}
+
 int	check_score(t_data *data, int dir, int x, int y)
 {
 	int	scores;
@@ -64,13 +64,7 @@ int	check_score(t_data *data, int dir, int x, int y)
 	neg = 1;
 	if (dir == 0 || dir == 1)
 		neg = -1;
-	if ((dir == 0 || dir == 2) && (x + 3 * neg <= 0 \
-		|| x + 3 * neg >= data->nb_cols || data->map[y][x + 3 * neg] == 'E' \
-		|| data->map[y][x + 3 * neg] == '1'))
-		return (-1);
-	else if ((dir == 1 || dir == 3) && (y + 3 * neg <= 0 \
-		|| y + 3 * neg >= data->nb_rows - 1 || data->map[y + 3 * neg][x] == 'E' \
-		|| data->map[y + 3 * neg][x] == '1'))
+	if (is_avaible(data, dir, x, y))
 		return (-1);
 	while (i <= 3)
 	{
@@ -85,6 +79,20 @@ int	check_score(t_data *data, int dir, int x, int y)
 	return (scores);
 }
 
+int	init_scores(t_mlx *mlx, int scores[4])
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		scores[i] = check_score(mlx->data, i, \
+		mlx->data->pos->player_col, mlx->data->pos->player_row);
+		i++;
+	}
+	return (*scores);
+}
+
 int	check_best_dir(t_mlx *mlx)
 {
 	int	best_dir;
@@ -93,13 +101,7 @@ int	check_best_dir(t_mlx *mlx)
 	int	scores[4];
 
 	dir = 0;
-	while (dir < 4)
-	{
-		scores[dir] = check_score(mlx->data, dir, \
-		mlx->data->pos->player_col, mlx->data->pos->player_row);
-		dir++;
-	}
-	dir = 0;
+	*scores = init_scores(mlx, scores);
 	best_score = scores[dir];
 	best_dir = dir;
 	while (dir < 4)
@@ -111,7 +113,8 @@ int	check_best_dir(t_mlx *mlx)
 		}
 		dir++;
 	}
-	mlx->score += best_score;
+	if (best_score > 0)
+		mlx->score += best_score;
 	if (best_score > 10)
 		ft_print_score(mlx, best_score / 10);
 	return (best_dir);

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 21:48:40 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/23 12:59:31 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:04:45 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,23 +132,26 @@ int	ft_dash(t_mlx *mlx)
 	int	dir;
 	int	new_dir;
 	int	i;
+	int	dash;
 
 	i = 1;
 	new_dir = 0;
 	dir = check_best_dir(mlx);
 	if (dir == 0)
-		ft_dash_left(mlx, mlx->data->map, \
+		dash = ft_dash_left(mlx, mlx->data->map, \
 		mlx->data->pos->player_col, mlx->data->pos->player_row);
 	if (dir == 1)
-		ft_dash_top(mlx, mlx->data->map, \
+		dash = ft_dash_top(mlx, mlx->data->map, \
 		mlx->data->pos->player_col, mlx->data->pos->player_row);
 	if (dir == 2)
-		ft_dash_right(mlx, mlx->data->map, \
+		dash = ft_dash_right(mlx, mlx->data->map, \
 		mlx->data->pos->player_col, mlx->data->pos->player_row);
 	if (dir == 3)
-		ft_dash_bottom(mlx, mlx->data->map, \
+		dash = ft_dash_bottom(mlx, mlx->data->map, \
 		mlx->data->pos->player_col, mlx->data->pos->player_row);
-	mlx->nb_move += 1;
-	ft_printf("Movements : %d\n", mlx->nb_move);
+	if (dash == 0)
+		mlx->nb_move += 1;
+	if (dash == 0)
+		ft_printf("Movements : %d\n", mlx->nb_move);
 	return (0);
 }
