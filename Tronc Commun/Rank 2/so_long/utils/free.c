@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:37:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/24 18:43:40 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/24 23:29:16 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,8 @@ void	ft_free_mobs(t_data *data)
 	free(data->mobs);
 }
 
-void	ft_free_levels(t_data *data)
-{
-	while (data->nb_level > 0)
-	{
-		data->nb_level--;
-		ft_free_map(data->levels[data->nb_level]->map);
-		free(data->levels[data->nb_level]);
-	}
-	free(data->levels);
-}
-
 void	free_data(t_data *data)
 {
-	if (data->levels)
-		ft_free_levels(data);
 	if (data->mobs)
 		ft_free_mobs(data);
 	if (data->flood)

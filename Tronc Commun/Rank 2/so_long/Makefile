@@ -18,7 +18,6 @@ SRCS = main.c \
 	utils/utils.c \
 	utils/utils_graphique.c \
 	utils/utils_score.c \
-	utils/utils_history.c \
 	graphique/so_long.c \
 	graphique/dash.c \
 	graphique/move.c \

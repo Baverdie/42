@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/24 18:40:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/24 23:34:30 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,24 +100,6 @@ int	so_long(t_data *data)
 		mlx->data->nb_rows * 64, "so_long");
 	set_img(mlx);
 	ft_map(mlx);
-	mlx_loop_hook(mlx->mlx, update, mlx);
-	mlx_loop(mlx->mlx);
-	ft_print_end(mlx);
-	ft_destroy(mlx);
-	return (0);
-}
-
-int	so_long_history(t_data *data)
-{
-	t_mlx	*mlx;
-
-	mlx = ft_calloc(1, sizeof(t_mlx));
-	init_vars(mlx, data);
-	mlx->mlx = mlx_init();
-	mlx->window = mlx_new_window(mlx->mlx, mlx->data->nb_cols * 64, \
-		mlx->data->nb_rows * 64, "so_long");
-	set_img(mlx);
-	ft_map_history(mlx);
 	mlx_loop_hook(mlx->mlx, update, mlx);
 	mlx_loop(mlx->mlx);
 	ft_print_end(mlx);

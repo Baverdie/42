@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/24 18:44:11 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/24 23:35:14 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,11 @@ typedef struct s_mob {
 	int	dir;
 }	t_mob;
 
-typedef struct s_level {
-	int		id;
-	int		nb_rows;
-	int		nb_cols;
-	int		fd;
-	char	*file_name;
-	char	**map;
-}	t_level;
-
 typedef struct s_data {
 	int						nb_rows;
 	int						nb_cols;
 	int						fd;
 	char					*file_name;
-	int						history;
-	int						nb_level;
-	struct s_level			**levels;
 	char					**map;
 	char					**flood;
 	int						errorx;
@@ -157,7 +145,6 @@ int		add_score_x(t_data *data, int i, int x, int y);
 void	ft_free(char **tab);
 void	free_data(t_data *data);
 void	ft_destroy(t_mlx *mlx);
-void	ft_destroy_history(t_mlx *mlx);
 	// print
 void	print_map_full(char **map); //delete
 void	print_map_errors(t_data *data);
@@ -183,11 +170,5 @@ int		kill_mob(t_mlx *mlx, int y, int x);
 int		count_mob(t_data *data);
 int		lateral(t_data *data, t_mob *mob, int rd);
 int		vertical(t_data *data, t_mob *mob, int rd);
-
-// HISTORY
-int		history_mode(int level);
-char	*ft_add_path(char *history, char level);
-int		so_long_history(t_mlx *mlx);
-int		reset_vars(t_mlx *mlx);
 
 #endif
