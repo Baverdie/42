@@ -6,11 +6,18 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:52:33 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 10:54:22 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 13:54:02 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	init_str(char	*str)
+{
+	if (parse_str(argv[1]))
+		return (ft_print_errors(NO_ARGUMENTS));
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
@@ -20,7 +27,10 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (ft_print_errors(NO_ARGUMENTS));
 	else if (argc == 2)
-		return (ft_print_errors(NOT_ENOUGH));
+		if (parse_str(argv[1]))
+			return (ft_print_errors(NO_ARGUMENTS));
+		if (ft_check_duplicates(argc, argv) == 0)
+			return (0);
 	else if (argc > 2)
 	{
 		if (ft_check_args(argc, argv) == 0)
