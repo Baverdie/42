@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/24 23:55:21 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/26 08:41:49 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # define MORE_FILE "Too many arguments detected\n"
 # define NO_FILE "Missing file\n"
 # define INVALID_FILE "Invalid file\n"
+# define EMPTY_FILE "Empty file\n"
 # define INVALID_MAP "Invalid map\n"
 # define PLAYER_MISSING "Player not found\n"
 # define PLAYER_MULTIPLE "Multiple players found\n"

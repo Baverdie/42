@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:34:46 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/24 18:34:07 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 09:33:39 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	errors_map(t_data *data)
 
 int	init(t_data *data)
 {
+	int	result;
+
 	data->pos = ft_calloc(1, sizeof(t_game_object));
 	if (!data->pos)
 		return (ft_print_errors(ERROR_LABDA));
@@ -52,13 +54,14 @@ int	init(t_data *data)
 	data->nb_0 = 0;
 	data->pos->ref_mob_score = 0;
 	data->pos->ref_col_score = 0;
-	if (read_map(data) == 0)
+	result = read_map(data);
+	if (result == 0)
 		return (ft_print_errors(INVALID_MAP));
+	else if (result == 2)
+		return (ft_print_errors(EMPTY_FILE));
 	if (parse_map(data) == 0)
 		return (ft_print_errors(ERROR_LABDA));
-	if (pos_data(data) == 0)
-		return (0);
-	if (errors_map(data) == 0)
+	if (pos_data(data) == 0 || errors_map(data) == 0)
 		return (0);
 	return (1);
 }

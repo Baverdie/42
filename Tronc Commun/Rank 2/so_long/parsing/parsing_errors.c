@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/23 13:14:54 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 09:33:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,10 @@ int	check_errors(t_data *data)
 	while (data->map[i])
 	{
 		j = 0;
-		if (((i == 0 && data->map[i][j] != '1') || (i == data->nb_rows - 1 \
+		if (((i == 0 && data->map[i][j] != '1') || (i == data->nb_rows \
 		&& data->map[i][j] != '1')) \
-		|| ((i == 0 && data->map[i][data->nb_cols - 1] != '1') \
-		|| (i == data->nb_rows - 1 && data->map[i][data->nb_cols - 1] != '1')))
+		|| ((j == 0 && data->map[i][j] != '1') \
+		|| (j == data->nb_cols && data->map[i][data->nb_cols] != '1')))
 			return (0);
 		while (data->map[i][j])
 		{

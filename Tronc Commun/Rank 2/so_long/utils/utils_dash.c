@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 04:52:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/24 14:00:22 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 09:31:53 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,15 @@ int	is_avaible(t_data *data, int dir, int x, int y)
 		neg = -1;
 	if ((dir == 0 || dir == 2) && (x + 3 * neg <= 0 \
 		|| x + 3 * neg >= data->nb_cols || data->map[y][x + 3 * neg] == 'E' \
-		|| data->map[y][x + 3 * neg] == '1'))
+		|| data->map[y][x + 3 * neg] == '1' \
+		|| (data->map[y][x + 2 * neg] == '1' \
+		&& data->map[y][x + 1 * neg] == '1')))
 		return (1);
 	else if ((dir == 1 || dir == 3) && (y + 3 * neg <= 0 \
 		|| y + 3 * neg >= data->nb_rows - 1 || data->map[y + 3 * neg][x] == 'E' \
-		|| data->map[y + 3 * neg][x] == '1'))
+		|| data->map[y + 3 * neg][x] == '1' \
+		|| (data->map[y + 2 * neg][x] == '1' \
+		&& data->map[y + 1 * neg][x] == '1')))
 		return (1);
 	return (0);
 }
@@ -115,7 +119,7 @@ int	check_best_dir(t_mlx *mlx)
 	}
 	if (best_score > 0)
 		mlx->score += best_score;
-	if (best_score > 10)
+	if (best_score >= 5)
 		ft_print_score(mlx, best_score / 10);
 	return (best_dir);
 }
