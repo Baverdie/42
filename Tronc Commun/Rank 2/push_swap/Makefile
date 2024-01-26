@@ -11,8 +11,8 @@ SRCS = src/main.c \
 		src/move/reverse_rotate.c \
 		src/utils/utils.c \
 		src/utils/utils_stack.c \
-		# src/moves/swap.c \
-		# src/moves/push.c \
+		src/move/push.c \
+		# src/move/swap.c \
 
 OBJS = ${SRCS:.c=.o}
 

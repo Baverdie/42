@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:53:16 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/25 15:48:23 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/26 10:43:32 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	add_stack(int argc, char **argv, t_stack *stack_a);
 int		rotate(t_stack **stack);
 int		reverse_rotate(t_stack **stack);
 
+int		pa(t_stack *stack_a, t_stack *stack_b);
+int		pb(t_stack *stack_a, t_stack *stack_b);
 int		ra(t_stack **stack_a);
 int		rb(t_stack **stack_b);
 int		rr(t_stack **stack_a, t_stack **stack_b);
@@ -55,6 +57,8 @@ int		rrr(t_stack **stack_a, t_stack **stack_b);
 	// print
 int		ft_print_errors(char *err);
 void	ft_print_stack(t_stack *stack);
+void	graph(t_stack *stack);
+void	graph_double(t_stack *stack_a, t_stack *stack_b);
 void	ft_print_double_stack(t_stack *stack_a, t_stack *stack_b);
 	// stack
 int		ft_lstsize(t_stack *lst);

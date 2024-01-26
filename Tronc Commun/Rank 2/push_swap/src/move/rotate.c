@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:55:56 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/25 16:38:30 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/26 10:36:56 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ int	rotate(t_stack **stack)
 	if (ft_lstsize(*stack) < 2)
 		return (1);
 	head = *stack;
-	printf("head->nb = %d\n", head->nb);
 	tail = ft_lstlast(head);
-	printf("tail->nb = %d\n", tail->nb);
 	*stack = head->next;
 	tail->next = head;
 	head->next = NULL;

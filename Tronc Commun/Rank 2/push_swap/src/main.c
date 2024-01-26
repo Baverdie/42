@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:52:33 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/25 15:48:57 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/26 10:54:22 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ int	main(int argc, char **argv)
 		stack_a->next = NULL;
 		stack_b->next = NULL;
 		add_stack(argc, argv, stack_a);
-		add_stack(argc, argv, stack_b);
-		ft_print_double_stack(stack_a, stack_b);
-		if (ra(&stack_a))
+		graph_double(stack_a, stack_b);
+		if (pb(stack_a, stack_b))
 			return (ft_print_errors(ERROR_LABDA));
-		ft_print_double_stack(stack_a, stack_b);
+		graph_double(stack_a, stack_b);
+		// if (pa(stack_a, stack_b))
+		// 	return (ft_print_errors(ERROR_LABDA));
+		// graph_double(stack_a, stack_b);
 	}
 	return (0);
 }

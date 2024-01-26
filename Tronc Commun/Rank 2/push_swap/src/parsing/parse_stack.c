@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:29:34 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/25 16:39:44 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/26 10:30:09 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ void	add_stack(int argc, char **argv, t_stack *stack_a)
 	int		i;
 
 	i = 1;
-	while (i < argc)
+	while (i <= argc - 1)
 	{
 		stack_a->nb = ft_atoi(argv[i]);
-		stack_a->next = malloc(sizeof(t_stack));
+		if (i + 1 <= argc - 1)
+			stack_a->next = ft_calloc(1, sizeof(t_stack));
 		stack_a = stack_a->next;
 		i++;
 	}
-	stack_a->next = NULL;
-	printf("stack_a->nb = %d\n", stack_a->nb);
 }
