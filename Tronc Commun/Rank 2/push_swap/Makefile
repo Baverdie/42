@@ -1,16 +1,23 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
-LIBS = ./ft_libft/libft.a \
-	./ft_printf/libftprintf.a \
+CFLAGS = -Wall -Wextra -Werror
+LIBS = ft_printf/libftprintf.a \
+		ft_libft/libft.a \
 
 SRCS = src/main.c \
-		src/utils.c \
+		src/parsing/parse_arg.c \
+		src/parsing/parse_stack.c \
+		src/move/rotate.c \
+		src/move/reverse_rotate.c \
+		src/utils/utils.c \
+		src/utils/utils_stack.c \
+		# src/moves/swap.c \
+		# src/moves/push.c \
 
-OBJS = $(SRCS:.c=.o)
+OBJS = ${SRCS:.c=.o}
 
 DEFAULT = \033[0m
-COLOR = \033[38;5;201m
+COLOR = \033[38;5;197m
 
 BANNER = @printf "$(COLOR) ____  __  __  ___  _   _       ___  _    _    __    ____\n"
 BANNER1 = printf "$(COLOR)(  _ \(  )(  )/ __)( )_( )     / __)( \/\/ )  /__\  (  _ \ \n"
@@ -21,26 +28,44 @@ HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@make -j -s -C ./ft_libft/
-	@make -j -s -C ./ft_printf/
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
-	$(HEADER)
-	@echo "\033[38;5;48mpush_swap is ready !\033[0m"
+load:
+	@sleep 0.4
+	@printf "|\033[0;31m▰     34%%\033[0m|"
+	@sleep 0.3
+	@printf "\r|\033[0;31m▰▰    69%%\033[0m|"
+	@sleep 0.3
+	@printf "\r|\033[0;31m▰▰▰   82%%\033[0m|"
+	@sleep 0.3
+	@printf "\r|\033[0;31m▰▰▰▰ 100%%\033[0m|"
+	@sleep 0.4
+	@printf "\r"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
+$(NAME): $(OBJS)
+	$(HEADER)
+	# @make --no-print-directory load
+	@echo "\033[38;5;48mMLX42 is ready !\033[0m"
+	# @make --no-print-directory load
+	@make -j -s -C ft_libft/
+	# @make --no-print-directory load
+	@make -j -s -C ft_printf/
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
+	# @make --no-print-directory load
+	@echo "\033[38;5;48mso_long is ready !\033[0m"
+
 clean:
-	@rm -f $(OBJS)
+	@make clean -s -C ft_libft/
+	@rm -rf $(OBJS)
 
 fclean: clean
-	@make fclean -C ./ft_libft/
-	@make fclean -C ./ft_printf/
 	@rm -f $(NAME)
-	@echo "\033[38;5;31mpush_swap cleaned...\033[0m"
+	@make fclean -s -C ft_libft/
+	@make fclean -s -C ft_printf/
+	@echo "\033[38;5;31mso_long cleaned...\033[0m"
 
-re: fclean all
-	@echo "\033[38;5;48mpush_swap reloaded !\033[0m"
+re: fclean
+	@make -j all --no-print-directory
 
 .PHONY: all clean fclean re

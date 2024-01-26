@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/24 23:35:14 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/24 23:55:21 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,6 @@ int		ft_dash(t_mlx *mlx);
 // UTILS
 	// init
 int		init_vars(t_mlx *mlx, t_data *data);
-t_mlx	*init_mlx(t_data *data);
 void	set_img(t_mlx *mlx);
 	// score
 int		add_score_y(t_data *data, int i, int x, int y);
@@ -146,7 +145,6 @@ void	ft_free(char **tab);
 void	free_data(t_data *data);
 void	ft_destroy(t_mlx *mlx);
 	// print
-void	print_map_full(char **map); //delete
 void	print_map_errors(t_data *data);
 void	print_path_map(t_data *data, int x, int y);
 int		ft_print_errors(char *err);
