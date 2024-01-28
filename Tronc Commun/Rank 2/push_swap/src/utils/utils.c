@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:24:37 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 10:54:31 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 19:32:22 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@ int	ft_print_errors(char *err)
 {
 	printf("%s%s", TITLE_ERROR, err);
 	return (0);
+}
+
+void	ft_free_stack(t_stack *stack)
+{
+	if (!stack)
+		return ;
+	ft_free_stack(stack->next);
+	free(stack);
 }
 
 void	graph(t_stack *stack)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 10:34:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/26 10:55:58 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 18:37:56 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	push(t_stack *stack_dest, t_stack *stack_src)
 	if (ft_lstsize(stack_src) == 0)
 		return (0);
 	dest = stack_dest;
-	printf("ok\n");
 	while (dest)
 	{
 		if (dest->next->next == NULL)

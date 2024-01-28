@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:29:34 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 13:52:55 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 19:25:12 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	add_stack_str(char *str, t_stack *stack_a)
 	int		i;
 	char	**nb;
 
-	nb = split(str, ' ');
-	i = 1;
+	nb = ft_split(str, ' ');
+	i = 0;
 	while (nb[i])
 	{
 		stack_a->nb = ft_atoi(nb[i]);

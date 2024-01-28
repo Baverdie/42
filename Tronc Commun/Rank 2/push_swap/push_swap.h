@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:53:16 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 10:43:32 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 19:34:16 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define NOT_INT "A number is not an int\n"
 # define NOT_DUPLICATES "Duplicates detected\n"
 # define NOT_ENOUGH "Not enough numbers\n"
+# define MALLOC_ERROR "Malloc error\n"
 
 typedef struct	s_stack
 {
@@ -36,9 +37,12 @@ typedef struct	s_stack
 // PARSING
 	// parse_arg
 int		ft_check_args(int argc, char **argv);
+int		parse_str(char *str);
 int		ft_check_duplicates(int argc, char **argv);
+int		ft_check_duplicates_str(char *str);
 	// parse_stack
 void	add_stack(int argc, char **argv, t_stack *stack_a);
+void	add_stack_str(char *str, t_stack *stack_a);
 
 // MOVE
 int		rotate(t_stack **stack);
@@ -63,5 +67,7 @@ void	ft_print_double_stack(t_stack *stack_a, t_stack *stack_b);
 	// stack
 int		ft_lstsize(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
+	// free
+void	ft_free_stack(t_stack *stack);
 
 #endif

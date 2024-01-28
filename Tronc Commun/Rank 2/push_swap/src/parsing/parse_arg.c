@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:06:11 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 13:50:52 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/01/26 18:04:46 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	parse_str(char	*str)
+int	parse_str(char *str)
 {
 	char	**nb;
 	int		i;
@@ -36,7 +36,7 @@ int	parse_str(char	*str)
 	return (1);
 }
 
-int	ft_check_duplicates_str(char	*str)
+int	ft_check_duplicates_str(char *str)
 {
 	char	**nb;
 	int		i;
@@ -44,7 +44,18 @@ int	ft_check_duplicates_str(char	*str)
 
 	i = 0;
 	nb = ft_split(str, ' ');
-	
+	while (nb[i])
+	{
+		j = i + 1;
+		while (nb[j])
+		{
+			if (ft_atoi(nb[i]) == ft_atoi(nb[j]))
+				return (ft_print_errors(NOT_DUPLICATES));
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
 int	ft_check_args(int argc, char **argv)
