@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:52:33 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 19:33:29 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/28 14:43:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,31 +46,8 @@ int	init_args(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 	return (1);
 }
 
-int	init_stack(t_stack *stack_a, t_stack *stack_b)
+int	init(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 {
-	stack_a = ft_calloc(1, sizeof(t_stack));
-	if (!stack_a)
-		return (ft_print_errors(MALLOC_ERROR));
-	stack_b = ft_calloc(1, sizeof(t_stack));
-	if (!stack_b)
-	{
-		free(stack_a);
-		return (ft_print_errors(MALLOC_ERROR));
-	}
-	stack_a->next = NULL;
-	stack_b->next = NULL;
-	return (1);
-}
-
-int	main(int argc, char **argv)
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	if (argc < 2)
-		return (ft_print_errors(NO_ARGUMENTS));
-	if (init_stack(stack_a, stack_b) == 0)
-		return (0);
 	if (argc == 2)
 	{
 		if (init_str(argv[1], stack_a, stack_b) == 0)
@@ -88,6 +65,33 @@ int	main(int argc, char **argv)
 			ft_free_stack(stack_b);
 			return (0);
 		}
+	}
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	if (argc < 2)
+		return (ft_print_errors(NO_ARGUMENTS));
+	else
+	{
+		stack_a = ft_calloc(1, sizeof(t_stack));
+		if (!stack_a)
+			return (ft_print_errors(MALLOC_ERROR));
+		stack_b = ft_calloc(1, sizeof(t_stack));
+		if (!stack_b)
+		{
+			free(stack_a);
+			return (ft_print_errors(MALLOC_ERROR));
+		}
+		stack_a->next = NULL;
+		stack_b->next = NULL;
+		init(argc, argv, stack_a, stack_b);
+		ra(&stack_a);
+		graph_double(stack_a, stack_b);
 	}
 	return (0);
 }

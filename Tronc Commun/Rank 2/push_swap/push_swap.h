@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:53:16 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 19:34:16 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/01/28 15:17:42 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		parse_str(char *str);
 int		ft_check_duplicates(int argc, char **argv);
 int		ft_check_duplicates_str(char *str);
 	// parse_stack
-void	add_stack(int argc, char **argv, t_stack *stack_a);
+int	add_stack(int argc, char **argv, t_stack *stack_a);
 void	add_stack_str(char *str, t_stack *stack_a);
 
 // MOVE
