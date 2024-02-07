@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   parse_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:29:34 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/30 13:12:19 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/07 16:30:43 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	check_int_str(int	nb)
+int	check_int_str(int nb)
 {
 	if (nb > 2147483647 || nb < -2147483648)
 		return (0);
 	return (1);
 }
 
-int add_stack(int argc, char **argv, t_stack *stack_a)
+int	add_stack(int argc, char **argv, t_stack *stack_a)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i != argc)
@@ -40,8 +40,8 @@ int add_stack(int argc, char **argv, t_stack *stack_a)
 
 int	add_stack_str(char *str, t_stack *stack_a)
 {
-	int i;
-	char **nb;
+	int		i;
+	char	**nb;
 
 	nb = ft_split(str, ' ');
 	i = 0;

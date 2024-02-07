@@ -1,7 +1,7 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-LIBS = ft_printf/libftprintf.a \
+CFLAGS = -Wall -Wextra -Werror -g3
+LIBS = ft_libft/ft_printf/libftprintf.a \
 		ft_libft/libft.a \
 
 SRCS = src/main.c \
@@ -12,7 +12,7 @@ SRCS = src/main.c \
 		src/utils/utils.c \
 		src/utils/utils_stack.c \
 		src/move/push.c \
-		# src/move/swap.c \
+		src/move/swap.c \
 
 OBJS = ${SRCS:.c=.o}
 
@@ -25,8 +25,6 @@ BANNER2 = printf "$(COLOR) )___/ )(__)( \__ \ ) _ (  ___ \__ \ )    (  /(__)\  )
 BANNER3 = printf "$(COLOR)(__)  (______)(___/(_) (_)(___)(___/(__/\__)(__)(__)(__)\n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
-
-all: $(NAME)
 
 load:
 	@sleep 0.4
@@ -41,15 +39,17 @@ load:
 	@printf "\r"
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
+
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(HEADER)
 	# @make --no-print-directory load
 	@make -j -s -C ft_libft/
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
 	# @make --no-print-directory load
-	@echo "\033[38;5;48mso_long is ready !\033[0m"
+	@echo "\033[38;5;48mpush_swap is ready !\033[0m"
 
 clean:
 	@make clean -s -C ft_libft/
@@ -58,9 +58,8 @@ clean:
 fclean: clean
 	@rm -rf $(NAME)
 	@make fclean -s -C ft_libft/
-	@echo "\033[38;5;31mso_long cleaned...\033[0m"
+	@echo "\033[38;5;31mpush_swap cleaned...\033[0m"
 
 re: fclean all
-	@make -j all --no-print-directory
 
 .PHONY: all clean fclean re

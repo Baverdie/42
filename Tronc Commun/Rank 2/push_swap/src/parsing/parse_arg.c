@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:06:11 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/06 16:15:39 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/07 16:29:56 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ft_check_args(int argc, char **argv)
 		tmp = ft_atoll(args[i]);
 		if (ft_isnum(args[i]))
 			ft_print_errors(NOT_NUMBERS);
-		if(tmp > 2147483647 || tmp < -2147483648)
+		if (tmp > 2147483647 || tmp < -2147483648 || ft_strlen(args[i]) > 11)
 			ft_print_errors(NOT_INT);
 		if (ft_check_duplicates(tmp, args, i))
 			ft_print_errors(NOT_DUPLICATES);

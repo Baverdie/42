@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:19:42 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/25 16:18:38 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/07 16:35:19 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ t_stack	*ft_lstnew(int nb)
 {
 	t_stack	*new;
 
-	if (!(new = malloc(sizeof(t_stack))))
+	new = ft_calloc(1, sizeof(t_stack));
+	if (!new)
 		return (NULL);
 	new->nb = nb;
 	new->next = NULL;
