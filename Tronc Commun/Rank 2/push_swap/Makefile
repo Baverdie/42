@@ -41,17 +41,13 @@ load:
 	@printf "\r"
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 	$(HEADER)
 	# @make --no-print-directory load
-	@echo "\033[38;5;48mMLX42 is ready !\033[0m"
-	# @make --no-print-directory load
 	@make -j -s -C ft_libft/
-	# @make --no-print-directory load
-	@make -j -s -C ft_printf/
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
 	# @make --no-print-directory load
 	@echo "\033[38;5;48mso_long is ready !\033[0m"
 
@@ -60,12 +56,11 @@ clean:
 	@rm -rf $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 	@make fclean -s -C ft_libft/
-	@make fclean -s -C ft_printf/
 	@echo "\033[38;5;31mso_long cleaned...\033[0m"
 
-re: fclean
+re: fclean all
 	@make -j all --no-print-directory
 
 .PHONY: all clean fclean re

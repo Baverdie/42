@@ -6,81 +6,98 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:24:37 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 19:32:22 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/06 15:41:53 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	ft_print_errors(char *err)
+int ft_print_errors(char *err)
 {
-	printf("%s%s", TITLE_ERROR, err);
-	return (0);
+	ft_putendl_fd(TITLE_ERROR, 2);
+	ft_putendl_fd(err, 2);
+	exit(0);
 }
 
-void	ft_free_stack(t_stack *stack)
+void	ft_free(char **str)
 {
-	if (!stack)
-		return ;
-	ft_free_stack(stack->next);
+	int	i;
+
+	i = 0;
+	if (str)
+	{
+		while (str[i])
+		{
+			free(str[i]);
+			i++;
+		}
+		free(str);
+		str = NULL;
+	}
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*head;
+	t_stack	*tmp;
+
+	head = *stack;
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 	free(stack);
 }
 
-void	graph(t_stack *stack)
+
+void graph(t_stack **stack)
 {
 	printf("\n-----\n| A |\n-----\n");
 	ft_print_stack(stack);
 	printf("-----\n");
 }
 
-void	graph_double(t_stack *stack_a, t_stack *stack_b)
+void graph_double(t_stack **stack_a, t_stack **stack_b)
 {
 	printf("\n-----\t\t-----\n| A |\t\t| B |\n-----\t\t-----\n");
 	ft_print_double_stack(stack_a, stack_b);
 	printf("-----\t\t-----\n\n");
 }
 
-void	ft_print_stack(t_stack *stack)
+void ft_print_stack(t_stack **stack)
 {
-	if (!stack)
-		return ;
-	printf("| %d |\n", stack->nb);
-	ft_print_stack(stack->next);
+	t_stack *tmp;
+
+	tmp = *stack;
+	while (tmp)
+	{
+		printf("| %d |\n", tmp->nb);
+		tmp = tmp->next;
+	}
 }
 
-void	ft_print_double_stack(t_stack *stack_a, t_stack *stack_b)
+void ft_print_double_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!stack_a->next && !stack_b->next)
+	t_stack *tmp_a;
+	t_stack *tmp_b;
+
+	tmp_a = *stack_a;
+	tmp_b = *stack_b;
+	while (tmp_a || tmp_b)
 	{
-		if (stack_a->nb)
-		{
-			printf("| %d |\t\t", stack_a->nb);
-			stack_a = stack_a->next;
-		}
+		if (tmp_a)
+			printf("| %d |\t\t", tmp_a->nb);
 		else
-			printf("|   |\t\t");
-		if (stack_b->nb)
-		{
-			printf("| %d |\n", stack_b->nb);
-			stack_b = stack_b->next;
-		}
+			printf("|\t\t");
+		if (tmp_b)
+			printf("| %d |\n", tmp_b->nb);
 		else
 			printf("|   |\n");
-		return ;
-		}
-	if (stack_a->nb)
-	{
-		printf("| %d |\t\t", stack_a->nb);
-		stack_a = stack_a->next;
+		if (tmp_a)
+			tmp_a = tmp_a->next;
+		if (tmp_b)
+			tmp_b = tmp_b->next;
 	}
-	else
-		printf("|   |\t\t");
-	if (stack_b->nb)
-	{
-		printf("| %d |\n", stack_b->nb);
-		stack_b = stack_b->next;
-	}
-	else
-		printf("|   |\n");
-	ft_print_double_stack(stack_a, stack_b);
 }

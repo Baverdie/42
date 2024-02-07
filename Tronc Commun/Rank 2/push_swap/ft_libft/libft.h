@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:52:05 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/25 15:37:06 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/06 15:53:18 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 
 int		ft_atoi(const char *nptr);
+long long int	ft_atoll(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);

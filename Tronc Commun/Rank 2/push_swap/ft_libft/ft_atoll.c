@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 01:51:48 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/06 15:52:46 by bastienverd      ###   ########.fr       */
+/*   Created: 2024/02/06 15:52:23 by bastienverd       #+#    #+#             */
+/*   Updated: 2024/02/06 15:53:00 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long long int	ft_atoll(const char *nptr)
 {
-	int	i;
+	int				i;
 	long long int	sign;
 	long long int	res;
 
