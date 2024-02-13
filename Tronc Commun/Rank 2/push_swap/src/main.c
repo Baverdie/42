@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:52:33 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/07 16:29:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:44:05 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	size = ft_lstsize(*stack_a);
 	if (size == 2)
 		ra(stack_a);
-	(void)stack_b;
+	else
+		radix(stack_a, stack_b);
 }
 
 void	init_stack(t_stack **stack, int argc, char **argv)
@@ -56,6 +57,7 @@ void	init_stack(t_stack **stack, int argc, char **argv)
 		ft_lstadd_back(stack, new);
 		i++;
 	}
+	init_index(stack);
 	if (argc == 2)
 		ft_free(args);
 }
@@ -80,6 +82,7 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		sort_stack(stack_a, stack_b);
+		graph_double(stack_a, stack_b);
 		free_stack(stack_a);
 		free_stack(stack_b);
 		return (0);

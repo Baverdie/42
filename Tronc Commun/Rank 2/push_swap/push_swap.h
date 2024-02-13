@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:53:16 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/07 16:26:28 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/12 16:37:59 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,16 @@
 typedef struct s_stack
 {
 	int				nb;
+	int				index;
 	struct s_stack	*next;
 }				t_stack;
 
 // PARSING
-	// parse_arg
 void	ft_check_args(int argc, char **argv);
-	// parse_stack
-int		add_stack(int argc, char **argv, t_stack *stack_a);
-int		add_stack_str(char *str, t_stack *stack_a);
+void	init_index(t_stack **stack);
 
 // MOVE
+void	radix(t_stack **stack_a, t_stack **stack_b);
 int		sa(t_stack **stack_a);
 int		sb(t_stack **stack_b);
 int		ss(t_stack **stack_a, t_stack **stack_b);

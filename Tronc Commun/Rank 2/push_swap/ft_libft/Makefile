@@ -29,11 +29,11 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -f $(OBJS)
-	@make clean -s -C ft_printf/
+	@make clean -j -s -C ft_printf/
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -s -C ft_printf/
+	@make fclean -j -s -C ft_printf/
 	@echo "\033[38;5;31mft_libft cleaned...\033[0m"
 
 re: fclean all
