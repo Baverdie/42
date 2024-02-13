@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 21:29:53 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/13 17:45:48 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/13 23:45:53 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ int	max_bit(t_stack **stack)
 void	radix(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
-	int i;
-	int	j;
-	int	size;
-	int	max;
+	int		i;
+	int		j;
+	int		size;
+	int		max;
 
 	i = 0;
 	tmp = *stack_a;

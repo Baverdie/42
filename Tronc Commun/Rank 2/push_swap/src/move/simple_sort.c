@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:35:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/13 22:32:13 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/13 23:44:59 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	find_max(t_stack **stack)
 {
-	t_stack *tmp;
-	int	max;
+	t_stack	*tmp;
+	int		max;
 
 	tmp = *stack;
 	max = tmp->nb;
@@ -30,8 +30,8 @@ int	find_max(t_stack **stack)
 
 int	find_min(t_stack **stack)
 {
-	t_stack *tmp;
-	int	min;
+	t_stack	*tmp;
+	int		min;
 
 	tmp = *stack;
 	min = tmp->nb;

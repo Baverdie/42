@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/13 10:47:50 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/13 23:45:24 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_index(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*head;
-	
+
 	head = *stack;
 	tmp = *stack;
 	while (tmp)

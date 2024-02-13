@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:24:37 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/13 22:33:39 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/13 23:46:14 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	free_stack(t_stack **stack)
 
 void	push_element(t_stack **stack_a, t_stack **stack_b, int nb)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		count;
 
 	tmp = *stack_a;

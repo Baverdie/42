@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:08:29 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/14 01:04:11 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/14 00:43:39 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	pos_player(t_data *data, t_game_object *pos)
 		while (data->map[i][j])
 		{
 			if (data->map[i][j] == 'P' && pos->player_col != 0)
-				return (ft_print_errors(PLAYER_MULTIPLE));
+				return (ft_print_errors(MULTIPLE_PLAYER));
 			else if (data->map[i][j] == 'P')
 			{
 				pos->player_row = i;
@@ -36,7 +36,7 @@ int	pos_player(t_data *data, t_game_object *pos)
 	}
 	if (pos->player_col != 0)
 		return (1);
-	return (ft_print_errors(PLAYER_MISSING));
+	return (ft_print_errors(MISSING_PLAYER));
 }
 
 void	count_obj(t_data *data, t_game_object *pos)
@@ -72,7 +72,7 @@ int	pos_exit(t_data *data, t_game_object *pos)
 		while (data->map[i][j])
 		{
 			if (data->map[i][j] == 'E' && pos->exit_col != 0)
-				return (ft_print_errors(EXIT_MULTIPLE));
+				return (ft_print_errors(MULTIPLE_EXIT));
 			else if (data->map[i][j] == 'E')
 			{
 				pos->exit_row = i;
@@ -84,7 +84,7 @@ int	pos_exit(t_data *data, t_game_object *pos)
 	}
 	if (pos->exit_col != 0)
 		return (1);
-	return (ft_print_errors(EXIT_MISSING));
+	return (ft_print_errors(MISSING_EXIT));
 }
 
 int	pos_data(t_data *data)

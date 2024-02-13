@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 16:34:46 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/13 16:14:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/14 00:44:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	errors_map(t_data *data)
 	if (check_errors(data) == 0 && check_path(data) != 0)
 	{
 		print_map_errors(data);
-		return (ft_print_errors(INVALID_NO_PATH));
+		return (ft_print_errors(INVALID_MAP_AND_NO_PATH));
 	}
 	if (check_errors(data) == 0)
 	{

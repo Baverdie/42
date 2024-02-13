@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/13 16:01:37 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/14 00:39:23 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ int	so_long(t_data *data)
 	t_mlx	*mlx;
 
 	mlx = ft_calloc(1, sizeof(t_mlx));
+	if (!mlx)
+		return (ft_print_errors(ERROR_LABDA));
 	init_vars(mlx, data);
 	mlx->mlx = mlx_init();
 	mlx->window = mlx_new_window(mlx->mlx, mlx->data->nb_cols * 32, \
