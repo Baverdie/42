@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:53:16 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/12 16:37:59 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/13 18:09:10 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	init_index(t_stack **stack);
 
 // MOVE
 void	radix(t_stack **stack_a, t_stack **stack_b);
+void	simple_sort(t_stack **stack);
+void	sort_4(t_stack **stack_a, t_stack **stack_b);
 int		sa(t_stack **stack_a);
 int		sb(t_stack **stack_b);
 int		ss(t_stack **stack_a, t_stack **stack_b);

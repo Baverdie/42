@@ -14,6 +14,7 @@ SRCS = src/main.c \
 		src/move/push.c \
 		src/move/swap.c \
 		src/move/radix.c \
+		src/move/simple_sort.c \
 
 OBJS = ${SRCS:.c=.o}
 

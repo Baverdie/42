@@ -3,51 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/13 10:38:52 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/13 10:47:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_stack	*get_next_min(t_stack **stack)
+int	get_next_min(t_stack *stack, int nb)
 {
 	t_stack	*tmp;
-	t_stack	*min;
-	int		has_min;
+	int		count;
 
-	min = NULL;
-	has_min = 0;
-	tmp = *stack;
-	if (tmp)
+	tmp = stack;
+	count = 0;
+	while (tmp)
 	{
-		while (tmp)
-		{
-			if (!has_min || tmp->nb < min->nb)
-			{
-				min = tmp;
-				has_min = 1;
-			}
-			tmp = tmp->next;
-		}
+		if (nb > tmp->nb)
+			count++;
+		tmp = tmp->next;
 	}
-	return (min);
+	return (count);
 }
 
 void	init_index(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack	*check_point;
-	int		index;
-
-	index = 1;
-	tmp = get_next_min(stack);
+	t_stack	*head;
+	
+	head = *stack;
+	tmp = *stack;
 	while (tmp)
 	{
-		tmp->index = index++;
-		tmp = get_next_min(stack);
+		tmp->index = get_next_min(head, tmp->nb);
 		tmp = tmp->next;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:52:33 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/12 19:44:05 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/13 18:10:54 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	size = ft_lstsize(*stack_a);
 	if (size == 2)
 		ra(stack_a);
+	else if (size == 3)
+		simple_sort(stack_a);
+	else if (size == 4)
+		sort_4(stack_a, stack_b);
 	else
 		radix(stack_a, stack_b);
 }

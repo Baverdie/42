@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 21:29:53 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/13 10:04:09 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/13 17:45:48 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

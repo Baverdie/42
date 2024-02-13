@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 23:16:19 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/23 13:12:47 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:11:52 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char	*get_line(char *line)
 	stored = ft_substr(line, i + 1, ft_strlen(line) - i);
 	if (!stored)
 	{
-		ft_free(stored);
+		free(stored);
 		stored = NULL;
 	}
 	if (line[i] != '\0')
@@ -67,7 +67,7 @@ static char	*read_line(int fd, char *buf, char *stored)
 		buf[j] = '\0';
 		if (!stored)
 		{
-			stored = malloc(sizeof(char));
+			stored = ft_calloc(sizeof(char), 1);
 			stored[0] = '\0';
 		}
 		tmp = stored;
@@ -89,7 +89,7 @@ char	*get_next_line(int fd)
 		free(stored);
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
-	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buf = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!buf)
 		return (NULL);
 	line = read_line(fd, buf, stored);

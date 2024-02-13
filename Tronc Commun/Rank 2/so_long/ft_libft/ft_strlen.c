@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:52:17 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/26 08:21:23 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:58:25 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strlen(const char *str)
 	i = 0;
 	if (!str)
 		return (0);
-	while (str[i] && str[i] != '\n')
+	while (str[i])
 		i++;
 	return (i);
 }
