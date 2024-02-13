@@ -1,9 +1,0 @@
-- change players
-- night mode
-- random boss spawn
-- exit in dead spawn
-- dash reloading
-- Score screen
-- retry screen
-- Game over screen
-- life bar
