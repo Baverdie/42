@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:24:37 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/07 16:34:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/13 22:33:39 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,54 +51,27 @@ void	free_stack(t_stack **stack)
 	free(stack);
 }
 
-void	graph(t_stack **stack)
+void	push_element(t_stack **stack_a, t_stack **stack_b, int nb)
 {
-	printf("\n-----\n| A |\n-----\n");
-	ft_print_stack(stack);
-	printf("-----\n");
-}
+	t_stack *tmp;
+	int		count;
 
-void	graph_double(t_stack **stack_a, t_stack **stack_b)
-{
-	printf("\n-----\t\t-----\n| A |\t\t| B |\n-----\t\t-----\n");
-	ft_print_double_stack(stack_a, stack_b);
-	printf("-----\t\t-----\n\n");
-}
-
-void	ft_print_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	tmp = *stack;
-	while (tmp)
+	tmp = *stack_a;
+	count = 0;
+	while (tmp->nb != nb)
 	{
-		printf("| %d |\n", tmp->nb);
 		tmp = tmp->next;
+		count++;
 	}
-}
-
-void	ft_print_double_stack(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*tmp_a;
-	t_stack	*tmp_b;
-
-	if (!stack_a || !stack_b)
-		printf("Error\n");
-	tmp_a = *stack_a;
-	tmp_b = *stack_b;
-	while (tmp_a || tmp_b)
+	if (count >= 3)
 	{
-		if (tmp_a)
-			printf("| %d |\t\t", tmp_a->nb);
-		else
-			printf("|   |\t\t");
-		if (tmp_b)
-			printf("| %d |\n", tmp_b->nb);
-		else
-			printf("|   |\n");
-		if (tmp_a)
-			tmp_a = tmp_a->next;
-		if (tmp_b)
-			tmp_b = tmp_b->next;
+		while ((*stack_a)->nb != nb)
+			rra(stack_a);
 	}
+	else if (count >= 1)
+	{
+		while ((*stack_a)->nb != nb)
+			ra(stack_a);
+	}
+	pb(stack_a, stack_b);
 }

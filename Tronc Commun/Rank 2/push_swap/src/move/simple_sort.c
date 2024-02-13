@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:35:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/13 18:13:36 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/13 22:32:13 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	find_max(t_stack **stack)
 {
 	t_stack *tmp;
 	int	max;
-	
+
 	tmp = *stack;
 	max = tmp->nb;
 	while (tmp)
@@ -32,7 +32,7 @@ int	find_min(t_stack **stack)
 {
 	t_stack *tmp;
 	int	min;
-	
+
 	tmp = *stack;
 	min = tmp->nb;
 	while (tmp)
@@ -59,34 +59,21 @@ void	simple_sort(t_stack **stack)
 
 void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tmp;
 	int	min;
-	int	count;
 
-	tmp = *stack_a;
 	min = find_min(stack_a);
-	count = 0;
-	while (tmp->nb != min)
-	{
-		tmp = tmp->next;
-		count++;
-	}
-	if (count >= 3)
-	{
-		while ((*stack_a)->nb != min)
-			rra(stack_a);
-	}
-	else if (count >= 1)
-	{
-		while ((*stack_a)->nb != min)
-			ra(stack_a);
-	}
-	pb(stack_a, stack_b);
+	push_element(stack_a, stack_b, min);
 	simple_sort(stack_a);
 	pa(stack_a, stack_b);
 }
 
 void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
-	
+	int	max;
+
+	max = find_max(stack_a);
+	push_element(stack_a, stack_b, max);
+	sort_4(stack_a, stack_b);
+	pa(stack_a, stack_b);
+	ra(stack_a);
 }
