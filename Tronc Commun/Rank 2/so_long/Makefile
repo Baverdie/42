@@ -1,6 +1,6 @@
 NAME = so_long
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
 LIBS = ft_printf/libftprintf.a \
 		ft_libft/libft.a \
 		MacroLibX/libmlx.so -lSDL2
