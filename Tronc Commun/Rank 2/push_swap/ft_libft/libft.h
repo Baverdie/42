@@ -6,12 +6,13 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:52:05 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/07 16:28:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/14 19:07:52 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include "ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
 

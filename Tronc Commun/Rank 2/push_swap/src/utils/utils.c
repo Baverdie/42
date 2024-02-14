@@ -6,16 +6,15 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:24:37 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/13 23:46:14 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/14 22:40:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	ft_print_errors(char *err)
+int	ft_print_errors()
 {
-	ft_putendl_fd(TITLE_ERROR, 2);
-	ft_putendl_fd(err, 2);
+	ft_putendl_fd("\033[0;31mError\033[0m", 2);
 	exit(0);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:53:16 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/13 22:34:14 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/14 22:40:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "ft_libft/libft.h"
-# include "ft_libft/ft_printf/ft_printf.h"
-# include <stdlib.h>
-# include <unistd.h>
-
-# define TITLE_ERROR "\033[0;31mError\033[0m"
-# define ERROR_LABDA "Error detected"
-# define NO_ARGUMENTS "Missing arguments"
-# define NOT_NUMBERS "A word was detected"
-# define NOT_INT "A number is not an int"
-# define NOT_DUPLICATES "Duplicates detected"
-# define NOT_ENOUGH "Not enough numbers"
-# define MALLOC_ERROR "Malloc error"
 
 typedef struct s_stack
 {
@@ -57,7 +45,7 @@ int		rrr(t_stack **stack_a, t_stack **stack_b);
 
 // UTILS
 	// print
-int		ft_print_errors(char *err);
+int		ft_print_errors();
 	// stack
 int		ft_lstsize(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
