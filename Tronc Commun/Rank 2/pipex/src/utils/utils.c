@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 23:06:05 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/15 11:43:41 by basverdi         ###   ########.fr       */
+/*   Created: 2024/02/15 11:36:04 by basverdi          #+#    #+#             */
+/*   Updated: 2024/02/15 11:45:13 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "../../pipex.h"
 
-# include "ft_libft/libft.h"
-# include <stdio.h>
-
-# define TITLE_ERROR "\033[0;31mError\033[0m\n"
-# define ERROR_ARGS "Pipex only takes 4 arguments !"
-
-//PIPEX
-
-//UTILS
-	//print
-int	ft_print_error(char *err);
-
-# endif
+int	ft_print_error(char *err)
+{
+	ft_printf("%s%s\n", TITLE_ERROR, err);
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:45:50 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/26 09:33:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/15 14:40:28 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	errors_type(t_data *data, int i, int j)
 	{
 		if (j == 0 || i == 0)
 			return (0);
-		if (j == data->nb_cols || i == data->nb_rows)
+		if (j == data->nb_cols - 1 || i == data->nb_rows)
 			return (0);
 	}
 	return (1);

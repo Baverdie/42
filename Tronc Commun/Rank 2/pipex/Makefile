@@ -5,6 +5,7 @@ LIBS = ft_libft/ft_printf/libftprintf.a \
 		ft_libft/libft.a \
 
 SRCS = src/main.c \
+	src/utils/utils.c \
 
 OBJS = ${SRCS:.c=.o}
 

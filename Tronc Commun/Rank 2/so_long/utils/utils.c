@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:46:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/13 11:01:42 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/15 13:05:11 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	init_vars(t_mlx *mlx, t_data *data)
 	mlx->img = ft_calloc(1, sizeof(t_textures));
 	if (!mlx || !mlx->img)
 		return (ft_print_errors(ERROR_LABDA));
+	mlx->img_size = 32;
 	mlx->data = data;
 	mlx->nb_move = 0;
 	mlx->nb_col = 0;

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/14 00:44:22 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/15 14:04:59 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define TITLE_ERROR "\033[0;31mError\033[0m\n"
 # define INVALID_EXTENSION "Invalid extension\n"
 # define ERROR_LABDA "Error detected\n"
-# define TO_MORE_FILE "Too many arguments detected\n"
+# define TO_MANY_FILE "Too many arguments detected\n"
 # define NO_FILE "Missing file\n"
 # define INVALID_FILE "Invalid file\n"
 # define EMPTY_FILE "Empty file\n"
@@ -146,6 +146,7 @@ void	free_data(t_data *data);
 void	ft_destroy(t_mlx *mlx);
 	// print
 void	print_map_errors(t_data *data);
+void	print_no_path(t_data *data);
 void	print_path_map(t_data *data, int x, int y);
 int		ft_print_errors(char *err);
 int		ft_map(t_mlx *mlx);
@@ -168,5 +169,9 @@ int		kill_mob(t_mlx *mlx, int y, int x);
 int		count_mob(t_data *data);
 int		lateral(t_data *data, t_mob *mob, int rd);
 int		vertical(t_data *data, t_mob *mob, int rd);
+
+
+
+void	print_map(char **map);
 
 #endif
