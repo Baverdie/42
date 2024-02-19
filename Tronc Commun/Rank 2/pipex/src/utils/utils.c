@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:36:04 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/19 14:17:42 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/19 15:14:33 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include PATH
+#include "../../pipex.h"
 
 int	ft_print_error(char *err)
 {
