@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:06:05 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/19 15:14:30 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/19 15:32:33 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 //PIPEX
 	//parsing
-int	check_cmd(char **av, char **envp);
+int	parse_args(char **av, char **envp);
 //UTILS
 	//print
 int	ft_print_error(char *err);

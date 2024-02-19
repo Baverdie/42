@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/19 15:28:37 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/19 15:32:13 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	check_cmd(char	**path, char **av)
 	while (path[i])
 	{
 		tmp = ft_strjoin(path[i], "/");
-		printf("%s\n", path[i]);
 		full_path = ft_strjoin(tmp, av[1]);
-		printf("%s\n", full_path);
 		free(tmp);
 		if (access(full_path, F_OK) == 0)
 			printf("%s is existing\n", av[1]);
@@ -45,12 +43,11 @@ int	parse_args(char **av, char **envp)
 	{
 		if (ft_strncmp(envp[i], "PATH=", 5) == 0)
 		{
-			printf("%s\n", envp[i]);
 			path = ft_split(envp[i] + 5, ':');
 		}
 		i++;
 	}
-	if (path == NULL)
+	if (!path)
 		return (1);
 	check_cmd(path, av);
 	ft_free(path);
