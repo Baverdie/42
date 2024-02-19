@@ -16,13 +16,13 @@ SRCS = main.c \
 	utils/utils_display.c \
 	utils/free.c \
 	utils/utils.c \
-	utils/utils_graphique.c \
+	utils/utils_graphic.c \
 	utils/utils_score.c \
-	graphique/so_long.c \
-	graphique/dash.c \
-	graphique/move.c \
-	graphique/mob.c \
-	graphique/events.c \
+	graphic/so_long.c \
+	graphic/dash.c \
+	graphic/move.c \
+	graphic/mob.c \
+	graphic/events.c \
 
 OBJS = ${SRCS:.c=.o}
 

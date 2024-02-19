@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:53:16 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/14 22:40:55 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/18 13:15:27 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		rrr(t_stack **stack_a, t_stack **stack_b);
 
 // UTILS
 	// print
-int		ft_print_errors();
+int		ft_print_errors(void);
 	// stack
 int		ft_lstsize(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);

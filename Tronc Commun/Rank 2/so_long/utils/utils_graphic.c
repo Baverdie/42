@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_graphique.c                                  :+:      :+:    :+:   */
+/*   utils_graphic.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:25:24 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/15 13:14:35 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:38:03 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,10 @@ void	ft_free_img(t_mlx *mlx)
 		mlx_destroy_image(mlx->mlx, mlx->img->player_left);
 	if (mlx->img->player_right)
 		mlx_destroy_image(mlx->mlx, mlx->img->player_right);
-	if (mlx->img->player_top)
-		mlx_destroy_image(mlx->mlx, mlx->img->player_top);
 	if (mlx->img->mob_left)
 		mlx_destroy_image(mlx->mlx, mlx->img->mob_left);
 	if (mlx->img->mob_right)
 		mlx_destroy_image(mlx->mlx, mlx->img->mob_right);
-	if (mlx->img->mob_top)
-		mlx_destroy_image(mlx->mlx, mlx->img->mob_top);
 	if (mlx->img->wall)
 		mlx_destroy_image(mlx->mlx, mlx->img->wall);
 	if (mlx->img->ground)
@@ -40,7 +36,8 @@ void	ft_free_img(t_mlx *mlx)
 
 void	ft_destroy(t_mlx *mlx)
 {
-	ft_free_img(mlx);
+	if (mlx)
+		ft_free_img(mlx);
 	mlx_destroy_window(mlx->mlx, mlx->window);
 	mlx_destroy_display(mlx->mlx);
 	free(mlx->img);

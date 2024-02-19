@@ -6,13 +6,13 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:24:37 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/14 22:40:50 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/18 13:15:14 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	ft_print_errors()
+int	ft_print_errors(void)
 {
 	ft_putendl_fd("\033[0;31mError\033[0m", 2);
 	exit(0);

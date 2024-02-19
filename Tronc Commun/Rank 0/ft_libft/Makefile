@@ -56,7 +56,7 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	
 bonus: $(OBJSBONUS) $(OBJS)
-	@ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
+	ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
 	$(HEADERB)
 	@echo "\033[38;5;48mft_libft_bonus is ready !\033[0m"
 

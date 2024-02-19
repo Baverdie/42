@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 19:46:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/15 13:05:11 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:53:32 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_str_display(t_mlx *mlx)
 	nb_score = ft_itoa(mlx->score);
 	score = ft_strjoin("Score : ", nb_score);
 	mlx_string_put(mlx->mlx, mlx->window, 32, 25, 0xffFFFFFF, movs);
-	mlx_string_put(mlx->mlx, mlx->window, width - 32, 25, 0xffFFFFFF, score);
+	mlx_string_put(mlx->mlx, mlx->window, width - 64, mlx->data->nb_rows * 32 - 15, 0xffFFFFFF, score);
 	free(nb_score);
 	free(nb_moves);
 	free(movs);

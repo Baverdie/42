@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 20:43:01 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/15 14:04:59 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:11:23 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,12 @@ typedef struct s_data {
 
 typedef struct s_textures {
 	void	*player_left;
-	void	*player_top;
 	void	*player_right;
 	void	*exit;
 	void	*wall;
 	void	*col;
 	void	*ground;
 	void	*mob_left;
-	void	*mob_top;
 	void	*mob_right;
 	void	*tombstone;
 }	t_textures;
@@ -169,8 +167,6 @@ int		kill_mob(t_mlx *mlx, int y, int x);
 int		count_mob(t_data *data);
 int		lateral(t_data *data, t_mob *mob, int rd);
 int		vertical(t_data *data, t_mob *mob, int rd);
-
-
 
 void	print_map(char **map);
 

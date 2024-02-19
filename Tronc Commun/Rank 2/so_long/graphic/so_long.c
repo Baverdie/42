@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:08:16 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/15 13:04:11 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:11:38 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ void	set_img(t_mlx *mlx)
 		"textures/wall.png", &mlx->img_size, &mlx->img_size);
 	mlx->img->ground = mlx_png_file_to_image(mlx->mlx, \
 		"textures/floor.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->player_top = mlx_png_file_to_image(mlx->mlx, \
-		"textures/player_left.png", &mlx->img_size, &mlx->img_size);
 	mlx->img->player_right = mlx_png_file_to_image(mlx->mlx, \
 		"textures/player_right.png", &mlx->img_size, &mlx->img_size);
 	mlx->img->player_left = mlx_png_file_to_image(mlx->mlx, \
@@ -51,8 +49,6 @@ void	set_img(t_mlx *mlx)
 		"textures/door_close.png", &mlx->img_size, &mlx->img_size);
 	mlx->img->col = mlx_png_file_to_image(mlx->mlx, \
 		"textures/collectible.png", &mlx->img_size, &mlx->img_size);
-	mlx->img->mob_top = mlx_png_file_to_image(mlx->mlx, \
-		"textures/mob_left.png", &mlx->img_size, &mlx->img_size);
 	mlx->img->mob_right = mlx_png_file_to_image(mlx->mlx, \
 		"textures/mob_right.png", &mlx->img_size, &mlx->img_size);
 	mlx->img->mob_left = mlx_png_file_to_image(mlx->mlx, \
