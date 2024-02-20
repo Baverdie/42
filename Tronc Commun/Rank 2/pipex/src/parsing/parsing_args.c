@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/19 15:32:13 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:51:35 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	check_cmd(char	**path, char **av)
 	while (path[i])
 	{
 		tmp = ft_strjoin(path[i], "/");
-		full_path = ft_strjoin(tmp, av[1]);
+		full_path = ft_strjoin(tmp, av[2]);
 		free(tmp);
 		if (access(full_path, F_OK) == 0)
-			printf("%s is existing\n", av[1]);
+			printf("%s is existing\n", av[2]);
 		i++;
 		free(full_path);
 	}
