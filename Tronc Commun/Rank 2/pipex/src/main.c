@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:45 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/19 17:01:09 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/20 14:41:44 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int	main(int ac, char **av, char **envp)
 
 	if (ac == 5)
 	{
-		get_fds(&data, av);
-		parse_args(av, envp);
+		if (get_fds(&data, av))
+			return (0);
+		if (parse_args(av, envp))
+			return (0);
 	}
 	else
 		ft_print_error(ERROR_ARGS);

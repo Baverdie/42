@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_args.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/19 16:51:35 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/20 14:45:03 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,18 @@ int	parse_args(char **av, char **envp)
 
 	i = 0;
 	path = NULL;
-	while (envp[i])
+	if (access(av[2], F_OK) == -1 && access(av[3], F_OK) == -1 && envp != NULL)
 	{
-		if (ft_strncmp(envp[i], "PATH=", 5) == 0)
+		while (envp[i])
 		{
-			path = ft_split(envp[i] + 5, ':');
+			if (ft_strncmp(envp[i], "PATH=", 5) == 0)
+				path = ft_split(envp[i] + 5, ':');
+			i++;
 		}
-		i++;
+		if (!path)
+			return (1);
+		check_cmd(path, av);
+		ft_free(path);
 	}
-	if (!path)
-		return (1);
-	check_cmd(path, av);
-	ft_free(path);
 	return (0);
 }
