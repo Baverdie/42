@@ -3,22 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:36:04 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/20 14:41:17 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/21 10:05:25 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../pipex.h"
 
-int	ft_print_error(char *err)
+void	ft_print_error(char *err)
+{
+	ft_printf("%s%s\n", TITLE_ERROR, err);
+}
+
+int	ft_print_error_return(char *err)
 {
 	ft_printf("%s%s\n", TITLE_ERROR, err);
 	return (0);
 }
 
-int	get_fds(t_data *data, char **av)
+void	get_fds(t_data *data, char **av)
 {
 	int	fd1;
 	int	fd2;
@@ -27,17 +32,22 @@ int	get_fds(t_data *data, char **av)
 	if (fd1 <= 0)
 	{
 		perror(av[1]);
-		return (1);
+		exit (1);
 	}
 	data->fd_in = fd1;
 	fd2 = open(av[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (fd2 <= 0)
 	{
 		perror(av[4]);
-		return (1);
+		exit (1);
 	}
 	data->fd_out = fd2;
-	return (0);
+}
+
+void	close_pipe(t_data *data)
+{
+	close(data->pipe[0]);
+	close(data->pipe[1]);
 }
 
 void	ft_free(char **tab)
