@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/21 14:22:48 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:27:15 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*get_path(char **envp, char *cmd)
 {
-	int	i;
+	int		i;
 	char	*path;
 	char	**paths;
 	char	*tmp;
@@ -24,28 +24,18 @@ char	*get_path(char **envp, char *cmd)
 		return (cmd);
 	while (ft_strncmp(envp[i], "PATH=", 5))
 		i++;
-	if (!envp || !envp[i])
+	if (!envp[i])
 		return (NULL);
 	paths = ft_split(envp[i] + 5, ':');
 	i = 0;
-	while (paths && paths[i])
+	path = ft_strdup("");
+	tmp = ft_strjoin("/", cmd);
+	while (paths && paths[i] && path && access(path, F_OK))
 	{
-		tmp = ft_strjoin(paths[i], "/");
-		if (!tmp)
-		{
-			i++;
-			continue;
-		}
-		path = ft_strjoin(tmp, cmd);
-		if (path && access(path, F_OK) == 0)
-		{
-			ft_free(paths);
-			free(tmp);
-			return (path);
-		}
-		ft_free_vars(2, path, tmp);
+		free(path);
+		path = ft_strjoin(paths[i], tmp);
 		i++;
 	}
 	ft_free(paths);
-	return (NULL);
+	return (path);
 }

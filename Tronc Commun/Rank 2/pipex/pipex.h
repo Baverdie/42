@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:06:05 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/21 12:40:45 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:09:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ int		ft_print_error_return(char *err);
 	//free
 void	ft_free(char **tab);
 void	ft_free_vars(int nb, ...);
-void	close_pipe(t_data *data);
+void	close_pipe(t_data data);
 
-# endif
+#endif
