@@ -3,23 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:36:04 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/21 10:05:25 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/02/21 12:40:35 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../pipex.h"
 
-void	ft_print_error(char *err)
-{
-	ft_printf("%s%s\n", TITLE_ERROR, err);
-}
-
 int	ft_print_error_return(char *err)
 {
-	ft_printf("%s%s\n", TITLE_ERROR, err);
+	ft_putstr_fd(TITLE_ERROR, 2);
+	ft_putstr_fd(err, 2);
 	return (0);
 }
 
@@ -61,4 +57,19 @@ void	ft_free(char **tab)
 		i++;
 	}
 	free(tab);
+}
+
+void	ft_free_vars(int nb, ...)
+{
+	va_list	arg;
+	int		i;
+
+	i = 0;
+	va_start(arg, nb);
+	while (i < nb)
+	{
+		free(va_arg(arg, char *));
+		i++;
+	}
+	va_end(arg);
 }
