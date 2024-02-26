@@ -6,51 +6,36 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/20 14:45:03 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:27:15 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../pipex.h"
 
-int	check_cmd(char	**path, char **av)
+char	*get_path(char **envp, char *cmd)
 {
-	int	i;
-	char	*full_path;
+	int		i;
+	char	*path;
+	char	**paths;
 	char	*tmp;
 
 	i = 0;
-	while (path[i])
-	{
-		tmp = ft_strjoin(path[i], "/");
-		full_path = ft_strjoin(tmp, av[2]);
-		free(tmp);
-		if (access(full_path, F_OK) == 0)
-			printf("%s is existing\n", av[2]);
+	if (access(cmd, F_OK) == 0)
+		return (cmd);
+	while (ft_strncmp(envp[i], "PATH=", 5))
 		i++;
-		free(full_path);
-	}
-	return (0);
-}
-
-int	parse_args(char **av, char **envp)
-{
-	int	i;
-	char	**path;
-
+	if (!envp[i])
+		return (NULL);
+	paths = ft_split(envp[i] + 5, ':');
 	i = 0;
-	path = NULL;
-	if (access(av[2], F_OK) == -1 && access(av[3], F_OK) == -1 && envp != NULL)
+	path = ft_strdup("");
+	tmp = ft_strjoin("/", cmd);
+	while (paths && paths[i] && path && access(path, F_OK))
 	{
-		while (envp[i])
-		{
-			if (ft_strncmp(envp[i], "PATH=", 5) == 0)
-				path = ft_split(envp[i] + 5, ':');
-			i++;
-		}
-		if (!path)
-			return (1);
-		check_cmd(path, av);
-		ft_free(path);
+		free(path);
+		path = ft_strjoin(paths[i], tmp);
+		i++;
 	}
-	return (0);
+	ft_free(paths);
+	return (path);
 }

@@ -6,11 +6,57 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:45 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/20 14:41:44 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/26 15:12:30 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
+
+void	child1(t_data data, char **av, char **envp)
+{
+	dup2(data.fd_in, 0);
+	dup2(data.pipe[1], 1);
+	close(data.pipe[0]);
+	if (!av[2] || !*av[2])
+	{
+		ft_print_error_return(ARG_NULL);
+		exit (1);
+	}
+	data.cmd = ft_split(av[2], ' ');
+	data.cmd_path = get_path(envp, data.cmd[0]);
+	if (data.cmd_path == NULL)
+	{
+		ft_print_error_return(ERROR_CMD);
+		ft_free(data.cmd);
+		exit (1);
+	}
+	execve(data.cmd_path, data.cmd, envp);
+	free(data.cmd_path);
+	ft_free(data.cmd);
+}
+
+void	child2(t_data data, char **av, char **envp)
+{
+	dup2(data.pipe[0], 0);
+	dup2(data.fd_out, 1);
+	close(data.pipe[1]);
+	if (!av[3] || !*av[3])
+	{
+		ft_print_error_return(ARG_NULL);
+		exit (1);
+	}
+	data.cmd = ft_split(av[3], ' ');
+	data.cmd_path = get_path(envp, data.cmd[0]);
+	if (data.cmd_path == NULL)
+	{
+		ft_print_error_return(ERROR_CMD);
+		ft_free(data.cmd);
+		exit (1);
+	}
+	execve(data.cmd_path, data.cmd, envp);
+	free(data.cmd_path);
+	ft_free(data.cmd);
+}
 
 int	main(int ac, char **av, char **envp)
 {
@@ -18,12 +64,24 @@ int	main(int ac, char **av, char **envp)
 
 	if (ac == 5)
 	{
-		if (get_fds(&data, av))
-			return (0);
-		if (parse_args(av, envp))
-			return (0);
+		get_fds(&data, av);
+		if (pipe(data.pipe) == -1)
+			ft_print_error_return(ERROR_PIPE);
+		data.pid1 = fork();
+		if (data.pid1 < 0)
+			ft_print_error_return(ERROR_FORK);
+		else if (data.pid1 == 0)
+			child1(data, av, envp);
+		data.pid2 = fork();
+		if (data.pid2 < 0)
+			ft_print_error_return(ERROR_FORK);
+		else if (data.pid2 == 0)
+			child2(data, av, envp);
+		close_pipe(data);
+		waitpid(data.pid1, NULL, 0);
+		waitpid(data.pid2, NULL, 0);
 	}
 	else
-		ft_print_error(ERROR_ARGS);
+		ft_print_error_return(ERROR_ARGS);
 	return (0);
 }
