@@ -6,7 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:36:04 by basverdi          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/02/26 15:00:09 by basverdi         ###   ########.fr       */
+=======
+/*   Updated: 2024/02/21 16:15:32 by basverdi         ###   ########.fr       */
+>>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +67,24 @@ void	ft_free(char **tab)
 	free(tab);
 }
 
+<<<<<<< HEAD
 void	close_std(void)
 {
 	close(0);
 	close(1);
+=======
+void	ft_free_vars(int nb, ...)
+{
+	va_list	arg;
+	int		i;
+
+	i = 0;
+	va_start(arg, nb);
+	while (i < nb)
+	{
+		free(va_arg(arg, char *));
+		i++;
+	}
+	va_end(arg);
+>>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
 }

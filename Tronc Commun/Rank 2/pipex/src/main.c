@@ -6,7 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:45 by basverdi          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/02/26 15:12:30 by basverdi         ###   ########.fr       */
+=======
+/*   Updated: 2024/02/21 16:17:02 by basverdi         ###   ########.fr       */
+>>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +34,11 @@ void	child1(t_data data, char **av, char **envp)
 		ft_free(data.cmd);
 		exit (1);
 	}
+<<<<<<< HEAD
+=======
+	close(0);
+	close(1);
+>>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
 	execve(data.cmd_path, data.cmd, envp);
 	free(data.cmd_path);
 	ft_free(data.cmd);
@@ -53,6 +62,11 @@ void	child2(t_data data, char **av, char **envp)
 		ft_free(data.cmd);
 		exit (1);
 	}
+<<<<<<< HEAD
+=======
+	close(0);
+	close(1);
+>>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
 	execve(data.cmd_path, data.cmd, envp);
 	free(data.cmd_path);
 	ft_free(data.cmd);

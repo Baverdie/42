@@ -6,7 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:06:05 by basverdi          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/02/26 14:51:19 by basverdi         ###   ########.fr       */
+=======
+/*   Updated: 2024/02/21 16:09:31 by basverdi         ###   ########.fr       */
+>>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +44,10 @@ typedef struct s_data
 
 //PIPEX
 	//parsing
+<<<<<<< HEAD
+=======
+void	parse_args(char **av, char **envp);
+>>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
 void	get_fds(t_data *data, char **argv);
 char	*get_path(char **envp, char *cmd);
 //UTILS
@@ -47,7 +55,11 @@ char	*get_path(char **envp, char *cmd);
 int		ft_print_error_return(char *err);
 	//free
 void	ft_free(char **tab);
+<<<<<<< HEAD
 void	close_std(void);
+=======
+void	ft_free_vars(int nb, ...);
+>>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
 void	close_pipe(t_data data);
 
 #endif
