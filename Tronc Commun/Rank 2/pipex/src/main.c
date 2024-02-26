@@ -6,11 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:45 by basverdi          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/02/26 15:12:30 by basverdi         ###   ########.fr       */
-=======
-/*   Updated: 2024/02/21 16:17:02 by basverdi         ###   ########.fr       */
->>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
+/*   Updated: 2024/02/26 17:59:25 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +14,8 @@
 
 void	child1(t_data data, char **av, char **envp)
 {
-	dup2(data.fd_in, 0);
-	dup2(data.pipe[1], 1);
-	close(data.pipe[0]);
+	dup2(data.fd_in, STDIN_FILENO);
+	dup2(data.pipe[1], STDOUT_FILENO);
 	if (!av[2] || !*av[2])
 	{
 		ft_print_error_return(ARG_NULL);
@@ -34,21 +29,17 @@ void	child1(t_data data, char **av, char **envp)
 		ft_free(data.cmd);
 		exit (1);
 	}
-<<<<<<< HEAD
-=======
-	close(0);
-	close(1);
->>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
+	close_pipe(data);
 	execve(data.cmd_path, data.cmd, envp);
+	close_std(data);
 	free(data.cmd_path);
 	ft_free(data.cmd);
 }
 
 void	child2(t_data data, char **av, char **envp)
 {
-	dup2(data.pipe[0], 0);
-	dup2(data.fd_out, 1);
-	close(data.pipe[1]);
+	dup2(data.pipe[0], STDIN_FILENO);
+	dup2(data.fd_out, STDOUT_FILENO);
 	if (!av[3] || !*av[3])
 	{
 		ft_print_error_return(ARG_NULL);
@@ -62,12 +53,9 @@ void	child2(t_data data, char **av, char **envp)
 		ft_free(data.cmd);
 		exit (1);
 	}
-<<<<<<< HEAD
-=======
-	close(0);
-	close(1);
->>>>>>> 65ebafa42360743e10784b295441462a9d178f7a
+	close_pipe(data);
 	execve(data.cmd_path, data.cmd, envp);
+	close_std(data);
 	free(data.cmd_path);
 	ft_free(data.cmd);
 }
@@ -92,6 +80,7 @@ int	main(int ac, char **av, char **envp)
 		else if (data.pid2 == 0)
 			child2(data, av, envp);
 		close_pipe(data);
+		close_std(data);
 		waitpid(data.pid1, NULL, 0);
 		waitpid(data.pid2, NULL, 0);
 	}
