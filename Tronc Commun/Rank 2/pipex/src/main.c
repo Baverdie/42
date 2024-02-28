@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:45 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/26 17:59:25 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:51:01 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ void	child1(t_data data, char **av, char **envp)
 		ft_free(data.cmd);
 		exit (1);
 	}
-	close_pipe(data);
+	ft_close(data);
 	execve(data.cmd_path, data.cmd, envp);
-	close_std(data);
 	free(data.cmd_path);
 	ft_free(data.cmd);
 }
@@ -53,9 +52,8 @@ void	child2(t_data data, char **av, char **envp)
 		ft_free(data.cmd);
 		exit (1);
 	}
-	close_pipe(data);
+	ft_close(data);
 	execve(data.cmd_path, data.cmd, envp);
-	close_std(data);
 	free(data.cmd_path);
 	ft_free(data.cmd);
 }
@@ -79,8 +77,7 @@ int	main(int ac, char **av, char **envp)
 			ft_print_error_return(ERROR_FORK);
 		else if (data.pid2 == 0)
 			child2(data, av, envp);
-		close_pipe(data);
-		close_std(data);
+		ft_close(data);
 		waitpid(data.pid1, NULL, 0);
 		waitpid(data.pid2, NULL, 0);
 	}

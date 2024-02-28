@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:22:15 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/26 17:51:57 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:50:46 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <sys/wait.h>
-# include <sys/types.h>
 
 # define TITLE_ERROR "\033[0;31mError\033[0m\n"
 # define ERROR_ARGS "Pipex only takes 4 arguments !\n"
@@ -47,7 +46,6 @@ char	*get_path(char **envp, char *cmd);
 int		ft_print_error_return(char *err);
 	//free
 void	ft_free(char **tab);
-void	close_std();
-void	close_pipe(t_data data);
+void	ft_close(t_data data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:22:06 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/26 17:54:54 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:51:01 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	get_fds(t_data *data, char **av)
 	fd1 = open(av[1], O_RDONLY);
 	if (fd1 <= 0)
 	{
-		close(fd1);
 		perror(av[1]);
 		exit (1);
 	}
@@ -35,14 +34,13 @@ void	get_fds(t_data *data, char **av)
 	fd2 = open(av[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (fd2 <= 0)
 	{
-		close(fd2);
 		perror(av[4]);
 		exit (1);
 	}
 	data->fd_out = fd2;
 }
 
-void	close_pipe(t_data data)
+void	ft_close(t_data data)
 {
 	close(data.pipe[0]);
 	close(data.pipe[1]);
@@ -61,11 +59,4 @@ void	ft_free(char **tab)
 		i++;
 	}
 	free(tab);
-}
-
-void	close_std()
-{
-	close(0);
-	close(1);
-	close(2);
 }
