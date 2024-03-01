@@ -2,28 +2,56 @@ NAME = libft.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
-ft_isalnum.c ft_isalpha.c ft_isascii.c \
-ft_isdigit.c ft_isprint.c ft_itoa.c \
-ft_memchr.c ft_memcmp.c ft_memcpy.c \
-ft_memmove.c ft_memset.c ft_putchar_fd.c \
-ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-ft_split.c ft_striteri.c ft_strchr.c \
-ft_strdup.c ft_strjoin.c ft_strlcat.c \
-ft_strlcpy.c ft_strlen.c ft_strmapi.c \
-ft_strncmp.c ft_strnstr.c ft_strrchr.c \
-ft_strtrim.c ft_substr.c ft_tolower.c \
-ft_toupper.c
-
-BONUS = ft_lstadd_back.c \
-ft_lstadd_front.c \
-ft_lstclear.c \
-ft_lstdelone.c \
-ft_lstiter.c \
-ft_lstlast.c \
-ft_lstmap.c \
-ft_lstnew.c \
-ft_lstsize.c \
+SRCS = char/ft_isalnum.c \
+	char/ft_isalpha.c \
+	char/ft_isascii.c \
+	char/ft_isdigit.c \
+	char/ft_isprint.c \
+	char/ft_tolower.c \
+	char/ft_toupper.c \
+	list/ft_lstadd_back.c \
+	list/ft_lstadd_front.c \
+	list/ft_lstclear.c \
+	list/ft_lstdelone.c \
+	list/ft_lstiter.c \
+	list/ft_lstlast.c \
+	list/ft_lstmap.c \
+	list/ft_lstnew.c \
+	list/ft_lstsize.c \
+	mem/ft_bzero.c \
+	mem/ft_calloc.c \
+	mem/ft_memchr.c \
+	mem/ft_memcmp.c \
+	mem/ft_memcpy.c \
+	mem/ft_memmove.c \
+	mem/ft_memset.c \
+	print/ft_printf.c \
+	print/ft_putchar.c \
+	print/ft_putchar_fd.c \
+	print/ft_putendl_fd.c \
+	print/ft_puthexa.c \
+	print/ft_putnbr.c \
+	print/ft_putnbr_fd.c \
+	print/ft_putptr.c \
+	print/ft_putstr.c \
+	print/ft_putstr_fd.c \
+	string/ft_split.c \
+	string/ft_striteri.c \
+	string/ft_strchr.c \
+	string/ft_strdup.c \
+	string/ft_strjoin.c \
+	string/ft_strlcat.c \
+	string/ft_strlcpy.c \
+	string/ft_strlen.c \
+	string/ft_strmapi.c \
+	string/ft_strncmp.c \
+	string/ft_strnstr.c \
+	string/ft_strrchr.c \
+	string/ft_strtrim.c \
+	string/ft_substr.c \
+	type/ft_atoi.c \
+	type/ft_atoll.c \
+	type/ft_itoa.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJSBONUS = $(BONUS:.c=.o)
@@ -56,7 +84,7 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 	
 bonus: $(OBJSBONUS) $(OBJS)
-	ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
+	@ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
 	$(HEADERB)
 	@echo "\033[38;5;48mft_libft_bonus is ready !\033[0m"
 

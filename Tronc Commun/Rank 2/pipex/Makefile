@@ -1,6 +1,6 @@
 NAME = pipex
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 LIBS = ft_libft/ft_printf/libftprintf.a \
 		ft_libft/libft.a \
 

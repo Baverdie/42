@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:45 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/28 12:51:01 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:37:20 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	child1(t_data data, char **av, char **envp)
 	data.cmd_path = get_path(envp, data.cmd[0]);
 	if (data.cmd_path == NULL)
 	{
-		ft_print_error_return(ERROR_CMD);
+		ft_print_error_return(CMD_ERROR);
 		ft_free(data.cmd);
 		exit (1);
 	}
@@ -48,7 +48,7 @@ void	child2(t_data data, char **av, char **envp)
 	data.cmd_path = get_path(envp, data.cmd[0]);
 	if (data.cmd_path == NULL)
 	{
-		ft_print_error_return(ERROR_CMD);
+		ft_print_error_return(CMD_ERROR);
 		ft_free(data.cmd);
 		exit (1);
 	}
@@ -66,15 +66,15 @@ int	main(int ac, char **av, char **envp)
 	{
 		get_fds(&data, av);
 		if (pipe(data.pipe) == -1)
-			ft_print_error_return(ERROR_PIPE);
+			ft_print_error_return(PIPE_ERROR);
 		data.pid1 = fork();
 		if (data.pid1 < 0)
-			ft_print_error_return(ERROR_FORK);
+			ft_print_error_return(FORK_ERROR);
 		else if (data.pid1 == 0)
 			child1(data, av, envp);
 		data.pid2 = fork();
 		if (data.pid2 < 0)
-			ft_print_error_return(ERROR_FORK);
+			ft_print_error_return(FORK_ERROR);
 		else if (data.pid2 == 0)
 			child2(data, av, envp);
 		ft_close(data);
@@ -82,6 +82,6 @@ int	main(int ac, char **av, char **envp)
 		waitpid(data.pid2, NULL, 0);
 	}
 	else
-		ft_print_error_return(ERROR_ARGS);
+		ft_print_error_return(ARGS_ERROR);
 	return (0);
 }

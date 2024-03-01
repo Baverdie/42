@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/28 12:48:13 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:25:13 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	*get_path(char **envp, char *cmd)
 		path = ft_strjoin(paths[i], tmp);
 		i++;
 	}
+	free(tmp);
 	ft_free(paths);
 	return (path);
 }

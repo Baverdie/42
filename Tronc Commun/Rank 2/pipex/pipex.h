@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:22:15 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/28 12:50:46 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:37:20 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # include <sys/wait.h>
 
 # define TITLE_ERROR "\033[0;31mError\033[0m\n"
-# define ERROR_ARGS "Pipex only takes 4 arguments !\n"
-# define ERROR_PIPE "Pipe failed\n"
-# define ERROR_FORK "Fork failed\n"
-# define ERROR_CMD "Command not found\n"
+# define ARGS_ERROR "Pipex only takes 4 arguments !\n"
+# define PIPE_ERROR "Pipe failed\n"
+# define FORK_ERROR "Fork failed\n"
+# define CMD_ERROR "Command not found\n"
 # define ARG_NULL "Error arguments\n"
 
 typedef struct s_data
