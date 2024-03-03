@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:45 by basverdi          #+#    #+#             */
-/*   Updated: 2024/03/01 15:37:20 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/03 16:18:54 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	child1(t_data data, char **av, char **envp)
 	}
 	data.cmd = ft_split(av[2], ' ');
 	data.cmd_path = get_path(envp, data.cmd[0]);
-	if (data.cmd_path == NULL)
+	if (data.cmd_path == NULL || access(data.cmd_path, F_OK))
 	{
 		ft_print_error_return(CMD_ERROR);
 		ft_free(data.cmd);
@@ -46,7 +46,7 @@ void	child2(t_data data, char **av, char **envp)
 	}
 	data.cmd = ft_split(av[3], ' ');
 	data.cmd_path = get_path(envp, data.cmd[0]);
-	if (data.cmd_path == NULL)
+	if (data.cmd_path == NULL || access(data.cmd_path, F_OK))
 	{
 		ft_print_error_return(CMD_ERROR);
 		ft_free(data.cmd);

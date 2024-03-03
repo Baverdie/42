@@ -1,8 +1,7 @@
 NAME = pipex
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-LIBS = ft_libft/ft_printf/libftprintf.a \
-		ft_libft/libft.a \
+LIBS = ft_libft/libft.a
 
 SRCS = src/main.c \
 	src/parsing/parsing_args.c \

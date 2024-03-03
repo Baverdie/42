@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:22:06 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/28 12:51:01 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/03 16:12:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ void	get_fds(t_data *data, char **av)
 	int	fd2;
 
 	fd1 = open(av[1], O_RDONLY);
+	fd2 = open(av[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (fd1 <= 0)
 	{
 		perror(av[1]);
 		exit (1);
 	}
 	data->fd_in = fd1;
-	fd2 = open(av[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (fd2 <= 0)
 	{
 		perror(av[4]);
