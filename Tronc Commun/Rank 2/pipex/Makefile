@@ -6,6 +6,7 @@ LIBS = ft_libft/libft.a
 SRCS = src/main.c \
 	src/parsing/parsing_args.c \
 	src/utils/utils.c \
+	src/utils/close.c \
 
 OBJS = ${SRCS:.c=.o}
 

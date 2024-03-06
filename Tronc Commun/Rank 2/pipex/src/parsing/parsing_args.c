@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 23:05:53 by basverdi          #+#    #+#             */
-/*   Updated: 2024/03/03 16:21:39 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/06 18:07:04 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_path(char **envp, char *cmd)
 
 	i = 0;
 	if (access(cmd, F_OK) == 0)
-		return (cmd);
+		return (ft_strdup(cmd));
 	while (ft_strncmp(envp[i], "PATH=", 5))
 		i++;
 	if (!envp[i])
