@@ -1,6 +1,6 @@
 PROJECT = ft_libft
 NAME = libft.a
-PROJET_EMOJY = 🌀
+PROJET_EMOJY = 📚
 CC = $(SILENT)cc $(CFLAGS)
 CFLAGS = -Wall -Wextra -Werror
 

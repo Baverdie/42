@@ -1,6 +1,6 @@
 PROJECT = push_swap
 NAME = push_swap
-PROJET_EMOJY = 🌀
+PROJET_EMOJY = 📶
 CC = $(SILENT)cc $(CFLAGS)
 CFLAGS = -Wall -Wextra -Werror
 
@@ -73,7 +73,7 @@ $(OBJS_DIR):
 	$(SILENT)mkdir -p $@
 
 clean:
-	@make clean -s -C $(LIBFT_DIR) 
+	@make clean -s -C $(LIBFT_DIR)
 	$(PRINT) $(MSG_CLEANING)
 	$(RM) $(OBJS_DIR)
 	$(DELET_LINE)
