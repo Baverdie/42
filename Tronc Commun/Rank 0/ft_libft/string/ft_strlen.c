@@ -6,15 +6,15 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:52:17 by basverdi          #+#    #+#             */
-/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:46:01 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (!str)

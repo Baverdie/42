@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:00:56 by basverdi          #+#    #+#             */
-/*   Updated: 2024/01/11 01:15:27 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/03/11 18:44:20 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,4 @@ int	ft_printf(const char *s, ...)
 	}
 	va_end(arg);
 	return (j);
-}
-
-int main(void)
-{
-	ft_printf("Hello %s\n", "World");
-	ft_printf("Hello %c\n", 'W');
-	ft_printf("Hello %d\n", 42);
-	ft_printf("Hello %i\n", 42);
-	ft_printf("Hello %u\n", 42);
-	ft_printf("Hello %x\n", 42);
-	ft_printf("Hello %X\n", 42);
-	ft_printf("Hello %p\n", 42);
-	return (0);
 }

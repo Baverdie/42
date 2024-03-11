@@ -1,8 +1,12 @@
+PROJECT = ft_libft
 NAME = libft.a
-CC = clang
+PROJET_EMOJY = 📚
+CC = $(SILENT)cc $(CFLAGS)
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = char/ft_isalnum.c \
+OBJS_DIR = obj
+
+SRCS_FILES = char/ft_isalnum.c \
 	char/ft_isalpha.c \
 	char/ft_isascii.c \
 	char/ft_isdigit.c \
@@ -53,47 +57,69 @@ SRCS = char/ft_isalnum.c \
 	type/ft_atoll.c \
 	type/ft_itoa.c \
 
-OBJS = $(SRCS:.c=.o)
-OBJSBONUS = $(BONUS:.c=.o)
+SRCS = 	$(addprefix ./, $(SRCS_FILES))
+OBJS = $(subst ./,$(OBJS_DIR)/, $(subst .c,.o, $(SRCS)))
 
-DEFAULT = \033[0m
-PURPLE = \033[38;5;213m
+DELET_LINE = $(SILENT) echo -n "\033[2K";
+RM = $(SILENT) rm -rf
 
-BANNER = @printf "$(PURPLE) ____  ____      __    ____  ____  ____  ____ \n"
-BANNER1 = printf "$(PURPLE)( ___)(_  _)    (  )  (_  _)(  _ \( ___)(_  _)\n"
-BANNER2 = printf "$(PURPLE) )__)   )(  ___  )(__  _)(_  ) _ < )__)   )(  \n"
-BANNER3 = printf "$(PURPLE)(__)   (__)(___)(____)(____)(____/(__)   (__) \n\n"
+SILENT = @
+COLOUR_GREEN=\033[0;32m
+COLOUR_RED=\033[0;31m
+COLOUR_PURPULE = \033[38;5;197m
+COLOUR_BLUE=\033[0;34m
+COLOUR_YELLOW=\033[0;33m
+NO_COLOR=\033[m
+
+bold := $(shell tput bold)
+notbold := $(shell tput sgr0)
+
+PRINT = $(SILENT) printf "\r%b"
+
+MSG_CLEANING = "$(COLOUR_RED)$(bold)🧹cleaning $(notbold)$(COLOUR_YELLOW)$(PROJECT)$(NO_COLOR)";
+MSG_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOUR_YELLOW)cleaned $(NO_COLOR)\n";
+MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOUR_YELLOW)is totaly cleaned $(NO_COLOR)\n";
+MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
+MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
+
+BANNER = $(PRINT)"$(COLOUR_PURPULE) ____  ____      __    ____  ____  ____  ____ \n"
+BANNER1 = printf "$(COLOUR_PURPULE)( ___)(_  _)    (  )  (_  _)(  _ \( ___)(_  _)\n"
+BANNER2 = printf "$(COLOUR_PURPULE) )__)   )(  ___  )(__  _)(_  ) _ < )__)   )(  \n"
+BANNER3 = printf "$(COLOUR_PURPULE)(__)   (__)(___)(____)(____)(____/(__)   (__) \n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
-BANNERB = @printf "$(PURPLE) ____  ____      __    ____  ____  ____  ____      ____  _____  _  _  __  __  ___ \n"
-BANNERB1 = printf "$(PURPLE)( ___)(_  _)    (  )  (_  _)(  _ \( ___)(_  _)    (  _ \(  _  )( \( )(  )(  )/ __)\n"
-BANNERB2 = printf "$(PURPLE) )__)   )(  ___  )(__  _)(_  ) _ < )__)   )(  ___  ) _ < )(_)(  )  (  )(__)( \__ \ \n"
-BANNERB3 = printf "$(PURPLE)(__)   (__)(___)(____)(____)(____/(__)   (__)(___)(____/(_____)(_)\_)(______)(___/\n\n"
-
-HEADERB = $(BANNERB);$(BANNERB1);$(BANNERB2);$(BANNERB3); \
-
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@ar -rc $(NAME) $(OBJS)
+$(NAME): $(OBJS) | $(OBJS_DIR)
 	$(HEADER)
-	@echo "\033[38;5;48mft_libft is ready !\033[0m"
+	@ar rcs $(NAME) $(OBJS)
+	$(DELET_LINE)
+	$(PRINT) $(MSG_READY)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -c -o $@ $<
-	
-bonus: $(OBJSBONUS) $(OBJS)
-	@ar -rc $(NAME) $(OBJSBONUS) $(OBJS)
-	$(HEADERB)
-	@echo "\033[38;5;48mft_libft_bonus is ready !\033[0m"
+$(OBJS): $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
+	@mkdir -p $(@D)
+	$(DELET_LINE)
+	$(PRINT) $(MSG_COMPILING)
+	$(CC) -c $< -o $@
+
+$(OBJS_DIR):
+	$(SILENT)mkdir -p $@
 
 clean:
-	@rm -f $(OBJS) $(OBJSBONUS)
+	$(PRINT) $(MSG_CLEANING)
+	@sleep 0.5
+	$(RM) $(OBJS_DIR)
+	$(DELET_LINE)
+	$(PRINT) $(MSG_CLEANED)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "\033[38;5;31mft_printf cleaned...\033[0m"
+	$(PRINT) $(MSG_CLEANING)
+	@sleep 0.5
+	$(RM) $(OBJS_DIR)
+	$(RM) $(NAME)
+	$(DELET_LINE)
+	$(PRINT) $(MSG_TOTALY_CLEANED)
 
 re: fclean all
 

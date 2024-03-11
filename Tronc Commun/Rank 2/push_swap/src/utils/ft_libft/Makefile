@@ -82,17 +82,9 @@ MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOU
 MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
 MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
 
-BANNER = $(PRINT)"$(COLOUR_PURPULE) ____  ____      __    ____  ____  ____  ____ \n"
-BANNER1 = printf "$(COLOUR_PURPULE)( ___)(_  _)    (  )  (_  _)(  _ \( ___)(_  _)\n"
-BANNER2 = printf "$(COLOUR_PURPULE) )__)   )(  ___  )(__  _)(_  ) _ < )__)   )(  \n"
-BANNER3 = printf "$(COLOUR_PURPULE)(__)   (__)(___)(____)(____)(____/(__)   (__) \n\n"
-
-HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
-
 all: $(NAME)
 
 $(NAME): $(OBJS) | $(OBJS_DIR)
-	$(HEADER)
 	@ar rcs $(NAME) $(OBJS)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_READY)
