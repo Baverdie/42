@@ -1,52 +1,91 @@
+PROJECT = push_swap
 NAME = push_swap
-CC = cc
+PROJET_EMOJY = 🌀
+CC = $(SILENT)cc $(CFLAGS)
 CFLAGS = -Wall -Wextra -Werror
-LIBS = ft_libft/ft_printf/libftprintf.a \
-		ft_libft/libft.a \
 
-SRCS = src/main.c \
-		src/parsing/parse_arg.c \
-		src/parsing/index.c \
-		src/move/rotate.c \
-		src/move/reverse_rotate.c \
-		src/utils/utils.c \
-		src/utils/utils_stack.c \
-		src/move/push.c \
-		src/move/swap.c \
-		src/sort/radix.c \
-		src/sort/simple_sort.c \
+SRCS_DIR = src
+OBJS_DIR = obj
+LIBFT_DIR = $(SRCS_DIR)/utils/ft_libft
+INCLUDE_LIBFT = $(LIBFT_DIR)/libft.a
 
-OBJS = ${SRCS:.c=.o}
+LIBS = $(INCLUDE_LIBFT)
 
-DEFAULT = \033[0m
-COLOR = \033[38;5;197m
+SRCS_FILES = main.c \
+		parsing/parse_arg.c \
+		parsing/index.c \
+		move/rotate.c \
+		move/reverse_rotate.c \
+		utils/utils.c \
+		utils/utils_stack.c \
+		move/push.c \
+		move/swap.c \
+		sort/radix.c \
+		sort/simple_sort.c
 
-BANNER = @printf "$(COLOR) ____  __  __  ___  _   _       ___  _    _    __    ____\n"
-BANNER1 = printf "$(COLOR)(  _ \(  )(  )/ __)( )_( )     / __)( \/\/ )  /__\  (  _ \ \n"
-BANNER2 = printf "$(COLOR) )___/ )(__)( \__ \ ) _ (  ___ \__ \ )    (  /(__)\  )___/\n"
-BANNER3 = printf "$(COLOR)(__)  (______)(___/(_) (_)(___)(___/(__/\__)(__)(__)(__)\n\n"
+SRCS = 	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
+OBJS = $(subst $(SRCS_DIR)/,$(OBJS_DIR)/, $(subst .c,.o, $(SRCS)))
+
+DELET_LINE = $(SILENT) echo -n "\033[2K";
+RM = $(SILENT) rm -rf
+
+SILENT = @
+COLOUR_GREEN=\033[0;32m
+COLOUR_RED=\033[0;31m
+COLOUR_PURPULE = \033[38;5;197m
+COLOUR_BLUE=\033[0;34m
+COLOUR_YELLOW=\033[0;33m
+NO_COLOR=\033[m
+
+bold := $(shell tput bold)
+notbold := $(shell tput sgr0)
+
+PRINT = $(SILENT) printf "\r%b"
+
+MSG_CLEANING = "$(COLOUR_RED)$(bold)🧹cleaning $(notbold)$(COLOUR_YELLOW)$(PROJECT)$(NO_COLOR)";
+MSG_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOUR_YELLOW)cleaned $(NO_COLOR)\n";
+MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
+MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
+
+BANNER = $(PRINT) "$(COLOUR_PURPULE) ____  __  __  ___  _   _       ___  _    _    __    ____\n"
+BANNER1 = printf "$(COLOUR_PURPULE)(  _ \(  )(  )/ __)( )_( )     / __)( \/\/ )  /__\  (  _ \ \n"
+BANNER2 = printf "$(COLOUR_PURPULE) )___/ )(__)( \__ \ ) _ (  ___ \__ \ )    (  /(__)\  )___/\n"
+BANNER3 = printf "$(COLOUR_PURPULE)(__)  (______)(___/(_) (_)(___)(___/(__/\__)(__)(__)(__)\n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) | $(OBJS_DIR)
 	$(HEADER)
-	@make -j -s -C ft_libft/
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
-	@echo "\033[38;5;48mpush_swap is ready !\033[0m"
+	@make -s -C $(LIBFT_DIR)
+	$(CC) $^ -o $@ $(LIBS)
+	$(DELET_LINE)
+	$(PRINT) $(MSG_READY)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -c -o $@ $<
+$(OBJS): $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
+	@mkdir -p $(@D)
+	$(DELET_LINE)
+	$(PRINT) $(MSG_COMPILING)
+	$(CC) -c $< -o $@
+
+$(OBJS_DIR):
+	$(SILENT)mkdir -p $@
 
 clean:
-	@make clean -s -C ft_libft/
-	@rm -f $(OBJS)
+	@make clean -s -C $(LIBFT_DIR) 
+	$(PRINT) $(MSG_CLEANING)
+	$(RM) $(OBJS_DIR)
+	$(DELET_LINE)
+	$(PRINT) $(MSG_CLEANED)
 
 fclean: clean
-	@rm -f $(NAME)
-	@make fclean -s -C ft_libft/
-	@echo "\033[38;5;31mpush_swap cleaned...\033[0m"
+	@make fclean -s -C $(LIBFT_DIR)
+	$(PRINT) $(MSG_CLEANING)
+	$(RM) $(OBJS_DIR)
+	$(RM) $(NAME)
+	$(DELET_LINE)
+	$(PRINT) $(MSG_CLEANED)
 
 re: fclean all
 

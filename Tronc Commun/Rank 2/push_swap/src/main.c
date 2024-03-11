@@ -6,11 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 14:52:33 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/14 22:37:24 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:22:44 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	is_sorted(t_stack **stack_a)
 {
@@ -30,7 +30,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
-	size = ft_lstsize(*stack_a);
+	size = ft_stksize(*stack_a);
 	if (size == 2)
 		ra(stack_a);
 	else if (size == 3)
@@ -59,8 +59,8 @@ void	init_stack(t_stack **stack, int argc, char **argv)
 	}
 	while (args[i])
 	{
-		new = ft_lstnew(ft_atoi(args[i]));
-		ft_lstadd_back(stack, new);
+		new = ft_stknew(ft_atoi(args[i]));
+		ft_stkadd_back(stack, new);
 		i++;
 	}
 	init_index(stack);

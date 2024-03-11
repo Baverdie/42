@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
+/*   Created: 2023/10/31 00:52:02 by basverdi          #+#    #+#             */
+/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../libft.h"
 
-int	get_next_min(t_stack *stack, int nb)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	t_stack	*tmp;
-	int		count;
+	size_t	i;
 
-	tmp = stack;
-	count = 0;
-	while (tmp)
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	if (size == 1)
 	{
-		if (nb > tmp->nb)
-			count++;
-		tmp = tmp->next;
+		dst[i] = 0;
+		return (ft_strlen(src));
 	}
-	return (count);
-}
-
-void	init_index(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*head;
-
-	head = *stack;
-	tmp = *stack;
-	while (tmp)
+	while (src[i] && i < size - 1)
 	{
-		tmp->index = get_next_min(head, tmp->nb);
-		tmp = tmp->next;
+		dst[i] = src[i];
+		i++;
 	}
+	dst[i] = '\0' ;
+	return (ft_strlen(src));
 }

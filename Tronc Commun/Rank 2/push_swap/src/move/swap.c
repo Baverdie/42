@@ -6,11 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:47:52 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/13 17:34:13 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:23:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 int	swap(t_stack **stack)
 {
@@ -26,7 +26,7 @@ int	swap(t_stack **stack)
 
 int	sa(t_stack **stack_a)
 {
-	if (ft_lstsize(*stack_a) < 2)
+	if (ft_stksize(*stack_a) < 2)
 		return (1);
 	swap(stack_a);
 	ft_printf("sa\n");
@@ -35,7 +35,7 @@ int	sa(t_stack **stack_a)
 
 int	sb(t_stack **stack_b)
 {
-	if (ft_lstsize(*stack_b) < 2)
+	if (ft_stksize(*stack_b) < 2)
 		return (1);
 	swap(stack_b);
 	ft_printf("sb\n");
@@ -44,7 +44,7 @@ int	sb(t_stack **stack_b)
 
 int	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_lstsize(*stack_a) < 2 || ft_lstsize(*stack_b) < 2)
+	if (ft_stksize(*stack_a) < 2 || ft_stksize(*stack_b) < 2)
 		return (1);
 	swap(stack_a);
 	swap(stack_b);

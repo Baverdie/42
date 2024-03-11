@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/04 12:27:32 by bastienverd       #+#    #+#             */
+/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../libft.h"
 
-int	get_next_min(t_stack *stack, int nb)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_stack	*tmp;
-	int		count;
+	char	*str;
+	int		i;
 
-	tmp = stack;
-	count = 0;
-	while (tmp)
+	i = 0;
+	if (!s || !f)
+		return (0);
+	str = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!str)
+		return (NULL);
+	while (s[i])
 	{
-		if (nb > tmp->nb)
-			count++;
-		tmp = tmp->next;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	return (count);
-}
-
-void	init_index(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*head;
-
-	head = *stack;
-	tmp = *stack;
-	while (tmp)
-	{
-		tmp->index = get_next_min(head, tmp->nb);
-		tmp = tmp->next;
-	}
+	return (str);
 }

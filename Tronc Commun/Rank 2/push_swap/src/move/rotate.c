@@ -6,21 +6,21 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:55:56 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/01/26 10:36:56 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:24:16 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 int	rotate(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*tail;
 
-	if (ft_lstsize(*stack) < 2)
+	if (ft_stksize(*stack) < 2)
 		return (1);
 	head = *stack;
-	tail = ft_lstlast(head);
+	tail = ft_stklast(head);
 	*stack = head->next;
 	tail->next = head;
 	head->next = NULL;
@@ -45,7 +45,7 @@ int	rb(t_stack **stack_b)
 
 int	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+	if ((ft_stksize(*stack_a) < 2) || (ft_stksize(*stack_b) < 2))
 		return (1);
 	rotate(stack_a);
 	rotate(stack_b);

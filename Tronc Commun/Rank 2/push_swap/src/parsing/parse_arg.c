@@ -6,11 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:06:11 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/14 22:39:41 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 int	ft_empty(char **argv)
 {

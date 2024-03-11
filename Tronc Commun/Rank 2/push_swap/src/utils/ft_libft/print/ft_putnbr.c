@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/22 15:36:10 by basverdi          #+#    #+#             */
+/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../libft.h"
 
-int	get_next_min(t_stack *stack, int nb)
+int	ft_putnbr(long long int n)
 {
-	t_stack	*tmp;
-	int		count;
+	int	cntr;
 
-	tmp = stack;
-	count = 0;
-	while (tmp)
+	cntr = 0;
+	if (n < 0)
 	{
-		if (nb > tmp->nb)
-			count++;
-		tmp = tmp->next;
+		n *= -1;
+		cntr += ft_putchar('-');
 	}
-	return (count);
-}
-
-void	init_index(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*head;
-
-	head = *stack;
-	tmp = *stack;
-	while (tmp)
+	if (n < 10)
+		cntr += ft_putchar(n + 48);
+	else
 	{
-		tmp->index = get_next_min(head, tmp->nb);
-		tmp = tmp->next;
+		cntr += ft_putnbr(n / 10);
+		cntr += ft_putchar(n % 10 + 48);
 	}
+	return (cntr);
 }

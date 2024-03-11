@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/01 17:59:22 by basverdi          #+#    #+#             */
+/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../libft.h"
 
-int	get_next_min(t_stack *stack, int nb)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	t_stack	*tmp;
-	int		count;
+	char		*dst;
+	const char	*s;
 
-	tmp = stack;
-	count = 0;
-	while (tmp)
+	s = src;
+	dst = dest;
+	if (dst == NULL && s == NULL)
+		return (0);
+	if (dst < s)
+		ft_memcpy(dst, s, n);
+	else
 	{
-		if (nb > tmp->nb)
-			count++;
-		tmp = tmp->next;
+		while (n > 0)
+		{
+			dst[n - 1] = s[n - 1];
+			n--;
+		}
 	}
-	return (count);
-}
-
-void	init_index(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*head;
-
-	head = *stack;
-	tmp = *stack;
-	while (tmp)
-	{
-		tmp->index = get_next_min(head, tmp->nb);
-		tmp = tmp->next;
-	}
+	return (dest);
 }

@@ -6,11 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:35:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/13 23:44:59 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 int	find_max(t_stack **stack)
 {

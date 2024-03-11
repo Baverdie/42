@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/02 01:32:11 by bastienverd       #+#    #+#             */
+/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../libft.h"
 
-int	get_next_min(t_stack *stack, int nb)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	t_stack	*tmp;
-	int		count;
+	char	*dest;
+	int		i;
 
-	tmp = stack;
-	count = 0;
-	while (tmp)
+	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	dest = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!dest)
+		return (NULL);
+	while (s1[i])
 	{
-		if (nb > tmp->nb)
-			count++;
-		tmp = tmp->next;
+		dest[i] = s1[i];
+		i++;
 	}
-	return (count);
-}
-
-void	init_index(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*head;
-
-	head = *stack;
-	tmp = *stack;
-	while (tmp)
+	while (*s2)
 	{
-		tmp->index = get_next_min(head, tmp->nb);
-		tmp = tmp->next;
+		dest[i] = *s2;
+		i++;
+		s2++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }

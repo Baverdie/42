@@ -6,11 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 10:34:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/02/07 16:31:47 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:24:41 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 int	push(t_stack **stack_dest, t_stack **stack_src)
 {
@@ -18,7 +18,7 @@ int	push(t_stack **stack_dest, t_stack **stack_src)
 	t_stack	*src;
 	t_stack	*tmp;
 
-	if (ft_lstsize(*stack_src) == 0)
+	if (ft_stksize(*stack_src) == 0)
 		return (0);
 	dest = *stack_dest;
 	src = *stack_src;

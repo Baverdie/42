@@ -20,7 +20,7 @@ char	*get_path(char **envp, char *cmd)
 	char	*tmp;
 
 	i = 0;
-	if (access(cmd, F_OK) == 0)
+	if (cmd && *cmd && access(cmd, F_OK) == 0)
 		return (ft_strdup(cmd));
 	while (ft_strncmp(envp[i], "PATH=", 5))
 		i++;

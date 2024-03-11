@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/01 23:36:53 by bastienverd       #+#    #+#             */
+/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../libft.h"
 
-int	get_next_min(t_stack *stack, int nb)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	t_stack	*tmp;
-	int		count;
+	size_t	i;
+	size_t	j;
 
-	tmp = stack;
-	count = 0;
-	while (tmp)
+	i = 0;
+	if (s2[0] == '\0')
+		return ((char *)s1);
+	if (len == 0)
+		return (NULL);
+	while (s1[i] && i < len)
 	{
-		if (nb > tmp->nb)
-			count++;
-		tmp = tmp->next;
+		j = 0;
+		while (s1[i + j] && s2[j] && s1[i + j] == s2[j] && (i + j) < len)
+			j++;
+		if (s2[j] == '\0')
+			return ((char *)s1 + i);
+		i++;
 	}
-	return (count);
-}
-
-void	init_index(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*head;
-
-	head = *stack;
-	tmp = *stack;
-	while (tmp)
-	{
-		tmp->index = get_next_min(head, tmp->nb);
-		tmp = tmp->next;
-	}
+	return (NULL);
 }

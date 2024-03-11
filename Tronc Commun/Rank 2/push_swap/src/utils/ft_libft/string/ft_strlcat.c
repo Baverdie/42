@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
+/*   Created: 2023/10/31 18:47:32 by basverdi          #+#    #+#             */
+/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../libft.h"
 
-int	get_next_min(t_stack *stack, int nb)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	t_stack	*tmp;
-	int		count;
+	size_t	i;
+	size_t	j;
+	size_t	dst_len;
+	size_t	src_len;
 
-	tmp = stack;
-	count = 0;
-	while (tmp)
+	if (size == 0 && dst == NULL)
+		return (0);
+	i = ft_strlen(dst);
+	j = 0;
+	dst_len = i;
+	src_len = ft_strlen(src);
+	if (size <= dst_len)
+		return (src_len + size);
+	while (src[j] && i < size - 1)
 	{
-		if (nb > tmp->nb)
-			count++;
-		tmp = tmp->next;
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	return (count);
-}
-
-void	init_index(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*head;
-
-	head = *stack;
-	tmp = *stack;
-	while (tmp)
-	{
-		tmp->index = get_next_min(head, tmp->nb);
-		tmp = tmp->next;
-	}
+	dst[i] = '\0';
+	return (dst_len + src_len);
 }

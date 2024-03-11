@@ -6,13 +6,13 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:19:42 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/07 16:35:19 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:46:44 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
-int	ft_lstsize(t_stack *lst)
+int	ft_stksize(t_stack *lst)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	ft_lstsize(t_stack *lst)
 	return (i);
 }
 
-t_stack	*ft_lstlast(t_stack *lst)
+t_stack	*ft_stklast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -34,7 +34,7 @@ t_stack	*ft_lstlast(t_stack *lst)
 	return (lst);
 }
 
-t_stack	*ft_lstnew(int nb)
+t_stack	*ft_stknew(int nb)
 {
 	t_stack	*new;
 
@@ -46,7 +46,7 @@ t_stack	*ft_lstnew(int nb)
 	return (new);
 }
 
-void	ft_lstadd_back(t_stack **alst, t_stack *new)
+void	ft_stkadd_back(t_stack **alst, t_stack *new)
 {
 	t_stack	*last;
 
@@ -57,11 +57,11 @@ void	ft_lstadd_back(t_stack **alst, t_stack *new)
 		*alst = new;
 		return ;
 	}
-	last = ft_lstlast(*alst);
+	last = ft_stklast(*alst);
 	last->next = new;
 }
 
-void	ft_lstadd_front(t_stack **alst, t_stack *new)
+void	ft_stkadd_front(t_stack **alst, t_stack *new)
 {
 	if (!alst)
 		return ;

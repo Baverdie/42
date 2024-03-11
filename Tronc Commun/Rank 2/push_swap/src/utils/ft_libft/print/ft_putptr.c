@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ft_puthexaptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:29:01 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/03/11 17:16:10 by basverdi         ###   ########.fr       */
+/*   Created: 2023/11/22 16:38:25 by basverdi          #+#    #+#             */
+/*   Updated: 2024/03/01 15:59:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../libft.h"
 
-int	get_next_min(t_stack *stack, int nb)
+int	ft_putptr(unsigned long long ptr, char *base)
 {
-	t_stack	*tmp;
-	int		count;
+	int	cntr;
 
-	tmp = stack;
-	count = 0;
-	while (tmp)
+	cntr = 0;
+	if (ptr == 0)
 	{
-		if (nb > tmp->nb)
-			count++;
-		tmp = tmp->next;
+		cntr += ft_putstr("(nil)");
+		return (cntr);
 	}
-	return (count);
-}
-
-void	init_index(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*head;
-
-	head = *stack;
-	tmp = *stack;
-	while (tmp)
+	cntr += ft_putstr("0x");
+	if (ptr < 16)
+		cntr += ft_putchar(base[ptr]);
+	else
 	{
-		tmp->index = get_next_min(head, tmp->nb);
-		tmp = tmp->next;
+		cntr += ft_puthexa(ptr / 16, base);
+		cntr += ft_putchar(base[ptr % 16]);
 	}
+	return (cntr);
 }

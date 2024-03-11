@@ -6,11 +6,11 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 21:29:53 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/02/13 23:45:53 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:23:12 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 int	max_bit(t_stack **stack)
 {
@@ -42,7 +42,7 @@ void	radix(t_stack **stack_a, t_stack **stack_b)
 
 	i = 0;
 	tmp = *stack_a;
-	size = ft_lstsize(*stack_a);
+	size = ft_stksize(*stack_a);
 	max = max_bit(stack_a);
 	while (i < max)
 	{
@@ -55,7 +55,7 @@ void	radix(t_stack **stack_a, t_stack **stack_b)
 			else
 				pb(stack_a, stack_b);
 		}
-		while (ft_lstsize(*stack_b) != 0)
+		while (ft_stksize(*stack_b) != 0)
 			pa(stack_a, stack_b);
 		i++;
 	}
