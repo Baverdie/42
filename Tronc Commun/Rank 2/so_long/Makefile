@@ -63,31 +63,6 @@ HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
 all: $(NAME)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -c -o $@ $<
-
-$(NAME): $(OBJS) | $(OBJS_DIR)
-	$(HEADER)
-	@make -j -s -C ft_libft/
-	@make -j -s -C ft_printf/
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBS)
-	@echo "\033[38;5;48mso_long is ready !\033[0m"
-
-clean:
-	@make clean -s -C ft_libft/
-	@rm -rf $(OBJS)
-
-fclean: clean
-	@rm -f $(NAME)
-	@make fclean -s -C ft_libft/
-	@make fclean -s -C ft_printf/
-	@echo "\033[38;5;31mso_long cleaned...\033[0m"
-
-re: fclean
-	@make -j all --no-print-directory
-
-.PHONY: all clean fclean re
-
 $(NAME): $(OBJS) | $(OBJS_DIR)
 	$(HEADER)
 	@make -s -C $(LIBFT_DIR)
@@ -100,9 +75,6 @@ $(OBJS): $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_COMPILING)
 	$(CC) -c $< -o $@
-
-$(OBJS_DIR):
-	$(SILENT)mkdir -p $@
 
 clean:
 	@make clean -s -C $(LIBFT_DIR)
