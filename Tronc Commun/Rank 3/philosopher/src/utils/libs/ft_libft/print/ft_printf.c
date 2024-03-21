@@ -6,13 +6,13 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:00:56 by basverdi          #+#    #+#             */
-/*   Updated: 2024/03/21 19:29:23 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:42:07 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static int ft_format(const char c, va_list args)
+static int	ft_format(const char c, va_list args)
 {
 	if (c == 'S')
 		return (ft_putmultstr(va_arg(args, char **)));

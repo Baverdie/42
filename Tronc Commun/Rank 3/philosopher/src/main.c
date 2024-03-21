@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:00:22 by basverdi          #+#    #+#             */
-/*   Updated: 2024/03/19 16:04:10 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:43:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ int	main(int ac, char **av)
 	if (ac < 4 || ac > 5)
 		ft_printf("Error");
 	(void)av;
+	return (0);
 }

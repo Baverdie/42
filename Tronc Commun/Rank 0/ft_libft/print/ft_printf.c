@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-static int ft_format(const char c, va_list args)
+static int	ft_format(const char c, va_list args)
 {
 	if (c == 'S')
 		return (ft_putmultstr(va_arg(args, char **)));
