@@ -22,23 +22,38 @@ SRCS_FILES = char/ft_isalnum.c \
 	list/ft_lstmap.c \
 	list/ft_lstnew.c \
 	list/ft_lstsize.c \
+	maths/ft_abs.c \
 	mem/ft_bzero.c \
 	mem/ft_calloc.c \
+	mem/ft_magic_free.c \
 	mem/ft_memchr.c \
 	mem/ft_memcmp.c \
 	mem/ft_memcpy.c \
 	mem/ft_memmove.c \
 	mem/ft_memset.c \
 	print/ft_printf.c \
+	print/ft_printf_fd.c \
 	print/ft_putchar.c \
 	print/ft_putchar_fd.c \
 	print/ft_putendl_fd.c \
 	print/ft_puthexa.c \
+	print/ft_putlchar.c \
+	print/ft_putlhexa.c \
+	print/ft_putlnbr.c \
+	print/ft_putlpoint.c \
+	print/ft_putlstr.c \
+	print/ft_putmultstr.c \
 	print/ft_putnbr.c \
 	print/ft_putnbr_fd.c \
 	print/ft_putptr.c \
+	print/ft_putstack.c \
 	print/ft_putstr.c \
 	print/ft_putstr_fd.c \
+	stack/ft_stackadd_back.c \
+	stack/ft_stackadd_front.c \
+	stack/ft_stacklast.c \
+	stack/ft_stacknew.c \
+	stack/ft_stacksize.c \
 	string/ft_split.c \
 	string/ft_striteri.c \
 	string/ft_strchr.c \
@@ -53,6 +68,7 @@ SRCS_FILES = char/ft_isalnum.c \
 	string/ft_strrchr.c \
 	string/ft_strtrim.c \
 	string/ft_substr.c \
+	string/ft_vjoin.c \
 	type/ft_atoi.c \
 	type/ft_atoll.c \
 	type/ft_itoa.c \

@@ -6,60 +6,54 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:00:56 by basverdi          #+#    #+#             */
-/*   Updated: 2024/03/11 18:44:20 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:29:23 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static int ft_check_flags(const char *s, int i, va_list arg)
+static int ft_format(const char c, va_list args)
 {
-	int j;
-
-	j = 0;
-	if (s[i] == '%')
-		j += ft_putchar('%');
-	else if (s[i] == 'c')
-		j += ft_putchar(va_arg(arg, int));
-	else if (s[i] == 's')
-		j += ft_putstr(va_arg(arg, char *));
-	else if (s[i] == 'p')
-		j += ft_putptr(va_arg(arg, long long int), "0123456789abcdef");
-	else if (s[i] == 'd' || s[i] == 'i')
-		j += ft_putnbr(va_arg(arg, int));
-	else if (s[i] == 'u')
-		j += ft_putnbr(va_arg(arg, unsigned int));
-	else if (s[i] == 'x')
-		j += ft_puthexa(va_arg(arg, unsigned int), "0123456789abcdef");
-	else if (s[i] == 'X')
-		j += ft_puthexa(va_arg(arg, unsigned int), "0123456789ABCDEF");
-	else
-		j += ft_putchar(s[i]);
-	return (j);
+	if (c == 'S')
+		return (ft_putmultstr(va_arg(args, char **)));
+	if (c == 'c')
+		return (ft_putlchar(va_arg(args, int)));
+	if (c == 's')
+		return (ft_putlstr(va_arg(args, char *)));
+	if (c == 'u')
+		return (ft_putlunbr(va_arg(args, unsigned int)));
+	if (c == 'd' || c == 'i')
+		return (ft_putlnbr(va_arg(args, int)));
+	if (c == '%')
+		return (ft_putlchar('%'));
+	if (c == 'x')
+		return (ft_putlhexa_low(va_arg(args, unsigned int)));
+	if (c == 'X')
+		return (ft_putlhexa_up(va_arg(args, unsigned int)));
+	if (c == 'p')
+		return (ft_putlpoint(va_arg(args, void *)));
+	if (!c)
+		return (0);
+	return (ft_putlchar('%') + ft_putlchar(c));
 }
 
 int	ft_printf(const char *s, ...)
 {
-	va_list arg;
-	int i;
-	int j;
+	va_list	args;
+	int		len;
 
-	i = 0;
-	j = 0;
-	va_start(arg, s);
-	if (s == NULL)
+	len = 0;
+	if (!s)
 		return (-1);
-	while (s[i])
+	va_start(args, s);
+	while (s && *s)
 	{
-		if (s[i] == '%' && s[i + 1] != '\0')
-		{
-			i++;
-			j += ft_check_flags(s, i, arg);
-		}
+		if (*s == '%')
+			len += ft_format(*(++s), args);
 		else
-			j += ft_putchar(s[i]);
-		i++;
+			len += ft_putlchar(*s);
+		s += 1;
 	}
-	va_end(arg);
-	return (j);
+	va_end(args);
+	return (len);
 }
