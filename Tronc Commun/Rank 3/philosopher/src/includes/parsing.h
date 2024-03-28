@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 16:04:56 by basverdi          #+#    #+#             */
-/*   Updated: 2024/03/28 17:18:46 by basverdi         ###   ########.fr       */
+/*   Created: 2024/03/28 16:23:29 by basverdi          #+#    #+#             */
+/*   Updated: 2024/03/28 16:55:18 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#ifndef PARSING_H
+# define PARSING_H
 
-# include <stdio.h>
+# include "../philo.h"
 
-# include "utils/libs/ft_libft/libft.h"
-# include "includes/structs.h"
-# include "includes/parsing.h"
+// Parsing
+
+t_bool	parse_args(int argc, char **argv, t_philo *philo, int count_philo);
 
 #endif

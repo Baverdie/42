@@ -11,7 +11,8 @@ INCLUDE_LIBFT = $(LIBFT_DIR)/libft.a
 
 LIBS = $(INCLUDE_LIBFT)
 
-SRCS_FILES = main.c \
+SRCS_FILES = main.c				\
+		parsing/parse_args.c	\
 
 SRCS = 	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
 OBJS = $(subst $(SRCS_DIR)/,$(OBJS_DIR)/, $(subst .c,.o, $(SRCS)))
