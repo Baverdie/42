@@ -82,6 +82,7 @@ void		ft_putnbr_fd(int n, int fd);
 int			ft_putptr(unsigned long long ptr, char *base);
 int			ft_putstr(char *s);
 void		ft_putstr_fd(char *s, int fd);
+t_bool		ft_overflow(char *s);
 char		**ft_split(const char *s, char c);
 void		ft_stackadd_back(t_stack **stack, t_stack *new);
 void		ft_stackadd_front(t_stack **stack, t_stack *new);
