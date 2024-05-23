@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:00:22 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/14 15:41:31 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/05/23 14:28:01 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,28 @@ t_bool	init(int ac, char **av, t_data *data)
 		return (TRUE);
 	if (init_forks(data))
 		return (TRUE);
-	while (i < data->nb_philo)
-	{
-		printf("Fork Right philo[%d] = %d\n", i, data->philo[i]->fork_r.fork);
-		printf("Fork Left philo[%d] = %d\n", i, data->philo[i]->fork_l->fork);
-		i++;
-	}
 	return (FALSE);
+}
+
+void	exec(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	if (data->num_of_meals != -1)
+	{
+		while (i < data->num_of_meals)
+		{
+			printf("OK\n");
+			i++;
+		}
+	}
+	else {
+		while (1)
+		{
+			printf("OK\n");
+		}
+	}
 }
 
 int	main(int ac, char **av)
@@ -60,7 +75,7 @@ int	main(int ac, char **av)
 			ft_free(data);
 			return (0);
 		}
-		printf("C'est ok\n");
+		exec(data);
 	}
 	else
 		printf("Error\n");
