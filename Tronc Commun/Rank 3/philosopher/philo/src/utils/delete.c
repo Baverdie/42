@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions.h                                        :+:      :+:    :+:   */
+/*   delete.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 15:12:59 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/05/23 14:37:11 by basverdi         ###   ########.fr       */
+/*   Created: 2024/05/23 14:59:58 by basverdi          #+#    #+#             */
+/*   Updated: 2024/05/23 15:16:47 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FUNCTIONS_H
-# define FUNCTIONS_H
+#include "../philo.h"
 
-# include "structs.h"
+void	print_philo(t_data *data)
+{
+	int	i;
 
-// Init functions
-t_bool	ft_init_philo(t_data *data);
-
-// Parsing functions
-t_bool parse_args(int ac, char **av, t_data *data);
-
-// Execution functions
-void	exec(t_data *data);
-
-#endif
+	i = 0;
+	while (i < data->nb_philo)
+	{
+		printf("Philo[%d] L = %d\n", data->philo[i]->id, data->philo[i]->fork_l->fork);
+		printf("Philo[%d] R = %d\n\n", data->philo[i]->id, data->philo[i]->fork_r.fork);
+		i++;
+	}
+}

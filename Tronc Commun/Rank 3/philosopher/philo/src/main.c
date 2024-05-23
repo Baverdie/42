@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:00:22 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/23 14:28:01 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:25:05 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_bool	init_forks(t_data *data)
 	while (i < data->nb_philo)
 	{
 		data->philo[i]->fork_r.fork = FALSE;
+		// data->philo[i]->fork_r.fork_m = (pthread_mutex_t){0};
 		if (i == 0)
 			data->philo[i]->fork_l = &data->philo[data->nb_philo - 1]->fork_r;
 		else
@@ -39,27 +40,6 @@ t_bool	init(int ac, char **av, t_data *data)
 	if (init_forks(data))
 		return (TRUE);
 	return (FALSE);
-}
-
-void	exec(t_data *data)
-{
-	int	i;
-
-	i = 0;
-	if (data->num_of_meals != -1)
-	{
-		while (i < data->num_of_meals)
-		{
-			printf("OK\n");
-			i++;
-		}
-	}
-	else {
-		while (1)
-		{
-			printf("OK\n");
-		}
-	}
 }
 
 int	main(int ac, char **av)
