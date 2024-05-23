@@ -9,10 +9,11 @@ OBJS_DIR = obj
 
 SRCS_FILES = main.c				\
 		parsing/parse_args.c	\
-		utils/type.c			\
+		utils/ft_overflow.c		\
+		utils/ft_free.c			\
 		utils/mem.c				\
 		utils/string.c			\
-		utils/ft_overflow.c		\
+		utils/type.c			\
 
 SRCS = 	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
 OBJS = $(subst $(SRCS_DIR)/,$(OBJS_DIR)/, $(subst .c,.o, $(SRCS)))

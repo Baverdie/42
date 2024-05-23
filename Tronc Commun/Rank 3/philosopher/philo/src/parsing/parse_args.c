@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:04:49 by basverdi          #+#    #+#             */
-/*   Updated: 2024/04/30 17:42:58 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/14 14:38:00 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,13 @@ t_bool	init_philo(t_data *data, char **av)
 	else
 		data->num_of_meals = -1;
 	data->philo = ft_calloc(data->nb_philo, sizeof(t_philo*));
-	printf("nb philo = %d\n", data->nb_philo);
+	if (!data->philo)
+		return (ft_free_philo(data));
 	while (i < data->nb_philo)
 	{
 		data->philo[i] = ft_calloc(i, sizeof(t_philo));
+		if (!data->philo[i])
+			return (ft_free_philo(data));
 		data->philo[i]->id = i;
 		i++;
 	}
@@ -41,11 +44,11 @@ t_bool	parse_args(int ac, char **av, t_data *data)
 	long long	tmp;
 	int			i;
 
-	i = 2;
+	i = 1;
+	if (ft_overflow("%ll %ll %ll %ll", av[1], av[2], av[3], av[4]))
+		return (TRUE);
 	while (i <= 4)
 	{
-		if (ft_overflow(av[i], "ll"))
-			return (TRUE);
 		tmp = ft_atoll(av[i]);
 		if (tmp < 0 || tmp > 999999 || ft_strlen(av[i]) > 6)
 			return (TRUE);
@@ -53,6 +56,7 @@ t_bool	parse_args(int ac, char **av, t_data *data)
 	}
 	if (ac == 6)
 	{
+		ft_overflow("%ll", av[5]);
 		tmp = ft_atoll(av[i]);
 		if (tmp < 0 || tmp > 2147483647 || ft_strlen(av[i]) > 6)
 			return (TRUE);

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_overflow.c                                      :+:      :+:    :+:   */
+/*   ft_overflow_better.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 17:30:10 by basverdi          #+#    #+#             */
-/*   Updated: 2024/04/30 17:37:04 by basverdi         ###   ########.fr       */
+/*   Created: 2024/05/13 10:56:35 by bastienverd       #+#    #+#             */
+/*   Updated: 2024/05/14 12:06:34 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-static t_bool	ft_is_nb(char c)
+static	t_bool ft_is_nb(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (TRUE);
 	return (FALSE);
 }
 
-static t_bool	is_nb(char *s)
+static	t_bool is_nb(char *s)
 {
 	if (*s == '-' || *s == '+')
 		s++;
@@ -33,9 +33,9 @@ static t_bool	is_nb(char *s)
 	return (TRUE);
 }
 
-static t_bool	check_nb_same_len(char *s, char *max, size_t len)
+static	t_bool check_nb_same_len(char *s, char *max, size_t len)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (i < len)
@@ -47,38 +47,13 @@ static t_bool	check_nb_same_len(char *s, char *max, size_t len)
 	return (FALSE);
 }
 
-t_bool	check_type(char *s, int i, char *type, int neg)
+static int ft_check_overflow(char *s, char *min, char *max, int len)
 {
-	if (!ft_strncmp(type, "int", 3))
-	{	
-		if (i > 11)
-			return (TRUE);
-		if (i == 10 && neg != -1)
-			return (check_nb_same_len(s, INT_MAX, 10));
-		else if (i == 10)
-			return (check_nb_same_len(s, INT_MIN, 10));
-		return (FALSE);
-	}
-	else if (!ft_strncmp(type, "ll", 2))
-	{
-		if (i > 19)
-			return (TRUE);
-		if (i == 19 && neg != -1)
-			return (check_nb_same_len(s, LLMAX, 19));
-		else if (i == 19)
-			return (check_nb_same_len(s, LLMIN, 19));
-		return (FALSE);
-	}
-	return (TRUE);
-}
+	int	neg;
+	int	i;
 
-t_bool	ft_overflow(char *s, char *type)
-{
-	size_t	i;
-	int		neg;
-
-	i = 0;
 	neg = 0;
+	i = 0;
 	if (!is_nb(s))
 		return (TRUE);
 	neg = (*s == '-') * -1 + (*s == '+') * 1;
@@ -86,5 +61,40 @@ t_bool	ft_overflow(char *s, char *type)
 		s++;
 	while (s && *(s + i))
 		i += 1;
-	return (check_type(s, i, type, neg));
+	if (i > len)
+		return (TRUE);
+	if (i == len && neg != -1)
+		return (check_nb_same_len(s, max, len));
+	else if (i == len)
+		return (check_nb_same_len(s, min, len));
+	return (FALSE);
+}
+
+t_bool	ft_overflow(char *s, ...)
+{
+	int		i;
+	va_list	arg;
+	t_bool	is_it;
+
+	i = 0;
+	va_start(arg, s);
+	if (s == NULL)
+		return (TRUE);
+	while (s[i])
+	{
+		if (s[i] == '%' && s[i + 1] != '\0')
+		{
+			if (s[i + 1] == 'i')
+				is_it = ft_check_overflow(va_arg(arg, char *), INTMIN, INTMAX, \
+					ft_strlen(INTMAX));
+			else if (s[i + 1] == 'l' && s[i + 2] == 'l')
+				is_it = ft_check_overflow(va_arg(arg, char *), LLMAX, LLMIN, \
+					ft_strlen(LLMAX));
+		}
+		if (is_it)
+			return (is_it);
+		i++;
+	}
+	va_end(arg);
+	return (is_it);
 }

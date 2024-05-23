@@ -1,47 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   libs.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 16:27:08 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/14 11:59:52 by bastienverd      ###   ########.fr       */
+/*   Created: 2024/05/14 14:32:28 by bastienverd       #+#    #+#             */
+/*   Updated: 2024/05/14 14:32:55 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef LIBS_H
+#define LIBS_H
 
-typedef enum e_bool
-{
-	FALSE,
-	TRUE
-}	t_bool;
-
-typedef struct s_fork
-{
-	t_bool fork;
-	pthread_mutex_t fork_m;
-} t_fork;
-
-typedef struct s_philo
-{
-	int		id;
-	int		meals;
-	int		die;
-	t_fork	fork_r;
-	t_fork	*fork_l;
-}	t_philo;
-
-typedef struct s_data
-{
-	int		time_to_die;
-	int		time_to_eat;
-	int		time_to_sleep;
-	int		num_of_meals;
-	int		nb_philo;
-	t_philo	**philo;
-}	t_data;
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <pthread.h>
 
 #endif

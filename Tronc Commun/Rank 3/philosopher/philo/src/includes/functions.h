@@ -1,47 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 16:27:08 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/14 11:59:52 by bastienverd      ###   ########.fr       */
+/*   Created: 2024/05/14 15:12:59 by bastienverd       #+#    #+#             */
+/*   Updated: 2024/05/14 15:14:32 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef FUNCTIONS_H
+# define FUNCTIONS_H
 
-typedef enum e_bool
-{
-	FALSE,
-	TRUE
-}	t_bool;
+# include "structs.h"
 
-typedef struct s_fork
-{
-	t_bool fork;
-	pthread_mutex_t fork_m;
-} t_fork;
+// Init functions
+t_bool	ft_init_philo(t_data *data);
 
-typedef struct s_philo
-{
-	int		id;
-	int		meals;
-	int		die;
-	t_fork	fork_r;
-	t_fork	*fork_l;
-}	t_philo;
-
-typedef struct s_data
-{
-	int		time_to_die;
-	int		time_to_eat;
-	int		time_to_sleep;
-	int		num_of_meals;
-	int		nb_philo;
-	t_philo	**philo;
-}	t_data;
+// Parsing functions
+t_bool parse_args(int ac, char **av, t_data *data);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:23:29 by basverdi          #+#    #+#             */
-/*   Updated: 2024/04/30 17:26:42 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:14:03 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 # include "../philo.h"
 
-// Parsing
-
+// Parsing functions
 t_bool	parse_args(int ac, char **av, t_data *data);
 
 #endif
