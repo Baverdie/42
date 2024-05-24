@@ -9,13 +9,14 @@ OBJS_DIR = obj
 
 SRCS_FILES = main.c				\
 		exec/execution.c		\
+		exec/get_time.c		\
 		parsing/parse_args.c	\
 		utils/ft_overflow.c		\
 		utils/ft_free.c			\
 		utils/mem.c				\
 		utils/string.c			\
 		utils/type.c			\
-		utils/delete.c			\
+		utils/print.c			\
 
 SRCS = 	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
 OBJS = $(subst $(SRCS_DIR)/,$(OBJS_DIR)/, $(subst .c,.o, $(SRCS)))

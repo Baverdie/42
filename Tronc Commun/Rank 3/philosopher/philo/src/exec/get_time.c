@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   delete.c                                           :+:      :+:    :+:   */
+/*   get_time.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 14:59:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/24 12:53:31 by basverdi         ###   ########.fr       */
+/*   Created: 2024/05/24 16:59:26 by basverdi          #+#    #+#             */
+/*   Updated: 2024/05/24 17:38:18 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-void	print_philo(t_philo *philo)
+long long	get_time(void)
 {
-	int	i;
+	struct timeval	time;
 
-	i = 0;
-	while (i < philo->data->nb_philo)
-	{
-		printf("Philo[%d] L = %d\n", philo[i].id, philo[i].fork_l->fork);
-		printf("Philo[%d] R = %d\n\n", philo[i].id, philo[i].fork_r.fork);
-		i++;
-	}
+	gettimeofday(&time, NULL);
+	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
 }

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:27:08 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/24 12:03:30 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/24 17:00:23 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,18 @@ typedef struct s_data
 	int		time_to_sleep;
 	int		num_of_meals;
 	int		nb_philo;
+	int		is_dead;
+	int		all_meals;
 }	t_data;
 
 typedef struct s_philo
 {
 	int			id;
 	int			meals;
-	int			die;
 	t_fork		fork_r;
 	t_fork		*fork_l;
 	pthread_t	thread;
-	t_data		*data;
+	t_data		data;
 }	t_philo;
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libs.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:32:28 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/05/14 14:32:55 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/05/24 17:02:48 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <pthread.h>
+#include <sys/time.h>
+#include <time.h>
 
 #endif

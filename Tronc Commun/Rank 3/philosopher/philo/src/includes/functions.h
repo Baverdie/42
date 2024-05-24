@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:12:59 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/05/24 12:42:35 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/24 17:03:29 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_bool	ft_init_philo(t_philo *philo);
 t_bool parse_args(int ac, char **av, t_philo *philo);
 
 // Execution functions
-void	exec(t_philo *philo);
+void		exec(t_philo *philo);
+long long	get_time(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:04:56 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/24 12:08:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:52:08 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@
 
 #define ERR_MUTEX "mutex init failed"
 
-# define TAKE_FORKS "has taken a fork"
+# define TAKE_LEFT_FORKS "has taken the left fork"
+# define TAKE_RIGHT_FORKS "has taken the right fork"
 # define THINKING "is thinking"
 # define SLEEPING "is sleeping"
 # define EATING "is eating"
-# define DIED "died"
+# define DIED "is died"
+# define END "All philosophers have eaten enough"
+# define FINISH "The simulation is over"
 
 #define DEFAULT "\001\033[m\002"
 #define BLACK "\001\e[0;30m\002"
