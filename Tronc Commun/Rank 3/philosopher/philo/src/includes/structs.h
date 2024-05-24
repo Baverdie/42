@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:27:08 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/24 11:04:12 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/05/24 12:03:30 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,15 @@ typedef struct s_fork
 	pthread_mutex_t	fork_m;
 } t_fork;
 
+typedef struct s_data
+{
+	int		time_to_die;
+	int		time_to_eat;
+	int		time_to_sleep;
+	int		num_of_meals;
+	int		nb_philo;
+}	t_data;
+
 typedef struct s_philo
 {
 	int			id;
@@ -33,16 +42,7 @@ typedef struct s_philo
 	t_fork		fork_r;
 	t_fork		*fork_l;
 	pthread_t	thread;
+	t_data		*data;
 }	t_philo;
-
-typedef struct s_data
-{
-	int		time_to_die;
-	int		time_to_eat;
-	int		time_to_sleep;
-	int		num_of_meals;
-	int		nb_philo;
-	t_philo	**philo;
-}	t_data;
 
 #endif

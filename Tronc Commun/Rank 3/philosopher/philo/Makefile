@@ -44,7 +44,7 @@ MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bo
 
 BANNER = $(PRINT) "$(COLOUR_PURPULE) ____  _   _  ____  __    _____  ___  _____  ____  _   _  ____  ____  ___ \n"
 BANNER1 = printf "$(COLOUR_PURPULE)(  _ \( )_( )(_  _)(  )  (  _  )/ __)(  _  )(  _ \( )_( )( ___)(  _ \/ __) \n"
-BANNER2 = printf "$(COLOUR_PURPULE) )___/ ) _ (  _)(_  )(__  )(_)( \__ \ )(_)(  )___/ ) _ (  )__)  )   /\__ \\n"
+BANNER2 = printf "$(COLOUR_PURPULE) )___/ ) _ (  _)(_  )(__  )(_)( \__ \ )(_)(  )___/ ) _ (  )__)  )   /\__ \ \n"
 BANNER3 = printf "$(COLOUR_PURPULE)(__)  (_) (_)(____)(____)(_____)(___/(_____)(__)  (_) (_)(____)(_)\_)(___/\n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \

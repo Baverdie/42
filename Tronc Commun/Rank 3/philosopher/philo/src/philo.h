@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:04:56 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/24 10:55:51 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/05/24 12:08:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "includes/libs.h"
 # include "includes/structs.h"
-# include "includes/parsing.h"
 # include "includes/utils.h"
 # include "includes/functions.h"
 

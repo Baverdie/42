@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:12:59 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/05/23 14:37:11 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/24 12:42:35 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include "structs.h"
 
 // Init functions
-t_bool	ft_init_philo(t_data *data);
+t_bool	ft_init_philo(t_philo *philo);
 
 // Parsing functions
-t_bool parse_args(int ac, char **av, t_data *data);
+t_bool parse_args(int ac, char **av, t_philo *philo);
 
 // Execution functions
-void	exec(t_data *data);
+void	exec(t_philo *philo);
 
 #endif
