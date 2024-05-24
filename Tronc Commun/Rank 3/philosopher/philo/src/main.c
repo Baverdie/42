@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:00:22 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/23 16:25:05 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/24 11:03:50 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_bool	init_forks(t_data *data)
 	{
 		data->philo[i]->fork_r.fork = FALSE;
 		// data->philo[i]->fork_r.fork_m = (pthread_mutex_t){0};
+		pthread_mutex_init(&data->philo[i]->fork_r.fork_m, NULL);
 		if (i == 0)
 			data->philo[i]->fork_l = &data->philo[data->nb_philo - 1]->fork_r;
 		else
@@ -32,9 +33,6 @@ t_bool	init_forks(t_data *data)
 
 t_bool	init(int ac, char **av, t_data *data)
 {
-	int			i;
-
-	i = 0;
 	if (parse_args(ac, av, data))
 		return (TRUE);
 	if (init_forks(data))
@@ -44,7 +42,7 @@ t_bool	init(int ac, char **av, t_data *data)
 
 int	main(int ac, char **av)
 {
-	t_data *data;
+	t_data	*data;
 
 	if (ac == 5 || ac == 6)
 	{
