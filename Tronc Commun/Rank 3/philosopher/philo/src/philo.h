@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:04:56 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/24 14:52:08 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/27 17:32:59 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 #define ERR_MUTEX "mutex init failed"
 
-# define TAKE_LEFT_FORKS "has taken the left fork"
-# define TAKE_RIGHT_FORKS "has taken the right fork"
+# define TAKE_FORKS "has taken a fork"
+// # define TAKE_RIGHT_FORKS "has taken the right fork"
 # define THINKING "is thinking"
 # define SLEEPING "is sleeping"
 # define EATING "is eating"

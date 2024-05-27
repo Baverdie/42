@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:04:49 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/24 16:40:40 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:04:47 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_bool	init_philo(t_philo *philo, char **av)
 	{
 		philo[i].id = i;
 		philo[i].meals = 0;
+		philo[i].is_dead = FALSE;
 		philo[i].data = philo->data;
 		i++;
 	}
@@ -41,13 +42,16 @@ t_bool	parse_args(int ac, char **av, t_philo *philo)
 	long long	tmp;
 	int			i;
 
-	i = 1;
+	i = 2;
 	if (ft_overflow("%ll %ll %ll", av[2], av[3], av[4]))
 		return (TRUE);
-	while (i <= 4)
+	tmp = ft_atoll(av[1]);
+	if (tmp < 0 || tmp > 200)
+		return (TRUE);
+	while (i <= 3)
 	{
 		tmp = ft_atoll(av[i]);
-		if (tmp < 0 || tmp > 2147483647 || ft_strlen(av[i]) > 6)
+		if (tmp < 60 || tmp > 2147483647 || ft_strlen(av[i]) > 6)
 			return (TRUE);
 		i++;
 	}
