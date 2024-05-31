@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:00:22 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/24 15:26:40 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:55:00 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	main(int ac, char **av)
 {
 	t_philo	*philo;
 
-	if (ft_overflow("%ll %i", av[1], av[1]))
-		return (print_error("Error\n"));
+	if (ft_overflow("%ll %i", av[1], av[1]) || ft_atoi(av[1]) > 200)
+		return (print_error("Error"));
 	philo = ft_calloc(ft_atoi(av[1]), sizeof(t_philo));
 	if (ac == 5 || ac == 6)
 	{

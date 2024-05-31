@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:59:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/27 17:53:49 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:26:05 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	print_philo(t_philo *philo)
 	i = 0;
 	while (i < philo->data.nb_philo)
 	{
-		printf("Philo[%d] :\n   id = %d\n   meals = %d\n   fork left = %d\n   fork right = %d\n   is dead = %d\n   all meals = %d\n", i, philo[i].id, philo[i].meals, philo[i].fork_l->fork, philo[i].fork_r.fork, philo[i].data.is_dead, philo[i].data.all_meals);
+		printf("Philo[%d] :\n   id = %d\n   meals = %d\n   fork left = %d\n   fork right = %d\n   is dead = %s\n", i + 1, philo[i].id + 1, philo[i].meals, philo[i].fork_l->fork, philo[i].fork_r.fork, philo[i].data.is_dead ? "true" : "false");
 		i++;
 	}
 }

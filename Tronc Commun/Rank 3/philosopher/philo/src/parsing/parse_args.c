@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:04:49 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/27 18:04:47 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:46:39 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_bool	init_philo(t_philo *philo, char **av)
 		philo[i].meals = 0;
 		philo[i].is_dead = FALSE;
 		philo[i].data = philo->data;
+		pthread_mutex_init(&philo[i].data.death, NULL);
 		i++;
 	}
 	return (FALSE);
