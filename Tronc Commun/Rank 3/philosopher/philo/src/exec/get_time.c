@@ -3,29 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   get_time.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 16:59:26 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/27 17:31:58 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/02 04:14:39 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-long long	get_time(long long start)
+u_int64_t	get_time(void)
 {
-	struct timeval	time;
-	long long		time_ms;
+	struct timeval tv;
 
-	gettimeofday(&time, NULL);
-	time_ms = time.tv_sec * 1000 + time.tv_usec / 1000 - start;
-	return (time_ms);
+	if (gettimeofday(&tv, NULL))
+		return (print_error("Error: gettimeofday failed", NULL));
+	return ((tv.tv_sec * (u_int64_t)1000) + (tv.tv_usec / 1000));
 }
 
-void	set_start(long long *start)
+int ft_usleep(useconds_t time)
 {
-	struct timeval	time;
+	u_int64_t start;
 
-	gettimeofday(&time, NULL);
-	*start = time.tv_sec * 1000 + time.tv_usec / 1000;
+	start = get_time();
+	while ((get_time() - start) < time)
+		usleep(time / 10);
+	return (0);
 }

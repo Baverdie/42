@@ -3,59 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:00:22 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/31 16:55:00 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/02 04:46:33 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-t_bool	init_forks(t_philo *philo)
+t_bool	case_one(t_data *data)
 {
-	int	i;
-
-	i = 0;
-	while (i < philo->data.nb_philo)
-	{
-		philo[i].fork_r.fork = FALSE;
-		pthread_mutex_init(&philo[i].fork_r.fork_m, NULL);
-		if (i == 0)
-			philo[i].fork_l = &philo[philo->data.nb_philo - 1].fork_r;
-		else
-			philo[i].fork_l = &philo[i - 1].fork_r;
-		i++;
-	}
-	return (FALSE);
+	data->start_time = get_time();
+	if (pthread_create(&data->tid[0], NULL, &routine, &data->philos[0]))
+		return (print_error(ERR_THREAD, data));
+	pthread_detach(data->tid[0]);
+	while (data->dead == 0)
+		ft_usleep(0);
+	ft_exit(data);
+	return (0);
 }
 
-t_bool	init(int ac, char **av, t_philo *philo)
+int main(int ac, char **av)
 {
-	if (parse_args(ac, av, philo))
-		return (TRUE);
-	if (init_forks(philo))
-		return (TRUE);
-	return (FALSE);
-}
+	t_data	data;
 
-int	main(int ac, char **av)
-{
-	t_philo	*philo;
-
-	if (ft_overflow("%ll %i", av[1], av[1]) || ft_atoi(av[1]) > 200)
-		return (print_error("Error"));
-	philo = ft_calloc(ft_atoi(av[1]), sizeof(t_philo));
 	if (ac == 5 || ac == 6)
 	{
-		if (init(ac, av, philo))
-		{
-			printf("Error\n");
-			return (0);
-		}
-		exec(philo);
+		if (check_input(av))
+			return (print_error(ERR_ARGS2, &data));
+		if (init(ac, av, &data))
+			return (1);
+		if (data.nb_philo == 1)
+			return (case_one(&data));
+		if (thread_init(&data))
+			return (1);
+		ft_exit(&data);
 	}
 	else
-		printf("Error\n");
+		return (print_error(ERR_ARGS, NULL));
 	return (0);
 }

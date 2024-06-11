@@ -3,45 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:59:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/05/31 17:26:05 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/02 04:21:04 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-int	print_error(char *s)
+int	print_error(char *s, t_data *data)
 {
 	printf("%s%s%s\n", RED, s, DEFAULT);
-	return (0);
+	if (data)
+		ft_exit(data);
+	return (1);
 }
 
-void	print_status(int id, char *status, long long time)
+void	print_color(u_int64_t time, t_philo *philo, char *status)
 {
-	if (!ft_strncmp(status, TAKE_FORKS, ft_strlen(TAKE_FORKS)))
-		printf("%s%lld ms %s%d%s has taken a fork%s\n", YELLOW, time, YELLOW, id + 1, YELLOW, DEFAULT);
-	else if (!ft_strncmp(status, EATING, ft_strlen(EATING)))
-		printf("%s%lld ms %s%d%s is eating%s\n", GREEN, time, YELLOW, id + 1, GREEN, DEFAULT);
-	else if (!ft_strncmp(status, SLEEPING, ft_strlen(SLEEPING)))
-		printf("%s%lld ms %s%d%s is sleeping%s\n", CYAN, time, YELLOW, id + 1, CYAN, DEFAULT);
-	else if (!ft_strncmp(status, THINKING, ft_strlen(THINKING)))
-		printf("%s%lld ms %s%d%s is thinking%s\n", MAGENTA, time, YELLOW, id + 1, MAGENTA, DEFAULT);
-	else if (!ft_strncmp(status, DIED, ft_strlen(DIED)))
-		printf("%s%lld ms %s%d%s is dead%s\n", RED, time, YELLOW, id + 1, RED, DEFAULT);
-	else if (!ft_strncmp(status, FINISH, ft_strlen(FINISH)))
-		printf("%sAll philosophers have finished eating%s\n", YELLOW, DEFAULT);
+	if (ft_strncmp(status, EATING, ft_strlen(EATING)) == 0)
+		printf("%s%llums %s%d %s%s%s\n", GREEN, time, YELLOW, philo->id, GREEN, status, DEFAULT);
+	else if (ft_strncmp(status, SLEEPING, ft_strlen(SLEEPING)) == 0)
+		printf("%s%llums %s%d %s%s%s\n", CYAN, time, YELLOW, philo->id, CYAN, status, DEFAULT);
+	else if (ft_strncmp(status, THINKING, ft_strlen(THINKING)) == 0)
+		printf("%s%llums %s%d %s%s%s\n", MAGENTA, time, YELLOW, philo->id, MAGENTA, status, DEFAULT);
+	else if (ft_strncmp(status, FORK, ft_strlen(FORK)) == 0)
+		printf("%s%llums %s%d %s%s%s\n", GREY, time, YELLOW, philo->id, GREY, status, DEFAULT);
 }
 
-void	print_philo(t_philo *philo)
+void	print_status(char *status, t_philo *philo)
 {
-	int	i;
+	u_int64_t	time;
 
-	i = 0;
-	while (i < philo->data.nb_philo)
+	pthread_mutex_lock(&philo->data->print);
+	time = get_time() - philo->data->start_time;
+	if (ft_strncmp(status, DIED, ft_strlen(DIED)) == 0 && philo->data->dead == 0)
 	{
-		printf("Philo[%d] :\n   id = %d\n   meals = %d\n   fork left = %d\n   fork right = %d\n   is dead = %s\n", i + 1, philo[i].id + 1, philo[i].meals, philo[i].fork_l->fork, philo[i].fork_r.fork, philo[i].data.is_dead ? "true" : "false");
-		i++;
+		printf("%s%llums %s%d %s%s%s\n", RED, time, YELLOW, philo->id, RED, status, DEFAULT);
+		philo->data->dead = 1;
 	}
+	if (!philo->data->dead)
+		print_color(time, philo, status);
+	pthread_mutex_unlock(&philo->data->print);
 }

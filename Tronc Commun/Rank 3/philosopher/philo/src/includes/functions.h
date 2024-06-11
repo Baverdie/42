@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:12:59 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/05/27 17:11:28 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/02 04:46:05 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 # include "structs.h"
 
 // Init functions
-t_bool	ft_init_philo(t_philo *philo);
+t_bool		init(int ac, char **av, t_data *data);
+t_bool		thread_init(t_data *data);
 
 // Parsing functions
-t_bool	parse_args(int ac, char **av, t_philo *philo);
+t_bool		check_input(char **av);
 
 // Execution functions
-void	exec(t_philo *philo);
-long long	get_time(long long start);
-void	set_start(long long *start);
+void		*routine(void *arg);
+u_int64_t	get_time(void);
+int			ft_usleep(useconds_t time);
 
 #endif

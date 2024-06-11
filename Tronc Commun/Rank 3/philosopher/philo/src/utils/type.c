@@ -3,34 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   type.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:05:07 by basverdi          #+#    #+#             */
-/*   Updated: 2024/04/30 17:18:53 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/02 04:44:35 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
-
-long long	ft_atoll(char *s)
-{
-	long long	result;
-	int			neg;
-
-	result = 0;
-	neg = 1;
-	if (*s == '-' || *s == '+')
-	{
-		neg = (*s == '-') * -1 + (*s == '+') * 1;
-		s += 1;
-	}
-	while (s && *s)
-	{
-		result = result * 10 + (*s - '0');
-		s += 1;
-	}
-	return (result * neg);
-}
 
 int	ft_atoi(const char *nptr)
 {

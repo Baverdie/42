@@ -8,11 +8,12 @@ SRCS_DIR = src
 OBJS_DIR = obj
 
 SRCS_FILES = main.c				\
+		initialisation/init.c	\
 		exec/execution.c		\
-		exec/get_time.c		\
+		exec/get_time.c			\
 		parsing/parse_args.c	\
+		utils/ft_exit.c			\
 		utils/ft_overflow.c		\
-		utils/ft_free.c			\
 		utils/mem.c				\
 		utils/string.c			\
 		utils/type.c			\
