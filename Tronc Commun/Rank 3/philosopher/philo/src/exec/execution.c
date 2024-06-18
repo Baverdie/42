@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execution.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:36:33 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/02 05:00:24 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/18 17:05:03 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ void	*supervisor(void *arg)
 		pthread_mutex_lock(&philo->lock);
 		if (get_time() >= philo->time_to_die + 1 && !philo->eating)
 			print_status(DIED, philo);
-		if (philo->count_meals == philo->data->nb_meals)
+		pthread_mutex_lock(&philo->data->lock);
+		if (philo->count_meals == philo->data->nb_meals \
+			&& philo->data->finished < philo->data->nb_philo)
 		{
-			pthread_mutex_lock(&philo->data->lock);
 			philo->data->finished++;
 			philo->count_meals++;
-			pthread_mutex_unlock(&philo->data->lock);
 		}
+		pthread_mutex_unlock(&philo->data->lock);
 		pthread_mutex_unlock(&philo->lock);
 	}
 	return (NULL);
@@ -44,8 +45,8 @@ void	eat_sleep(t_philo *philo)
 	philo->eating = TRUE;
 	philo->time_to_die = get_time() + philo->data->time_to_die;
 	print_status(EATING, philo);
-	philo->count_meals++;
 	ft_usleep(philo->data->time_to_eat);
+	philo->count_meals++;
 	philo->eating = FALSE;
 	pthread_mutex_unlock(&philo->lock);
 	pthread_mutex_unlock(philo->r_fork);
@@ -80,7 +81,7 @@ void	*monitor(void *arg)
 	while (philo->data->dead == 0)
 	{
 		pthread_mutex_lock(&philo->lock);
-		if (philo->data->finished >= philo->data->nb_philo)
+		if (philo->data->finished == philo->data->nb_philo)
 			philo->data->dead = 1;
 		pthread_mutex_unlock(&philo->lock);
 	}
@@ -97,19 +98,19 @@ t_bool	thread_init(t_data *data)
 	if (data->nb_meals > 0)
 	{
 		if (pthread_create(&t0, NULL, &monitor, &data->philos[0]))
-			return (print_error(ERR_THREAD, data));
+			return (print_error(ERR_THREAD));
 	}
 	while (++i < data->nb_philo)
 	{
 		if (pthread_create(&data->tid[i], NULL, &routine, &data->philos[i]))
-			return (print_error(ERR_THREAD, data));
+			return (print_error(ERR_THREAD));
 		usleep(100);
 	}
 	i = -1;
 	while (++i < data->nb_philo)
 	{
 		if (pthread_join(data->tid[i], NULL))
-			return (print_error(ERR_THREAD, data));
+			return (print_error(ERR_THREAD));
 	}
 	return (FALSE);
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_overflow_better.c                               :+:      :+:    :+:   */
+/*   ft_overflow.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 10:56:35 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/05/14 12:06:34 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/18 12:58:24 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-static	t_bool ft_is_nb(char c)
+static t_bool	ft_is_nb(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (TRUE);
 	return (FALSE);
 }
 
-static	t_bool is_nb(char *s)
+static t_bool	is_nb(char *s)
 {
 	if (*s == '-' || *s == '+')
 		s++;
@@ -33,9 +33,9 @@ static	t_bool is_nb(char *s)
 	return (TRUE);
 }
 
-static	t_bool check_nb_same_len(char *s, char *max, size_t len)
+static t_bool	check_nb_same_len(char *s, char *max, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)
@@ -47,7 +47,7 @@ static	t_bool check_nb_same_len(char *s, char *max, size_t len)
 	return (FALSE);
 }
 
-static int ft_check_overflow(char *s, char *min, char *max, int len)
+static int	ft_check_overflow(char *s, char *min, char *max, int len)
 {
 	int	neg;
 	int	i;

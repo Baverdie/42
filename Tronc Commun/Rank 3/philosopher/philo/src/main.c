@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:00:22 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/02 04:46:33 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/18 16:44:24 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_bool	case_one(t_data *data)
 {
 	data->start_time = get_time();
 	if (pthread_create(&data->tid[0], NULL, &routine, &data->philos[0]))
-		return (print_error(ERR_THREAD, data));
+		return (print_error(ERR_THREAD));
 	pthread_detach(data->tid[0]);
 	while (data->dead == 0)
 		ft_usleep(0);
@@ -24,14 +24,14 @@ t_bool	case_one(t_data *data)
 	return (0);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_data	data;
 
 	if (ac == 5 || ac == 6)
 	{
 		if (check_input(av))
-			return (print_error(ERR_ARGS2, &data));
+			return (print_error(ERR_ARGS2));
 		if (init(ac, av, &data))
 			return (1);
 		if (data.nb_philo == 1)
@@ -41,6 +41,6 @@ int main(int ac, char **av)
 		ft_exit(&data);
 	}
 	else
-		return (print_error(ERR_ARGS, NULL));
+		return (print_error(ERR_ARGS));
 	return (0);
 }

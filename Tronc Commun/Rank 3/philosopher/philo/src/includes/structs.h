@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:27:08 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/02 04:12:11 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/18 13:02:01 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef enum e_bool
 	TRUE
 }	t_bool;
 
-struct s_data;
+struct	s_data;
 
 typedef struct s_philo
 {
@@ -50,6 +50,6 @@ typedef struct s_data
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	lock;
 	pthread_mutex_t	print;
-} t_data;
+}	t_data;
 
 #endif

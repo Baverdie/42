@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 01:18:26 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/02 02:09:10 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/18 16:44:24 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-t_bool init_data(int ac, char **av, t_data *data)
+t_bool	init_data(int ac, char **av, t_data *data)
 {
-	if (ft_overflow("%ll %ll %ll %ll", av[1], av[2], av[3], av[4]) ||
-		ft_overflow("%i %i %i %i", av[1], av[2], av[3], av[4]))
+	if (ft_overflow("%ll %ll %ll %ll", av[1], av[2], av[3], av[4]) \
+		|| ft_overflow("%i %i %i %i", av[1], av[2], av[3], av[4]))
 		return (TRUE);
 	data->nb_philo = ft_atoi(av[1]);
 	data->time_to_die = ft_atoi(av[2]);
@@ -29,27 +29,27 @@ t_bool init_data(int ac, char **av, t_data *data)
 	}
 	else
 		data->nb_meals = -1;
-	if (data->nb_philo <= 0 || data->nb_philo > 200 || data->time_to_die < 0 \
-		|| data->time_to_eat < 0 || data->time_to_sleep < 0)
+	if (data->nb_philo <= 0 || data->nb_philo > 200 || data->time_to_die <= 0 \
+		|| data->time_to_eat <= 0 || data->time_to_sleep <= 0)
 		return (TRUE);
 	data->dead = 0;
 	data->finished = 0;
 	pthread_mutex_init(&data->print, NULL);
 	pthread_mutex_init(&data->lock, NULL);
-	return (0);
+	return (FALSE);
 }
 
-t_bool alloc(t_data *data)
+t_bool	alloc(t_data *data)
 {
 	data->tid = ft_calloc(data->nb_philo, sizeof(pthread_t));
 	if (!data->tid)
-		return (print_error(ERR_MALLOC, data));
+		return (print_error(ERR_MALLOC));
 	data->forks = ft_calloc(data->nb_philo, sizeof(pthread_mutex_t));
 	if (!data->forks)
-		return (print_error(ERR_MALLOC, data));
+		return (print_error(ERR_MALLOC));
 	data->philos = ft_calloc(data->nb_philo, sizeof(t_philo));
 	if (!data->philos)
-		return (print_error(ERR_MALLOC, data));
+		return (print_error(ERR_MALLOC));
 	return (FALSE);
 }
 
@@ -89,12 +89,15 @@ void	init_philos(t_data *data)
 	}
 }
 
-t_bool init(int ac, char **av, t_data *data)
+t_bool	init(int ac, char **av, t_data *data)
 {
 	if (init_data(ac, av, data))
-		return (print_error(ERR_ARGS2, data));
+		return (print_error(ERR_ARGS2));
 	if (alloc(data))
+	{
+		ft_free_alloc(data);
 		return (TRUE);
+	}
 	if (init_forks(data))
 		return (TRUE);
 	init_philos(data);

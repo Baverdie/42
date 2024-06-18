@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:06:55 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/02 04:45:15 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/18 16:41:17 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_bool		ft_overflow(char *s, ...);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		ft_exit(t_data *data);
 void		print_status(char *status, t_philo *philo);
-int			print_error(char *s, t_data *data);
-void		clear_data(t_data *data);
+int			print_error(char *s);
+void		ft_free_alloc(t_data *data);
 
 #endif

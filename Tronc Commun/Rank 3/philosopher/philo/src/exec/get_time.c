@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_time.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 16:59:26 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/02 04:14:39 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/18 13:00:25 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 u_int64_t	get_time(void)
 {
-	struct timeval tv;
+	struct timeval	tv;
 
 	if (gettimeofday(&tv, NULL))
 		return (print_error("Error: gettimeofday failed", NULL));
 	return ((tv.tv_sec * (u_int64_t)1000) + (tv.tv_usec / 1000));
 }
 
-int ft_usleep(useconds_t time)
+int	ft_usleep(useconds_t time)
 {
-	u_int64_t start;
+	u_int64_t	start;
 
 	start = get_time();
 	while ((get_time() - start) < time)
