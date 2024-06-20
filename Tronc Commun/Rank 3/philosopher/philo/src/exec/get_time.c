@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 16:59:26 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/18 13:00:25 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:45:10 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ u_int64_t	get_time(void)
 	struct timeval	tv;
 
 	if (gettimeofday(&tv, NULL))
-		return (print_error("Error: gettimeofday failed", NULL));
+		return (print_error("Error: gettimeofday failed"));
 	return ((tv.tv_sec * (u_int64_t)1000) + (tv.tv_usec / 1000));
 }
 

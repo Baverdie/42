@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:00:22 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/18 16:44:24 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:34:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ t_bool	case_one(t_data *data)
 	data->start_time = get_time();
 	if (pthread_create(&data->tid[0], NULL, &routine, &data->philos[0]))
 		return (print_error(ERR_THREAD));
-	pthread_detach(data->tid[0]);
-	while (data->dead == 0)
-		ft_usleep(0);
+	if (pthread_join(data->tid[0], NULL))
+		return (print_error(ERR_THREAD));
 	ft_exit(data);
 	return (0);
 }
