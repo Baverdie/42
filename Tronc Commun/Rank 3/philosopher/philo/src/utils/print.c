@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:59:58 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/20 17:51:13 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:11:36 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,12 @@ void	print_status(char *status, t_philo *philo)
 		printf("%s%lums %s%d %s%s%s\n", RED, time, YELLOW, philo->id, RED, \
 			status, DEFAULT);
 		pthread_mutex_lock(&philo->data->lock);
-		printf("Philo %d died\n", philo->id);
 		philo->data->dead = 1;
 		pthread_mutex_unlock(&philo->data->lock);
 	}
+	pthread_mutex_lock(&philo->data->lock);
 	if (!philo->data->dead)
 		print_color(time, philo, status);
+	pthread_mutex_unlock(&philo->data->lock);
 	pthread_mutex_unlock(&philo->data->print);
 }

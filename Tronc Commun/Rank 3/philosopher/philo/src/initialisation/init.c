@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 01:18:26 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/20 15:31:36 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/21 18:02:41 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_bool	alloc(t_data *data)
 	data->tid = ft_calloc(data->nb_philo, sizeof(pthread_t));
 	if (!data->tid)
 		return (print_error(ERR_MALLOC));
-	data->forks = ft_calloc(data->nb_philo, sizeof(pthread_mutex_t));
+	data->forks = malloc(sizeof(pthread_mutex_t) * data->nb_philo);
 	if (!data->forks)
 		return (print_error(ERR_MALLOC));
 	data->philos = ft_calloc(data->nb_philo, sizeof(t_philo));
