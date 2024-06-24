@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 01:18:26 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/24 11:41:07 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/24 15:46:30 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_bool	init_data(int ac, char **av, t_data *data)
 {
-	if (ft_overflow("%ll %ll %ll %ll", av[1], av[2], av[3], av[4]) \
+	if (ft_overflow("%ll %ll %ll %ll", av[1], av[2], av[3], av[4])
 		|| ft_overflow("%i %i %i %i", av[1], av[2], av[3], av[4]))
 		return (TRUE);
 	data->nb_philo = ft_atoi(av[1]);
@@ -29,9 +29,9 @@ t_bool	init_data(int ac, char **av, t_data *data)
 	}
 	else
 		data->nb_meals = -1;
-	if (data->nb_philo <= 0 || data->nb_philo > 200 || data->time_to_die <= 0 \
-		|| data->time_to_eat <= 0 || data->time_to_sleep <= 0 \
-		|| (ac == 6 && data->nb_meals <= 0))
+	if (data->nb_philo <= 0 || data->nb_philo > 200 || data->time_to_die <= 0
+		|| data->time_to_eat <= 0 || data->time_to_sleep <= 0 || (ac == 6
+			&& data->nb_meals <= 0))
 		return (TRUE);
 	data->dead = 0;
 	data->finished = 0;

@@ -12,6 +12,7 @@ SRCS_FILES = main.c				\
 		exec/execution.c		\
 		exec/get_time.c			\
 		parsing/parse_args.c	\
+		utils/utils.c			\
 		utils/ft_exit.c			\
 		utils/ft_overflow.c		\
 		utils/mem.c				\

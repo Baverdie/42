@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 10:56:35 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/18 12:58:24 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/24 15:46:30 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ t_bool	ft_overflow(char *s, ...)
 		if (s[i] == '%' && s[i + 1] != '\0')
 		{
 			if (s[i + 1] == 'i')
-				is_it = ft_check_overflow(va_arg(arg, char *), INTMIN, INTMAX, \
-					ft_strlen(INTMAX));
+				is_it = ft_check_overflow(va_arg(arg, char *), INTMIN, INTMAX,
+						ft_strlen(INTMAX));
 			else if (s[i + 1] == 'l' && s[i + 2] == 'l')
-				is_it = ft_check_overflow(va_arg(arg, char *), LLMAX, LLMIN, \
-					ft_strlen(LLMAX));
+				is_it = ft_check_overflow(va_arg(arg, char *), LLMAX, LLMIN,
+						ft_strlen(LLMAX));
 		}
 		if (is_it)
 			return (is_it);

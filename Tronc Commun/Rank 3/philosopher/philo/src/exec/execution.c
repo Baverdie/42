@@ -6,66 +6,11 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:36:33 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/24 11:30:13 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/24 18:16:29 by babonnet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
-
-void	check_meals(t_philo *philo)
-{
-	if (philo->data->nb_meals != -1 && philo->count_meals == philo->data->nb_meals)
-		philo->data->finished++;
-}
-
-t_bool	drop_forks(t_philo *philo)
-{
-	if (philo->id > philo->id % 2) {
-		pthread_mutex_unlock(philo->r_fork);
-		pthread_mutex_unlock(philo->l_fork);
-	}
-	else
-	{
-		pthread_mutex_unlock(philo->l_fork);
-		pthread_mutex_unlock(philo->r_fork);
-	}
-	if (philo->data->dead)
-		return (TRUE);
-	return (FALSE);
-}
-
-t_bool	taken_forks(t_philo *philo)
-{
-	if (philo->l_fork == philo->r_fork)
-	{
-		print_status(FORK, philo);
-		print_status(DIED, philo);
-		return (TRUE);
-	}
-	if (philo->id > philo->id % 2)
-	{
-		pthread_mutex_lock(philo->r_fork);
-		print_status(FORK, philo);
-		pthread_mutex_lock(philo->l_fork);
-		print_status(FORK, philo);
-	}
-	else
-	{
-		pthread_mutex_lock(philo->l_fork);
-		print_status(FORK, philo);
-		pthread_mutex_lock(philo->r_fork);
-		print_status(FORK, philo);
-	}
-	pthread_mutex_lock(&philo->data->lock);
-	if (philo->data->dead)
-	{
-		pthread_mutex_unlock(&philo->data->lock);
-		drop_forks(philo);
-		return (TRUE);
-	}
-	pthread_mutex_unlock(&philo->data->lock);
-	return (FALSE);
-}
 
 t_bool	eat(t_philo *philo)
 {
@@ -92,8 +37,7 @@ t_bool	eat(t_philo *philo)
 		time_to_die -= 10;
 	}
 	philo->count_meals++;
-	if (philo->data->nb_meals != -1 && philo->count_meals == philo->data->nb_meals)
-		philo->data->finished += 1;
+	check_meals(philo);
 	return (FALSE);
 }
 
@@ -107,7 +51,7 @@ t_bool	ft_sleep(t_philo *philo, int time_to_die)
 	{
 		ft_usleep(10);
 		pthread_mutex_lock(&philo->data->lock);
-		if (time_to_die - (int)philo->data->time_to_eat < time_to_sleep \
+		if (time_to_die - (int)philo->data->time_to_eat < time_to_sleep
 			|| philo->data->dead)
 		{
 			pthread_mutex_unlock(&philo->data->lock);
@@ -135,7 +79,7 @@ t_bool	think(t_philo *philo, int time_to_die)
 	while (time_to_think > 0)
 	{
 		pthread_mutex_lock(&philo->data->lock);
-		if (time_to_think + time_to_eat + time_to_sleep > time_to_die \
+		if (time_to_think + time_to_eat + time_to_sleep > time_to_die
 			|| philo->data->dead)
 		{
 			pthread_mutex_unlock(&philo->data->lock);
@@ -156,7 +100,7 @@ void	*routine(void *arg)
 
 	philo = (t_philo *)arg;
 	philo->time_to_die = philo->data->time_to_die + get_time();
-	while (!philo->data->dead)
+	while (!philo->data->dead || philo->data->finished == philo->data->nb_philo)
 	{
 		if (taken_forks(philo))
 			return (NULL);
@@ -181,7 +125,7 @@ void	*routine(void *arg)
 
 t_bool	thread_init(t_data *data)
 {
-	int			i;
+	int	i;
 
 	data->start_time = get_time();
 	i = -1;
