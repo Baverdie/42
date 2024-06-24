@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 01:18:26 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/21 18:02:41 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/24 11:41:07 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ t_bool	init_data(int ac, char **av, t_data *data)
 	else
 		data->nb_meals = -1;
 	if (data->nb_philo <= 0 || data->nb_philo > 200 || data->time_to_die <= 0 \
-		|| data->time_to_eat <= 0 || data->time_to_sleep <= 0)
+		|| data->time_to_eat <= 0 || data->time_to_sleep <= 0 \
+		|| (ac == 6 && data->nb_meals <= 0))
 		return (TRUE);
 	data->dead = 0;
 	data->finished = 0;

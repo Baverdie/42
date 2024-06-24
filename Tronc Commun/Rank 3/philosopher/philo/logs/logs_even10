@@ -1,0 +1,1485 @@
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m0ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m1200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m1200ms [1;33m1 [1;35mis thinking[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m1400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1400ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1600ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m1600ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m1600ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1600ms [1;33m3 [1;35mis thinking[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m1800ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1800ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1800ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1800ms [1;33m4 [1;35mis thinking[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2000ms [1;33m3 [1;35mis thinking[m
+[1;35m2000ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m2000ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m2000ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m2 [1;35mis thinking[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;31m2200ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m4 [1;35mis thinking[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2400ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m2400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m2400ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2400ms [1;33m3 [1;35mis thinking[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m2600ms [1;33m4 [1;35mis thinking[m
+[1;35m2600ms [1;33m2 [1;35mis thinking[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;31m2600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m2600ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2800ms [1;33m3 [1;35mis thinking[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;35m2800ms [1;33m1 [1;35mis thinking[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;31m2800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m3000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m3000ms [1;33m2 [1;35mis thinking[m
+[1;35m3000ms [1;33m4 [1;35mis thinking[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;31m3000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m3200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m3200ms [1;33m1 [1;35mis thinking[m
+[1;35m3200ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m3200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m3200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m3200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m3200ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m3200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m3200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m3200ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m3400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m3400ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m3400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m3400ms [1;33m4 [1;35mis thinking[m
+[1;35m3600ms [1;33m3 [1;35mis thinking[m
+[1;35m3600ms [1;33m1 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m0ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m1200ms [1;33m1 [1;35mis thinking[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m1600ms [1;33m3 [1;35mis thinking[m
+[1;35m1600ms [1;33m1 [1;35mis thinking[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m1600ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;31m1600ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m1800ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1800ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1800ms [1;33m2 [1;35mis thinking[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1800ms [1;33m4 [1;35mis thinking[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2000ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m2000ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2000ms [1;33m1 [1;35mis thinking[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2000ms [1;33m3 [1;35mis thinking[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m2200ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m4 [1;35mis thinking[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2200ms [1;33m2 [1;35mis thinking[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2400ms [1;33m1 [1;35mis thinking[m
+[1;35m2400ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m2400ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m2600ms [1;33m4 [1;35mis thinking[m
+[1;35m2600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m2600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m2600ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2800ms [1;33m1 [1;35mis thinking[m
+[1;35m2800ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m2800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m3000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m3000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m3000ms [1;33m4 [1;35mis thinking[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m3000ms [1;33m2 [1;35mis thinking[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m3200ms [1;33m1 [1;35mis thinking[m
+[1;35m3200ms [1;33m3 [1;35mis thinking[m
+[1;90m3200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m3200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m3200ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m3200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;31m3200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m3400ms [1;33m4 [1;35mis thinking[m
+[1;35m3400ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m3400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m3600ms [1;33m1 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m0ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;35m1200ms [1;33m1 [1;35mis thinking[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;31m1200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;35m1400ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m1400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1600ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m1600ms [1;33m1 [1;35mis thinking[m
+[1;35m1600ms [1;33m3 [1;35mis thinking[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1600ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m1800ms [1;33m4 [1;35mis thinking[m
+[1;35m1800ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1800ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1800ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2000ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m2000ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2000ms [1;33m1 [1;35mis thinking[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2000ms [1;33m3 [1;35mis thinking[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m2200ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m2200ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m2 [1;35mis thinking[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2400ms [1;33m3 [1;35mis thinking[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m2400ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2400ms [1;33m1 [1;35mis thinking[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2600ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2600ms [1;33m2 [1;35mis thinking[m
+[1;35m2600ms [1;33m4 [1;35mis thinking[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;31m2600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2800ms [1;33m1 [1;35mis thinking[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;31m2800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m2800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2800ms [1;33m3 [1;35mis thinking[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m3000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m3000ms [1;33m4 [1;35mis thinking[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;35m3000ms [1;33m2 [1;35mis thinking[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m3000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m3200ms [1;33m3 [1;35mis thinking[m
+[1;35m3200ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m3200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m3200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m3400ms [1;33m2 [1;35mis thinking[m
+[1;35m3400ms [1;33m4 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m1ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m214ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m214ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m214ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m214ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m414ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m414ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m414ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m414ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m614ms [1;33m2 [1;35mis thinking[m
+[1;90m614ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m614ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m614ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m614ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m614ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m614ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m814ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m814ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m814ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m814ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m814ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m814ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m814ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m814ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;2m814ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1014ms [1;33m4 [1;35mis thinking[m
+[1;35m1014ms [1;33m2 [1;35mis thinking[m
+[1;90m1014ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1014ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1014ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m1014ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m1014ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1014ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1014ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1014ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m1214ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m1214ms [1;33m3 [1;35mis thinking[m
+[1;35m1214ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m1214ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1214ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1214ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1214ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m1214ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1214ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1214ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1414ms [1;33m2 [1;35mis thinking[m
+[1;35m1414ms [1;33m4 [1;35mis thinking[m
+[1;90m1414ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;31m1414ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1414ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1414ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1414ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1414ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1414ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1414ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1614ms [1;33m1 [1;35mis thinking[m
+[1;35m1614ms [1;33m3 [1;35mis thinking[m
+[1;90m1614ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1614ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1614ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1614ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m1614ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m1614ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1614ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1614ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m1814ms [1;33m2 [1;35mis thinking[m
+[1;90m1814ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1814ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1814ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1814ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1814ms [1;33m4 [1;35mis thinking[m
+[1;90m1814ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1814ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1814ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m1814ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2014ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m2014ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2014ms [1;33m3 [1;35mis thinking[m
+[1;90m2014ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2014ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2014ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2014ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2014ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2014ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2014ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m2214ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m2214ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m2214ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m2214ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2214ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2214ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2214ms [1;33m4 [1;35mis thinking[m
+[1;90m2214ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2214ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2214ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2414ms [1;33m1 [1;35mis thinking[m
+[1;90m2414ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;31m2414ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2414ms [1;33m3 [1;35mis thinking[m
+[1;90m2414ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2414ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m2414ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2414ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2414ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;2m2414ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2614ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m2614ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2614ms [1;33m2 [1;35mis thinking[m
+[1;90m2614ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2614ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2614ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2614ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2614ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m2614ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2614ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2814ms [1;33m3 [1;35mis thinking[m
+[1;35m2814ms [1;33m1 [1;35mis thinking[m
+[1;90m2814ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2814ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2814ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2814ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2814ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2814ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2814ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2814ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;31m3014ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m3014ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m3014ms [1;33m2 [1;35mis thinking[m
+[1;90m3014ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3014ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3014ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m3014ms [1;33m4 [1;35mis thinking[m
+[1;90m3014ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m3014ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3014ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m3214ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m3214ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m3214ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m3214ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m3214ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m3214ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m3214ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m3414ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m3414ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m3414ms [1;33m4 [1;35mis thinking[m
+[1;35m3614ms [1;33m3 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m0ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m1200ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m1200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m1400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m1400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1400ms [1;33m2 [1;35mis thinking[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m1600ms [1;33m1 [1;35mis thinking[m
+[1;35m1600ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m1600ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m1600ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1800ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1800ms [1;33m4 [1;35mis thinking[m
+[1;35m1800ms [1;33m2 [1;35mis thinking[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;31m1800ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2000ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m2000ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2000ms [1;33m3 [1;35mis thinking[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2000ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2200ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m2200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m4 [1;35mis thinking[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2200ms [1;33m2 [1;35mis thinking[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2400ms [1;33m3 [1;35mis thinking[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2400ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2400ms [1;33m1 [1;35mis thinking[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m2600ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2600ms [1;33m4 [1;35mis thinking[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m2600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2800ms [1;33m3 [1;35mis thinking[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m2800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m2800ms [1;33m1 [1;35mis thinking[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m3000ms [1;33m4 [1;35mis thinking[m
+[1;35m3000ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m3000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m3000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m3200ms [1;33m3 [1;35mis thinking[m
+[1;35m3200ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m3200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m3200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m3200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m3200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m3200ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m3200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m3200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m3200ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m3400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m3400ms [1;33m4 [1;35mis thinking[m
+[1;35m3400ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m3400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m3600ms [1;33m1 [1;35mis thinking[m
+[1;35m3600ms [1;33m3 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m0ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;35m1205ms [1;33m1 [1;35mis thinking[m
+[1;90m1205ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;31m1205ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m1205ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1205ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m1205ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1205ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;35m1405ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1405ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1405ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;31m1405ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m1405ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1405ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1405ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1405ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1405ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1605ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m1605ms [1;33m1 [1;35mis thinking[m
+[1;90m1605ms [1;33m1 [1;90mhas taken a fork[m
+[1;35m1605ms [1;33m3 [1;35mis thinking[m
+[1;90m1605ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1605ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1605ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m1605ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m1605ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1605ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1805ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1805ms [1;33m2 [1;35mis thinking[m
+[1;90m1805ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1805ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1805ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1805ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1805ms [1;33m4 [1;35mis thinking[m
+[1;90m1805ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1805ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1805ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2005ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2005ms [1;33m3 [1;35mis thinking[m
+[1;90m2005ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2005ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2005ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m2005ms [1;33m1 [1;35mis thinking[m
+[1;90m2005ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2005ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2005ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2005ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2205ms [1;33m4 [1;35mis thinking[m
+[1;35m2205ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m2205ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m2205ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2205ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2205ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2205ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m2205ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2205ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2205ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2405ms [1;33m3 [1;35mis thinking[m
+[1;35m2405ms [1;33m1 [1;35mis thinking[m
+[1;90m2405ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m2405ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2405ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2405ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2405ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2405ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2405ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2405ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2605ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m2605ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2605ms [1;33m2 [1;35mis thinking[m
+[1;90m2605ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2605ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2605ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m2605ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2605ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2605ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2605ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m2805ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2805ms [1;33m3 [1;35mis thinking[m
+[1;90m2805ms [1;33m3 [1;90mhas taken a fork[m
+[1;35m2805ms [1;33m1 [1;35mis thinking[m
+[1;90m2805ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2805ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2805ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2805ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2805ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2805ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m3005ms [1;33m4 [1;35mis thinking[m
+[1;90m3005ms [1;33m4 [1;90mhas taken a fork[m
+[1;35m3005ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m3005ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m3005ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3005ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3005ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m3005ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3005ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m3005ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m3205ms [1;33m1 [1;35mis thinking[m
+[1;35m3205ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m3205ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m3205ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m3405ms [1;33m4 [1;35mis thinking[m
+[1;35m3405ms [1;33m2 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m1ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m1200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m1200ms [1;33m1 [1;35mis thinking[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m2 [1;35mis thinking[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m1400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1600ms [1;33m1 [1;35mis thinking[m
+[1;35m1600ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m1600ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;31m1600ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1800ms [1;33m2 [1;35mis thinking[m
+[1;35m1800ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m1800ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1800ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2000ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m2000ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2000ms [1;33m3 [1;35mis thinking[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2000ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m2 [1;35mis thinking[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;35m2200ms [1;33m4 [1;35mis thinking[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2200ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m2400ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;31m2400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2400ms [1;33m1 [1;35mis thinking[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2400ms [1;33m3 [1;35mis thinking[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m2600ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m2600ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m2600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m2600ms [1;33m2 [1;35mis thinking[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2800ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m2800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;35m2800ms [1;33m3 [1;35mis thinking[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m3000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m3000ms [1;33m2 [1;35mis thinking[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m3000ms [1;33m4 [1;35mis thinking[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m3000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m3200ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m3200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m3200ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m3201ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m3201ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m3201ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m3201ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m3400ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m3401ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m3401ms [1;33m4 [1;35mis thinking[m
+[1;35m3601ms [1;33m1 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m0ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1200ms [1;33m1 [1;35mis thinking[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;2m1200ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m1200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;2m1200ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m1400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1400ms [1;33m2 [1;35mis thinking[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m1400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m1600ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m1600ms [1;33m3 [1;35mis thinking[m
+[1;35m1600ms [1;33m1 [1;35mis thinking[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m1600ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;31m1800ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1800ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1800ms [1;33m2 [1;35mis thinking[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1800ms [1;33m4 [1;35mis thinking[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2000ms [1;33m1 [1;35mis thinking[m
+[1;35m2000ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m2000ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2000ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2200ms [1;33m4 [1;35mis thinking[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;31m2200ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m2200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2400ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2400ms [1;33m1 [1;35mis thinking[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;35m2400ms [1;33m3 [1;35mis thinking[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2600ms [1;33m2 [1;35mis thinking[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m2600ms [1;33m4 [1;35mis thinking[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2600ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2800ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m2800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m2800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2800ms [1;33m3 [1;35mis thinking[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m3000ms [1;33m2 [1;35mis thinking[m
+[1;35m3000ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m3000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m3000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m3200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m3200ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m3200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m3200ms [1;33m1 [1;35mis thinking[m
+[1;35m3400ms [1;33m4 [1;35mis thinking[m
+[1;35m3400ms [1;33m2 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m0ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m1200ms [1;33m1 [1;35mis thinking[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m1400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m1400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1400ms [1;33m2 [1;35mis thinking[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m1600ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m1600ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m1600ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m1600ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m1800ms [1;33m4 [1;35mis thinking[m
+[1;35m1800ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m1800ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m1800ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1800ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1800ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2000ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;38;5;31m2000ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2000ms [1;33m1 [1;35mis thinking[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m1 [1;38;5;2mis eating[m
+[1;35m2000ms [1;33m3 [1;35mis thinking[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2000ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2000ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m2200ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m2200ms [1;33m2 [1;35mis thinking[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2200ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2200ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2400ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m2400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m2400ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m2400ms [1;33m1 [1;35mis thinking[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2400ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2600ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2600ms [1;33m4 [1;35mis thinking[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m2600ms [1;33m2 [1;35mis thinking[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2600ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2800ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m2800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m2800ms [1;33m1 [1;35mis thinking[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2800ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m3000ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m3000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m3000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m3000ms [1;33m4 [1;35mis thinking[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m3000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3000ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m3200ms [1;33m1 [1;35mis thinking[m
+[1;35m3200ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m3200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m3200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m3400ms [1;33m4 [1;35mis thinking[m
+[1;35m3400ms [1;33m2 [1;35mis thinking[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m0ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m0ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m0ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m200ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;90m200ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m200ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m200ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m400ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m400ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m400ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m400ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m600ms [1;33m2 [1;35mis thinking[m
+[1;38;5;31m600ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m600ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m600ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m600ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m800ms [1;33m3 [1;35mis thinking[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m800ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m800ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m800ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m1000ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1000ms [1;33m2 [1;35mis thinking[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;31m1000ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1000ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m2 [1;38;5;2mis eating[m
+[1;90m1000ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1000ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m1200ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m1200ms [1;33m3 [1;35mis thinking[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;35m1200ms [1;33m1 [1;35mis thinking[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1200ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1200ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m1200ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1200ms [1;33m3 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m4 [1;35mis thinking[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m1400ms [1;33m2 [1;35mis thinking[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1400ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1400ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1400ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m1400ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m1600ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m1600ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;31m1600ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m1600ms [1;33m3 [1;35mis thinking[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m3 [1;38;5;2mis eating[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m1600ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m1600ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m1800ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;35m1800ms [1;33m4 [1;35mis thinking[m
+[1;90m1801ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m1801ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m1801ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m1801ms [1;33m2 [1;35mis thinking[m
+[1;90m1801ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m1801ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m1801ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m1801ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2000ms [1;33m3 [1;35mis thinking[m
+[1;35m2001ms [1;33m1 [1;35mis thinking[m
+[1;38;5;31m2001ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;90m2001ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2001ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2001ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2001ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2001ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2001ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2001ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2201ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2201ms [1;33m2 [1;35mis thinking[m
+[1;35m2201ms [1;33m4 [1;35mis thinking[m
+[1;90m2201ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2201ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2201ms [1;33m4 [1;38;5;2mis eating[m
+[1;38;5;31m2201ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m2201ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2201ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2201ms [1;33m2 [1;38;5;2mis eating[m
+[1;35m2401ms [1;33m1 [1;35mis thinking[m
+[1;35m2401ms [1;33m3 [1;35mis thinking[m
+[1;90m2401ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2401ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2401ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;31m2401ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;90m2401ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2401ms [1;33m1 [1;38;5;2mis eating[m
+[1;38;5;31m2401ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;38;5;2m2401ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2601ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;38;5;31m2601ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;35m2601ms [1;33m4 [1;35mis thinking[m
+[1;90m2601ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m2601ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m2601ms [1;33m4 [1;38;5;2mis eating[m
+[1;35m2601ms [1;33m2 [1;35mis thinking[m
+[1;90m2601ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m2601ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m2601ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m2801ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m2801ms [1;33m3 [1;35mis thinking[m
+[1;35m2801ms [1;33m1 [1;35mis thinking[m
+[1;90m2801ms [1;33m1 [1;90mhas taken a fork[m
+[1;90m2801ms [1;33m1 [1;90mhas taken a fork[m
+[1;38;5;2m2801ms [1;33m1 [1;38;5;2mis eating[m
+[1;90m2801ms [1;33m3 [1;90mhas taken a fork[m
+[1;90m2801ms [1;33m3 [1;90mhas taken a fork[m
+[1;38;5;2m2801ms [1;33m3 [1;38;5;2mis eating[m
+[1;38;5;31m2801ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m3001ms [1;33m2 [1;35mis thinking[m
+[1;35m3001ms [1;33m4 [1;35mis thinking[m
+[1;38;5;31m3001ms [1;33m3 [1;38;5;31mis sleeping[m
+[1;90m3001ms [1;33m2 [1;90mhas taken a fork[m
+[1;90m3001ms [1;33m4 [1;90mhas taken a fork[m
+[1;90m3001ms [1;33m4 [1;90mhas taken a fork[m
+[1;38;5;2m3001ms [1;33m4 [1;38;5;2mis eating[m
+[1;90m3001ms [1;33m2 [1;90mhas taken a fork[m
+[1;38;5;2m3001ms [1;33m2 [1;38;5;2mis eating[m
+[1;38;5;31m3001ms [1;33m1 [1;38;5;31mis sleeping[m
+[1;38;5;31m3201ms [1;33m2 [1;38;5;31mis sleeping[m
+[1;35m3201ms [1;33m1 [1;35mis thinking[m
+[1;35m3201ms [1;33m3 [1;35mis thinking[m
+[1;38;5;31m3201ms [1;33m4 [1;38;5;31mis sleeping[m
+[1;35m3401ms [1;33m2 [1;35mis thinking[m
+[1;35m3401ms [1;33m4 [1;35mis thinking[m

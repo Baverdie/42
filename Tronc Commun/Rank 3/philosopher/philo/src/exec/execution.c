@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execution.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:36:33 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/21 19:33:13 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/24 11:30:13 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,8 @@ t_bool	eat(t_philo *philo)
 t_bool	ft_sleep(t_philo *philo, int time_to_die)
 {
 	int	time_to_sleep;
-	int	time_to_think;
 
 	time_to_sleep = philo->data->time_to_sleep;
-	time_to_think = philo->data->time_to_die - (int)philo->data->time_to_eat;
-	time_to_think -= philo->data->time_to_sleep;
 	print_status(SLEEPING, philo);
 	while (time_to_sleep > 0)
 	{
