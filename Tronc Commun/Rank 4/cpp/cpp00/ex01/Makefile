@@ -6,20 +6,20 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/06/25 12:37:29 by bastienverd      ###   ########.fr        #
+#    Updated: 2024/06/25 13:16:03 by bastienverd      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = megaphone
-NAME = megaphone
-PROJET_EMOJY = 📢
+PROJECT = PhoneBook
+NAME = PhoneBook
+PROJET_EMOJY = 📞
 CC = $(SILENT)c++ $(CFLAGS)
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS_DIR = .
+SRCS_DIR = src
 OBJS_DIR = obj
 
-SRCS_FILES = megaphone.cpp
+SRCS_FILES = main.cpp
 
 SRCS = 	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
 OBJS = $(subst $(SRCS_DIR)/,$(OBJS_DIR)/, $(subst .cpp,.o, $(SRCS)))
