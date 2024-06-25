@@ -1,0 +1,163 @@
+[
+ {
+  "directory": "/nfs/homes/babonnet/Documents/cpp/cpp02/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-MMD",
+   "-MP",
+   "-std=c++98",
+   "-std=c++11",
+   "-Isrc",
+   "-I",
+   "src/visualiser",
+   "-I",
+   "MacroLibX/includes",
+   "-c",
+   "src/main.cpp",
+   "-o",
+   "obj/main.o"
+  ],
+  "file": "src/main.cpp"
+ },
+ {
+  "directory": "/nfs/homes/babonnet/Documents/cpp/cpp02/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-MMD",
+   "-MP",
+   "-std=c++98",
+   "-std=c++11",
+   "-Isrc",
+   "-I",
+   "src/visualiser",
+   "-I",
+   "MacroLibX/includes",
+   "-c",
+   "src/Fixed.cpp",
+   "-o",
+   "obj/Fixed.o"
+  ],
+  "file": "src/Fixed.cpp"
+ },
+ {
+  "directory": "/nfs/homes/babonnet/Documents/cpp/cpp02/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-MMD",
+   "-MP",
+   "-std=c++98",
+   "-std=c++11",
+   "-Isrc",
+   "-I",
+   "src/visualiser",
+   "-I",
+   "MacroLibX/includes",
+   "-c",
+   "src/bsp.cpp",
+   "-o",
+   "obj/bsp.o"
+  ],
+  "file": "src/bsp.cpp"
+ },
+ {
+  "directory": "/nfs/homes/babonnet/Documents/cpp/cpp02/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-MMD",
+   "-MP",
+   "-std=c++98",
+   "-std=c++11",
+   "-Isrc",
+   "-I",
+   "src/visualiser",
+   "-I",
+   "MacroLibX/includes",
+   "-c",
+   "src/Point.cpp",
+   "-o",
+   "obj/Point.o"
+  ],
+  "file": "src/Point.cpp"
+ },
+ {
+  "directory": "/nfs/homes/babonnet/Documents/cpp/cpp02/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-MMD",
+   "-MP",
+   "-std=c++98",
+   "-std=c++11",
+   "-Isrc",
+   "-I",
+   "src/visualiser",
+   "-I",
+   "MacroLibX/includes",
+   "-c",
+   "src/visualiser/printLine.cpp",
+   "-o",
+   "obj/visualiser/printLine.o"
+  ],
+  "file": "src/visualiser/printLine.cpp"
+ },
+ {
+  "directory": "/nfs/homes/babonnet/Documents/cpp/cpp02/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-MMD",
+   "-MP",
+   "-std=c++98",
+   "-std=c++11",
+   "-Isrc",
+   "-I",
+   "src/visualiser",
+   "-I",
+   "MacroLibX/includes",
+   "-c",
+   "src/visualiser/MlxClass.cpp",
+   "-o",
+   "obj/visualiser/MlxClass.o"
+  ],
+  "file": "src/visualiser/MlxClass.cpp"
+ },
+ {
+  "directory": "/nfs/homes/babonnet/Documents/cpp/cpp02/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-MMD",
+   "-MP",
+   "-std=c++98",
+   "-std=c++11",
+   "-Isrc",
+   "-I",
+   "src/visualiser",
+   "-I",
+   "MacroLibX/includes",
+   "-c",
+   "src/visualiser/Triangle.cpp",
+   "-o",
+   "obj/visualiser/Triangle.o"
+  ],
+  "file": "src/visualiser/Triangle.cpp"
+ }
+]
