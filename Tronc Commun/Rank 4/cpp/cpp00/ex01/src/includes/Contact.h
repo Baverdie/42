@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:54:49 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/25 15:01:15 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/25 18:29:09 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ class Contact {
 		std::string _phoneNumber;
 		std::string _darkestSecret;
 	public:
+		
 };
