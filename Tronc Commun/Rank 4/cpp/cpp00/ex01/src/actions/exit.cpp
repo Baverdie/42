@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.h                                        :+:      :+:    :+:   */
+/*   exit.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 14:55:10 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/26 16:23:33 by bastienverd      ###   ########.fr       */
+/*   Created: 2024/06/26 15:26:42 by bastienverd       #+#    #+#             */
+/*   Updated: 2024/06/26 15:44:38 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 
-#include "Contact.h"
+#include "PhoneBook.h"
 
-class PhoneBook {
-	private:
-		void	Add();
-		void	Exit();
-
-		Contact	_contact[8];
-		int		_index : 1;
-
-	public:
-		int	Command(const std::string &command);
-};
-
-bool CheckInput(std::string &rep);
+void	PhoneBook::Exit(void) {
+	std::cout << "See you soon..." << std::endl;
+}

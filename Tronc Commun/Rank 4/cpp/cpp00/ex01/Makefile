@@ -6,7 +6,7 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/06/25 19:31:35 by basverdi         ###   ########.fr        #
+#    Updated: 2024/06/26 16:19:23 by bastienverd      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,19 @@ PROJECT = PhoneBook
 NAME = PhoneBook
 PROJET_EMOJY = 📞
 CC = $(SILENT)c++ $(CFLAGS)
-CFLAGS = -std=c++98 -Wall -Wextra -Werror
+CFLAGS = -std=c++98 -Wall -Wextra -Werror -g
 
-SRCS_DIR = src
-OBJS_DIR = obj
+HSRCS = src/includes
+SRC_DIR = src
+OBJ_DIR = obj
 
-SRCS_FILES = main.cpp
+SRC = PhoneBook.cpp		\
+		Contact.cpp			\
+		actions/exit.cpp	\
+		actions/add.cpp		\
+		# actions/search.cpp	\
 
-SRCS = 	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
-OBJS = $(subst $(SRCS_DIR)/,$(OBJS_DIR)/, $(subst .cpp,.o, $(SRCS)))
+OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
 DELET_LINE = $(SILENT) echo -n "\033[2K";
 RM = $(SILENT) rm -rf
@@ -55,20 +59,17 @@ HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
 all: $(NAME)
 
-$(NAME): $(OBJS) | $(OBJS_DIR)
+$(NAME): $(OBJS)
 	$(HEADER)
 	$(CC) $^ -o $@
 	$(DELET_LINE)
 	$(PRINT) $(MSG_READY)
 
-$(OBJS): $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp | $(OBJS_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(@D)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_COMPILING)
-	$(CC) -c $< -o $@
-
-$(OBJS_DIR):
-	$(SILENT)mkdir -p $@
+	@$(CC) $(CFLAGS) -I $(HSRCS) -o $@ -c $<
 
 clean:
 	$(PRINT) $(MSG_CLEANING)
