@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:54:49 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/26 16:12:57 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/26 19:14:25 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <string>
 #include <iostream>
+#include <string>
 
 class Contact {
 	private:

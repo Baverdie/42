@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:49:18 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/26 16:21:52 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/26 19:14:46 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	PhoneBook::Add(void) {
 	std::string	input;
 
+	std::cout << "index = " << _index << std::endl;
 	std::cout << "New contact" << std::endl;
 	std::cout << "First name : ";
 	CheckInput(input);
@@ -31,5 +32,8 @@ void	PhoneBook::Add(void) {
 	std::cout << "Darkest secret : ";
 	CheckInput(input);
 	_contact[_index].SetDarkestSecret(input);
+	std::cout << std::endl;
 	_index++;
+	std::cout << "index = " << _index << std::endl;
+	printAllContact(_contact);
 }

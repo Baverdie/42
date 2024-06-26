@@ -6,7 +6,7 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/06/26 16:19:23 by bastienverd      ###   ########.fr        #
+#    Updated: 2024/06/26 17:55:59 by basverdi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = PhoneBook.cpp		\
 		Contact.cpp			\
 		actions/exit.cpp	\
 		actions/add.cpp		\
+		delete.cpp			\
 		# actions/search.cpp	\
 
 OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))

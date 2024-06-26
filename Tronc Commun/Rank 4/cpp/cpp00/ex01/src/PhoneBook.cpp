@@ -6,12 +6,15 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:27:46 by basverdi          #+#    #+#             */
-/*   Updated: 2024/06/26 16:24:10 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/26 19:14:31 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "includes/PhoneBook.h"
+
+
+PhoneBook::PhoneBook(void) : _index(0) {}
 
 bool	CheckInput(std::string &rep) {
 	getline(std::cin, rep);

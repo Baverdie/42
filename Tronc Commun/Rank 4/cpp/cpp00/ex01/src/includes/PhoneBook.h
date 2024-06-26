@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:55:10 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/26 16:23:33 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/06/26 19:14:21 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 #include "Contact.h"
 
+typedef unsigned char uint8_t;
+
 class PhoneBook {
 	private:
 		void	Add();
 		void	Exit();
 
 		Contact	_contact[8];
-		int		_index : 1;
+		uint8_t	_index : 3;
 
 	public:
-		int	Command(const std::string &command);
+		PhoneBook(void);
+			int	Command(const std::string &command);
 };
 
-bool CheckInput(std::string &rep);
+void	printAllContact(Contact *contact);
+bool	CheckInput(std::string &rep);
