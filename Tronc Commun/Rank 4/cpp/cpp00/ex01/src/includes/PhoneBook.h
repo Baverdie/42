@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:55:10 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/26 19:14:21 by basverdi         ###   ########.fr       */
+/*   Updated: 2024/06/27 15:29:45 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ class PhoneBook {
 	private:
 		void	Add();
 		void	Exit();
+		void	Search();
 
 		Contact	_contact[8];
-		uint8_t	_index : 3;
+		uint8_t	_index;
 
 	public:
 		PhoneBook(void);
@@ -31,3 +32,4 @@ class PhoneBook {
 
 void	printAllContact(Contact *contact);
 bool	CheckInput(std::string &rep);
+std::string CheckLength(const std::string &str);

@@ -6,7 +6,7 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/06/26 17:55:59 by basverdi         ###   ########.fr        #
+#    Updated: 2024/06/28 20:32:02 by bastienverd      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = PhoneBook.cpp		\
 		actions/exit.cpp	\
 		actions/add.cpp		\
 		delete.cpp			\
-		# actions/search.cpp	\
+		actions/search.cpp	\
 
 OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
@@ -51,10 +51,10 @@ MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOU
 MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
 MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
 
-BANNER = $(PRINT) "$(COLOUR_PURPULE) __  __  ____  ___    __    ____  _   _  _____  _  _  ____ \n"
-BANNER1 = printf "$(COLOUR_PURPULE)(  \/  )( ___)/ __)  /__\  (  _ \( )_( )(  _  )( \( )( ___) \n"
-BANNER2 = printf "$(COLOUR_PURPULE) )    (  )__)( (_-. /(__)\  )___/ ) _ (  )(_)(  )  (  )__) \n"
-BANNER3 = printf "$(COLOUR_PURPULE)(_/\/\_)(____)\___/(__)(__)(__)  (_) (_)(_____)(_)\_)(____) \n\n"
+BANNER = $(PRINT) "$(COLOUR_PURPULE) ____  _  _   __   __ _  ____  ____   __    __  __ _  \n"
+BANNER1 = printf "$(COLOUR_PURPULE)(  _ \/ )( \ /  \ (  ( \(  __)(  _ \ /  \  /  \(  / ) \n"
+BANNER2 = printf "$(COLOUR_PURPULE) ) __/) __ ((  O )/    / ) _)  ) _ ((  O )(  O ))  ( \n"
+BANNER3 = printf "$(COLOUR_PURPULE)(__)  \_)(_/ \__/ \_)__)(____)(____/ \__/  \__/(__\_) \n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
