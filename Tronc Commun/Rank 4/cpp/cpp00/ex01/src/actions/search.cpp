@@ -6,18 +6,24 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:07:53 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/28 20:18:59 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/07/02 19:39:50 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <PhoneBook.h>
+#include <cctype>
+#include <cstdlib>
+#include <string>
+#include <iostream>
+#include <climits>
+#include <iomanip>
 
-std::string centerText(const std::string &text, int width){
+std::string RightAlign(const std::string &text, int width){
 	int len = text.length();
 	if (len >= width)
 		return text;
-	int padding = (width - len) / 2;
-	return std::string(padding, ' ') + text + std::string(padding, ' ') + ((width - len) % 2 == 0 ? "" : " ");
+	int padding = (width - len);
+	return std::string(padding, ' ') + text;
 }
 
 std::string CheckLength(const std::string &str) {
@@ -35,10 +41,10 @@ static bool	printTable(Contact *contact) {
 			  << "│  INDEX   │FIRST NAME│LAST  NAME│ NICKNAME │\n"
 			  << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
 	for (int i = 0; i < 8 && !contact[i].GetFirstName().empty(); i++) {
-		std::cout << "│" << centerText(std::to_string(i + 1), LENGTH_COLUMNS) << "│"
-				  << centerText(CheckLength(contact[i].GetFirstName()), LENGTH_COLUMNS) << "│"
-				  << centerText(CheckLength(contact[i].GetLastName()), LENGTH_COLUMNS) << "│"
-				  << centerText(CheckLength(contact[i].GetNickname()), LENGTH_COLUMNS);
+		std::cout << "│         " << i + 1 << "│"
+				  << RightAlign(CheckLength(contact[i].GetFirstName()), LENGTH_COLUMNS) << "│"
+				  << RightAlign(CheckLength(contact[i].GetLastName()), LENGTH_COLUMNS) << "│"
+				  << RightAlign(CheckLength(contact[i].GetNickname()), LENGTH_COLUMNS);
 		if (i == 7 || contact[i + 1].GetFirstName().empty())
 			std::cout << "│\n└──────────┴──────────┴──────────┴──────────┘\n" << std::endl;
 		else
@@ -47,8 +53,8 @@ static bool	printTable(Contact *contact) {
 	return (false);
 }
 
-static void	DisplayContact(const std::string &input, Contact *contact) {
-	int	index = std::stoi(input) - 1;
+static void	DisplayContact(std::string &input, Contact *contact) {
+	int	index = std::atoi(input.c_str()) - 1;
 
 	if (index < 0 || index > 7 || contact[index].GetFirstName().empty()) {
 		std::cout << RED << "Contact not found\n" << RESET << std::endl;

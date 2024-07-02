@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:55:10 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/27 15:29:45 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/07/02 16:58:55 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ class PhoneBook {
 			int	Command(const std::string &command);
 };
 
-void	printAllContact(Contact *contact);
 bool	CheckInput(std::string &rep);
 std::string CheckLength(const std::string &str);

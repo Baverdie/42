@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 14:54:49 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/27 14:21:47 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/07/02 18:39:22 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 #include <string>
 #include <iostream>
-#include <string>
-#include <iomanip>
+#include <cstdlib>
 
 #define LENGTH_COLUMNS 10
 

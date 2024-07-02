@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:49:18 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/06/28 20:18:39 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/07/02 16:59:08 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,4 @@ void	PhoneBook::Add(void) {
 	_contact[_index].SetDarkestSecret(input);
 	_index++;
 	std::cout << "└─────────────────────────────────────────┘\n" << RESET << std::endl;
-	// printAllContact(_contact);
 }
