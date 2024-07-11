@@ -6,7 +6,7 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/07/11 03:06:12 by bastienverd      ###   ########.fr        #
+#    Updated: 2024/07/11 14:20:41 by bastienverd      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,10 +47,10 @@ MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOU
 MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
 MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
 
-BANNER = $(PRINT) "$(COLOUR_PURPULE)  __    ___  ___  __   _  _  __ _  ____  \n"
-BANNER1 = printf "$(COLOUR_PURPULE) / _\  / __)/ __)/  \ / )( \(  ( \(_  _) \n"
-BANNER2 = printf "$(COLOUR_PURPULE)/    \( (__( (__(  O )) \/ (/    /  )( \n"
-BANNER3 = printf "$(COLOUR_PURPULE)\_/\_/ \___)\___)\__/ \____/\_)__) (__) \n\n"
+BANNER = $(PRINT) "$(COLOUR_PURPULE)   __    ___  ___  _____  __  __  _  _  ____ \n"
+BANNER1 = printf "$(COLOUR_PURPULE)  /__\  / __)/ __)(  _  )(  )(  )( \( )(_  _) \n"
+BANNER2 = printf "$(COLOUR_PURPULE) /(__)\( (__( (__  )(_)(  )(__)(  )  (   )(   \n"
+BANNER3 = printf "$(COLOUR_PURPULE)(__)(__)\___)\___)(_____)(______)(_)\_) (__)  \n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
