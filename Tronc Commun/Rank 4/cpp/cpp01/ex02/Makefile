@@ -6,13 +6,13 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/07/11 03:06:12 by bastienverd      ###   ########.fr        #
+#    Updated: 2024/07/11 03:16:08 by bastienverd      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Account
-NAME = Account
-PROJET_EMOJY = 🏦
+PROJECT = HI_THIS_IS_BRAIN
+NAME = Brain
+PROJET_EMOJY = 🧠
 CC = $(SILENT)c++ $(CFLAGS)
 CFLAGS = -std=c++98 -Wall -Wextra -Werror -g
 
@@ -20,8 +20,7 @@ HSRCS = .
 SRC_DIR = .
 OBJ_DIR = obj
 
-SRC = Account.cpp	\
-	tests.cpp
+SRC = main.cpp \
 
 OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
@@ -47,10 +46,10 @@ MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOU
 MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
 MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
 
-BANNER = $(PRINT) "$(COLOUR_PURPULE)  __    ___  ___  __   _  _  __ _  ____  \n"
-BANNER1 = printf "$(COLOUR_PURPULE) / _\  / __)/ __)/  \ / )( \(  ( \(_  _) \n"
-BANNER2 = printf "$(COLOUR_PURPULE)/    \( (__( (__(  O )) \/ (/    /  )( \n"
-BANNER3 = printf "$(COLOUR_PURPULE)\_/\_/ \___)\___)\__/ \____/\_)__) (__) \n\n"
+BANNER = $(PRINT) "$(COLOUR_PURPULE) ____  ____   __   __  __ _  \n"
+BANNER1 = printf "$(COLOUR_PURPULE)(  _ \(  _ \ / _\ (  )(  ( \ \n"
+BANNER2 = printf "$(COLOUR_PURPULE) ) _ ( )   //    \ )( /    / \n"
+BANNER3 = printf "$(COLOUR_PURPULE)(____/(__\_)\_/\_/(__)\_)__) \n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 

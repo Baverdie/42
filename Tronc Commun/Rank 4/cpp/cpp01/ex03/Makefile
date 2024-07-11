@@ -6,22 +6,24 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/07/11 03:06:12 by bastienverd      ###   ########.fr        #
+#    Updated: 2024/07/11 03:34:34 by bastienverd      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = Account
-NAME = Account
-PROJET_EMOJY = 🏦
+PROJECT = Unnecessary_violence
+NAME = Violence
+PROJET_EMOJY = 🔫
 CC = $(SILENT)c++ $(CFLAGS)
 CFLAGS = -std=c++98 -Wall -Wextra -Werror -g
 
-HSRCS = .
-SRC_DIR = .
+HSRCS = src/includes
+SRC_DIR = src
 OBJ_DIR = obj
 
-SRC = Account.cpp	\
-	tests.cpp
+SRC = main.cpp \
+	HumanA.cpp \
+	HumanB.cpp \
+	Weapon.cpp \
 
 OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
@@ -47,10 +49,10 @@ MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOU
 MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
 MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
 
-BANNER = $(PRINT) "$(COLOUR_PURPULE)  __    ___  ___  __   _  _  __ _  ____  \n"
-BANNER1 = printf "$(COLOUR_PURPULE) / _\  / __)/ __)/  \ / )( \(  ( \(_  _) \n"
-BANNER2 = printf "$(COLOUR_PURPULE)/    \( (__( (__(  O )) \/ (/    /  )( \n"
-BANNER3 = printf "$(COLOUR_PURPULE)\_/\_/ \___)\___)\__/ \____/\_)__) (__) \n\n"
+BANNER = $(PRINT) "$(COLOUR_PURPULE) _  _  __  __   __    ____  __ _   ___  ____  \n"
+BANNER1 = printf "$(COLOUR_PURPULE)/ )( \(  )/  \ (  )  (  __)(  ( \ / __)(  __) \n"
+BANNER2 = printf "$(COLOUR_PURPULE)\ \/ / )((  O )/ (_/\ ) _) /    /( (__  ) _) \n"
+BANNER3 = printf "$(COLOUR_PURPULE) \__/ (__)\__/ \____/(____)\_)__) \___)(____) \n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
@@ -76,7 +78,7 @@ clean:
 
 fclean: clean
 	$(PRINT) $(MSG_CLEANING)
-	$(RM) $(OBJS_DIR)
+	$(RM) $(OBJ_DIR)
 	$(RM) $(NAME)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_TOTALY_CLEANED)
