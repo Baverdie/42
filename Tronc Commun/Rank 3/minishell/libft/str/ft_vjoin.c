@@ -6,7 +6,7 @@
 /*   By: yroussea <yroussea@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:13:27 by yroussea          #+#    #+#             */
-/*   Updated: 2024/03/12 15:13:30 by yroussea         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:14:38 by yroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static size_t	ft_va_strlen(size_t nb_str, va_list args)
 	return (i);
 }
 
-static char	*annex_vjoin(size_t nb_str, char *sep, va_list args)
+char	*annex_vjoin(size_t nb_str, char *sep, va_list args)
 {
 	va_list	args_copy;
 	size_t	total_len;
@@ -43,9 +43,9 @@ static char	*annex_vjoin(size_t nb_str, char *sep, va_list args)
 	j = 0;
 	while (s && i < nb_str)
 	{
-		j += ft_strlcpy(s + j, va_arg(args, char *), total_len);
+		j += ft_strlcpy(s + j, va_arg(args, char *), total_len + 1);
 		if (i != nb_str - 1)
-			j += ft_strlcpy(s + j, sep, total_len);
+			j += ft_strlcpy(s + j, sep, total_len + 1);
 		i += 1;
 	}
 	*(s + j) = 0;

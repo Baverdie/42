@@ -1,0 +1,23 @@
+# trash :)
+*.vscode
+*.swp
+*.DS*
+*.nfs*
+*test
+*tags
+.heredoc
+
+# Object files
+*.o
+obj/
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Executables
+*.exe
+*.out
+minishell

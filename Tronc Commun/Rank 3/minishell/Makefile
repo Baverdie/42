@@ -1,8 +1,17 @@
 SILENT = @
 
-CC = $(SILENT)cc $(CFLAGS)
-CFLAGS = -Wall -Werror -Wextra -g
+COMPIL = $(CLANG)
+ALL_FLAG =
+CC = $(COMPIL) $(ALL_FLAG)
 
+CFLAGS = -Wall -Werror -Wextra
+CLANG = $(SILENT)clang $(CFLAGS)
+GCC = $(SILENT)gcc $(CFLAGS)
+
+DEAD_CODE = -g -ffunction-sections -Wl,--gc-sections -Wl,--print-gc-sections
+
+DEBUGCFLAG = -g -gdwarf-3
+MACRO_FLAG = -O3 -D FAST_PROMPT=1
 
 SRCS_DIR = src
 OBJS_DIR = obj
@@ -11,13 +20,56 @@ INCLUDE_LIBFT = $(LIBFT_DIR)/libft.a -lreadline
 
 SRCS_FILES = 							\
 	minishell.c							\
-	utils/better_fnct.c					\
-	utils/prompt.c						\
 	parsing/parsing.c					\
-	exec/utils/print_lst_tree.c			\
+	parsing/tokeniser/tokeniser.c		\
+	parsing/unquoting.c					\
+	utils/utils_exec.c					\
+	utils/utils_nocolors_prompt.c		\
+	utils/better_fnct.c					\
+	utils/better_fnct_2.c				\
+	utils/get_malloc.c					\
+	utils/lst/lst_cmd.c					\
 	utils/lst/lst_envp.c				\
 	utils/lst/utils_lst_envp.c			\
-	utils/lst/lst_cmd.c					
+	utils/parsing/utils_parsing.c		\
+	utils/prompt/prompt.c				\
+	utils/prompt/prompt_get_git.c		\
+	utils/sig/sig.c						\
+	utils/sig/exitcode.c				\
+	exec/access/access.c				\
+	exec/builtin/ft_cd.c				\
+	exec/builtin/ft_echo.c				\
+	exec/builtin/ft_env.c				\
+	exec/builtin/ft_exit.c				\
+	exec/builtin/ft_export.c			\
+	exec/builtin/ft_pwd.c				\
+	exec/builtin/ft_unset.c				\
+	exec/builtin/utils/utils_builtin.c	\
+	exec/execution.c					\
+	exec/exectree/exec_builtin.c		\
+	exec/exectree/exec_tree.c			\
+	exec/exectree/exec_cmd.c			\
+	exec/exectree/exec_or.c				\
+	exec/exectree/exec_and.c			\
+	exec/exectree/exec_pipe.c			\
+	exec/exectree/redir.c				\
+	exec/exectree/redir_cmd.c			\
+	exec/heredoc/heredoc.c				\
+	exec/heredoc/heredoc_reopen.c		\
+	exec/lst_com_split_args.c			\
+	exec/utils/heredoc/utils_heredoc.c	\
+	exec/utils/exit_cmd.c				\
+	exec/utils/utils_cmd.c				\
+	exec/utils/utils_redir.c			\
+	exec/utils/lst/lst_com.c			\
+	exec/utils/lst/stkpid.c				\
+	exec/utils/lst/stkpipe.c			\
+	exec/utils/lst/lst_ope.c			\
+	exec/utils/lst/lst_redir.c			\
+	exec/utils/node/add_branch.c		\
+	exec/utils/node/add_leaf.c			\
+	exec/utils/node/init_node.c			\
+	exec/utils/close.c
 
 
 SRCS = 	$(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
@@ -65,9 +117,8 @@ $(OBJS_DIR):
 	$(SILENT)mkdir -p $@
 
 clean:
-	@make clean -s -j -C $(LIBFT_DIR) 
+	@make clean -s -j -C $(LIBFT_DIR)
 	$(PRINT) $(MSG_CLEANING)
-	@sleep 0.3
 	$(RM) $(OBJS_DIR)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_CLEANED)
@@ -75,12 +126,40 @@ clean:
 fclean:
 	@make fclean -s -j -C $(LIBFT_DIR)
 	$(PRINT) $(MSG_CLEANING)
-	@sleep 0.3
 	$(RM) $(OBJS_DIR)
 	$(RM) $(NAME)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_TOTALY_CLEANED)
 
+--cc:
+	$(eval COMPIL = $(CLANG))
+	$(eval ALL_FLAG += $(DEBUGCFLAG))
+	$(eval CC = $(COMPIL) $(ALL_FLAG))
+
+--gcc:
+	$(eval COMPIL = $(GCC))
+	$(eval CC = $(COMPIL) $(ALL_FLAG))
+
+--dead_code:
+	$(eval ALL_FLAG += $(DEAD_CODE))
+	$(eval COMPIL = $(GCC))
+	$(eval CC = $(COMPIL) $(ALL_FLAG))
+
+--fast:
+	$(eval ALL_FLAG += $(MACRO_FLAG))
+	$(eval CC = $(COMPIL) $(ALL_FLAG))
+
+cc: fclean --cc $(NAME)
+gcc: fclean --gcc $(NAME)
+dead_code: fclean --dead_code $(NAME)
+fast: fclean --fast $(NAME)
+
+print_compilation_flag:
+	echo $(COMPIL)
+	echo $(ALL_FLAG)
+
+
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re fast cc gcc dead_code print_compilation_flag
+.SILENT:

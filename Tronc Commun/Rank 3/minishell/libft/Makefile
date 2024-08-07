@@ -6,7 +6,7 @@
 #    By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 13:06:11 by yroussea          #+#    #+#              #
-#    Updated: 2024/03/12 17:10:45 by basverdi         ###   ########.fr        #
+#    Updated: 2024/07/10 17:54:22 by yroussea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRCS_FILES = char/ft_isalnum.c			\
 	print/ft_putstr_fd.c		\
 	print/ft_putstack.c			\
 	str/ft_split.c				\
+	str/ft_split_out_quote.c	\
 	str/ft_split_charset.c		\
 	str/ft_split_first_sep.c	\
 	str/ft_strchr.c				\
@@ -78,7 +79,9 @@ SRCS_FILES = char/ft_isalnum.c			\
 	str/ft_substr.c				\
 	str/ft_vjoin.c				\
 	type/ft_atoi.c				\
+	type/ft_atoll.c				\
 	type/ft_itoa.c				\
+	type/ft_overflow.c			\
 	gnl/get_next_line.c			\
 	gnl/get_next_line_utils.c	\
 	maths/vmin_vmax.c 			\
@@ -127,14 +130,12 @@ $(OBJS_DIR):
 
 clean:
 	$(PRINT) $(MSG_CLEANING)
-	@sleep 0.3
 	$(RM) $(OBJS_DIR)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_CLEANED)
 
 fclean:
 	$(PRINT) $(MSG_CLEANING)
-	@sleep 0.3
 	$(RM) $(OBJS_DIR)
 	$(RM) $(NAME)
 	$(DELET_LINE)

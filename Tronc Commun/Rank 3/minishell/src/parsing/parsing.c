@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yroussea <yroussea@student.42angouleme.fr  +#+  +:+       +#+        */
+/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:25:08 by yroussea          #+#    #+#             */
-/*   Updated: 2024/03/12 19:51:02 by yroussea         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:18:59 by yroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-char	**split_line(char *line)
-{
-	return (ft_split(line, ' '));
-}
 
 t_type_of_node	get_type(char *s)
 {
@@ -25,43 +20,50 @@ t_type_of_node	get_type(char *s)
 		return (PIPE);
 	if (ft_strncmp(s, "&&", 3) == 0)
 		return (AND);
+	if (ft_strncmp(s, " 2>", 3) == 0)
+		return (DIRE_TWO);
+	if (ft_strncmp(s, ">>", 2) == 0)
+		return (ADD);
+	if (ft_strncmp(s, "<<", 2) == 0)
+		return (HEREDOC);
+	if (ft_strncmp(s, "<", 1) == 0)
+		return (DIRE_IN);
+	if (ft_strncmp(s, ">", 1) == 0)
+		return (DIRE_OUT);
+	if (ft_strncmp(s, "$", 1) == 0)
+		return (VARIABLE);
+	if (ft_strncmp(s, "-", 1) == 0)
+		return (FLAG);
 	return (CMD);
 }
 
-char	**unzoom(char *s)
+void	tokenise_redir(char **args, t_lst_cmd **lst_cmd)
 {
-	char	**unzoomed;
+	int				i;
+	char			**cmd_and_arg;
+	char			*tmp;
 
-	unzoomed = ft_calloc(2, sizeof(char *));
-	if (unzoomed)
+	i = 0;
+	while (args && args[i])
 	{
-		unzoomed[0] = ft_strdup(s);
-		unzoomed[1] = NULL;
+		tmp = ft_vjoin(2, "", " ", args[i]);
+		cmd_and_arg = va_tokeniser(tmp, 11, ">>", " 2>", ">", "<<", "<", \
+			" ", "\n", "\r", "\t", "\v", "\f");
+		if (!ft_lst_cmd_add(lst_cmd, cmd_and_arg, get_type(args[i])))
+			*lst_cmd = NULL;
+		i += 1;
+		free(tmp);
 	}
-	return (unzoomed);
 }
 
 t_lst_cmd	*parsing(char *line)
 {
 	char			**args;
-	int				i;
 	t_lst_cmd		*lst_cmd;
-	t_type_of_node	type;
 
-	i = 0;
 	lst_cmd = NULL;
-	args = split_line(line);
-	while (args && args[i])
-	{
-		type = get_type(args[i]);
-		if (!ft_lst_cmd_add(&lst_cmd, unzoom(args[i]), type))
-		{
-			ft_lst_cmd_free(lst_cmd);
-			ft_magic_free("%2 %1", args, line);
-			return (NULL);
-		}
-		i += 1;
-	}
-	ft_magic_free("%2 %1", args, line);
+	args = va_tokeniser(line, 3, "||", "&&", "|");
+	tokenise_redir(args, &lst_cmd);
+	ft_magic_free("%1 %2", line, args);
 	return (lst_cmd);
 }
