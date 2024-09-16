@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: basverdi <basverdi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:31:20 by yroussea          #+#    #+#             */
-/*   Updated: 2024/07/14 19:23:21 by yroussea         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:59:57 by bastienverd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
