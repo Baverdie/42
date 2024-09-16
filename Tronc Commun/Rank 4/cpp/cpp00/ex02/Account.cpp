@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 00:52:08 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/07/11 02:10:30 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:55:54 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	Account::makeDeposit( int deposit ) {
 
 bool	Account::makeWithdrawal( int withdrawal ) {
 	if (withdrawal > _amount) {
-		PRINT(5, "index", _accountIndex, "amount", _amount, "withdrawal:refused");
+		PRINT(5, "index", _accountIndex, "p_amount", _amount, "withdrawal:refused");
 		return (false);
 	}
 	_amount -= withdrawal;

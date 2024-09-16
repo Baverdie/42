@@ -6,7 +6,7 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/07/11 14:20:41 by bastienverd      ###   ########.fr        #
+#    Updated: 2024/08/19 19:02:14 by basverdi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ PROJECT = Account
 NAME = Account
 PROJET_EMOJY = 🏦
 CC = $(SILENT)c++ $(CFLAGS)
-CFLAGS = -std=c++98 -Wall -Wextra -Werror -g
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 HSRCS = .
 SRC_DIR = .
