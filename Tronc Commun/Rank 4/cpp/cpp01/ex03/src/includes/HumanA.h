@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 03:22:49 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/07/11 03:22:50 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/12/05 13:08:57 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 
 class HumanA
 {
-public:
-	HumanA(const std::string &name, Weapon &wepon);
+	private:
+		std::string _name;
+		Weapon &_weapon;
 
-	void attack(void) const;
-
-private:
-	std::string _name;
-	Weapon &_weapon;
+	public:
+		HumanA(const std::string &name, Weapon &wepon);
+		void attack(void) const;
 };

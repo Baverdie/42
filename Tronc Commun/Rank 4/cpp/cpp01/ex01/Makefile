@@ -6,13 +6,13 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/07/11 14:26:23 by bastienverd      ###   ########.fr        #
+#    Updated: 2024/12/05 13:01:45 by bastienverdie    ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PROJECT = ZombieHorde
 NAME = Horde
-PROJET_EMOJY = 🧟🧟‍♀️🧟‍♂️
+PROJET_EMOJY = 🧟🧟🧟
 CC = $(SILENT)c++ $(CFLAGS)
 CFLAGS = -std=c++98 -Wall -Wextra -Werror -g
 
@@ -71,13 +71,13 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 clean:
 	$(PRINT) $(MSG_CLEANING)
-	$(RM) $(OBJS_DIR)
+	$(RM) $(OBJ_DIR)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_CLEANED)
 
 fclean: clean
 	$(PRINT) $(MSG_CLEANING)
-	$(RM) $(OBJS_DIR)
+	$(RM) $(OBJ_DIR)
 	$(RM) $(NAME)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_TOTALY_CLEANED)

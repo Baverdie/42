@@ -4,6 +4,6 @@ int main()
 {
 	Zombie *heap = newZombie("Foo");
 	heap->announce();
-	delete heap;
+	delete heap;	
 	randomChump("Bob");
 }

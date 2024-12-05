@@ -6,7 +6,7 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/07/11 14:27:47 by bastienverd      ###   ########.fr        #
+#    Updated: 2024/12/05 13:06:21 by bastienverdie    ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,13 +69,13 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 
 clean:
 	$(PRINT) $(MSG_CLEANING)
-	$(RM) $(OBJS_DIR)
+	$(RM) $(OBJ_DIR)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_CLEANED)
 
 fclean: clean
 	$(PRINT) $(MSG_CLEANING)
-	$(RM) $(OBJS_DIR)
+	$(RM) $(OBJ_DIR)
 	$(RM) $(NAME)
 	$(DELET_LINE)
 	$(PRINT) $(MSG_TOTALY_CLEANED)
