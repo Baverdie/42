@@ -6,22 +6,21 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/12/10 16:38:14 by bastienverdie    ###   ########.fr        #
+#    Updated: 2024/12/05 16:56:49 by bastienverdie    ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT = HARL 2.0
-NAME = Harl
-PROJET_EMOJY = 
+PROJECT = Mon premier canon
+NAME = Fixed
+PROJET_EMOJY = 💣
 CC = $(SILENT)c++ $(CFLAGS)
-CFLAGS = -std=c++98 -Wall -Wextra -Werror
+CFLAGS = -std=c++98 -Wall -Wextra -Werror -g
 
-HSRCS = src/includes
+HSRCS = src
 SRC_DIR = src
 OBJ_DIR = obj
 
 SRC = main.cpp \
-	  Harl.cpp
 
 OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
@@ -47,18 +46,12 @@ MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOU
 MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
 MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
 
-BANNER = $(PRINT) "$(COLOUR_PURPULE) _  _  ____  _____  __    ____  _  _  ___  ____ \n"
-BANNER1 = printf "$(COLOUR_PURPULE)( \/ )(_  _)(  _  )(  )  ( ___)( \( )/ __)( ___) \n"
-BANNER2 = printf "$(COLOUR_PURPULE) \  /  _)(_  )(_)(  )(__  )__)  )  (( (__  )__)  \n"
-BANNER3 = printf "$(COLOUR_PURPULE)  \/  (____)(_____)(____)(____)(_)\_)\___)(____) \n\n"
+BANNER = $(PRINT) "$(COLOUR_PURPULE) _   _  _____  ____  ____  ____ \n"
+BANNER1 = printf "$(COLOUR_PURPULE)( )_( )(  _  )(  _ \(  _ \( ___) \n"
+BANNER2 = printf "$(COLOUR_PURPULE) ) _ (  )(_)(  )   / )(_) ))__)  \n"
+BANNER3 = printf "$(COLOUR_PURPULE)(_) (_)(_____)(_)\_)(____/(____) \n\n"
 
-
-
-HEADER = $(PRINT) "$(COLOUR_PURPULE) _   _    __    ____  __   \n( )_( )  /__\  (  _ \(  )  \n ) _ (  /(__)\  )   / )(__ \n(_) (_)(__)(__)(_)\_)(____)\n\n"
-
-
-
-#HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
+HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 
 all: $(NAME)
 
