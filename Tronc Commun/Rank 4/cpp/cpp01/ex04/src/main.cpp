@@ -6,7 +6,7 @@
 /*   By: basverdi <basverdi@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 17:07:38 by basverdi          #+#    #+#             */
-/*   Updated: 2024/12/05 14:15:16 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2024/12/12 17:37:04 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ int	main(int ac, char **av)
 		return (1);
 	}
 
-	std::ifstream inputFile(filename);
+	std::ifstream inputFile(filename.c_str());
 	if (!inputFile.is_open()) {
 		std::cerr << filename + " can't be open" << std::endl;
 		return (1);
 	}
 
-	std::ofstream outputFile(filename + ".replace");
+	std::ofstream outputFile((filename + ".replace").c_str());
 	if (!outputFile.is_open()) {
 		std::cerr << filename + ".replace can't be created" << std::endl;
 		inputFile.close();

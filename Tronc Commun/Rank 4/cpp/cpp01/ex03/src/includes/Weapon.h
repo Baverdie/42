@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 03:23:02 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/12/05 13:08:24 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2024/12/12 17:23:11 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ class Weapon
 	public:
 		Weapon(const std::string &type);
 		void setType(const std::string &type);
-		std::string getType(void) const;
+		const std::string &getType(void) const;
 };

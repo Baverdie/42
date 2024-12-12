@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 03:23:42 by bastienverd       #+#    #+#             */
-/*   Updated: 2024/07/11 03:24:03 by bastienverd      ###   ########.fr       */
+/*   Updated: 2024/12/12 17:23:01 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void Weapon::setType(const std::string &type)
 	_type = type;
 }
 
-std::string Weapon::getType(void) const
+const std::string &Weapon::getType(void) const
 {
-	return _type;
+	return this->_type;
 }
