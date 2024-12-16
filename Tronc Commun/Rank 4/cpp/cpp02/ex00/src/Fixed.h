@@ -1,16 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 16:47:13 by bastienverdie     #+#    #+#             */
-/*   Updated: 2024/12/05 16:57:03 by bastienverdie    ###   ########.fr       */
+/*   Created: 2024/12/16 00:07:22 by bastienverdie     #+#    #+#             */
+/*   Updated: 2024/12/16 00:39:11 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main()
-{
+#pragma once
 
-}
+#ifndef FIXED_H
+#define FIXED_H
+
+#include <iostream>
+
+class Fixed {
+	private:
+		int					_value;
+		static const int	_fractionalBits = 8;
+	public:
+		Fixed();
+		Fixed(const Fixed &src);
+		~Fixed();
+
+		Fixed &operator=(const Fixed &rhs);
+
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+};
+
+#endif
