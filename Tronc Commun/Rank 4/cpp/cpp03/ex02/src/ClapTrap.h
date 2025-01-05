@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:55:47 by bastienverdie     #+#    #+#             */
-/*   Updated: 2024/12/20 14:51:20 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/05 19:11:45 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ClapTrap {
 	public:
 		ClapTrap(const std::string &name);
 		ClapTrap(const ClapTrap &other);
+		//operator !!!!!!
 		ClapTrap(void);
 		~ClapTrap(void);
 

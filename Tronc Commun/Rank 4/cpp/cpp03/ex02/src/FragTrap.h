@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:52:39 by bastienverdie     #+#    #+#             */
-/*   Updated: 2024/12/20 18:52:50 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/05 19:11:52 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class FragTrap : public ClapTrap {
   public:
     FragTrap(const std::string &name);
     FragTrap(const FragTrap &other);
+		//operator !!!!!!
     FragTrap(void);
     ~FragTrap(void);
 
