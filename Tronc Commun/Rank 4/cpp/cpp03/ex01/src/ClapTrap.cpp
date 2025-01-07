@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:59:54 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/07 16:13:38 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/08 00:47:42 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap()
 	: hitPoints(10),
 	energyPoints(10),
-	attackDamage(10) {
+	attackDamage(0) {
 	std::cout << "ClapTrap default constructor called !" << std::endl;
 }
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap(const std::string &name)
 	: name(name),
 	hitPoints(10),
 	energyPoints(10),
-	attackDamage(10) {
+	attackDamage(0) {
 	std::cout << "ClapTrap " << name << " constructor called !" << std::endl;
 }
 

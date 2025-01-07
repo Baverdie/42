@@ -6,20 +6,20 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:59:54 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/07 16:06:08 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/08 00:43:26 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
 
 ClapTrap::ClapTrap(const std::string &name)
-	: name(name), hitPoints(10), energyPoints(10), attackDamage(10) {
+	: name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
 	std::cout << "ClapTrap " << name << " has been constructed !" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) 
     : name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage) {
-    std::cout << "ClapTrap copy constructor called!" << std::endl;
+    std::cout << "ClapTrap copy constructor called !" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &rhs) {
@@ -29,7 +29,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &rhs) {
         energyPoints = rhs.energyPoints;
         attackDamage = rhs.attackDamage;
     }
-    std::cout << "ClapTrap copy assignment operator called!" << std::endl;
+    std::cout << "ClapTrap copy assignment operator called !" << std::endl;
     return *this;
 }
 

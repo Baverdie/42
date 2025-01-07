@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:34:23 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/08 00:07:47 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/08 00:47:54 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	std::cout << "ScavTrap default constructor called !" << std::endl;
 	hitPoints = 100;
 	energyPoints = 50;
-	attackDamage = 30;
+	attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const std::string &name) 
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap(const std::string &name)
 	std::cout << "ScavTrap " << name << " constructor called !" << std::endl;
 	hitPoints = 100;
 	energyPoints = 50;
-	attackDamage = 30;
+	attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other)
@@ -36,7 +36,7 @@ ScavTrap::ScavTrap(const ScavTrap &other)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
     ClapTrap::operator=(rhs);
-    std::cout << "ScavTrap copy assignment operator called!" << std::endl;
+    std::cout << "ScavTrap copy assignment operator called !" << std::endl;
     return *this;
 }
 
