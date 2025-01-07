@@ -6,11 +6,18 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 16:17:29 by bastienverdie     #+#    #+#             */
-/*   Updated: 2024/12/20 19:44:21 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/08 00:36:30 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.h"
+
+FragTrap::FragTrap() {
+	std::cout << "FragTrap default constructor called" << std::endl;
+	hitPoints = 100;
+	energyPoints = 100;
+	attackDamage = 20;
+}
 
 FragTrap::FragTrap(const std::string &name)
 	: ClapTrap(name) {
@@ -26,14 +33,14 @@ FragTrap::FragTrap(const FragTrap &other)
 	std::cout << "FragTrap " << name << " constructor by copy called !" << std::endl;
 }
 
-FragTrap::FragTrap(void) {
-	std::cout << "FragTrap default constructor called" << std::endl;
-	hitPoints = 100;
-	energyPoints = 100;
-	attackDamage = 20;
+
+FragTrap &FragTrap::operator=(const FragTrap &rhs) {
+    ClapTrap::operator=(rhs);
+    std::cout << "FragTrap copy assignment operator called!" << std::endl;
+    return *this;
 }
 
-FragTrap::~FragTrap(void) {
+FragTrap::~FragTrap() {
 	std::cout << "FragTrap " << name << " destructor called" << std::endl;
 }
 

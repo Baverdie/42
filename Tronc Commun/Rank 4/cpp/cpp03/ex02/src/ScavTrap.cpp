@@ -6,11 +6,18 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:34:23 by bastienverdie     #+#    #+#             */
-/*   Updated: 2024/12/20 19:44:02 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/08 00:34:55 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.h"
+
+ScavTrap::ScavTrap() {
+	std::cout << "ScavTrap default constructor called !" << std::endl;
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
+}
 
 ScavTrap::ScavTrap(const std::string &name) 
 	: ClapTrap(name) {
@@ -26,14 +33,13 @@ ScavTrap::ScavTrap(const ScavTrap &other)
 	std::cout << "ScavTrap " << name << " constructor by copy called !" << std::endl;
 }
 
-ScavTrap::ScavTrap(void) {
-	std::cout << "ScavTrap default constructor called !" << std::endl;
-	hitPoints = 100;
-	energyPoints = 50;
-	attackDamage = 20;
+ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
+    ClapTrap::operator=(rhs);
+    std::cout << "ScavTrap copy assignment operator called!" << std::endl;
+    return *this;
 }
 
-ScavTrap::~ScavTrap(void) {
+ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap " << name << " destructor called !" << std::endl;
 }
 

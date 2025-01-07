@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:59:54 by bastienverdie     #+#    #+#             */
-/*   Updated: 2024/12/18 18:23:22 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/07 16:06:08 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 ClapTrap::ClapTrap(const std::string &name)
 	: name(name), hitPoints(10), energyPoints(10), attackDamage(10) {
 	std::cout << "ClapTrap " << name << " has been constructed !" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other) 
+    : name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage) {
+    std::cout << "ClapTrap copy constructor called!" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs) {
+    if (this != &rhs) {
+        name = rhs.name;
+        hitPoints = rhs.hitPoints;
+        energyPoints = rhs.energyPoints;
+        attackDamage = rhs.attackDamage;
+    }
+    std::cout << "ClapTrap copy assignment operator called!" << std::endl;
+    return *this;
 }
 
 ClapTrap::~ClapTrap() {

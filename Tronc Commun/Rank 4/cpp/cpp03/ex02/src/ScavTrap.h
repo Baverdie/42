@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 14:34:06 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/05 19:11:58 by basverdi         ###   ########.fr       */
+/*   Updated: 2025/01/08 00:34:23 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ class ScavTrap : public ClapTrap {
 	public:
 		ScavTrap(const std::string &name);
 		ScavTrap(const ScavTrap &other);
-		//operator !!!!!!
-		ScavTrap(void);
-		~ScavTrap(void);
+		ScavTrap &operator=(const ScavTrap &rhs);
+		ScavTrap();
+		~ScavTrap();
 
 		void attack(const std::string &target);
 		void guardGate(void) const;

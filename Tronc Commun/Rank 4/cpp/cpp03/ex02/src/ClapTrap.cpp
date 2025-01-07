@@ -6,11 +6,18 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:59:54 by bastienverdie     #+#    #+#             */
-/*   Updated: 2024/12/20 15:34:14 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/08 00:33:51 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
+
+ClapTrap::ClapTrap()
+	: hitPoints(10),
+	energyPoints(10),
+	attackDamage(10) {
+	std::cout << "ClapTrap default constructor called !" << std::endl;
+}
 
 ClapTrap::ClapTrap(const std::string &name)
 	: name(name),
@@ -25,11 +32,15 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 	std::cout << "ClapTrap " << name << " constructor by copy called !" << std::endl;
 }
 
-ClapTrap::ClapTrap(void)
-	: hitPoints(10),
-	energyPoints(10),
-	attackDamage(10) {
-	std::cout << "ClapTrap default constructor called !" << std::endl;
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs) {
+    if (this != &rhs) {
+        name = rhs.name;
+        hitPoints = rhs.hitPoints;
+        energyPoints = rhs.energyPoints;
+        attackDamage = rhs.attackDamage;
+    }
+    std::cout << "ClapTrap copy assignment operator called !" << std::endl;
+    return *this;
 }
 
 ClapTrap::~ClapTrap() {
