@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 17:31:55 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/10 14:26:25 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/10 15:05:48 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 #define CAT_H
 
 #include "Animal.h"
+#include "Brain.h"
 
 class Cat : public Animal {
+	private:
+		Brain *brain;
+		void makeSound() const;
+
 	public:
 		Cat();
 		Cat(const Cat &other);
 		Cat &operator=(Cat const &rhs);
 		~Cat();
 
-	private:
-		void makeSound() const;
+		Brain *getBrain() const;
 };
 
 #endif

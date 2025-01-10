@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.h                                              :+:      :+:    :+:   */
+/*   Brain.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 17:31:55 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/10 14:26:25 by bastienverdie    ###   ########.fr       */
+/*   Created: 2025/01/10 14:43:12 by bastienverdie     #+#    #+#             */
+/*   Updated: 2025/01/10 14:57:14 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-#define CAT_H
+#ifndef BRAIN_H
+#define BRAIN_H
 
 #include "Animal.h"
 
-class Cat : public Animal {
-	public:
-		Cat();
-		Cat(const Cat &other);
-		Cat &operator=(Cat const &rhs);
-		~Cat();
-
+class Brain {
 	private:
-		void makeSound() const;
+		std::string ideas[100];
+
+	public:
+		Brain();
+		Brain(const Brain &other);
+		Brain &operator=(const Brain &rhs);
+		~Brain();
+
+		void setIdea(int index, const std::string &idea);
+		std::string getIdea(int index) const;
 };
 
 #endif

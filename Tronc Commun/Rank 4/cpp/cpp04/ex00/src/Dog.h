@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 17:31:55 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/04 17:37:06 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/10 14:09:10 by bastienverdie    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 #include "Animal.h"
 
 class Dog : public Animal {
+	private:
+		void makeSound() const;
 	public:
 		Dog();
+		Dog(const Dog &other);
+		Dog &operator=(Dog const &rhs);
 		~Dog();
-		void makeSound() const;
 };
 
 #endif
