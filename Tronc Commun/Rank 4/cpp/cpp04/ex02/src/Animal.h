@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/04 17:19:07 by bastienverdie     #+#    #+#             */
+/*   Updated: 2025/01/13 15:50:52 by bastienverdie    ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ANIMAL_H
+#define ANIMAL_H
+
+#include <iostream>
+#include <string>
+
+class Animal {
+	protected:
+		std::string type;
+	
+	public:
+		Animal();
+		Animal(const std::string &type);
+		Animal(const Animal &other);
+		virtual Animal &operator=(const Animal &rhs);
+		virtual ~Animal();
+
+		virtual void makeSound() const = 0;
+		virtual const std::string &getType() const;
+};
+
+#endif
