@@ -6,7 +6,7 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2024/12/16 00:57:46 by bastienverdie    ###   ########.fr        #
+#    Updated: 2024/12/17 17:18:31 by basverdi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,12 +47,7 @@ MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOU
 MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
 MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
 
-BANNER = $(PRINT) "$(COLOUR_PURPULE) _   _  _____  ____  ____  ____ \n"
-BANNER1 = printf "$(COLOUR_PURPULE)( )_( )(  _  )(  _ \(  _ \( ___) \n"
-BANNER2 = printf "$(COLOUR_PURPULE) ) _ (  )(_)(  )   / )(_) ))__)  \n"
-BANNER3 = printf "$(COLOUR_PURPULE)(_) (_)(_____)(_)\_)(____/(____) \n\n"
-
-HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
+HEADER = $(PRINT) "$(COLOUR_PURPULE) ____  ____  _  _  ____  ____ \n( ___)(_  _)( \/ )( ___)(  _ \ \n )__)  _)(_  )  (  )__)  )(_) )\n(__)  (____)(_/\_)(____)(____/ \n\n"
 
 all: $(NAME)
 

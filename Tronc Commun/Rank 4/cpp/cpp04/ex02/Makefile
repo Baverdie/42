@@ -6,13 +6,13 @@
 #    By: bastienverdier-vaissiere <bastienverdie    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 12:24:01 by bastienverd       #+#    #+#              #
-#    Updated: 2025/01/13 15:20:11 by bastienverdie    ###   ########.fr        #
+#    Updated: 2025/01/14 16:25:09 by basverdi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PROJECT = Abstract_class
 NAME = Abstract
-PROJET_EMOJY = 🔥
+PROJET_EMOJY = 
 CC = $(SILENT)c++ $(CFLAGS)
 CFLAGS = -std=c++98 -Wall -Wextra -Werror -g
 
@@ -52,10 +52,10 @@ MSG_TOTALY_CLEANED = "$(COLOUR_RED)$(bold)[🗑️ ]$(PROJECT) $(notbold)$(COLOU
 MSG_COMPILING = "$(COLOUR_YELLOW)$(bold)[💧 Compiling 💧]$(notbold)$(COLOUR_YELLOW) $(^)$(NO_COLOR)";
 MSG_READY = "$(PROJET_EMOJY) $(COLOUR_BLUE)$(bold)$(PROJECT) $(COLOUR_GREEN)$(bold)ready$(NO_COLOR)\n";
 
-BANNER = $(PRINT) "$(COLOUR_PURPULE) _   _  _____  ____  ____  ____ \n"
-BANNER1 = printf "$(COLOUR_PURPULE)( )_( )(  _  )(  _ \(  _ \( ___) \n"
-BANNER2 = printf "$(COLOUR_PURPULE) ) _ (  )(_)(  )   / )(_) ))__)  \n"
-BANNER3 = printf "$(COLOUR_PURPULE)(_) (_)(_____)(_)\_)(____/(____) \n\n"
+BANNER = $(PRINT) "$(COLOUR_PURPULE)   __    ____  ___  ____  ____    __    ___  ____ \n"
+BANNER1 = printf "$(COLOUR_PURPULE)  /__\  (  _ \/ __)(_  _)(  _ \  /__\  / __)(_  _) \n"
+BANNER2 = printf "$(COLOUR_PURPULE) /(__)\  ) _ <\__ \  )(   )   / /(__)\( (__   )(   \n"
+BANNER3 = printf "$(COLOUR_PURPULE)(__)(__)(____/(___/ (__) (_)\_)(__)(__)\___) (__)  \n\n"
 
 HEADER = $(BANNER);$(BANNER1);$(BANNER2);$(BANNER3); \
 

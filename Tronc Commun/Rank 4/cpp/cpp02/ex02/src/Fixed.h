@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 00:07:22 by bastienverdie     #+#    #+#             */
-/*   Updated: 2024/12/16 01:58:53 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2024/12/17 17:23:52 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #define FIXED_H
 
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 	private:
