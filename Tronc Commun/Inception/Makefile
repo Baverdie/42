@@ -18,7 +18,5 @@ stop :
 
 fclean :
 	docker system prune -af
-	docker volume rm wordpress mariadb
-	rm -rf /home/basverdi/data
 
-.PHONY re start stop up down fclean all
+.PHONY: re start stop up down fclean all

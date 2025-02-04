@@ -28,8 +28,8 @@ services:
     expose:
       - "3306"
     environment:
-      - DB_PASS:${DB_PASS}
-      - DB_USER:${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_USER: ${DB_USER}
     restart: unless-stopped
   wordpress:
     container_name: wordpress
