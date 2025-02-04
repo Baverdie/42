@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:21:14 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/10 17:29:18 by basverdi         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:43:14 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Cat.h"
 
 int main() {
-/*	std::cout << "=== Test tableau ===" << std::endl; 
+	std::cout << "=== Test tableau ===" << std::endl; 
 	const Animal *animals[4];
 
 	for (int i = 0; i < 2; ++i)
@@ -41,13 +41,6 @@ int main() {
 	dog2.getBrain()->setIdea(0, "Playing fetch");
 	std::cout << "Dog1 idea after change: " << dog1.getBrain()->getIdea(0) << std::endl;
 	std::cout << "Dog2 idea after change: " << dog2.getBrain()->getIdea(0) << std::endl;
-*/	
-	Dog basic;
 
-	{
-
-		Dog tmp = basic;
-
-	}
 	return 0;
 }

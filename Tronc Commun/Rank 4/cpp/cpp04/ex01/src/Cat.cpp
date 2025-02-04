@@ -6,7 +6,7 @@
 /*   By: bastienverdier-vaissiere <bastienverdier-  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 17:37:21 by bastienverdie     #+#    #+#             */
-/*   Updated: 2025/01/10 15:12:17 by bastienverdie    ###   ########.fr       */
+/*   Updated: 2025/01/14 16:42:51 by basverdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Cat &Cat::operator=(Cat const &rhs) {
 }
 
 Cat::~Cat() {
+	delete brain;
 	std::cout << "Cat destructor called !" << std::endl;
 }
 
